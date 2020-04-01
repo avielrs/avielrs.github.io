@@ -4,11 +4,22 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+### PROFILE
 
-### More Information
+My ambition to work in Data Science emanates from my interest to use science in real-world applications within businesses, thus in return making an impact through data findings. My aptitude for research, analytics, and communicating data makes Data Science an inherent career path for me.
 
-A place to include any other types of information that you'd like to include about yourself.
+### SKILLS
+
+mySQL, NLP, Python, Hypothesis Testing, statistical analysis, Tableau, Plotly, Seaborn, Data Visualization, Big Data, Hadoop, Spark, Hive, AWS, GIT, UNIX, MATLAB, Computational Modelling, Machine Learning libraries in python, JIRA, Confluence
+
+### PROJECTS
+
+NLP from reviews to target wine scores
+
+Hatch, J., Cooke, M., Stern, A., Douilly, R., Oglesby, D. Considering fault   interaction in estimates of absolute stress along faults in the San Gorgonio Pass region, southern California (2020 Manuscript submitted for publication.
+
+[Fault Interaction within Restraining Bend Fault Systems](https://scholarworks.umass.edu/masters_theses_2/449/)
+
 
 ### Contact me
 
