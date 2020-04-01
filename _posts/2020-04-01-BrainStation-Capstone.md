@@ -18,3 +18,13 @@ import pandas as pd
 ```
 
 Next import csv dataframe (`winemag_data_130k_v2.csv`)[https://www.kaggle.com/zynicide/wine-reviews#winemag-data_first150k.csv]
+
+Step 2: Split train and test data
+
+```python
+# Import train_test_split package
+from sklearn.model_selection import train_test_split
+
+# Split data into train and test, where text_size is 30 percent, andsp train set is 70%
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=42, stratify = y)
+```
