@@ -11,10 +11,10 @@ Understanding what makes a great wine is very complex. The taste of a wine is de
 
 Step 1: Import Packages
 
-```javascript
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 ```
 
-Next import csv dataframe `winemag_data_130k_v2.csv`
+Next import csv dataframe (`winemag_data_130k_v2.csv`)[]
