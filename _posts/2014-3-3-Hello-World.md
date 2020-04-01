@@ -11,8 +11,9 @@ Understanding what makes a great wine is very complex. The taste of a wine is de
 
 Step 1: Import Packages
 
-'''
-
+```javascript
 import pandas
+import numpy
 
-'''
+import matplotlib
+```
