@@ -17,4 +17,4 @@ import matplotlib.pyplot as plt
 import pandas as pd
 ```
 
-Next import csv dataframe (`winemag_data_130k_v2.csv`)[]
+Next import csv dataframe (`winemag_data_130k_v2.csv`)[https://www.kaggle.com/zynicide/wine-reviews#winemag-data_first150k.csv]
