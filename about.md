@@ -14,9 +14,9 @@ mySQL, NLP, Python, Hypothesis Testing, statistical analysis, Tableau, Plotly, S
 
 ### PROJECTS
 
-NLP from reviews to target wine scores
+[NLP from reviews to target wine scores](https://avielrs.github.io/BrainStation-Capstone/)
 
-Hatch, J., Cooke, M., Stern, A., Douilly, R., Oglesby, D. Considering fault   interaction in estimates of absolute stress along faults in the San Gorgonio Pass region, southern California (2020 Manuscript submitted for publication.
+Hatch, J., Cooke, M., Stern, A., Douilly, R., Oglesby, D. Considering fault   interaction in estimates of absolute stress along faults in the San Gorgonio Pass region, southern California (2020) Manuscript submitted for publication.
 
 [Fault Interaction within Restraining Bend Fault Systems](https://scholarworks.umass.edu/masters_theses_2/449/)
 
