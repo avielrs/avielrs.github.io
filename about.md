@@ -18,7 +18,8 @@ mySQL, NLP, Python, Hypothesis Testing, statistical analysis, Tableau, Plotly, S
 
 Hatch, J., Cooke, M., Stern, A., Douilly, R., Oglesby, D. Considering fault   interaction in estimates of absolute stress along faults in the San Gorgonio Pass region, southern California (2020) Manuscript submitted for publication.
 
-[Fault Interaction within Restraining Bend Fault Systems](https://scholarworks.umass.edu/masters_theses_2/449/)
+[Fault Interaction within Restraining Bend Fault Systems](https://scholarworks.umass.edu/masters_theses_2/449/) | MASTER THESIS 2016
+University of Massachusetts Amherst, Geoscience Department
 
 
 ### Contact me
