@@ -26,12 +26,12 @@ SEP 2012, SANTA CRUZ, CA
 ### PROJECTS
 
 [NLP from reviews to target wine scores](https://avielrs.github.io/BrainStation-Capstone/)<br/>
-MAR  2020, BRAINSTATION
+March 2020, Capstone | BrainStation
 
 Hatch, J., Cooke, M., Stern, A., Douilly, R., Oglesby, D. Considering fault   interaction in estimates of absolute stress along faults in the San Gorgonio Pass region, southern California (2020) Manuscript submitted for publication.
 
-[Fault Interaction within Restraining Bend Fault Systems](https://scholarworks.umass.edu/masters_theses_2/449/) | MASTER THESIS 2016<br/>
-University of Massachusetts Amherst, Geoscience Department
+[Fault Interaction within Restraining Bend Fault Systems](https://scholarworks.umass.edu/masters_theses_2/449/)<br/>
+September 2016, Master Thesis| University of Massachusetts Amherst, Geoscience Department
 
 
 ### CONTACT ME
