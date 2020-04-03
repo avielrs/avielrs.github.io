@@ -5,7 +5,6 @@ permalink: /about/
 ---
 
 ### Profile
-
 From earthquake scientist to data scientist, I became aware of my passion for working with data and my curiosity for how data creates transparency, growth, and productive decisions within communities. As a Data Scientist, I am driven to extract essential information through data engineering, data analysis, and machine learning, and to then tell a story through data visualization. I am enthusiastic to apply data science in real-world applications within businesses and to make an impact within my community through data findings.
 
 ### Skills
