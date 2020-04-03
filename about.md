@@ -37,5 +37,5 @@ Hatch, J., Cooke, M., Stern, A., Douilly, R., Oglesby, D. Considering fault   in
 September 2016, Master Thesis | UMASS Amherst, Geoscience
 
 
-### CONTACT ME
+#### CONTACT ME
 [avielstern@gmail.com](mailto:avielstern@gmail.com)
