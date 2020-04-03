@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 ### PROFILE
-My ambition to work in Data Science emanates from my interest to use science in real-world applications within businesses, thus in return making an impact through data findings. My aptitude for research, analytics, and communicating data makes Data Science an inherent career path for me.
+My ambition to work in Data Science progragates from my interest to use science in real-world applications within businesses, and in return making an impact through data findings.
 
 
 ### SKILLS
@@ -14,10 +14,10 @@ My ambition to work in Data Science emanates from my interest to use science in 
 Python, mySQL, UNIX, GIT
 
 #### Data Science Techniques 
-NLP, Machine Learning, Hypothesis Testing, A/B Testing, Data Anlysis, Data Visualization
+NLP, Machine Learning, Hypothesis Testing, Data Anlysis, Data Visualization
 
 #### Software
-Tableau, Jira, Confluence, Hadoop, Spark, Hive, AWS Big Data, MATLAB
+Tableau, Jira, Confluence, Hadoop, Spark, AWS Big Data
 
 
 ### EDUCATION
@@ -42,5 +42,5 @@ Hatch, J., Cooke, M., Stern, A., Douilly, R., Oglesby, D. Considering fault   in
 September 2016, Master Thesis | UMASS Amherst, Geoscience
 
 
-#### CONTACT ME
+### CONTACT ME
 [avielstern@gmail.com](mailto:avielstern@gmail.com)
