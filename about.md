@@ -10,9 +10,14 @@ My ambition to work in Data Science emanates from my interest to use science in 
 
 ### SKILLS
 
-Python, mySQL, UNIX, GIT, MATLAB<br/>
-NLP, Machine Learning, Hypothesis Testing, A/B Testing<br/>  
-Tableau, Jira, Confluence, Hadoop, Spark, Hive, AWS Big Data  
+#### Programming Languages
+Python, mySQL, UNIX, GIT
+
+#### Data Science Techniques 
+NLP, Machine Learning, Hypothesis Testing, A/B Testing, Data Anlysis, Data Visualization
+
+#### Software
+Tableau, Jira, Confluence, Hadoop, Spark, Hive, AWS Big Data, MATLAB
 
 
 ### EDUCATION
