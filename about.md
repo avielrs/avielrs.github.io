@@ -5,7 +5,14 @@ permalink: /about/
 ---
 
 ### PROFILE
-My ambition to work in Data Science progragates from my interest to use science in real-world applications within businesses, and in return making an impact through data findings.
+
+    I want to help people. This is the underlining code driving my career path. While the output may seem clear and concise, just like a script of code, achieving the end result frequently entails trial and error, modifying, and assessing until reaching our final goal. In my case, it entails pursuing a career in Data Science.
+
+    My first script of code driving my career path lead me to pursue an academic career in geology. Wait, Geology as in rocks? Why would someone want to study this? Well, geology helps us understand why natural disasters happen. Natural disasters hugely impact communities every year such as tornados, landslides, hurricanes, and earthquakes. I focused my studies specifically on the science of earthquakes to develop insights into potential seismic regions. This information can help communities prepare for earthquakes such as emergency preparedness, community outreach, and technology invested in preparedness.
+
+    From earthquake scientist to data scientist, my next version of code leading my career path required a lot of processing where I evaluated my skillsets, interests, and original goal to help people. Through multiple iterations, I realized my passion for working with data and my curiosity for how data creates transparency, growth, and productive decisions within communities. As a Data Scientist, I am driven to extract essential information through data engineering, data analysis, and machine learning, and to then tell a story through data visualization.
+
+    I am enthusiastic to apply data science in real-world applications within businesses and to make an impact within my community through data findings. The impacts of big data, machine learning, and deep learning is continuously evolving to help technology, medicine, and corporations. As data science is making great steps, it will be even more important to ensure that as a Data Scientist, I make ethical decisions, consider accuracy, and keep up to date with innovative approaches. 
 
 
 ### SKILLS
