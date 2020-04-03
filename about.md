@@ -13,14 +13,14 @@ mySQL, NLP, Python, Hypothesis Testing, statistical analysis, Tableau, Plotly, S
 
 
 ### EDUCATION
-BrainStation |  Diploma Candidate, Data Science<br/>
-MAR 2020, TORONTO, ONTARIO
+[BrainStation](https://www.ucsc.edu/) |  Diploma Candidate, Data Science<br/>
+March 2020, Toronto, Ontario
 
-University of Massachusetts, Amherst |  Master in Geoscience<br/>
-SEP 2016, AMHERST, MA
+[University of Massachusetts, Amherst](https://www.umass.edu/) |  Master in Geoscience<br/>
+September 2016, Amherst, MA
 
-University of California, Santa Cruz |  Bachelors in Earth Science<br/>
-SEP 2012, SANTA CRUZ, CA
+(University of California, Santa Cruz)[https://www.ucsc.edu/] |  Bachelors in Earth Science<br/>
+September 2012, Santa Cruz, CA
 
 
 ### PROJECTS
@@ -31,7 +31,7 @@ March 2020, Capstone | BrainStation
 Hatch, J., Cooke, M., Stern, A., Douilly, R., Oglesby, D. Considering fault   interaction in estimates of absolute stress along faults in the San Gorgonio Pass region, southern California (2020) Manuscript submitted for publication.
 
 [Fault Interaction within Restraining Bend Fault Systems](https://scholarworks.umass.edu/masters_theses_2/449/)<br/>
-September 2016, Master Thesis| University of Massachusetts Amherst, Geoscience Department
+September 2016, Master Thesis | UMASS Amherst, Geoscience
 
 
 ### CONTACT ME
