@@ -9,17 +9,20 @@ My ambition to work in Data Science emanates from my interest to use science in 
 
 
 ### SKILLS
-mySQL, NLP, Python, Hypothesis Testing, statistical analysis, Tableau, Plotly, Seaborn, Data Visualization, Big Data, Hadoop, Spark, Hive, AWS, GIT, UNIX, MATLAB, Computational Modelling, Machine Learning libraries in python, JIRA, Confluence
+
+Python, mySQL, UNIX, GIT, MATLAB<br/>
+NLP, Machine Learning, Hypothesis Testing, A/B Testing<br/>  
+Tableau, Jira, Confluence, Hadoop, Spark, Hive, AWS Big Data  
 
 
 ### EDUCATION
-[BrainStation](https://www.ucsc.edu/) |  Diploma Candidate, Data Science<br/>
+[BrainStation](https://www.ucsc.edu/) | Data Science Diploma<br/>
 March 2020, Toronto, Ontario
 
 [University of Massachusetts, Amherst](https://www.umass.edu/) |  Master in Geoscience<br/>
 September 2016, Amherst, MA
 
-(University of California, Santa Cruz)[https://www.ucsc.edu/] |  Bachelors in Earth Science<br/>
+[University of California, Santa Cruz](https://www.ucsc.edu/) |  Bachelors in Earth Science<br/>
 September 2012, Santa Cruz, CA
 
 
