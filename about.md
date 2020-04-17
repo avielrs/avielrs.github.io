@@ -10,12 +10,11 @@ From earthquake scientist to data scientist, I jumped into this career switch wh
 ### Skills
 
 #### Programming Languages
-Python, SQL
-![image info](/images/python-logo.png) ![image info](/images/tableau-logo.png)
+![image info](/images/python-logo.png) ![image info](/images/mysqllogo.png)
 #### Data Science Techniques 
 NLP, Machine Learning, Hyperparameter Optimizatiton, Hypothesis Testing, Data Cleaning, Feature Engineering, Data Visualization
 #### Technical Skills
-Linux, GIT, Tableau, Jira, Confluence, Hadoop, Spark, AWS Big Data
+Linux, GIT, ![image info](/images/tableau-logo.png), Jira, Confluence, Hadoop, Spark, AWS Big Data
 
 
 ### Education
