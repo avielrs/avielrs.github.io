@@ -12,6 +12,8 @@ Skills
 
 #### Programming Languages
 Python, SQL
+![image info](/Users/avielstern/Desktop/portfolio/avielrs.github.io/images/python-logo-master-v3-TM.png)
+
 #### Data Science Techniques 
 NLP, Machine Learning, Hyperparameter Optimizatiton, Hypothesis Testing, Data Cleaning, Feature Engineering, Data Visualization
 #### Technical Skills
