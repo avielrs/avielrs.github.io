@@ -7,17 +7,17 @@ permalink: /about/
 ### Profile
 From earthquake scientist to data scientist, I jumped into this career switch when I realized my passion for working with data, and my curiosity for how data creates transparency, growth, and productive decisions within communities. As a Data Scientist, I am driven to extract essential information through data engineering, data analysis, and machine learning, and to then tell a story through data visualizations. I am enthusiastic to apply data science in real-world applications within businesses and to make an impact within my community through data findings.
 
-### <img src="https://img.icons8.com/ios/45/000000/parse-from-clipboard.png"/> Skills 
+### Skills 
 
 #### Programming Languages
-![image info](/images/python-logo.png)     ![image info](/images/mysqllogo.png)
+Python, mySQL
 #### Data Science Techniques 
 NLP, Machine Learning, Hyperparameter Optimizatiton, Hypothesis Testing, Data Cleaning, Feature Engineering, Data Visualization
 #### Technical Skills
-Linux, GIT, ![image info](/images/tableau-logo.png),![image info](/images/aws-logo.png) Jira, Confluence, Hadoop, Spark
+Linux, GIT, Tableau, AWS,  Hadoop, Spark, Jira, Confluence
 
 
-#### <img src="https://img.icons8.com/dotty/45/000000/education.png"/> Education 
+#### Education 
 [BrainStation](https://www.ucsc.edu/) | Data Science Diploma<br/>
 March 2020, Toronto, Ontario
 
