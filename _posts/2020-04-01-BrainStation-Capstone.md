@@ -33,12 +33,32 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random
 ```
 
 Step 3: Explore Data
-Before removing missing data and dropping columns, it is important to first review the dataset. 
-Things to check in a dataset:
-    1. Make sure each column contains the correct data type
-    2. Check to see if a column name should be renamed
-    3. Check to see if there are duplicate columns
-    4. How many rows in each column
-    5. Are there missing values in a column? 
-    6. Can we complete feature engineering from a column
+    Before removing missing data and dropping columns, it is important to first review the dataset. 
+    Things to check in a dataset:
+        1. Make sure each column contains the correct data type
+        2. Check to see if a column name should be renamed
+        3. Check to see if there are duplicate columns
+        4. How many rows in each column
+        5. Are there missing values in a column? 
+        6. Can we complete feature engineering from a column
 
+Step 4. Drop Columns
+    This step is to drop columns 
+
+Step 5. Fill Missing Values
+```python
+# Replace variety nan with most frequent variety
+X_train['variety'].fillna(X_train['variety'].describe()['top'], inplace = True)
+
+# Replace variety nan with most frequent variety
+X_train['country'].fillna(X_train['country'].describe()['top'], inplace = True)
+
+# Replace variety nan with most frequent variety
+X_train['province'].fillna(X_train['province'].describe()['top'], inplace = True)
+
+# Replace variety nan with most frequent variety
+X_train['price'].fillna(X_train['price'].median(), inplace = True)
+
+# Check to make sure missing values are filled in variety
+X_train.isna().sum()
+```
