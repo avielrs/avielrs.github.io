@@ -10,14 +10,14 @@ From earthquake scientist to data scientist, I jumped into this career switch wh
 ### Skills
 
 #### Programming Languages
-![image info](/images/python-logo.png) ![image info](/images/mysqllogo.png)
+![image info](/images/python-logo.png)     ![image info](/images/mysqllogo.png)
 #### Data Science Techniques 
 NLP, Machine Learning, Hyperparameter Optimizatiton, Hypothesis Testing, Data Cleaning, Feature Engineering, Data Visualization
 #### Technical Skills
 Linux, GIT, ![image info](/images/tableau-logo.png),![image info](/images/aws-logo.png) Jira, Confluence, Hadoop, Spark
 
 
-### Education <<img src="https://img.icons8.com/dotty/40/000000/education.png"/>>
+### Education <img src="https://img.icons8.com/dotty/40/000000/education.png"/>
 [BrainStation](https://www.ucsc.edu/) | Data Science Diploma<br/>
 March 2020, Toronto, Ontario
 
