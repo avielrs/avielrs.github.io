@@ -17,7 +17,7 @@ NLP, Machine Learning, Hyperparameter Optimizatiton, Hypothesis Testing, Data Cl
 Linux, GIT, Tableau, AWS,  Hadoop, Spark, Jira, Confluence
 
 
-#### Education 
+### Education 
 [BrainStation](https://www.ucsc.edu/) | Data Science Diploma<br/>
 March 2020, Toronto, Ontario
 
