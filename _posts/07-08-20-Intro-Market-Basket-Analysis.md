@@ -56,6 +56,8 @@ $$  \text{support}(X \cup Y) = \frac{\text{# of transactions with X and Y togeth
 Create a recommendor system from lift value
 Once the dataframe is setup correctly, we can run Aipori Algorithm which is an association rule algorithm. Association Rules "help uncover all such relationships between items from huge databases". The Aipori Algorithm groups the list of items into antecedents and consequents. The antecedent is what the customer purchased such as bread and eggs, while the consequent is the purchase result (https://towardsdatascience.com/association-rules-2-aa9a77241654). For example, if a user purchases milk and sugar (antecendent) then they will purcahse coffee (consquent). We can see from the sample dataset above that if a customer buys beer (antecendent) then the customer buys rice (Consequent) for 50% of transactions (4 transacations/ 8 total transactions). We can see here that the antecedent and consequent are setup as an if (antecedent) else (consequent) statement.
 
+
+
 Links for Reference:
 https://towardsdatascience.com/mba-for-breakfast-4c18164ef82b
 https://www.youtube.com/watch?v=WGlMlS_Yydk&t=8s
