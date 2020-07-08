@@ -10,11 +10,11 @@ From earthquake scientist to data scientist, I jumped into this career switch wh
 ### Skills 
 
 #### Programming Languages
-Python, mySQL
+Python (Numpy, Matplotlib, Seaborn, Scikit-Learn), SQL
 #### Data Science Techniques 
-NLP, Machine Learning, Hyperparameter Optimizatiton, Hypothesis Testing, Data Cleaning, Feature Engineering, Data Visualization
+NLP, Machine Learning, Predictive Modeling, Hyperparameter Optimizatiton, Hypothesis Testing, Data Cleaning, Feature Engineering, Data Visualization, Statistical Analysis
 #### Technical Skills
-Linux, GIT, Tableau, AWS,  Hadoop, Spark, Jira, Confluence
+Linux, GIT, Tableau, AWS,  Hadoop, Spark, Jira, MATLAB
 
 
 ### Education 
@@ -33,10 +33,18 @@ September 2012, Santa Cruz, CA
 [NLP from reviews to target wine scores](https://avielrs.github.io/BrainStation-Capstone/)<br/>
 March 2020, Capstone | BrainStation
 
-Hatch, J., Cooke, M., Stern, A., Douilly, R., Oglesby, D. Considering fault   interaction in estimates of absolute stress along faults in the San Gorgonio Pass region, southern California (2020) Manuscript submitted for publication.
+[Jennifer L. Hatch, Michele L. Cooke, Aviel R. Stern, Roby Douilly, David D. Oglesby; Considering fault interaction in estimates of absolute stress along faults in the San Gorgonio Pass region, southern California. Geosphere ; 16 (3): 751–764. doi: https://doi.org/10.1130/GES02153.1](https://pubs.geoscienceworld.org/gsa/geosphere/article/16/3/751/583442/Considering-fault-interaction-in-estimates-of)<br/>
+
+[Co-Founder/Producer | Tasty Chicks Comedy](www.tastychickscomedy.com)<br/>
+MAY  2018 – PRESENT, NEW ENGLAND REGION<br/>
 
 [Fault Interaction within Restraining Bend Fault Systems](https://scholarworks.umass.edu/masters_theses_2/449/)<br/>
 September 2016, Master Thesis | UMASS Amherst, Geoscience
+
+The Rheology of Granular flow with Acoustic Vibrations at Constant Volume <br/>
+JUN 2012, University of California, Santa Cruz, Brodsky Seismic Lab<br/>
+Received Undergraduate Thesis Honors<br/>
+
 
 
 ### Contact Me
