@@ -37,19 +37,19 @@ In order to run the market basket analysis, we must first start with a list of t
 #### Step 2:
 Next use [TransactionEncoder](http://rasbt.github.io/mlxtend/user_guide/preprocessing/TransactionEncoder/) to transform the list of transactional items into dummy variables which is suitable for computating text data such as in Machine Learning and Statistical Analysis methods.
 
-|   | Apple | Bananas | Beer | Chicken | Milk | Rice |
-|---|---|---|---|---|---|---|
-| 0 | True | False | True | True | False | True |
-| 1 | True | False | True | False | False | True |
-| 2 | True | True | True | False | False | False |
-| 3 | True | False | False | False | False | False |
-| 4 | False | False | True | True | True | True |
-| 5 | False | False | True | False | True | True |
-| 6 | False | False | True | False | True | False |
-| 7 | True | True | False | False | False | False |
+|     | Apple | Bananas |   Beer  | Chicken |   Milk  |   Rice  |
+|-----|-------|---------|---------|---------|---------|---------|
+|  0  | True  |  False  |   True  |  True   |  False  |   True  |
+|  1  | True  |  False  |   True  |  False  |  False  |   True  |
+|  2  | True  |  True   |   True  |  False  |  False  |   False |
+|  3  | True  |  False  |   False |  False  |  False  |   False |
+|  4  | False |  False  |   True  |  True   |  True   |   True  |
+|  5  | False |  False  |   True  |  False  |  True   |   True  |
+|  6  | False |  False  |   True  |  False  |  True   |   False |
+|  7  | True  |  True   |   False |  False  |  False  |   False |
 
 #### Step 3:
-Once the dataframe is setup correctly, we can run Aipori Algorithm which is an association rule algorithm. Association Rules "help uncover all such relationships between items from huge databases". The Aipori Algorithm groups the list of items into antecedents and consequents. The antecedent is what the customer purchased such as bread and eggs, while the consequent is the purchase result (https://towardsdatascience.com/association-rules-2-aa9a77241654). For example, if a user purchases  beer (antecendent) then they will purcahse rice (consquent). We can see from the sample dataset above that if a customer buys beer (antecendent) then the customer buys rice (Consequent) for 50% of transactions (4 transacations/ 8 total transactions). We can see here that the antecedent and consequent are setup as an *if* (antecedent) *else* (consequent) statement.
+Once the dataframe is setup correctly, we can run Aipori Algorithm which is an association rule algorithm. Association Rules "help uncover all such relationships between items from huge databases". The Aipori Algorithm groups the list of items into antecedents and consequents. The antecedent is what the customer purchased such as bread and eggs, while the consequent is the purchase result. For example, if a user purchases  beer (antecendent) then they will purcahse rice (consquent). We can see from the sample dataset above that if a customer buys beer (antecendent) then the customer buys rice (Consequent) for 50% of transactions (4 transacations/ 8 total transactions). We can see here that the antecedent and consequent are setup as an *if* (antecedent) *else* (consequent) statement.
 
 Aipori Algorithm quantifies the likelihood of a customer who purchases item A who will also purchase item B.
 
