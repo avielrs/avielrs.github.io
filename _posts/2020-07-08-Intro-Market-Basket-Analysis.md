@@ -54,20 +54,23 @@ Once the dataframe is setup correctly, we can run Aipori Algorithm which is an a
 Aipori Algorithm quantifies the likelihood of a customer who purchases item A who will also purchase item B.
 
 Aipori Algorithm provides three components: Support, Confidence, Conviction, and Lift:
+
 ```math
-$$\frac{a}{b}$$
+support(X U Y) = # of transactions with X and Y together / total number of transactions
+support(apple) = 5/8 = 0.625 
+x^2
+```
+We can then set a support threshold where the support value means the item has a meaningful outcome on sales. Therefore identifying all items within all transactions where items contain a support threshold equal or greater than the set value. Confidence signifies the likelihood of item Y being purchased with item X. 
+
+This is also known as conidtional probablity P(Y|X). The conditional probability of P(Y|X) is the probability of itemset 𝑌 in all transactions given the transaction already contains 𝑋. The drawback of confidence is that it only takes into account the popularity of X, and not the popularity of Y. 
+
+```math
+confidence(X\rightarrow Y) = \frac{\text{support}(X\cup Y)}{\text{support}(X)} = \frac{\text{proportion of transactions with X and Y}}{\text{proportion of transactions with X}}$$ <br/><br/>
 ```
 
 ```math
-\support}(X U Y) = # of transactions with X and Y together/total number of transactions
+
 ```
-$$  \text{support}(apple) = \frac{\text{5}}{\text{8}} = 0.625 $$
-
-We can then set a support threshold where the support value means the item has a meaningful outcome on sales. Therefore identifying all items within all transactions where items contain a support threshold equal or greater than the set value. Confidence signifies the likelihood of item Y being purchased with item X. This is also known as conidtional probablity P(Y|X). The conditional probability of P(Y|X) is the probability of itemset 𝑌 in all transactions given the transaction already contains 𝑋. The drawback of confidence is that it only takes into account the popularity of X, and not the popularity of Y. 
-
-$$ \text{confidence}(X\rightarrow Y) = \frac{\text{support}(X\cup Y)}{\text{support}(X)} = \frac{\text{proportion of transactions with X and Y}}{\text{proportion of transactions with X}}$$ <br/><br/>
-
-
 $$ \text{confidence}(milk, beer\rightarrow rice) = \frac{\text{support}(milk, beer\cup rice)}{\text{support}(rice)} = \frac{\frac{2}{8}}{\frac{4}{8}} = 0.5$$ <br/><br/>
 
 
