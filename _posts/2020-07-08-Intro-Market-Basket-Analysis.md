@@ -64,7 +64,7 @@ df = pd.DataFrame(item, columns = te.columns_)
 ```
 
 <p align="center">
-  <img src="/images/Intro_MBA/dummytable.png"/>
+    <img src="/images/Intro_MBA/dummytable.png"/>
 </p>
 
 
