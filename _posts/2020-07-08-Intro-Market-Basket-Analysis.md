@@ -55,15 +55,9 @@ Aipori Algorithm quantifies the likelihood of a customer who purchases item A wh
 
 **Aipori Algorithm provides three components: Support, Confidence, Conviction, and Lift**
 
-
-$ \text{support}(X \cup Y) = \frac{\text{# of transactions with X and Y together}}{\text{total number of transactions}} $<br/><br/>
-
 ```math
-\text{support}(X \cup Y) = \frac{\text{# of transactions with X and Y together}}{\text{total number of transactions}}
+\support}(X U Y) = # of transactions with X and Y together/total number of transactions
 ```
-
-
-
 $$  \text{support}(apple) = \frac{\text{5}}{\text{8}} = 0.625 $$<br/><br/>
 
 We can then set a support threshold where the support value means the item has a meaningful outcome on sales. Therefore identifying all items within all transactions where items contain a support threshold equal or greater than the set value.
