@@ -56,28 +56,23 @@ Aipori Algorithm quantifies the likelihood of a customer who purchases item A wh
 Aipori Algorithm provides three components: Support, Confidence, Conviction, and Lift:
 
 ```math
-support(X U Y) = # of transactions with X and Y together / total number of transactions
-support(apple) = 5/8 = 0.625 
-x^2
+support(X U Y) = #of transactions with X and Y together / total number of transactions
+support(apple) = 5/8 = 0.625
 ```
-We can then set a support threshold where the support value means the item has a meaningful outcome on sales. Therefore identifying all items within all transactions where items contain a support threshold equal or greater than the set value. Confidence signifies the likelihood of item Y being purchased with item X. 
-
-This is also known as conidtional probablity P(Y|X). The conditional probability of P(Y|X) is the probability of itemset 𝑌 in all transactions given the transaction already contains 𝑋. The drawback of confidence is that it only takes into account the popularity of X, and not the popularity of Y. 
+We can then set a support threshold where the support value means the item has a meaningful outcome on sales. Therefore identifying all items within all transactions where items contain a support threshold equal or greater than the set value. Confidence signifies the likelihood of item Y being purchased with item X. This is also known as conidtional probablity P(Y|X). The conditional probability of is the probability of itemset 𝑌 in all transactions given the transaction already contains 𝑋. The drawback of confidence is that it only takes into account the popularity of X, and not the popularity of Y. 
 
 ```math
-confidence(X\rightarrow Y) = \frac{\text{support}(X\cup Y)}{\text{support}(X)} = \frac{\text{proportion of transactions with X and Y}}{\text{proportion of transactions with X}}$$ <br/><br/>
+confidence(X -> Y) = support}(X U Y)} / support(X) = proportion of transactions with X and Y / proportion of transactions with X
 ```
 
 ```math
-
+confidence(milk, beer -> rice) = support(milk, beer U rice) / support(rice) = 2/{8 / 4/8 = 0.5
 ```
-$$ \text{confidence}(milk, beer\rightarrow rice) = \frac{\text{support}(milk, beer\cup rice)}{\text{support}(rice)} = \frac{\frac{2}{8}}{\frac{4}{8}} = 0.5$$ <br/><br/>
-
 
 Lift takes into account for popularity of Y which thus accomodates for the drawback present in calculating confidence. More precisely lift signifies the liklihood of item Y being purchased when item X is purchased, while taking into account the popularity of Y. If Lift > 1, then Y is likely bought with item X. Lift < 1, then Y is unlikely bought with item X. <br/><br/>
 
 
-$$ \text{lift}(X\rightarrow Y) = \frac{\text{confidence}(X\rightarrow Y)}{\text{support}(Y)} = \frac{\frac{\text{support}(X\cup Y)}{\text{support}(X)}}{\text{support}(Y)} = \frac{\text{support}(X\cup Y)}{\text{support}(X)\times\text{support}(Y)}$$<br/><br/>
+lift(X -> Y) = confidence(X -> Y) / support(Y) = \frac{\frac{\text{support}(X\cup Y)}{\text{support}(X)}}{\text{support}(Y)} = \frac{\text{support}(X\cup Y)}{\text{support}(X)\times\text{support}(Y)}$$<br/><br/>
 
 $$ \text{lift}(beer\rightarrow rice) = \frac{\frac{4}{8}}{\frac{6}{8}\times\frac{4}{8}} = 1.3 $$
 
