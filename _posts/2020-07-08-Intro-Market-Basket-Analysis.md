@@ -69,7 +69,43 @@ Conviction is the measure of the dependence of the consequent on the antecedent:
 #### Step 4: 
 Create a recommendor system from lift value
 
+### Step 1: Transform dataframe into a list
 
+```python
+# Import packages
+import pandas as pd
+import numpy as np
+import matplotlib as pl
+
+# Import mlxtend packages
+from mlxtend.preprocessing import TransactionEncoder
+import itertools  
+
+from mlxtend.frequent_patterns import apriori
+from mlxtend.frequent_patterns import association_rules
+
+```
+
+```python
+basket = []
+
+df.values[0, 0].split(',')
+
+for i in range(len(df)):
+    basket.append(df.values[i, 0].split(','))
+```
+
+### Step 2: Transform input dataset into a one-hot encoded NumPy boolean array
+```python
+# Instantiate
+te = TransactionEncoder()
+
+# Fit and Transform the data into True and False (1 and 0)
+item = te.fit(basket).transform(basket)
+
+# Create DataFrame
+df = pd.DataFrame(item, columns = te.columns_)
+```
 
 Links for Reference:
 https://towardsdatascience.com/mba-for-breakfast-4c18164ef82b
