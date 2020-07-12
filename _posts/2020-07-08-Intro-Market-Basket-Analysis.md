@@ -2,7 +2,7 @@
 layout: post
 title: Introduction to Market Basket Analysis
 ---
-![Alternate image text](/images/Intro_MBA/header_image.jpg)</br>
+![Alternate image text](/images/Intro_MBA/header_image.jpg)
 
 **Market Basket Analysis** (MBA) is a data mining technique and rule-based algorithm that can learn through relationships.  MBA can be greatly utilized within ecommerce and marketing strategies which can allow for enhancing more productive decisions that will benefit not only sales but also the ease of how a consumer shops.
 
@@ -10,7 +10,7 @@ When we walk down a grocery store aisle we expect to see certain items placed to
 
 Market Basket Analysis also provides insight into how stores should market their items and target customers. If a customer purchases item A, and we know that item B is frequently purchased with item A, then we might consider targeting item A to that customer. With MBA we can determine how to consider more advantageous group discounts, and even go one step further in developing a recommmendor system for ecommerce shoppers.
 
-MBA is considered a type of rule based learning. A rule might look like: 'If a customer bought tortilla chips, then they will also buy salsa.'
+MBA is considered a type of rule based learning. A rule might look like: *IF* a customer bought tortilla chips, *THEN* they will also buy salsa.
 
 ![Alternate image text](/images/Intro_MBA/chips_salsa.png)
 
@@ -79,72 +79,10 @@ Conviction is the measure of the dependence of the consequent on the antecedent:
 ![Alternate image text](/images/Intro_MBA/conviction.png)
 
 #### Step 4: 
-Create a recommendor system from lift value
-
-### Step 1: Transform dataframe into a list
-
-This dataset is a simple grocery store dataset taken from [Kaggle](https://www.kaggle.com/shazadudwadia/supermarket). The dataset is a list of 20 transactions from a grocery store. 
-
-```python
-# Import packages
-import pandas as pd
-import numpy as np
-import matplotlib as pl
-
-# Import mlxtend packages
-from mlxtend.preprocessing import TransactionEncoder
-import itertools  
-
-from mlxtend.frequent_patterns import apriori
-from mlxtend.frequent_patterns import association_rules
-
-```
-
-```python
-basket = []
-
-df.values[0, 0].split(',')
-
-for i in range(len(df)):
-    basket.append(df.values[i, 0].split(','))
-```
-
-![Alternate image text](/images/Intro_MBA/basket.png)
-
-### Step 2: Transform input dataset into a one-hot encoded NumPy boolean array
-```python
-# Instantiate
-te = TransactionEncoder()
-
-# Fit and Transform the data into True and False (1 and 0)
-item = te.fit(basket).transform(basket)
-
-# Create DataFrame
-df = pd.DataFrame(item, columns = te.columns_)
-```
-
-![Alternate image text](/images/Intro_MBA/basket_dummy.png)
-
-Just by looking at this contingency heatmap which shows the frequency of each item purchased with another item. We can see some trends. For example, Bread is bought frequently with tea, sugar, milk, maggi, and coffee. As well, cornflakes and coffee were bought three times together. While for example, sugar and jam were never purachased together. While this is a first order attempt to look at the relationships, the Aipori Algorithm can provide an even more detail outline of relationships between multiple items which can provide much greater insight.
+Create a recommendor system
 
 
-![Alternate image text](/images/Intro_MBA/basket_correlation.png)
 
-### Step 3: Aipori Algorithm
-
-```python
-frequent_itemsets = apriori(df, min_support=0.1, use_colnames=True, max_len = 4)
-
-# Add a column to the DataFrame that includes the length of the itemsets
-frequent_itemsets['length'] = frequent_itemsets['itemsets'].apply(lambda x: len(x))
-
-# In this specific project, we only care about itemsets where length = 2
-# and support is greater than and equal to 0.05 (5%)
-items = frequent_itemsets[ (frequent_itemsets['length'] == 2) & (frequent_itemsets['support'] >= 0.05) ]
-
-#take a look at the help for ways we can use this function
-association_rules = association_rules(x, metric="lift", min_threshold=1)
-```
 
 Links for Reference:
 https://towardsdatascience.com/mba-for-breakfast-4c18164ef82b
