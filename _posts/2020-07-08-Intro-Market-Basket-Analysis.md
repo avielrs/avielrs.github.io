@@ -48,6 +48,8 @@ Next use [TransactionEncoder](http://rasbt.github.io/mlxtend/user_guide/preproce
 |  6    | False |  False  |   True  |  False  |  True   |   False |
 |  7    | True  |  True   |   False |  False  |  False  |   False |
 
+![Alternate image text](/images/dummytable.png)
+
 #### Step 3:
 Once the dataframe is setup correctly, we can run Aipori Algorithm which is an association rule algorithm. Association Rules "help uncover all such relationships between items from huge databases". The Aipori Algorithm groups the list of items into antecedents and consequents. The antecedent is what the customer purchased such as bread and eggs, while the consequent is the purchase result. For example, if a user purchases  beer (antecendent) then they will purcahse rice (consquent). We can see from the sample dataset above that if a customer buys beer (antecendent) then the customer buys rice (Consequent) for 50% of transactions (4 transacations/ 8 total transactions). We can see here that the antecedent and consequent are setup as an *if* (antecedent) *else* (consequent) statement.
 
