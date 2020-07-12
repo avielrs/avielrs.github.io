@@ -52,10 +52,29 @@ In order to run the market basket analysis, we must first start with a list of t
 
 Next use [TransactionEncoder](http://rasbt.github.io/mlxtend/user_guide/preprocessing/TransactionEncoder/) to transform the list of transactional items into dummy variables which is suitable for computating text data such as in Machine Learning and Statistical Analysis methods.
 
+```python
+# Instantiate
+te = TransactionEncoder()
+
+# Fit and Transform the data into True and False (1 and 0)
+item = te.fit(basket).transform(basket)
+
+# Create DataFrame
+df = pd.DataFrame(item, columns = te.columns_)
+```
+
 ![Alternate image text](/images/Intro_MBA/dummytable.png)
 
-#### Step 3:
-Once the dataframe is setup correctly, we can run Aipori Algorithm which is an association rule algorithm. Association Rules "help uncover all such relationships between items from huge databases". The Aipori Algorithm groups the list of items into antecedents and consequents. The antecedent is what the customer purchased such as bread and eggs, while the consequent is the purchase result. For example, if a user purchases  beer (antecendent) then they will purcahse rice (consquent). We can see from the sample dataset above that if a customer buys beer (antecendent) then the customer buys rice (Consequent) for 50% of transactions (4 transacations/ 8 total transactions). We can see here that the antecedent and consequent are setup as an *if* (antecedent) *else* (consequent) statement.
+
+Just by looking at this contingency heatmap which shows the frequency of each item purchased with another item. We can see some trends. For example, Bread is bought frequently with tea, sugar, milk, maggi, and coffee. As well, cornflakes and coffee were bought three times together. While for example, sugar and jam were never purachased together. While this is a first order attempt to look at the relationships, the Aipori Algorithm can provide an even more detail outline of relationships between multiple items which can provide much greater insight.
+
+
+![Alternate image text](/images/Intro_MBA/basket_correlation.png)
+
+
+#### Step 3: Apriori Algorithm
+
+Once the dataframe is setup correctly, we can run Apriori Algorithm which is an association rule algorithm. Association Rules "help uncover all such relationships between items from huge databases". The Aipori Algorithm groups the list of items into antecedents and consequents. The antecedent is what the customer purchased such as bread and eggs, while the consequent is the purchase result. For example, if a user purchases  beer (antecendent) then they will purcahse rice (consquent). We can see from the sample dataset above that if a customer buys beer (antecendent) then the customer buys rice (Consequent) for 50% of transactions (4 transacations/ 8 total transactions). We can see here that the antecedent and consequent are setup as an *if* (antecedent) *else* (consequent) statement.
 
 Aipori Algorithm quantifies the likelihood of a customer who purchases item A who will also purchase item B.
 
@@ -82,6 +101,23 @@ Leverage is the difference in support of the larger group, than would be expecte
 Conviction is the measure of the dependence of the consequent on the antecedent: A high value denotes that we always purchase the C with the A. <br/>
 
 ![Alternate image text](/images/Intro_MBA/conviction.png)
+
+Example:
+
+#### min_support is the frequency of occurance in the dataset
+#### use_colnames is the output
+#### max_len is the upper length 
+
+    Creates a DataFrame with 2 columns with Support value and Itemsets
+    frequent_itemsets = apriori(df, min_support=0.1, use_colnames=True, max_len = 4)
+
+![Alternate image text](/images/Intro_MBA/apriori.png)
+
+    Creates a DataFrame with a list of antecedents, consequents, antecedent support, consquent support, support, confidence, lift, leverage, conviction
+    association_rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1)
+
+![Alternate image text](/images/Intro_MBA/association_rule.png)
+
 
 #### Step 4: 
 Create a recommendor system
