@@ -49,11 +49,13 @@ Aipori Algorithm provides three components: Support, Confidence, Conviction, and
 
 ![Alternate image text](/images/support.png)
 
-We can then set a support threshold where the support value means the item has a meaningful outcome on sales. Therefore identifying all items within all transactions where items contain a support threshold equal or greater than the set value. Confidence signifies the likelihood of item Y being purchased with item X. 
+We can then set a support threshold where the support value means the item has a meaningful outcome on sales. Therefore identifying all items within all transactions where items contain a support threshold equal or greater than the set value.
 
-This is also known as conidtional probablity P(Y|X). The conditional probability of is the probability of itemset 𝑌 in all transactions given the transaction already contains 𝑋. The drawback of confidence is that it only takes into account the popularity of X, and not the popularity of Y. 
+Confidence signifies the likelihood of item Y being purchased with item X. This is also known as conidtional probablity P(Y|X). The conditional probability of P(Y|X) is the probability of itemset 𝑌 in all transactions given the transaction already contains 𝑋. The drawback of confidence is that it only takes into account the popularity of X, and not the popularity of Y.
 
-Lift takes into account for popularity of Y which thus accomodates for the drawback present in calculating confidence. More precisely lift signifies the liklihood of item Y being purchased when item X is purchased, while taking into account the popularity of Y. If Lift > 1, then Y is likely bought with item X. Lift < 1, then Y is unlikely bought with item X. 
+![Alternate image text](/images/confidence.png)
+
+Lift takes into account for popularity of Y which thus accomodates for the drawback present in calculating confidence. More precisely lift signifies the liklihood of item Y being purchased when item X is purchased, while taking into account the popularity of Y. If Lift > 1, then Y is likely bought with item X. Lift < 1, then Y is unlikely bought with item X.
 
 ![Alternate image text](/images/lift.png)
 
