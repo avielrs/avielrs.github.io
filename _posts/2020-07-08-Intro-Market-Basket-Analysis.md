@@ -51,7 +51,7 @@ Aipori Algorithm provides three components: Support, Confidence, Conviction, and
 
 We can then set a support threshold where the support value means the item has a meaningful outcome on sales. Therefore identifying all items within all transactions where items contain a support threshold equal or greater than the set value.
 
-Confidence signifies the likelihood of item Y being purchased with item X. This is also known as conidtional probablity P(Y|X). The conditional probability of P(Y|X) is the probability of itemset 𝑌 in all transactions given the transaction already contains 𝑋. The drawback of confidence is that it only takes into account the popularity of X, and not the popularity of Y.
+Confidence signifies the likelihood of item Y being purchased with item X. This is also known as conidtional probablity. The conditional probability of P(Y|X) is the probability of itemset 𝑌 in all transactions given the transaction already contains 𝑋. The drawback of confidence is that it only takes into account the popularity of X, and not the popularity of Y.
 
 ![Alternate image text](/images/confidence.png)
 
@@ -121,15 +121,19 @@ Just by looking at this contingency heatmap which shows the frequency of each it
 
 ### Step 3: Aipori Algorithm
 
-    min_support = is the frequency of occurance in the dataset
-    use_colnames is our output
-    max_len is the upper length 
-    Support - what porportions of transactions include this set of items or include this basket.
+```python
+frequent_itemsets = apriori(df, min_support=0.1, use_colnames=True, max_len = 4)
 
-    When max_len = 3, itemsets range between 1 item, 2 items, and 3 items
-    min_suport - 0.1, minimum of 10% of  frequency of occurance
+# Add a column to the DataFrame that includes the length of the itemsets
+frequent_itemsets['length'] = frequent_itemsets['itemsets'].apply(lambda x: len(x))
 
-apriori(df, min_support=0.1, use_colnames=True, max_len = 3)
+# In this specific project, we only care about itemsets where length = 2
+# and support is greater than and equal to 0.05 (5%)
+items = frequent_itemsets[ (frequent_itemsets['length'] == 2) & (frequent_itemsets['support'] >= 0.05) ]
+
+#take a look at the help for ways we can use this function
+association_rules = association_rules(x, metric="lift", min_threshold=1)
+```
 
 Links for Reference:
 https://towardsdatascience.com/mba-for-breakfast-4c18164ef82b
