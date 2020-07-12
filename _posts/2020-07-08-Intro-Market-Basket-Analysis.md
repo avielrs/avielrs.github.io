@@ -2,15 +2,21 @@
 layout: post
 title: Introduction to Market Basket Analysis
 ---
-![Alternate image text](/images/Intro_MBA/header_image.jpg)
+![Alternate image text](/images/Intro_MBA/header_image.jpg)</br>
 
-<p>Data taken from Kaggle. I picked this dataset because I wanted to gain experience applying Market Basket Analysis with a small dataset. Market Basket Analysis is a data mining technique and rule-based algorithm that can learn through relationships and can be utilized within ecommerce and marketing strategies. Through this analysis we can make smarter decisions that will benefit the consumer.</p>
+**Market Basket Analysis** (MBA) is a data mining technique and rule-based algorithm that can learn through relationships.  MBA can be greatly utilized within ecommerce and marketing strategies which can allow for enhancing more productive decisions that will benefit not only sales but also the ease of how a consumer shops.
 
-<p>For example, Market Basket Analysis helps provide insights that allows us to determine where to place items in a store. For example, we tend to see coffee, tea, and cereal placed in the same isle. As well, if a customer purchases one item we might consider targeting them with advertisements with another item. With MBA we can determine how to consider more advantageous group discounts, and even go one step further in developing a recommmendor system for ecommerce shoppers.</p>
+When we walk down a grocery store aisle we expect to see certain items placed together that helps us shop quickly and find the items that we want easily. For example, the cereal aisle will also have otameal, tea, coffee, coffee filters, and sugar. While as humans, we might be able to make a basic observation that coffee and tea should be placed near each other, there are many items within a large grocery store that need to be placed and Market Basket Analysis optmizes our solution for where to place these items. 
 
-MBA is considered a type of rule based learning. A rule might look like: 'If a customer bought tortilla chips, then they will buy salsa.' This example might seem obvious, however we can create more specific association rules such as:
+Market Basket Analysis also provides insight into how stores should market their items and target customers. If a customer purchases item A, and we know that item B is frequently purchased with item A, then we might consider targeting item A to that customer. With MBA we can determine how to consider more advantageous group discounts, and even go one step further in developing a recommmendor system for ecommerce shoppers.
 
-If a customer is female, aged 20-40, and buys diapers between 5 and 7pm, then customer will also buy wine.
+MBA is considered a type of rule based learning. A rule might look like: 'If a customer bought tortilla chips, then they will also buy salsa.'
+
+![Alternate image text](/images/Intro_MBA/chips_salsa.png)
+
+
+Another rule example might be: If a customer is female, aged 20-40, and buys diapers between 5 and 7pm, then customer will also buy wine.
+
 Mining retail datasets like this is done to find a number of relations:
 - Complementary products: products which are often bought together, like chips and salsa
 - Substitute products: products which replace each other, like Coke and Pepsi
@@ -76,6 +82,8 @@ Conviction is the measure of the dependence of the consequent on the antecedent:
 Create a recommendor system from lift value
 
 ### Step 1: Transform dataframe into a list
+
+This dataset is a simple grocery store dataset taken from [Kaggle](https://www.kaggle.com/shazadudwadia/supermarket). The dataset is a list of 20 transactions from a grocery store. 
 
 ```python
 # Import packages
