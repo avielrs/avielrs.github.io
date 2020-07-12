@@ -23,7 +23,11 @@ Mining retail datasets like this is done to find a number of relations:
 - Trigger products: products which when bought, trigger other purchases
 - Common Baskets: combinations of products that are often bought together
 
-#### Step 1
+## Setting up Market Basket Analysis
+Let's now review the theory behind Market Basket Analysis and the steps needed to process a data.
+
+### Step 1: A list of transactions
+
 In order to run the market basket analysis, we must first start with a list of transactions: 
     
     Transaction 1: 'Apple', 'Beer', 'Rice', 'Chicken'
@@ -44,7 +48,8 @@ In order to run the market basket analysis, we must first start with a list of t
            ['Milk', 'Beer'], 
            ['Apple', 'Bananas']]
  
-#### Step 2:
+#### Step 2: Transaction Encoder
+
 Next use [TransactionEncoder](http://rasbt.github.io/mlxtend/user_guide/preprocessing/TransactionEncoder/) to transform the list of transactional items into dummy variables which is suitable for computating text data such as in Machine Learning and Statistical Analysis methods.
 
 ![Alternate image text](/images/Intro_MBA/dummytable.png)
