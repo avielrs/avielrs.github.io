@@ -98,6 +98,8 @@ for i in range(len(df)):
     basket.append(df.values[i, 0].split(','))
 ```
 
+![Alternate image text](/images/basket.png)
+
 ### Step 2: Transform input dataset into a one-hot encoded NumPy boolean array
 ```python
 # Instantiate
@@ -109,6 +111,25 @@ item = te.fit(basket).transform(basket)
 # Create DataFrame
 df = pd.DataFrame(item, columns = te.columns_)
 ```
+
+![Alternate image text](/images/basket_dummy.png)
+
+Just by looking at this contingency heatmap which shows the frequency of each item purchased with another item. We can see some trends. For example, Bread is bought frequently with tea, sugar, milk, maggi, and coffee. As well, cornflakes and coffee were bought three times together. While for example, sugar and jam were never purachased together. While this is a first order attempt to look at the relationships, the Aipori Algorithm can provide an even more detail outline of relationships between multiple items which can provide much greater insight.
+
+
+![Alternate image text](/images/basket_correlation.png)
+
+### Step 3: Aipori Algorithm
+
+    min_support = is the frequency of occurance in the dataset
+    use_colnames is our output
+    max_len is the upper length 
+    Support - what porportions of transactions include this set of items or include this basket.
+
+    When max_len = 3, itemsets range between 1 item, 2 items, and 3 items
+    min_suport - 0.1, minimum of 10% of  frequency of occurance
+
+apriori(df, min_support=0.1, use_colnames=True, max_len = 3)
 
 Links for Reference:
 https://towardsdatascience.com/mba-for-breakfast-4c18164ef82b
