@@ -37,10 +37,10 @@ In order to run the market basket analysis, we must first start with a list of t
 #### Step 2:
 Next use [TransactionEncoder](http://rasbt.github.io/mlxtend/user_guide/preprocessing/TransactionEncoder/) to transform the list of transactional items into dummy variables which is suitable for computating text data such as in Machine Learning and Statistical Analysis methods.
 
-| index | Apple | Bananas |   Beer  | Chicken |   Milk  |   Rice  |
-|-------|-------|---------|---------|---------|---------|---------|
-|  0    | True  |  False  |   True  |  True   |  False  |   True  |
-|  1    | True  |  False  |   True  |  False  |  False  |   True  |
+| index |     Apple     |     Bananas     |     Beer     |     Chicken     |     Milk     |     Rice     |
+|:-----:|:-------------:|:---------------:|:------------:|:---------------:|:------------:|:------------:|
+|  0    | True          |  False          |   True       |  True           |  False       |   True       |
+|  1    | True          |  False          |   True       |  False  |  False  |   True  |
 |  2    | True  |  True   |   True  |  False  |  False  |   False |
 |  3    | True  |  False  |   False |  False  |  False  |   False |
 |  4    | False |  False  |   True  |  True   |  True   |   True  |
@@ -54,6 +54,9 @@ Once the dataframe is setup correctly, we can run Aipori Algorithm which is an a
 Aipori Algorithm quantifies the likelihood of a customer who purchases item A who will also purchase item B.
 
 **Aipori Algorithm provides three components: Support, Confidence, Conviction, and Lift**
+```math
+\frac{a}{b}
+```
 
 ```math
 \support}(X U Y) = # of transactions with X and Y together/total number of transactions
