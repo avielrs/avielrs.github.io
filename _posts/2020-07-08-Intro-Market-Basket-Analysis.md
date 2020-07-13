@@ -88,7 +88,7 @@ Aipori Algorithm provides four components: Support, Confidence, Conviction, and 
 
 ![Alternate image text](/images/Intro_MBA/support.png)
 
-We can then set a support threshold where the support value means the item has a meaningful outcome on sales. Therefore identifying all items within all transactions where items contain a support threshold equal or greater than the set value. Confidence signifies the likelihood of item Y being purchased with item X. This is also known as conidtional probablity  ```math P(Y|X)```. The conditional probability of P(Y|X) is the probability of itemset 𝑌 in all transactions given the transaction already contains 𝑋. The drawback of confidence is that it only takes into account the popularity of X, and not the popularity of Y.
+We can then set a support threshold where the support value means the item has a meaningful outcome on sales. Therefore identifying all items within all transactions where items contain a support threshold equal or greater than the set value. Confidence signifies the likelihood of item Y being purchased with item X. This is also known as conidtional probablity  ``` P(Y|X)```. The conditional probability of ```P(Y|X)``` is the probability of itemset 𝑌 in all transactions given the transaction already contains 𝑋. The drawback of confidence is that it only takes into account the popularity of X, and not the popularity of Y.
 
 ![Alternate image text](/images/Intro_MBA/confidence.png)
 
