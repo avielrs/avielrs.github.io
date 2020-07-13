@@ -106,13 +106,12 @@ Conviction is the measure of the dependence of the consequent on the antecedent:
 
 ![Alternate image text](/images/Intro_MBA/conviction.png)
 
-Example:
+### APRIORI ALGORITHM EXAMPLE
 
-min_support is the frequency of occurance in the dataset </br>
-use_colnames is the output </br>
-max_len is the upper length </br>
+min_support = frequency of occurance in the dataset
+max_len = upper length 
 
-Creates a DataFrame with 2 columns with Support value and Itemsets
+Creates a DataFrame with 2 columns with Support value and Itemsets:
     
     frequent_itemsets = apriori(df, min_support=0.1, use_colnames=True, max_len = 4)
 
