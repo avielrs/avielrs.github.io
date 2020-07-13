@@ -132,9 +132,9 @@ Create a recommendor system
 
 
 
-Links for Reference:
-[https://towardsdatascience.com/mba-for-breakfast-4c18164ef82b]
-[https://www.youtube.com/watch?v=WGlMlS_Yydk&t=8s]
-[https://towardsdatascience.com/association-rules-2-aa9a77241654]
-[https://towardsdatascience.com/complete-guide-to-association-rules-2-2-c92072b56c84]
+#### Links for Reference
+[https://towardsdatascience.com/mba-for-breakfast-4c18164ef82b](https://towardsdatascience.com/mba-for-breakfast-4c18164ef82b)
+[https://www.youtube.com/watch?v=WGlMlS_Yydk&t=8s](https://www.youtube.com/watch?v=WGlMlS_Yydk&t=8s)
+[https://towardsdatascience.com/association-rules-2-aa9a77241654](https://towardsdatascience.com/association-rules-2-aa9a77241654)
+[https://towardsdatascience.com/complete-guide-to-association-rules-2-2-c92072b56c84](https://towardsdatascience.com/complete-guide-to-association-rules-2-2-c92072b56c84)
 
