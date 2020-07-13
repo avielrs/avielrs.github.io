@@ -4,9 +4,9 @@ title: Introduction to Market Basket Analysis
 ---
 ![Alternate image text](/images/Intro_MBA/header_image.jpg)
 
-**Market Basket Analysis** (MBA) is a data mining technique and rule-based algorithm that can learn through relationships.  MBA can be greatly utilized within ecommerce and marketing strategies which can allow for enhancing more productive decisions that will benefit not only sales but also the ease of how a consumer shops.
+**Market Basket Analysis** (MBA) is a data mining technique and rule-based algorithm that can learn through relationships.  MBA can be greatly utilized within ecommerce and marketing strategies which can allow for enhancing more productive decisions that will benefit not only consumer sales but improve the ease of the shopper experience. 
 
-When we walk down a grocery store aisle we expect to see certain items placed together that helps us shop quickly and find the items that we want easily. For example, the cereal aisle will also have otameal, tea, coffee, coffee filters, and sugar. While as humans, we might be able to make a basic observation that coffee and tea should be placed near each other, there are many items within a large grocery store that need to be placed and Market Basket Analysis optmizes our solution for where to place these items. 
+When we walk down a grocery store aisle we expect to see certain items placed together that helps us shop quickly and find the items that we want easily. For example, the cereal aisle will also have otameal, tea, coffee, coffee filters, and sugar. While as humans, we might be able to make an intuiation and basic observation that coffee and tea should be placed near each other, with Market Basket Analysis we are able to optimize our decisions for where to place the many items in a groacery store. 
 
 Market Basket Analysis also provides insight into how stores should market their items and target customers. If a customer purchases item A, and we know that item B is frequently purchased with item A, then we might consider targeting item A to that customer. With MBA we can determine how to consider more advantageous group discounts, and even go one step further in developing a recommmendor system for ecommerce shoppers.
 
@@ -24,7 +24,7 @@ Mining retail datasets like this is done to find a number of relations:
 - Common Baskets: combinations of products that are often bought together
 
 ## Setting up Market Basket Analysis
-Let's now review the theory behind Market Basket Analysis and the steps needed to process a data.
+Let's now review the theory behind Market Basket Analysis and the steps needed to process a dataset.
 
 ### Step 1: A list of transactions
 
@@ -67,27 +67,30 @@ df = pd.DataFrame(item, columns = te.columns_)
     <img src="/images/Intro_MBA/dummytable.png"/>
 </p>
 
+With the dataset transformed into True and False, we can begin to utilize the data by making observations through data visualizations and some quick calculations. Exploring the data before applying a rule base learning algorithm such as Apriori Algorithm can be helpful for making some first order observations.
 
-Just by looking at this contingency heatmap which shows the frequency of each item purchased with another item. We can see some trends. For example, Bread is bought frequently with tea, sugar, milk, maggi, and coffee. As well, cornflakes and coffee were bought three times together. While for example, sugar and jam were never purachased together. While this is a first order attempt to look at the relationships, the Aipori Algorithm can provide an even more detail outline of relationships between multiple items which can provide much greater insight.
+Below is a table of the sum of each item purchased for all transactions individually and when purchased with another item. We can see that Apples, Beer, and Rice are the top most frequent purcahses. I have as well plotted a contingency heatmap which is a nice visual aid for viewing the frequency co-purcahses. 
 
-![Alternate image text](/images/Intro_MBA/df1.png)
-![Alternate image text](/images/Intro_MBA/df2.png)
+![Alternate image text](/images/Intro_MBA/df2.png) </br>
 ![Alternate image text](/images/Intro_MBA/correlation.png)
 
+We can see from the contingency heatmap that Beer & Rice were co-purchased toegher 4 out of the 8 transactions and Beer & Milk and Apple & Beer were purchaased 3 out of the 8 transactions. While here in this example, the heatmap is a nice visual aid, for Big Datasets that contain thousands of items, a contingency heatmap will not be able to be helpful. As well, if a costumer purchases beer, what is the likelihood that the customer will also purchase rice? Or what is the likelihood that if the same customer purchases rice will be beer? Is this likelihood the same for both cases? Just because within this dataset, we see that there is a co-purchase between rice and beer, should a company invest time in money in marketing campaigns and consumer strategy that will focus on the purchase of beer and rice? 
+
+In order to answer these questions, as data scientists we can apply an Apriori Algorithm which will determine the likelihood of co-purchases.
 
 #### Step 3: Apriori Algorithm
 
-Once the dataframe is setup correctly, we can run Apriori Algorithm which is an association rule algorithm. Association Rules "help uncover all such relationships between items from huge databases". The Aipori Algorithm groups the list of items into antecedents and consequents. The antecedent is what the customer purchased such as bread and eggs, while the consequent is the purchase result. For example, if a user purchases  beer (antecendent) then they will purcahse rice (consquent). We can see from the sample dataset above that if a customer buys beer (antecendent) then the customer buys rice (Consequent) for 50% of transactions (4 transacations/ 8 total transactions). We can see here that the antecedent and consequent are setup as an *if* (antecedent) *else* (consequent) statement.
+Apriori Algorithm is an association rule algorithm. Association rules "help uncover all such relationships between items from huge databases". The Aipori Algorithm groups the list of items into antecedents and consequents. The antecedent is what the customer purchased while the consequent is the purchase result. For example, if a user purchases  beer (antecendent) then they will purcahse rice (consquent). We can see from the sample dataset above that if a customer buys beer (antecendent) then the customer buys rice (Consequent) for 50% of transactions (4 transacations/ 8 total transactions). We can see here that the antecedent and consequent are setup as an *if* (antecedent) *then* (consequent) statement.
 
 Aipori Algorithm quantifies the likelihood of a customer who purchases item A who will also purchase item B.
 
-Aipori Algorithm provides three components: Support, Confidence, Conviction, and Lift:
+Aipori Algorithm provides four components: Support, Confidence, Conviction, and Lift:
 
 ![Alternate image text](/images/Intro_MBA/support.png)
 
 We can then set a support threshold where the support value means the item has a meaningful outcome on sales. Therefore identifying all items within all transactions where items contain a support threshold equal or greater than the set value.
 
-Confidence signifies the likelihood of item Y being purchased with item X. This is also known as conidtional probablity. The conditional probability of P(Y|X)is the probability of itemset 𝑌 in all transactions given the transaction already contains 𝑋. The drawback of confidence is that it only takes into account the popularity of X, and not the popularity of Y.
+Confidence signifies the likelihood of item Y being purchased with item X. This is also known as conidtional probablity P(Y|X). The conditional probability of P(Y|X) is the probability of itemset 𝑌 in all transactions given the transaction already contains 𝑋. The drawback of confidence is that it only takes into account the popularity of X, and not the popularity of Y.
 
 ![Alternate image text](/images/Intro_MBA/confidence.png)
 
