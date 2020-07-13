@@ -39,7 +39,7 @@ In order to run the market basket analysis, we must first start with a list of t
     Transaction 7: 'Milk', 'Beer'
     Transaction 8: 'Apple', 'Bananas'
 
-    dataset = [['Apple', 'Beer', 'Rice', 'Chicken'], 
+    basket = [['Apple', 'Beer', 'Rice', 'Chicken'], 
            ['Apple', 'Beer', 'Rice'], 
            ['Apple', 'Beer'], 
            ['Apple', 'Bananas'], 
