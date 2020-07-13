@@ -71,7 +71,7 @@ With the dataset transformed into True and False, we can begin to utilize the da
 
 Below is a table of the sum of each item purchased for all transactions individually and when purchased with another item. We can see that Apples, Beer, and Rice are the top most frequent purcahses. I have as well plotted a contingency heatmap which is a nice visual aid for viewing the frequency co-purcahses. 
 
-![Alternate image text](/images/Intro_MBA/df2.png) </br>
+![Alternate image text](/images/Intro_MBA/df2.png) 
 ![Alternate image text](/images/Intro_MBA/correlation.png)
 
 We can see from the contingency heatmap that Beer & Rice were co-purchased toegher 4 out of the 8 transactions and Beer & Milk and Apple & Beer were purchaased 3 out of the 8 transactions. While here in this example, the heatmap is a nice visual aid, for Big Datasets that contain thousands of items, a contingency heatmap will not be able to be helpful. As well, if a costumer purchases beer, what is the likelihood that the customer will also purchase rice? Or what is the likelihood that if the same customer purchases rice will be beer? Is this likelihood the same for both cases? Just because within this dataset, we see that there is a co-purchase between rice and beer, should a company invest time in money in marketing campaigns and consumer strategy that will focus on the purchase of beer and rice? 
@@ -88,9 +88,7 @@ Aipori Algorithm provides four components: Support, Confidence, Conviction, and 
 
 ![Alternate image text](/images/Intro_MBA/support.png)
 
-We can then set a support threshold where the support value means the item has a meaningful outcome on sales. Therefore identifying all items within all transactions where items contain a support threshold equal or greater than the set value.
-
-Confidence signifies the likelihood of item Y being purchased with item X. This is also known as conidtional probablity P(Y|X). The conditional probability of P(Y|X) is the probability of itemset 𝑌 in all transactions given the transaction already contains 𝑋. The drawback of confidence is that it only takes into account the popularity of X, and not the popularity of Y.
+We can then set a support threshold where the support value means the item has a meaningful outcome on sales. Therefore identifying all items within all transactions where items contain a support threshold equal or greater than the set value. Confidence signifies the likelihood of item Y being purchased with item X. This is also known as conidtional probablity  ```math P(Y|X)```. The conditional probability of P(Y|X) is the probability of itemset 𝑌 in all transactions given the transaction already contains 𝑋. The drawback of confidence is that it only takes into account the popularity of X, and not the popularity of Y.
 
 ![Alternate image text](/images/Intro_MBA/confidence.png)
 
