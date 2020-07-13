@@ -107,9 +107,9 @@ Conviction is the measure of the dependence of the consequent on the antecedent:
 
 Example:
 
-#### min_support is the frequency of occurance in the dataset
-#### use_colnames is the output
-#### max_len is the upper length 
+min_support is the frequency of occurance in the dataset </br>
+use_colnames is the output </br>
+max_len is the upper length </br>
 
 Creates a DataFrame with 2 columns with Support value and Itemsets
     
@@ -133,8 +133,8 @@ Create a recommendor system
 
 
 Links for Reference:
-https://towardsdatascience.com/mba-for-breakfast-4c18164ef82b
-https://www.youtube.com/watch?v=WGlMlS_Yydk&t=8s
-https://towardsdatascience.com/association-rules-2-aa9a77241654
-https://towardsdatascience.com/complete-guide-to-association-rules-2-2-c92072b56c84
+[https://towardsdatascience.com/mba-for-breakfast-4c18164ef82b]
+[https://www.youtube.com/watch?v=WGlMlS_Yydk&t=8s]
+[https://towardsdatascience.com/association-rules-2-aa9a77241654]
+[https://towardsdatascience.com/complete-guide-to-association-rules-2-2-c92072b56c84]
 
