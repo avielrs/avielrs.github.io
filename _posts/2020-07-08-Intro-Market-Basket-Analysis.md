@@ -131,6 +131,7 @@ Conviction is the measure of the dependence of the consequent on the antecedent:
 #### Step 4: 
 Now we can create a recommendor system based off of the lift value. For example, if a consumer purcahses Milk (antecdent) provide all consequents where the lift value is equal or greaater than 5 which means the customer is at least 5 times more likely to purchase item B (consequents) when purchasing item A (antecedent). Another method is to sort the lift values where the output lists the top 3 consequents with the greatest lift values.
 
+For more details, please visit my [github](https://github.com/avielrs/Market-Basket-Analysis) where my jupyter notebook and datafile is provided!
 
 
 
