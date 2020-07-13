@@ -108,18 +108,20 @@ Conviction is the measure of the dependence of the consequent on the antecedent:
 
 ### APRIORI ALGORITHM EXAMPLE
 
-min_support = frequency of occurance in the dataset
-max_len = upper length 
+1. Creates a DataFrame with 2 columns with Support value and Itemsets, Where: 
 
-Creates a DataFrame with 2 columns with Support value and Itemsets:
+- min_support = frequency of occurance in the dataset
+- max_len = upper length 
     
     frequent_itemsets = apriori(df, min_support=0.1, use_colnames=True, max_len = 4)
+
 
 <p align="center">
     <img src="/images/Intro_MBA/apriori.png"/>
 </p>
 
-Creates a DataFrame with a list of antecedents, consequents, antecedent support, consquent support, support, confidence, lift, leverage, conviction
+
+2. Create a DataFrame with a list of antecedents, consequents, antecedent support, consquent support, support, confidence, lift, leverage, conviction
     
     association_rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1)
 
@@ -127,7 +129,7 @@ Creates a DataFrame with a list of antecedents, consequents, antecedent support,
 
 
 #### Step 4: 
-Create a recommendor system
+Now we can create a recommendor system based off of the lift value. For example, if a consumer purcahses Milk (antecdent) provide all consequents where the lift value is equal or greaater than 5 which means the customer is at least 5 times more likely to purchase item B (consequents) when purchasing item A (antecedent). Another method is to sort the lift values where the output lists the top 3 consequents with the greatest lift values.
 
 
 
