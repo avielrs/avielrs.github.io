@@ -71,7 +71,7 @@ df = pd.DataFrame(item, columns = te.columns_)
 Just by looking at this contingency heatmap which shows the frequency of each item purchased with another item. We can see some trends. For example, Bread is bought frequently with tea, sugar, milk, maggi, and coffee. As well, cornflakes and coffee were bought three times together. While for example, sugar and jam were never purachased together. While this is a first order attempt to look at the relationships, the Aipori Algorithm can provide an even more detail outline of relationships between multiple items which can provide much greater insight.
 
 
-![Alternate image text](/images/Intro_MBA/basket_correlation.pngstyle)
+![Alternate image text](/images/Intro_MBA/basket_correlation.png)
 
 
 #### Step 3: Apriori Algorithm
