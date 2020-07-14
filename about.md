@@ -33,8 +33,7 @@ Things that I love to do are swimming, hiking, dancing, and baking the best oatm
 NLP, Machine Learning, Predictive Modeling, Hyperparameter Optimizatiton, Hypothesis Testing, Data Cleaning, Feature Engineering, Data Visualization, Statistical Analysis, Conda Environments, EDA
 
 #### Technical Skills
-Linux, Anaconda-Navagator, GIT, Tableau, AWS, Hadoop, Spark, MATLAB, Jira, Confluence, Origin
-![Alternate image text](/images/about/technical.png)    
+![Alternate image text](/images/about/technicalskills.png)    
 
 ### Education 
 [BrainStation](https://www.ucsc.edu/) | Data Science Diploma<br/>
