@@ -34,7 +34,7 @@ NLP, Machine Learning, Predictive Modeling, Hyperparameter Optimizatiton, Hypoth
 
 #### Technical Skills
 Linux, Anaconda-Navagator, GIT, Tableau, AWS, Hadoop, Spark, MATLAB, Jira, Confluence, Origin
-
+![Alternate image text](/images/about/technical.png)    
 
 ### Education 
 [BrainStation](https://www.ucsc.edu/) | Data Science Diploma<br/>
