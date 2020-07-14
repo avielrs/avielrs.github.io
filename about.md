@@ -27,14 +27,18 @@ Things that I love to do are swimming, hiking, dancing, and baking the best oatm
 
 ### Skills 
 
-#### Data Science Techniques ---
+#### Data Science Techniques 
 NLP, Machine Learning, Predictive Modeling, Hyperparameter Optimizatiton, Hypothesis Testing, Data Cleaning, Feature Engineering, Data Visualization, Statistical Analysis, Conda Environments, EDA
 
-#### Programming Languages ---
-<p>![Alternate image text](/images/panda.png)</p>      
+#### Programming Languages 
 
-#### Technical Skills ---
-<p>![Alternate image text](/images/about/tech2.png)</p>   
+![Alternate image text](/images/panda.png)
+
+
+#### Technical Skills 
+
+![Alternate image text](/images/about/tech2.png)  
+
 
 ---
 
