@@ -24,18 +24,19 @@ At BrainStation, I worked on cross-functional teams within a hackathon challenge
 Things that I love to do are swimming, hiking, dancing, and baking the best oatmeal chocolate chip cookies. I as well co-created [Tasty Chicks Comedy](www.tastychickscomedy.com). 
 
 
-### Skills 
+## Skills 
 
-#### Data Science Techniques 
+### Data Science Techniques 
 NLP, Machine Learning, Predictive Modeling, Hyperparameter Optimizatiton, Hypothesis Testing, Data Cleaning, Feature Engineering, Data Visualization, Statistical Analysis, Conda Environments, EDA
 
-#### Programming Languages
+### Programming Languages
 ![Alternate image text](/images/panda.png)          
 
-#### Technical Skills
+### Technical Skills
 ![Alternate image text](/images/about/tech2.png)    
 
-### Education 
+</br>
+### Education
 [BrainStation](https://www.ucsc.edu/) | Data Science Diploma<br/>
 March 2020, Toronto, Ontario
 
