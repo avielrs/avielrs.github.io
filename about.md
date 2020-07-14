@@ -38,7 +38,7 @@ March 2020, Capstone | BrainStation
 
 [Jennifer L. Hatch, Michele L. Cooke, Aviel R. Stern, Roby Douilly, David D. Oglesby; Considering fault interaction in estimates of absolute stress along faults in the San Gorgonio Pass region, southern California. Geosphere ; 16 (3): 751–764. doi: https://doi.org/10.1130/GES02153.1](https://pubs.geoscienceworld.org/gsa/geosphere/article/16/3/751/583442/Considering-fault-interaction-in-estimates-of)<br/>
 
-[Fault Interaction within Restraining Bend Fault Systems](https://scholarworks.umass.edu/masters_theses_2/449/)<br/>
+[Stern, Aviel Rachel, "Fault Interaction within Restraining Bend Fault Systems" (2016). Masters Theses. 449](https://scholarworks.umass.edu/masters_theses_2/449/)<br/>
 September 2016, Master Thesis | UMASS Amherst, Geoscience
 
 

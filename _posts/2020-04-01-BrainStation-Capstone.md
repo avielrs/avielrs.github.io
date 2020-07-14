@@ -2,7 +2,6 @@
 layout: post
 title: Use of NLP and Supervised learning to Target Wine Scores
 ---
-
 ![Alternate image text](/images/NLP_Wine/wine1.jpg)
 
 #### Problem Statement:
