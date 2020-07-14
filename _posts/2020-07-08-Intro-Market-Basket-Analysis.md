@@ -110,8 +110,8 @@ Conviction is the measure of the dependence of the consequent on the antecedent:
 
 #### 1. Creates a DataFrame with 2 columns with Support value and Itemsets, Where: 
 
-    - min_support = frequency of occurance in the dataset
-    - max_len = upper length 
+- min_support = frequency of occurance in the dataset
+- max_len = upper length 
 
 ```python
  frequent_itemsets = apriori(df, min_support=0.1, use_colnames=True, max_len = 4)
@@ -119,6 +119,8 @@ Conviction is the measure of the dependence of the consequent on the antecedent:
 <p align="center">
     <img src="/images/Intro_MBA/apriori.png"/>
 </p>
+
+---
 
  #### 2. Create a DataFrame with a list of antecedents, consequents, antecedent support, consquent support, support, confidence, lift, leverage, conviction
 
