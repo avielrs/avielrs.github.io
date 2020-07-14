@@ -1,18 +1,21 @@
 ---
 layout: page
-title: About
+title: About Me
 permalink: /about/
 ---
 
-![Alternate image text](/images/aboutme.jpg)
+![Alternate image text](/images/aboutme2.jpg)
 
 ### Profile
-From earthquake scientist to data scientist, I jumped into this career switch when I realized my passion for working with data, and my curiosity for how data creates transparency, growth, and productive decisions within communities. As a Data Scientist, I am driven to extract essential information through data engineering, data analysis, and machine learning, and to then tell a story through data visualizations. I am enthusiastic to apply data science in real-world applications within businesses and to make an impact within my community through data findings.
+Hello! From earthquake scientist to data scientist, I jumped into this career switch when I realized my passion for working with data, and my curiosity for how data creates transparency, growth, and productive decisions within communities. As a Data Scientist, I am driven to extract essential information through data engineering, data analysis, and machine learning, and to then tell a story through data visualizations. I am enthusiastic to apply data science in real-world applications within businesses and to make an impact within my community through data findings.
 
 ### Skills 
 
 #### Programming Languages
 Python (Numpy, Matplotlib, Seaborn, Scikit-Learn), SQL
+
+![Alternate image text](/images/python-logo.png)
+
 #### Data Science Techniques 
 NLP, Machine Learning, Predictive Modeling, Hyperparameter Optimizatiton, Hypothesis Testing, Data Cleaning, Feature Engineering, Data Visualization, Statistical Analysis
 #### Technical Skills
