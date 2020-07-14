@@ -23,19 +23,21 @@ At BrainStation, I worked on cross-functional teams within a hackathon challenge
 
 Things that I love to do are swimming, hiking, dancing, and baking the best oatmeal chocolate chip cookies. I as well co-created [Tasty Chicks Comedy](www.tastychickscomedy.com). 
 
+---
 
-## Skills 
+### Skills 
 
-### Data Science Techniques 
+#### Data Science Techniques 
 NLP, Machine Learning, Predictive Modeling, Hyperparameter Optimizatiton, Hypothesis Testing, Data Cleaning, Feature Engineering, Data Visualization, Statistical Analysis, Conda Environments, EDA
 
-### Programming Languages
+#### Programming Languages
 ![Alternate image text](/images/panda.png)          
 
-### Technical Skills
+#### Technical Skills
 ![Alternate image text](/images/about/tech2.png)    
 
-</br>
+---
+
 ### Education
 [BrainStation](https://www.ucsc.edu/) | Data Science Diploma<br/>
 March 2020, Toronto, Ontario
@@ -46,6 +48,7 @@ September 2016, Amherst, MA
 [University of California, Santa Cruz](https://www.ucsc.edu/) |  Bachelors in Earth Science<br/>
 September 2012, Santa Cruz, CA
 
+---
 
 ### Projects
 
@@ -56,6 +59,7 @@ March 2020, Capstone | BrainStation
 
 [Stern, Aviel Rachel, "Fault Interaction within Restraining Bend Fault Systems" (2016). Masters Theses. 449](https://scholarworks.umass.edu/masters_theses_2/449/)<br/>
 
+---
 
 ### Contact Me
 [avielstern@gmail.com](mailto:avielstern@gmail.com)
