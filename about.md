@@ -14,7 +14,7 @@ Hello World! From earthquake scientist to data scientist, I jumped into this car
 #### Programming Languages
 Python (Numpy, Matplotlib, Seaborn, Scikit-Learn), SQL
 
-![Alternate image text](/images/panda_packages.png)           ![Alternate image text](/images/mysqllogo.png)
+![Alternate image text](/images/panda.png)           ![Alternate image text](/images/mysqllogo.png)
 
 #### Data Science Techniques 
 NLP, Machine Learning, Predictive Modeling, Hyperparameter Optimizatiton, Hypothesis Testing, Data Cleaning, Feature Engineering, Data Visualization, Statistical Analysis
