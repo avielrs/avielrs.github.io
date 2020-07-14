@@ -31,10 +31,10 @@ Things that I love to do are swimming, hiking, dancing, and baking the best oatm
 NLP, Machine Learning, Predictive Modeling, Hyperparameter Optimizatiton, Hypothesis Testing, Data Cleaning, Feature Engineering, Data Visualization, Statistical Analysis, Conda Environments, EDA
 
 #### Programming Languages ---
-![Alternate image text](/images/panda.png)          
+<p>![Alternate image text](/images/panda.png)</p>      
 
 #### Technical Skills ---
-![Alternate image text](/images/about/tech2.png)    
+<p>![Alternate image text](/images/about/tech2.png)</p>   
 
 ---
 
