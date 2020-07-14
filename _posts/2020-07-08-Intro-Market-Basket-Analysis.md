@@ -26,7 +26,7 @@ Mining retail datasets like this is done to find a number of relations:
 ## Setting up Market Basket Analysis
 Let's now review the theory behind Market Basket Analysis and the steps needed to process a dataset.
 
-### Step 1: A list of transactions
+#### Step 1: A list of transactions
 
 In order to run the market basket analysis, we must first start with a list of transactions: 
     
@@ -106,9 +106,11 @@ Conviction is the measure of the dependence of the consequent on the antecedent:
 
 ![Alternate image text](/images/Intro_MBA/conviction.png)
 
+---
+
 ### APRIORI ALGORITHM EXAMPLE
 
-#### 1. Creates a DataFrame with 2 columns with Support value and Itemsets, Where: 
+#### Creates a DataFrame with 2 columns with Support value and Itemsets, Where: 
 
 - min_support = frequency of occurance in the dataset
 - max_len = upper length 
@@ -120,16 +122,14 @@ Conviction is the measure of the dependence of the consequent on the antecedent:
     <img src="/images/Intro_MBA/apriori.png"/>
 </p>
 
----
 
- #### 2. Create a DataFrame with a list of antecedents, consequents, antecedent support, consquent support, support, confidence, lift, leverage, conviction
+ #### Create a DataFrame with a list of antecedents, consequents, antecedent support, consquent support, support, confidence, lift, leverage, conviction
 
 ```python
 association_rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1)
  ```
 
 ![Alternate image text](/images/Intro_MBA/association_rule.png)
-
 
 #### Step 4: 
 Now we can create a recommendor system based off of the lift value. For example, if a consumer purcahses Milk (antecdent) provide all consequents where the lift value is equal or greaater than 5 which means the customer is at least 5 times more likely to purchase item B (consequents) when purchasing item A (antecedent). Another method is to sort the lift values where the output lists the top 3 consequents with the greatest lift values.
