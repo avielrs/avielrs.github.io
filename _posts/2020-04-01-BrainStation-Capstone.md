@@ -3,7 +3,7 @@ layout: post
 title: Use of NLP and Supervised learning to Target Wine Scores
 ---
 
-![Alternate image text](/images/NLP_wine1.jpg)
+![Alternate image text](/images/NLP_Wine/wine1.jpg)
 
 #### Problem Statement:
 Predicting how a wine will perform and understanding why that wine performs well can be beneficial for consumers and sellers of wine. For example, a winemaker might want to gain insights into why their pinot noir is rated higher than their chardonnay. As well, wine distributers might want to make profitable decisions like is it worth it to invest in an expensive wine and will this wine sell. To delve into these questions, I created a predictive model to target wine scores and analyze a dataset that includes the geography of the wine, price, description, variety, and vintage.
