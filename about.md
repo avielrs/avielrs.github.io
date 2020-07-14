@@ -21,7 +21,7 @@ At BrainStation, I worked on cross-functional teams within a hackathon challenge
 
 This is my blog in hopes for you to get to know me better, to make new connections, and share my interests.
 
-Things that I love to do are swimming, hiking, dancing, and baking the best oatmeal chocolate chip cookie. I as well co-created [Tasty Chicks Comedy](www.tastychickscomedy.com)
+Things that I love to do are swimming, hiking, dancing, and baking the best oatmeal chocolate chip cookies.
 
 
 ### Skills 
