@@ -104,6 +104,9 @@ X_train['price'].fillna(X_train['price'].median(), inplace = True)
 # Check to make sure missing values are filled in variety
 X_train.isna().sum()
 ```
+
+---
+
 #### Part 2: Feature Engineering
 Goal: Extract the year of the wine from the title column
 
@@ -120,6 +123,8 @@ regex = '([1][9][0-9][0-9]|[2][0-1][0-2][0-9])'
 
 To view entire code for extracting year from title please visit my [github](https://github.com/avielrs/BrainStation-Capstone/blob/master/Notebook/Part1_Clean.ipynb)
 
+---
+
 #### Part 3: Use NLP to transform text data into numeric values
 In order to perform predictive models on the dataset, the text data must first be transformed into numeric values. I used pd.get_dummies which is a one-hot-encoding process to transform Country, Province, and Variety into a 1 or 0. I then used TF-IDF from sklearn to transform the wine descriptions into weighted tokens.
 
@@ -135,13 +140,14 @@ The wine scores ranges between 80 – 100 with an increment of 1. There are thre
 Step 2: TF-IDF Vectorizer
 
 TF-IDF 
-# Import TFIDF Vectorizer package from Sklearn
+# Import [TFIDF Vectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html) package from Sklearn
 
 ```python
 from sklearn.feature_extraction.text import TfidfVectorizer
 ```
 
 ```python
+
 import string
 
 import nltk
@@ -169,7 +175,8 @@ def my_tokenizer(sentence):
             stemmed_word = stemmer.stem(word)
             listofstemmed_words.append(stemmed_word)
 
-    return listofstemmed_words
+    return listofstemmed_words 
+    
 ```
 
 
