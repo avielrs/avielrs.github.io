@@ -189,7 +189,7 @@ def my_tokenizer(sentence):
 
 Test
 
-<iframe src="https://public.tableau.com/views/WineReviewsData_15847279378710/Sheet3?:language=en&:display_count=y&publish=yes&:origin=viz_share_link" width = '650' height = '450'></iframe>
+<iframe src="https://public.tableau.com/views/WineReviewsData_15847279378710/Sheet3?:showVizHome=no&:embed=true" width = '650' height = '450'></iframe>
 
 test
 
