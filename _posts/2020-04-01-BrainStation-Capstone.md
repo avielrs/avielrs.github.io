@@ -130,6 +130,8 @@ The wine scores ranges between 80 – 100 with an increment of 1. There are thre
 
 Use [get dummies](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html) for the columns: Province, Country and Variety. This will transform all text in these columns into 1 or 0
 
+EXAMPLE: 
+
 Country = ['Italy', 'USA', 'Australia', 'Italy']
 
 df = pd.get_dummies(Country)
@@ -141,19 +143,16 @@ df = pd.get_dummies(Country)
 |  2   |   0   |  0  |    1      |
 |  3   |   1   |  0  |    0      |
 
-```python
-cat_columns=["country", "province", "variety"]
-dummy = pd.get_dummies(df, prefix_sep="__", columns=cat_columns)
-```
 
 #### Step 2: TF-IDF Vectorizer
 
-TF-IDF 
-# Import [TFIDF Vectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html) package from Sklearn
+Import [TFIDF Vectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html) package from Sklearn
 
 ```python
 from sklearn.feature_extraction.text import TfidfVectorizer
 ```
+
+
 
 ```python
 
@@ -203,3 +202,4 @@ words_df = pd.DataFrame({"word": words,
                          "weight": word_weights})
 ```
 
+<iframe src="https://public.tableau.com/views/WineReviewsData_15847279378710/PointsvsPrice?:language=en&:display_count=y&publish=yes&:origin=viz_share_link"width = '650' height = '450'></iframe>
