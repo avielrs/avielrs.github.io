@@ -5,7 +5,7 @@ title: Use of NLP and Supervised learning to Target Wine Scores
 ![Alternate image text](/images/NLP_Wine/wine1.jpg)
 
 #### Problem Statement:
-Predicting how a wine will perform and understanding why that wine performs well can be beneficial for consumers and sellers of wine. For example, a winemaker might want to gain insights into why their pinot noir is rated higher than their chardonnay. As well, wine distributers might want to make profitable decisions like is it worth it to invest in an expensive wine and will this wine sell. To delve into these questions, I created a predictive model to target wine scores and analyze a dataset that includes the geography of the wine, price, description, variety, and vintage.
+Predicting how a wine will perform and understanding why that wine performs well can be beneficial for consumers and sellers of wine. For example, a winemaker might want to gain insights into why their pinot noir is rated higher than their chardonnay. As well, wine distributers might want to make profitable decisions like is it worth it to invest in an expensive wine and will this wine sell. To delve into these questions, I created a predictive model to attempt to target wine scores and analyze a dataset that includes the geography of the wine, price, description, variety, and vintage.
 
 #### Background:
 Understanding what makes a great wine is very complex. The taste of a wine is dependent on the climate, weather, geology, soil, timing of pruning, and chemical makeup of the wine. For example, a pinot noir thrives in Central Coast, California because that region provides the combination of sunlight and fog which creates a cool climate that is perfect for winemaking. As well the geology in that region provides soil content of mudstone and siltstone which is another contributing factor to a great tasting pinot noir. We can see that creating a predictive model to determine which wines perform the best is complex. Therefore, this project is a first step approach to predicting wine scores.
@@ -23,7 +23,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 ```
 
-Next import csv dataframe `winemag_data_130k_v2.csv`
+Next import csv dataframe `winemag_data_130k_v2.csv` which was downloaded from the kaggle page.
 
 #### Define each column: 
 - country: Name of the Country where the wine is grown
@@ -43,7 +43,7 @@ Next import csv dataframe `winemag_data_130k_v2.csv`
 
 #### Things to note: 
 
-- points is our target and will be set as the dependent variable
+- points coloumn is our target and will be set as the dependent variable
 - taster_twiter_handle will be deleted as it will not be included in the model
 - Each row of data is a different review
 - Each column describes information about the wine, review, and reviewer
@@ -79,7 +79,7 @@ Things to check in a dataset:
 6. Can we complete feature engineering from a column
 
 Step 4. Drop Columns
-I dropped all columns that seemed like would be less helpful for the model. This is a qualitative decision. For a more quantitative decision, I could look at the variance for each column. If there is high variance than I might want to consider keeping that column, while a column with low variance, I might want to consider dropping.
+I dropped all columns that seemed to be less helpful for the model. This is a qualitative decision. For a more quantitative decision, I could look at the variance for each column. If there is high variance than I might want to consider keeping that column, while a column with low variance, I might want to consider dropping.
 
 ```python
 # Drop columns
@@ -127,13 +127,14 @@ Step 1: View Classification of wine score
 
 ![Alternate image text](/images/NLP_Wine/winescoredistribution.png)
 
-The wine scores range between 80 – 100 with an increment of one. There are three approaches for creating a predictive model to target these wine scores. One approach is to use a regression model and treat the wine scores as a continuous quantity. The second approach is to use a classification model to predict the wine scores and treat the wine scores as 20 classifiers. While technically we can have 20 classifiers in a classification model, this would not be helpful for predicting a score because the accuracy score will be too low in a classification model. In order to run a classification model, I grouped the wine scores into two categories by setting a score of 90 and above to equal 1 and a score below 90 to equal 0. By doing this we have two classifications where we predict “good” scores and “bad” scores.  We can see from the figure that when I group the scores into 0 and 1, there are more negative scores than positive scores therefore the predictive model will be better at predicting wine scores that negative.
+The wine scores ranges between 80 – 100 with an increment of 1. There are three approaches for creating a predictive model to target these wine scores. One approach is to use a regression model and treat the wine scores as a continuous quantity. The second approach is to use a classification model to predict the wine scores and treat the wine scores as 20 classifiers. While technically we can have 20 classifiers in a classification model, this would not be helpful for predicting a score because the accuracy score will be too low in a classification model. In order to run a classification model, I group the wine scores into two categories by setting a score of 90 and above to equal 1 and a score below 90 to equal 0. By doing this we have two classifications where we predict “good” scores and “bad” scores.  We can see from the figure that when I group the scores into 0 and 1, there are more negative scores than positive scores therefore the predictive model will be better at predicting wine scores that negative. 
 
 ![Alternate image text](/images/NLP_Wine/true_false_distribution.png)
 
 
 Step 2: TF-IDF Vectorizer
 
+TF-IDF 
 # Import TFIDF Vectorizer package from Sklearn
 ```python
 from sklearn.feature_extraction.text import TfidfVectorizer
