@@ -54,7 +54,7 @@ Next import csv dataframe `winemag_data_130k_v2.csv`
 - I have also decided to drop region_1 because the dataset will become very large once I use NLP on the text columns. I can always include region_1 later on to see how the models run.
 - I will drop designation for the same reason for dropping region_1
 
-Step 2: Split train and test data
+Step 2: Split train/test set
 
 The train dataset will be used to train the model and the test dataset will be used to test how well the model runs on a dataset that is not trained. I split the datatset before even cleaning so that I can make sure all steps can be reproduced for a future dataset. As well, I will not be "peaking" into the test dataset when making decisions on how to clean the data and how to model the data.
 
@@ -125,4 +125,62 @@ In order to perform predictive models on the dataset, the text data must first b
 
 Step 1: View Classification of wine score
 
-The wine scores range between 80 – 100 with an increment of one. There are three approaches for creating a predictive model to target these wine scores. One approach is to use a regression model and treat the wine scores as a continuous quantity. The second approach is to use a classification model to predict the wine scores and treat the wine scores as 20 classifiers. While technically we can have 20 classifiers in a classification model, this would not be helpful for predicting a score because the accuracy score will be too low in a classification model. In order to run a classification model, I grouped the wine scores into two categories by setting a score of 90 and above to equal 1 and a score below 90 to equal 0. By doing this we have two classifications where we predict “good” scores and “bad” scores.  We can see from the figure on the left that when I group the scores into 0 and 1, there are more negative scores than positive scores therefore the predictive model will be better at predicting wine scores that negative.
+![Alternate image text](/images/NLP_Wine/winescoredistribution.png)
+
+The wine scores range between 80 – 100 with an increment of one. There are three approaches for creating a predictive model to target these wine scores. One approach is to use a regression model and treat the wine scores as a continuous quantity. The second approach is to use a classification model to predict the wine scores and treat the wine scores as 20 classifiers. While technically we can have 20 classifiers in a classification model, this would not be helpful for predicting a score because the accuracy score will be too low in a classification model. In order to run a classification model, I grouped the wine scores into two categories by setting a score of 90 and above to equal 1 and a score below 90 to equal 0. By doing this we have two classifications where we predict “good” scores and “bad” scores.  We can see from the figure that when I group the scores into 0 and 1, there are more negative scores than positive scores therefore the predictive model will be better at predicting wine scores that negative.
+
+![Alternate image text](/images/NLP_Wine/true_false_distribution.png)
+
+
+Step 2: TF-IDF Vectorizer
+
+# Import TFIDF Vectorizer package from Sklearn
+```python
+from sklearn.feature_extraction.text import TfidfVectorizer
+```
+
+```python
+import string
+
+import nltk
+stemmer = nltk.stem.PorterStemmer()
+
+nltk.download('stopwords')
+from nltk.corpus import stopwords 
+ENGLISH_STOP_WORDS = stopwords.words('english')
+
+def my_tokenizer(sentence):
+    
+    for punctuation_mark in string.punctuation:
+        # Remove punctuation and set to lower case
+        sentence = sentence.replace(punctuation_mark,'').lower()
+
+    # split sentence into words
+    listofwords = sentence.split(' ')
+    listofstemmed_words = []
+    
+        
+    # Remove stopwords and any tokens that are just empty strings
+    for word in listofwords:
+        if (not word in ENGLISH_STOP_WORDS) and (word!=''):
+            # Stem words
+            stemmed_word = stemmer.stem(word)
+            listofstemmed_words.append(stemmed_word)
+
+    return listofstemmed_words
+    ```
+
+
+
+<div class='tableauPlaceholder' id='viz1594829622458' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Wi&#47;WineReviewsData_15847279378710&#47;Sheet3&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='WineReviewsData_15847279378710&#47;Sheet3' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Wi&#47;WineReviewsData_15847279378710&#47;Sheet3&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1594829622458');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+
+```python
+# View tokens associated to their weight for the train dataset
+word_weights = np.array(np.sum(review_train, axis=0)).reshape((-1,))
+
+words = np.array(tfidf.get_feature_names())
+words_df = pd.DataFrame({"word": words, 
+                         "weight": word_weights})
+```
+

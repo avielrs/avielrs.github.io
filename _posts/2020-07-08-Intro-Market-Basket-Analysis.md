@@ -14,13 +14,10 @@ MBA is considered a type of rule based learning. A rule might look like: *IF* a 
 
 ![Alternate image text](/images/Intro_MBA/chips_salsa.png)
 
-
-Another rule example might be: If a customer is female, aged 20-40, and buys diapers between 5 and 7pm, then customer will also buy wine.
-
 Mining retail datasets like this is done to find a number of relations:
 - Complementary products: products which are often bought together, like chips and salsa
 - Substitute products: products which replace each other, like Coke and Pepsi
-- Trigger products: products which when bought, trigger other purchases
+- Trigger products: products which when bought trigger other purchases
 - Common Baskets: combinations of products that are often bought together
 
 ## Setting up Market Basket Analysis
