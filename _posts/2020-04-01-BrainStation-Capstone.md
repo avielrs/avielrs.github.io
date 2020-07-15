@@ -13,9 +13,11 @@ Understanding what makes a great wine is very complex. The taste of a wine is de
 #### Setup:
 The goal of this project is predict wine scores from wine reviews, geography, variety, and vintage. I downloaded a wine dataset from [Kaggle](https://www.kaggle.com/zynicide/wine-reviews) which will be used to predict the wine scores. Because I am predicting a target value from multiple independent variables this will be a Supervised Learning model.
 
-#### Part 1: Cleaning Data
+--- 
 
-Step 1: Import Packages and identify columns:
+### Part 1: Data Cleaning and Data Wrangling
+
+#### Step 1: EDA:
 
 ```python
 import numpy as np
@@ -23,9 +25,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 ```
 
-Next import csv dataframe `winemag_data_130k_v2.csv` which was downloaded from the kaggle page.
-
-#### Define each column: 
+#### Define each column in the [wine reviews dataset](https://www.kaggle.com/zynicide/wine-reviews): 
 - country: Name of the Country where the wine is grown
 - description: Description of the wine review
 - designation: The vineyard within the winery where the grapes that made the wine
@@ -35,7 +35,7 @@ Next import csv dataframe `winemag_data_130k_v2.csv` which was downloaded from t
 - region_1: Region within the province where the wine is grown
 - reigon_2: A sub-region within the region where the wine is grown
 - taster_name: Name of the person who rated the wine
-- taster_twitter_handle: The twitter handle of the person who rated the wine.
+- taster_twitter_handle: The twitter handle of the person who rated the wine
 - tile: Name of the wine
 - variety: The blend/type of wine
 - winery: Name of the winery where the wine is made.
@@ -43,7 +43,7 @@ Next import csv dataframe `winemag_data_130k_v2.csv` which was downloaded from t
 
 #### Things to note: 
 
-- points coloumn is our target and will be set as the dependent variable
+- points coloumn is our target and will be set as the dependent variable Y
 - taster_twiter_handle will be deleted as it will not be included in the model
 - Each row of data is a different review
 - Each column describes information about the wine, review, and reviewer
@@ -54,7 +54,7 @@ Next import csv dataframe `winemag_data_130k_v2.csv` which was downloaded from t
 - I have also decided to drop region_1 because the dataset will become very large once I use NLP on the text columns. I can always include region_1 later on to see how the models run.
 - I will drop designation for the same reason for dropping region_1
 
-Step 2: Split train/test set
+#### Step 2: Split train/test set
 
 The train dataset will be used to train the model and the test dataset will be used to test how well the model runs on a dataset that is not trained. I split the datatset before even cleaning so that I can make sure all steps can be reproduced for a future dataset. As well, I will not be "peaking" into the test dataset when making decisions on how to clean the data and how to model the data.
 
@@ -78,7 +78,7 @@ Things to check in a dataset:
 5. Are there missing values in a column? 
 6. Can we complete feature engineering from a column
 
-Step 4. Drop Columns
+#### Step 4. Drop Columns
 I dropped all columns that seemed to be less helpful for the model. This is a qualitative decision. For a more quantitative decision, I could look at the variance for each column. If there is high variance than I might want to consider keeping that column, while a column with low variance, I might want to consider dropping.
 
 ```python
@@ -86,28 +86,16 @@ I dropped all columns that seemed to be less helpful for the model. This is a qu
 X_train = X_train.drop(['designation', 'taster_twitter_handle', 'winery', 'taster_name', 'region_2', 'region_1'], axis=1)
 ```
 
-Step 5. Fill Missing Values
+#### Step 5. Fill Missing Values
 
 ```python
 # Replace variety nan with most frequent variety
 X_train['variety'].fillna(X_train['variety'].describe()['top'], inplace = True)
-
-# Replace variety nan with most frequent variety
-X_train['country'].fillna(X_train['country'].describe()['top'], inplace = True)
-
-# Replace variety nan with most frequent variety
-X_train['province'].fillna(X_train['province'].describe()['top'], inplace = True)
-
-# Replace variety nan with most frequent variety
-X_train['price'].fillna(X_train['price'].median(), inplace = True)
-
-# Check to make sure missing values are filled in variety
-X_train.isna().sum()
 ```
 
 ---
 
-#### Part 2: Feature Engineering
+### Part 2: Feature Engineering
 Goal: Extract the year of the wine from the title column
 
 Import regex package:
@@ -125,10 +113,9 @@ To view entire code for extracting year from title please visit my [github](http
 
 ---
 
-#### Part 3: Use NLP to transform text data into numeric values
-In order to perform predictive models on the dataset, the text data must first be transformed into numeric values. I used pd.get_dummies which is a one-hot-encoding process to transform Country, Province, and Variety into a 1 or 0. I then used TF-IDF from sklearn to transform the wine descriptions into weighted tokens.
+### Step 3: View Classification of wine score
 
-Step 1: View Classification of wine score
+In order to perform predictive models on the dataset, the text data must first be transformed into numeric values. I used pd.get_dummies which is a one-hot-encoding process to transform Country, Province, and Variety into a 1 or 0. I then used TF-IDF from sklearn to transform the wine descriptions into weighted tokens.
 
 ![Alternate image text](/images/NLP_Wine/winescoredistribution.png)
 
@@ -137,7 +124,9 @@ The wine scores ranges between 80 – 100 with an increment of 1. There are thre
 ![Alternate image text](/images/NLP_Wine/true_false_distribution.png)
 
 
-Step 2: TF-IDF Vectorizer
+### Part 4: Use NLP to transform text data into numeric values
+
+#### Step 1: TF-IDF Vectorizer
 
 TF-IDF 
 # Import [TFIDF Vectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html) package from Sklearn
@@ -179,10 +168,11 @@ def my_tokenizer(sentence):
     
 ```
 
-
+Test
 
 <div class='tableauPlaceholder' id='viz1594829622458' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Wi&#47;WineReviewsData_15847279378710&#47;Sheet3&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='WineReviewsData_15847279378710&#47;Sheet3' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Wi&#47;WineReviewsData_15847279378710&#47;Sheet3&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1594829622458');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
 
+test
 
 ```python
 # View tokens associated to their weight for the train dataset
