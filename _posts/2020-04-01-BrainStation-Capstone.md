@@ -135,8 +135,8 @@ Country = ['Italy', 'USA', 'Australia', 'Italy']
 
     df = pd.get_dummies(Country)
 
-|      | Italy   | USA   | Australia   |
-|------|:-------:|:-----:|:-----------:|
+|      |    Italy   |     USA   |     Australia   |
+|------|:----------:|:---------:|:---------------:|
 |  0   |   1   |  0  |    0      |
 |  1   |   0   |  1  |    0      |
 |  2   |   0   |  0  |    1      |
@@ -188,7 +188,7 @@ def my_tokenizer(sentence):
 
 
 
-<iframe src="https://public.tableau.com/views/test_15948342860330/WeightedWords?:showVizHome=no&:embed=true" width = '650' height = '450'></iframe>
+<iframe src="https://public.tableau.com/views/test_15948342860330/WeightedWords?:showVizHome=no&:embed=true"></iframe>
 
 
 
