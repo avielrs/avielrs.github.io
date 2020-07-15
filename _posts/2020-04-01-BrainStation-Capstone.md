@@ -134,7 +134,7 @@ EXAMPLE:
 
 Country = ['Italy', 'USA', 'Australia', 'Italy']
 
-df = pd.get_dummies(Country)
+    df = pd.get_dummies(Country)
 
 |Index | Italy | USA | Australia |
 |------|-------|-----|-----------|
@@ -199,7 +199,7 @@ word_weights = np.array(np.sum(review_train, axis=0)).reshape((-1,))
 
 words = np.array(tfidf.get_feature_names())
 words_df = pd.DataFrame({"word": words, 
-                         "weight": word_weights})
+                         "weight": word_weights}) 
 ```
 
 <iframe src="https://public.tableau.com/views/WineReviewsData_15847279378710/PointsvsPrice?:language=en&:display_count=y&publish=yes&:origin=viz_share_link"width = '650' height = '450'></iframe>
