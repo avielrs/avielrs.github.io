@@ -136,8 +136,8 @@ Country = ['Italy', 'USA', 'Australia', 'Italy']
 
     df = pd.get_dummies(Country)
 
-|Index | Italy | USA | Australia |
-|------|-------|-----|-----------|
+|      | Italy   | USA   | Australia   |
+|------|:-------:|:-----:|:-----------:|
 |  0   |   1   |  0  |    0      |
 |  1   |   0   |  1  |    0      |
 |  2   |   0   |  0  |    1      |
@@ -202,4 +202,7 @@ words_df = pd.DataFrame({"word": words,
                          "weight": word_weights}) 
 ```
 
-<iframe src="https://public.tableau.com/views/WineReviewsData_15847279378710/PointsvsPrice?:language=en&:display_count=y&publish=yes&:origin=viz_share_link"width = '650' height = '450'></iframe>
+Test 
+
+
+<iframe src="https://public.tableau.com/views/WineReviewsData_15847279378710/PointsvsPrice?:language=en&:display_count=y&publish=yes&:origin=viz_share_link" width = '650' height = '450'></iframe>
