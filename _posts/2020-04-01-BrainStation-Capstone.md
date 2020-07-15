@@ -136,6 +136,7 @@ Step 2: TF-IDF Vectorizer
 
 TF-IDF 
 # Import TFIDF Vectorizer package from Sklearn
+
 ```python
 from sklearn.feature_extraction.text import TfidfVectorizer
 ```
@@ -169,7 +170,7 @@ def my_tokenizer(sentence):
             listofstemmed_words.append(stemmed_word)
 
     return listofstemmed_words
-    ```
+```
 
 
 
