@@ -115,8 +115,6 @@ To view entire code for extracting year from title please visit my [github](http
 
 ### Step 3: View Classification of wine score
 
-In order to perform predictive models on the dataset, the text data must first be transformed into numeric values. I used pd.get_dummies which is a one-hot-encoding process to transform Country, Province, and Variety into a 1 or 0. I then used TF-IDF from sklearn to transform the wine descriptions into weighted tokens.
-
 ![Alternate image text](/images/NLP_Wine/winescoredistribution.png)
 
 The wine scores ranges between 80 – 100 with an increment of 1. There are three approaches for creating a predictive model to target these wine scores. One approach is to use a regression model and treat the wine scores as a continuous quantity. The second approach is to use a classification model to predict the wine scores and treat the wine scores as 20 classifiers. While technically we can have 20 classifiers in a classification model, this would not be helpful for predicting a score because the accuracy score will be too low in a classification model. In order to run a classification model, I group the wine scores into two categories by setting a score of 90 and above to equal 1 and a score below 90 to equal 0. By doing this we have two classifications where we predict “good” scores and “bad” scores.  We can see from the figure that when I group the scores into 0 and 1, there are more negative scores than positive scores therefore the predictive model will be better at predicting wine scores that negative. 
@@ -125,6 +123,7 @@ The wine scores ranges between 80 – 100 with an increment of 1. There are thre
 
 
 ### Part 4: Use NLP to transform text data into numeric values
+In order to perform predictive models on the dataset, the text data must first be transformed into numeric values. I used pd.get_dummies which is a one-hot-encoding process to transform Country, Province, and Variety into a 1 or 0. I then used TF-IDF from sklearn to transform the wine descriptions into weighted tokens.
 
 #### Step 1: Use One Hot Encoding to transform Province, Country, and Variety into 1 or 0
 
@@ -187,11 +186,11 @@ def my_tokenizer(sentence):
     
 ```
 
-Test
 
-<iframe src="https://public.tableau.com/views/WineReviewsData_15847279378710/Sheet3?:showVizHome=no&:embed=true" width = '650' height = '450'></iframe>
 
-test
+<iframe src="https://public.tableau.com/views/test_15948342860330/WeightedWords?:showVizHome=no&:embed=true" width = '650' height = '450'></iframe>
+
+
 
 ```python
 # View tokens associated to their weight for the train dataset
@@ -202,7 +201,4 @@ words_df = pd.DataFrame({"word": words,
                          "weight": word_weights}) 
 ```
 
-Test 
-
-
-<iframe src="https://public.tableau.com/views/WineReviewsData_15847279378710/PointsvsPrice?:language=en&:display_count=y&publish=yes&:origin=viz_share_link" width = '650' height = '450'></iframe>
+ 
