@@ -43,7 +43,7 @@ NLP, Machine Learning, Predictive Modeling, Hyperparameter Optimizatiton, Hypoth
 ---
 
 ### Education
-[BrainStation](https://www.ucsc.edu/) | Data Science Diploma<br/>
+[BrainStation](https://brainstation.io/) | Data Science Diploma<br/>
 March 2020, Toronto, Ontario
 
 [University of Massachusetts, Amherst](https://www.umass.edu/) |  Master in Geoscience<br/>
