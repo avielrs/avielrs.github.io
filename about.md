@@ -21,7 +21,7 @@ After graduating at UMass Amherst, I worked at OriginLab in Technical Support wh
 
 At BrainStation, I worked on cross-functional teams within a hackathon challenge, and I met with a scrum group where I provided weekly updates on my agile deliverables. Homework assignments included data cleaning, EDA, machine learning, NLP, answering business type questions. For example, I used Bixi bike data in SQL to gain an understanding of how people use Bixi bikes and to determine what factors influence the volume of usage, and overall business growth. I as well fitted a statistical model to predict the 2016 relative vote share of the Republican party within a county using the county-level demographic data. For another assignment I optimized hyperparameters in order to improve accuracy scores for logistic regression, KNN, and decision tree models on Hotel Reviews. 
 
-Things that I love to do are swimming, hiking, dancing, and baking the best oatmeal chocolate chip cookies. I as well co-created [Tasty Chicks Comedy](www.tastychickscomedy.com). 
+Things that I love to do are swimming, hiking, dancing, and baking the best oatmeal chocolate chip cookies. I as well co-created [Tasty Chicks Comedy](https://www.tastychickscomedy.com/). 
 
 ---
 
