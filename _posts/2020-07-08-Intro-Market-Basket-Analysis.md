@@ -6,11 +6,11 @@ title: Introduction to Market Basket Analysis
 
 **Market Basket Analysis** (MBA) is a data mining technique and rule-based algorithm that can learn through relationships.  MBA can be greatly utilized within ecommerce and marketing strategies which can allow for enhancing more productive decisions that will benefit not only consumer sales but improve the ease of the shopper experience. 
 
-When we walk down a grocery store aisle we expect to see certain items placed together that helps us shop quickly and find the items that we want easily. For example, the cereal aisle will also have otameal, tea, coffee, coffee filters, and sugar. While as humans, we might be able to make an intuiation and basic observation that coffee and tea should be placed near each other, with Market Basket Analysis we are able to optimize our decisions for where to place the many items in a groacery store. 
+When we walk down a grocery store aisle, we expect to see certain items placed together that helps us shop quickly and find the items that we want easily. For example, the cereal aisle will also have otameal, tea, coffee, coffee filters, and sugar. While as humans, we might be able to make an intuiation and basic observation that coffee and tea should be placed near each other, with Market Basket Analysis we are able to optimize our decisions for where to place the many items in a groacery store. 
 
 Market Basket Analysis also provides insight into how stores should market their items and target customers. If a customer purchases item A, and we know that item B is frequently purchased with item A, then we might consider targeting item A to that customer. With MBA we can determine how to consider more advantageous group discounts, and even go one step further in developing a recommmendor system for ecommerce shoppers.
 
-MBA is considered a type of rule based learning. A rule might look like: *IF* a customer bought tortilla chips, *THEN* they will also buy salsa.
+MBA is considered a type of rule-based learning. A rule might look like: *IF* a customer bought tortilla chips, *THEN* they will also buy salsa.
 
 ![Alternate image text](/images/Intro_MBA/chips_salsa.png)
 
@@ -71,25 +71,25 @@ Below is a table of the sum of each item purchased for all transactions individu
 ![Alternate image text](/images/Intro_MBA/df2.png) 
 ![Alternate image text](/images/Intro_MBA/correlation.png)
 
-We can see from the contingency heatmap that Beer & Rice were co-purchased toegher 4 out of the 8 transactions and Beer & Milk and Apple & Beer were purchaased 3 out of the 8 transactions. While here in this example, the heatmap is a nice visual aid, for Big Datasets that contain thousands of items, a contingency heatmap will not be able to be helpful. As well, if a costumer purchases beer, what is the likelihood that the customer will also purchase rice? Or what is the likelihood that if the same customer purchases rice will be beer? Is this likelihood the same for both cases? Just because within this dataset, we see that there is a co-purchase between rice and beer, should a company invest time in money in marketing campaigns and consumer strategy that will focus on the purchase of beer and rice? 
+We can see from the contingency heatmap that Beer & Rice were co-purchased together 4 out of the 8 transactions and Beer & Milk and Apple & Beer were purchased 3 out of the 8 transactions. While here in this example, the heatmap is a nice visual aid, for Big Datasets that contain thousands of items, a contingency heatmap will not be able to be helpful. As well, if a customer purchases beer, what is the likelihood that the customer will also purchase a bag of rice? Or what is the likelihood that if the same customer purchases rice will be beer? Is this likelihood the same for both cases? Just because within this dataset, we see that there is a co-purchase between rice and beer, should a company invest time in money in marketing campaigns and consumer strategy that will focus on the purchase of beer and rice? 
 
 In order to answer these questions, as data scientists we can apply an Apriori Algorithm which will determine the likelihood of co-purchases.
 
 #### Step 3: Apriori Algorithm
 
-Apriori Algorithm is an association rule algorithm. Association rules "help uncover all such relationships between items from huge databases". The Aipori Algorithm groups the list of items into antecedents and consequents. The antecedent is what the customer purchased while the consequent is the purchase result. For example, if a user purchases  beer (antecendent) then they will purcahse rice (consquent). We can see from the sample dataset above that if a customer buys beer (antecendent) then the customer buys rice (Consequent) for 50% of transactions (4 transacations/ 8 total transactions). We can see here that the antecedent and consequent are setup as an *if* (antecedent) *then* (consequent) statement.
+Apriori Algorithm is an association rule algorithm. Association rules "help uncover all such relationships between items from huge databases". The Aipori Algorithm groups the list of items into antecedents and consequents. The antecedent is what the customer purchased while the consequent is the purchase result. For example, if a user purchases beer (antecedent) then they will purchase rice (consequent). We can see from the sample dataset above that if a customer buys beer (antecedent) then the customer buys rice (Consequent) for 50% of transactions (4 transactions/ 8 total transactions). We can see here that the antecedent and consequent are setup as an *if* (antecedent) *then* (consequent) statement.
 
-Aipori Algorithm quantifies the likelihood of a customer who purchases item A who will also purchase item B.
+Apriori Algorithm quantifies the likelihood of a customer who purchases item A who will also purchase item B.
 
-Aipori Algorithm provides four components: Support, Confidence, Conviction, and Lift:
+Apriori Algorithm provides four components: Support, Confidence, Conviction, and Lift:
 
 ![Alternate image text](/images/Intro_MBA/support.png)
 
-We can then set a support threshold where the support value means the item has a meaningful outcome on sales. Therefore identifying all items within all transactions where items contain a support threshold equal or greater than the set value. Confidence signifies the likelihood of item Y being purchased with item X. This is also known as conidtional probablity  ``` P(Y|X)```. The conditional probability of ```P(Y|X)``` is the probability of itemset 𝑌 in all transactions given the transaction already contains 𝑋. The drawback of confidence is that it only takes into account the popularity of X, and not the popularity of Y.
+We can then set a support threshold where the support value means the item has a meaningful outcome on sales. Therefore, identifying all items within all transactions where items contain a support threshold equal or greater than the set value. Confidence signifies the likelihood of item Y being purchased with item X. This is also known as conditional probability ``` P(Y|X)```. The conditional probability of ```P(Y|X)``` is the probability of itemset 𝑌 in all transactions given the transaction already contains 𝑋. The drawback of confidence is that it only takes into account the popularity of X, and not the popularity of Y.
 
 ![Alternate image text](/images/Intro_MBA/confidence.png)
 
-Lift takes into account for popularity of Y which thus accomodates for the drawback present in calculating confidence. More precisely lift signifies the liklihood of item Y being purchased when item X is purchased, while taking into account the popularity of Y. If Lift > 1, then Y is likely bought with item X. Lift < 1, then Y is unlikely bought with item X.
+Lift takes into account for popularity of Y which thus accommodates for the drawback present in calculating confidence. More precisely lift signifies the likelihood of item Y being purchased when item X is purchased, while taking into account the popularity of Y. If Lift > 1, then Y is likely bought with item X. Lift < 1, then Y is unlikely bought with item X.
 
 ![Alternate image text](/images/Intro_MBA/lift.png)
 
@@ -107,7 +107,7 @@ Conviction is the measure of the dependence of the consequent on the antecedent:
 
 ### APRIORI ALGORITHM EXAMPLE
 
-**Creates a DataFrame with 2 columns with Support value and Itemsets, where:**
+**Creates a DataFrame with 2 columns with Support value and Itemset, where:**
 
 - min_support = frequency of occurance in the dataset
 - max_len = upper length 
@@ -119,8 +119,7 @@ Conviction is the measure of the dependence of the consequent on the antecedent:
     <img src="/images/Intro_MBA/apriori.png"/>
 </p>
 
-
-**Create a DataFrame with a list of antecedents, consequents, antecedent support, consquent support, support, confidence, lift, leverage, conviction**
+**Create a DataFrame with a list of antecedents, consequents, antecedent support, consequent support, support, confidence, lift, leverage, conviction**
 
 ```python
 association_rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1)
@@ -129,16 +128,12 @@ association_rules = association_rules(frequent_itemsets, metric="lift", min_thre
 ![Alternate image text](/images/Intro_MBA/association_rule.png)
 
 #### Step 4: 
-Now we can create a recommendor system based off of the lift value. For example, if a consumer purcahses Milk (antecdent) provide all consequents where the lift value is equal or greaater than 5 which means the customer is at least 5 times more likely to purchase item B (consequents) when purchasing item A (antecedent). Another method is to sort the lift values where the output lists the top 3 consequents with the greatest lift values.
-
+Now we can create a recommender system based off of the lift value. For example, if a consumer purchases Milk (antecedent) provide all consequents where the lift value is equal or greater than 5 which means the customer is at least 5 times more likely to purchase item B (consequents) when purchasing item A (antecedent). Another method is to sort the lift values where the output lists the top 3 consequents with the greatest lift values.
 
 #### For more details, please visit my [github](https://github.com/avielrs/Market-Basket-Analysis)!
-
-
 
 #### Links for Reference
 [https://towardsdatascience.com/mba-for-breakfast-4c18164ef82b](https://towardsdatascience.com/mba-for-breakfast-4c18164ef82b)
 [https://www.youtube.com/watch?v=WGlMlS_Yydk&t=8s](https://www.youtube.com/watch?v=WGlMlS_Yydk&t=8s)
 [https://towardsdatascience.com/association-rules-2-aa9a77241654](https://towardsdatascience.com/association-rules-2-aa9a77241654)
 [https://towardsdatascience.com/complete-guide-to-association-rules-2-2-c92072b56c84](https://towardsdatascience.com/complete-guide-to-association-rules-2-2-c92072b56c84)
-
