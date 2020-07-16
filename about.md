@@ -56,7 +56,7 @@ September 2012, Santa Cruz, CA
 
 ### Projects
 
-[NLP from reviews to target wine scores](https://avielrs.github.io/BrainStation-Capstone/)<br/>
+[NLP from reviews to target wine scores](https://github.com/avielrs/BrainStation-Capstone)<br/>
 March 2020, Capstone | BrainStation
 
 [Jennifer L. Hatch, Michele L. Cooke, Aviel R. Stern, Roby Douilly, David D. Oglesby; Considering fault interaction in estimates of absolute stress along faults in the San Gorgonio Pass region, southern California. Geosphere ; 16 (3): 751–764. doi: https://doi.org/10.1130/GES02153.1](https://pubs.geoscienceworld.org/gsa/geosphere/article/16/3/751/583442/Considering-fault-interaction-in-estimates-of)<br/>
