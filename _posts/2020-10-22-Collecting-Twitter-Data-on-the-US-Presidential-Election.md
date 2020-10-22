@@ -13,13 +13,11 @@ I am collecting Twitter API data in order to analyze topics during the 2020 pres
 ### The Data
 The dataset I am using is originally taken from <a href="https://github.com/echen102/us-pres-elections-2020" target="_blank">GitHub</a> repository. Ok I know what you are thinking. “Wait! Aviel, I thought you were starting from scratch!” Ok, hear me out first and then you will see where I am going with this. The GitHub repository includes a list of ongoing tweet IDs associated with the 2020 United States presidential elections from June 20, 2020 – October 2020 which means the repository will continue to be updated through November 3, 2020 and possibly beyond (Chen et. al 2020). This also means that I will need to obtain the json file associated with each Tweet ID. 
 
-When extracting a Twitter API, the data is encoded using [JSON](https://developer.twitter.com/en/docs/twitter-api/v1/data-dictionary/overview/intro-to-tweet-json){:target="_blank"}. The data is then setup as a data dictionary where each object is given an attribute. 
-
-#### Step 1: How do I even grab twitter data? And which data to collect?
+#### Step 1: How do I even collect twitter data?
 
 I first applied for a [twitter developer](https://developer.twitter.com/en/apply-for-access){:target="_blank"} account and four hours later I was approved! Not going to lie, I felt pretty cool logging into my Twitter Developer Account. 
 
-Next! I located my Developer Portal Dashboard. I created a Project App which provides me with a [Key and Token](https://developer.twitter.com/en/docs/authentication/oauth-2-0){:target="_blank"}. Keys are unique identifiers that authenticates a developer’s identity, and tokens are a type of authorization for a project app to gain access to the data.
+Next! I located my Developer Portal Dashboard. I created a Project App which provides me with a Key and Token. Keys are unique identifiers that authenticates a developer’s identity, and tokens are a type of authorization for a project app to gain access to the data.
 
 There are multiple ways to collect tweet data and I have only scratched the surface when it comes to collecting APIs. However, I will share with you my journey so far. 
 
@@ -58,9 +56,9 @@ The us-pres-elections-2020 repo provides a python script ‘hydrate.py’ which 
 
 #### Step 2: Running into problems
 
-After happily running the hydrate.py script on my computer for four days, I realized that I had not even finished extracting tweets from June! So I went back to the us-pres-elections-2020 repo and reviewed the associated [paper](https://arxiv.org/pdf/2010.00600.pdf){:target="_blank"}. In the paper it states their first release of tweets from 6/20/2020 through 9/06/2020 contains 240 million tweets which is almost 2 TB of raw data!
+After happily running the hydrate.py script on my computer for four days, I realized that I had not even finished extracting tweets from June! So I went back to the us-pres-elections-2020 repo and reviewed the associated [paper](https://arxiv.org/pdf/2010.00600.pdf){:target="_blank"}. In the paper it states their first release of tweets from 6/20/2020 through 9/06/2020 contains ****240 million tweets** which is almost **2 TB** of raw data!
 
-uh......ABANDON hydrate.py! STOP COLLECTING DATA!
+ABANDON hydrate.py! STOP COLLECTING DATA!
 
 My macbook air cannot handle 240 million tweets and its storage limit is 250 GB lol. I could potentially collect the data on the cloud, however at the moment I do not want to work on the cloud or at least until my analysis is ready to run.
 
