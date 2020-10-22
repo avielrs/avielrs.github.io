@@ -60,7 +60,7 @@ After happily running the hydrate.py script on my computer for four days, I real
 
 Red Alert! Abandon hydrate.py ASAP! STOP COLLECTING DATA!
 
-My macbook air cannot handle 240 million tweets and its storage limit is 250 GB lol. I could potentially collect the data on the cloud, however at the moment I do not want to work on the cloud or at least until my analysis is ready to run.
+My macbook air cannot handle 240 million tweets and its storage limit is 250 GB lol. I could potentially collect the data on the cloud, however at the moment I do not want to work on the cloud or at least until my analysis is ready for production.
 
 This put me in a perdicament. I want to collect enough data for each month so that I can analyze the tweet data throughout the presedential campaign, rather than for just the month of June 2020. Within the Twarc documentation they describe applying certain filters such as: 
 
