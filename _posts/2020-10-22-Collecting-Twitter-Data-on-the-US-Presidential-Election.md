@@ -21,7 +21,7 @@ Next! I located my Developer Portal Dashboard. I created a Project App which pro
 
 There are multiple ways to collect tweet data and I have only scratched the surface when it comes to collecting APIs. However, I will share with you my journey so far. 
 
-Before collecting the tweets, I first download the data folders from the GitHub rep by applying a [fork](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo){:target="_blank"} to my personal GitHub repository. I then pulled the dataset from my forked repo to my desktop by running this git command: 
+Before collecting the tweets, I first download the data folders from the GitHub repo by applying a [fork](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo){:target="_blank"} to my personal GitHub repository. I then pulled the dataset from my forked repo to my desktop by running this git command: 
 
 ```
 git clone https://github.com/user_name/repo_name.git
@@ -34,7 +34,7 @@ Ok. I have the data on my desktop! Yay! Well sort of….
 
 As I mentioned earlier, the dataset contains a list of Tweet IDs. In order to search the tweet API associated with the Tweet ID, I need to rehydrate the Tweet IDs with [Twarc](https://github.com/DocNow/twarc){:target="_blank"} or another installation package of your choosing. The reason for rehydrated tweets is because of Twitter API’s Terms of Service which does not permit developers to provide large amounts of raw Twitter data available on the Web. The goal of this is for Twitter to ensure user privacy. For example, if a user decides to delete their tweet, then the developer will not be able to retrieve the deleted tweet even with the tweet ID. As well part of the developer agreement, is that private information found in tweet data such as a username or user ID associated to sexual orientation, religion, health, or alleged crime is not permitted to made public on the web. Well that seems fair enough. 
 
-Install Twarc
+Install Twarc:
 ```
 pip install twarc
 ```
@@ -44,7 +44,7 @@ To begin using twarc enter in the command line:
 twarc configure
 ```
 
-Now I am ready to Twarc!! Do you think Ed Summers(edsu) and Github user SamSamhuns who developed twarc is making a pun from twerk? I may have to email them to find out.
+Now I am ready to Twarc!!
 
 Now that I have twark configured, I can run a simple command to retrieve tweet data. For example: 
 ```
