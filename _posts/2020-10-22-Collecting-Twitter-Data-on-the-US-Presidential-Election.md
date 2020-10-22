@@ -24,7 +24,7 @@ There are multiple ways to collect tweet data and I have only scratched the surf
 Before collecting the tweets, I first download the data folders from the GitHub rep by applying a [fork](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo){:target="_blank"} to my personal GitHub repository. I then pulled the dataset from my forked repo to my desktop by running this git command: 
 
 ```
-git pull origin
+git clone https://github.com/user_name/repo_name.git
 
 ```
 
@@ -52,7 +52,7 @@ twarc search #blacklivesmatter > tweets.jsonl
 ```
 Which will search for all tweets with the hashtag #blacklivesmatter and will be placed into a file named tweets.jsonl
 
-The us-pres-elections-2020 repo provides a python script ‘hydrate.py’ which will run twarc and search through each .txt file which lists about 100,000 tweet IDs for each file and outputs a zipped json file containing all twitter data associated with every tweet ID in that .txt file. 
+The us-pres-elections-2020 repo provides a python script ‘hydrate.py’ which will run twarc and search through each .txt filce which lists about 100,000 tweet IDs for each file and outputs a zipped json file containing all twitter data associated with every tweet ID in that .txt file. 
 
 #### Step 2: Running into problems
 
