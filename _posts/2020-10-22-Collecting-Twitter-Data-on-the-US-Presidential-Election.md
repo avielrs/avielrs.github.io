@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PART 1: Collecting Twitter Data on the US 2020 Presidential Election
+title: Collecting Twitter Data on the US 2020 Presidential Election
 ---
 ![Alternate image text](/images/twitter/tweet_tweet.jpg)
 
