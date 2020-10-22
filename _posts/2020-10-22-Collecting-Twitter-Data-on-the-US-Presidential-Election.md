@@ -17,13 +17,13 @@ When extracting a Twitter API, the data is encoded using [JSON](https://develope
 
 #### Step 1: How do I even grab twitter data? And which data to collect?
 
-I first applied for a [twitter developer](https://developer.twitter.com/en/apply-for-access) account and four hours later I was approved! Not going to lie, I felt pretty cool logging into my Twitter Developer Account. 
+I first applied for a [twitter developer](https://developer.twitter.com/en/apply-for-access){:target="_blank"} account and four hours later I was approved! Not going to lie, I felt pretty cool logging into my Twitter Developer Account. 
 
-Next! I located my Developer Portal Dashboard. I created a Project App which provides me with a [Key and Token](https://developer.twitter.com/en/docs/authentication/oauth-2-0). Keys are unique identifiers that authenticates a developer’s identity, and tokens are a type of authorization for a project app to gain access to the data.
+Next! I located my Developer Portal Dashboard. I created a Project App which provides me with a [Key and Token](https://developer.twitter.com/en/docs/authentication/oauth-2-0){:target="_blank"}. Keys are unique identifiers that authenticates a developer’s identity, and tokens are a type of authorization for a project app to gain access to the data.
 
 There are multiple ways to collect tweet data and I have only scratched the surface when it comes to collecting APIs. However, I will share with you my journey so far. 
 
-Before collecting the tweets, I first download the data folders from the GitHub rep by applying a [fork](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) to my personal GitHub repository. I then pulled the dataset from my forked repo to my desktop by running this git command: 
+Before collecting the tweets, I first download the data folders from the GitHub rep by applying a [fork](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo){:target="_blank"} to my personal GitHub repository. I then pulled the dataset from my forked repo to my desktop by running this git command: 
 
 ```
 git pull origin
@@ -34,7 +34,7 @@ This step is important because the dataset will be continuously updated in the n
 
 Ok. I have the data on my desktop! Yay! Well sort of….
 
-As I mentioned earlier, the dataset contains a list of Tweet IDs. In order to search the tweet API associated with the Tweet ID, I need to rehydrate the Tweet IDs with [Twarc](https://github.com/DocNow/twarc) or another installation package of your choosing. The reason for rehydrated tweets is because of Twitter API’s Terms of Service which does not permit developers to provide large amounts of raw Twitter data available on the Web. The goal of this is for Twitter to ensure user privacy. For example, if a user decides to delete their tweet, then the developer will not be able to retrieve the deleted tweet even with the tweet ID. As well part of the developer agreement, is that private information found in tweet data such as a username or user ID associated to sexual orientation, religion, health, or alleged crime is not permitted to made public on the web. Well that seems fair enough. 
+As I mentioned earlier, the dataset contains a list of Tweet IDs. In order to search the tweet API associated with the Tweet ID, I need to rehydrate the Tweet IDs with [Twarc](https://github.com/DocNow/twarc){:target="_blank"} or another installation package of your choosing. The reason for rehydrated tweets is because of Twitter API’s Terms of Service which does not permit developers to provide large amounts of raw Twitter data available on the Web. The goal of this is for Twitter to ensure user privacy. For example, if a user decides to delete their tweet, then the developer will not be able to retrieve the deleted tweet even with the tweet ID. As well part of the developer agreement, is that private information found in tweet data such as a username or user ID associated to sexual orientation, religion, health, or alleged crime is not permitted to made public on the web. Well that seems fair enough. 
 
 Install Twarc
 ```
@@ -58,7 +58,7 @@ The us-pres-elections-2020 repo provides a python script ‘hydrate.py’ which 
 
 #### Step 2: Running into problems
 
-After happily running the hydrate.py script on my computer for four days, I realized that I had not even finished extracting tweets from June! So I went back to the us-pres-elections-2020 repo and reviewed the associated (paper)[https://arxiv.org/pdf/2010.00600.pdf]. In the paper it states their first release of tweets from 6/20/2020 through 9/06/2020 contains 240 million tweets which is almost 2 TB of raw data!
+After happily running the hydrate.py script on my computer for four days, I realized that I had not even finished extracting tweets from June! So I went back to the us-pres-elections-2020 repo and reviewed the associated [paper](https://arxiv.org/pdf/2010.00600.pdf){:target="_blank"}. In the paper it states their first release of tweets from 6/20/2020 through 9/06/2020 contains 240 million tweets which is almost 2 TB of raw data!
 
 uh......ABANDON hydrate.py! STOP COLLECTING DATA!
 
