@@ -58,7 +58,7 @@ The us-pres-elections-2020 repo provides a python script ‘hydrate.py’ which 
 
 After happily running the hydrate.py script on my computer for four days, I realized that I had not even finished extracting tweets from June! So I went back to the us-pres-elections-2020 repo and reviewed the associated [paper](https://arxiv.org/pdf/2010.00600.pdf){:target="_blank"}. In the paper it states their first release of tweets from 6/20/2020 through 9/06/2020 contains **240 million tweets** which is almost **2 TB** of raw data!
 
-ABANDON hydrate.py! STOP COLLECTING DATA!
+Red Alert! Abandon hydrate.py ASAP! STOP COLLECTING DATA!
 
 My macbook air cannot handle 240 million tweets and its storage limit is 250 GB lol. I could potentially collect the data on the cloud, however at the moment I do not want to work on the cloud or at least until my analysis is ready to run.
 
