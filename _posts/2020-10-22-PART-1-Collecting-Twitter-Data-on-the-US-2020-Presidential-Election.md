@@ -4,6 +4,7 @@ title: PART 1: Collecting Twitter Data on the US 2020 Presidential Election
 ---
 ![Alternate image text](/images/twitter/tweet_tweet.jpg)
 
+**Collecting Twitter Data on the US 2020 Presidential Election**
 In the beginning there was data (pretend that 2001: A Space Odyssey theme song playing in the background). This data was unstructured, floating in the internet, and not able to process. We took this data and made it readable for computers to process and formatted for humans to analyze. Ok I’ll get to the point.
 As a Data Scientist, it is easy to get caught up with wanting to start with nicely formatted data and jumping into the predictive modelling and analysis phase. However, beginning a Data Science project from raw data can be fun and rewarding. Everyone loves a good challenge. Right? I decided it was time to work with Twitter APIs to create my own dataset. The reason for working with Twitter APIs is because 1) There is an insane amount of documentation on Twitter APIs. Score! 2) There is an overwhelming amount of data that can be collected from Twitter (which I will discuss in a later post), 3) Twitter APIs allows me to obtain information like the text, time/date, location of the tweet, number of followers in the user, hashtags, user mentions, and 4) I am intrigued by the idea of being able to create a story, a timeline, and find a trend in emotions on a specific topic just from a simple tweet.
 
