@@ -13,7 +13,7 @@ I am collecting Twitter API data in order to analyze topics during the 2020 pres
 ### The Data
 The dataset I am using is originally taken from <a href="https://github.com/echen102/us-pres-elections-2020" target="_blank">GitHub</a> repository. Ok I know what you are thinking. “Wait! Aviel, I thought you were starting from scratch!” Ok, hear me out first and then you will see where I am going with this. The GitHub repository includes a list of ongoing tweet IDs associated with the 2020 United States presidential elections from June 20, 2020 – October 2020 which means the repository will continue to be updated through November 3, 2020 and possibly beyond (Chen et. al 2020). This also means that I will need to obtain the json file associated with each Tweet ID. 
 
-When extracting a Twitter API, the data is encoded using [JSON]https://developer.twitter.com/en/docs/twitter-api/v1/data-dictionary/overview/intro-to-tweet-json). The data is then setup as a data dictionary where each object is given an attribute. 
+When extracting a Twitter API, the data is encoded using [JSON]https://developer.twitter.com/en/docs/twitter-api/v1/data-dictionary/overview/intro-to-tweet-json){:target="_blank"}. The data is then setup as a data dictionary where each object is given an attribute. 
 
 #### Step 1: How do I even grab twitter data? And which data to collect?
 
