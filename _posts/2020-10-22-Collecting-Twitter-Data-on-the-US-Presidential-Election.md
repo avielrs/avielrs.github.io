@@ -61,7 +61,7 @@ twarc search #blacklivesmatter > tweets.jsonl
 ```
 Which will search for all tweets with the hashtag #blacklivesmatter and will be placed into a file named tweets.jsonl
 
-The us-pres-elections-2020 repo from GitHub user [echen102](https://github.com/echen102){:target="_blank"} provides a python script ‘hydrate.py’ which runs twarc and rehydrates every tweet ID from the text files and creates a zipped json file with about 100,000 tweet data for each zipped json file. 
+The us-pres-elections-2020 repo from GitHub user [echen102](https://github.com/echen102){:target="_blank"} provides a python script ‘hydrate.py’ which runs twarc and rehydrates every tweet ID from the text files and creates a zipped json file with about 100,000 tweet data in each zipped json file. 
 
 ```
 python3 hydrate.py
