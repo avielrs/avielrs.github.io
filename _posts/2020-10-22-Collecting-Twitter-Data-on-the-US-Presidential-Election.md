@@ -64,10 +64,10 @@ This will search for all tweets that contain the hashtag #blacklivesmatter and w
 The us-pres-elections-2020 repo from GitHub user [echen102](https://github.com/echen102){:target="_blank"} provides a python script ‘hydrate.py’ which runs twarc and rehydrates every tweet ID from the text files and creates a zipped json file with about 100,000 tweet data in each zipped json file. 
 
 Run in the command line: 
-```
-python3 hydrate.py
-```
 
+    python3 hydrate.py 
+
+</br>
 ![Alternate image text](/images/twitter/hydrate.png)
 
 #### Step 2: Running into problems
