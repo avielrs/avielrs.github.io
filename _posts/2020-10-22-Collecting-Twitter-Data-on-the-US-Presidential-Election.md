@@ -10,6 +10,9 @@ As a Data Scientist, it is easy to want to start with nicely formatted data and 
 ### Purpose
 I am collecting Twitter API data in order to analyze topics during the 2020 presidential election and to determine if there is a trend in the overall sentiment within these topics depending on location and time of the tweet. Topics that I expect to find from the tweets comprises of COVID19, Trump, Biden, election, vaccines, Black Lives Matter, fake news, Proud Boys, voter fraud, climate change, Ruth Ginsburg, Amy Coney Barrett, and TikTok. Phew, can you believe all this has happened in just 4 months?! 
 
+![Alternate image text](/images/twitter/voter_facemask.jpg)
+
+
 ### The Data
 The dataset I am using is originally taken from <a href="https://github.com/echen102/us-pres-elections-2020" target="_blank">GitHub</a> repository. Ok I know what you are thinking. “Wait! Aviel, I thought you were starting from scratch!” Hear me out first, and then you will see where I am going with this. The GitHub repository includes a list of ongoing tweet IDs associated with the 2020 United States presidential election from June 20, 2020 – October 2020. This means the repository will continue to be updated through November 3, 2020 and possibly beyond (Chen et. al 2020). This also means that I will need to obtain the json file associated with each Tweet ID. 
 
@@ -66,7 +69,7 @@ The us-pres-elections-2020 repo from GitHub user [echen102]( https://github.com/
 python3 hydrate.py
 ```
 
-![Alternate image text](/images/twitter/happy_twarcing.png)
+![Alternate image text](/images/twitter/hydrate.png)
 
 #### Step 2: Running into problems
 
