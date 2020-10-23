@@ -72,9 +72,9 @@ python3 hydrate.py
 
 #### Step 2: Running into problems
 
-After happily running the hydrate.py script on my computer for four days, I realized that I had not even finished extracting tweets from June! I may have missed something… Therefore, I decided take a look at the us-pres-elections-2020 repo and review the associated [paper](https://arxiv.org/pdf/2010.00600.pdf){:target="_blank"}. In the paper it states their first release of tweets from 6/20/2020 through 9/06/2020 contains **240 million tweets** which is almost **2 TB** of raw data!
+After happily running the hydrate.py script on my computer for about four days, I realized that the twarcing had only extracte tweets from June 2020! I decided take a look at the us-pres-elections-2020 repo and review the associated [paper](https://arxiv.org/pdf/2010.00600.pdf){:target="_blank"}. In the paper it became apparent to me that the first release of tweets from 6/20/2020 through 9/06/2020 contains **240 million tweets** which is almost **2 TB** of raw data!
 
-Ummmm……. Abandon twarcing! Stop Collecting Data!!
+    Ummmm... Abandon twarcing! Stop Collecting Data!!
 
 My MacBook air cannot handle 240 million tweets and its storage limit is 250 GB lol. I could potentially collect the data on the cloud, however at the moment I do not want to work on the cloud or at least until my analysis is ready for production.
 
