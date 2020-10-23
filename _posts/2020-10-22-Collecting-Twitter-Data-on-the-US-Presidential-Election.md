@@ -80,6 +80,8 @@ My MacBook air cannot handle 240 million tweets and its storage limit is 250 GB 
 
 #### Step 3: Revisiting collecting twitter data
 
+![Alternate image text](/images/twitter/rethinking.jpg)
+
 I want to collect enough data for each month so that I can analyze the tweet data throughout the presidential campaign. Within the Twarc documentation they describe applying certain filters such as: 
 
 ```
