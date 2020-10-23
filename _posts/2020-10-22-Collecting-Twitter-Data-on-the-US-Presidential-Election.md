@@ -50,7 +50,7 @@ twarc configure
 ```
 
 The below image should appear in your Terminal:
-  Happing Twarcing! Do you think Ed Summers and Sam Samhuns, the developers of twarc, is making a pun from Twerking? I may have to email them and ask.
+  Happing Twarcing! Do you think Ed Summers and Sam Samhuns, the developers of twarc, is making a pun from Twerking? I may have to email them and ask.</br>
 ![Alternate image text](/images/twitter/happy_twarcing.png)
 
 Now that I have twark configured, I can run a command to retrieve tweet data. 
@@ -72,11 +72,11 @@ python3 hydrate.py
 
 #### Step 2: Running into problems
 
-After happily running the hydrate.py script on my computer for about four days, I realized that the twarcing had only extracte tweets from June 2020! I decided take a look at the us-pres-elections-2020 repo and review the associated [paper](https://arxiv.org/pdf/2010.00600.pdf){:target="_blank"}. In the paper it became apparent to me that the first release of tweets from 6/20/2020 through 9/06/2020 contains **240 million tweets** which is almost **2 TB** of raw data!
+After happily running the hydrate.py script on my computer for about four days, I realized that only June 2020 tweets had been extracted! I decided take a look at the us-pres-elections-2020 repo and review the associated [paper](https://arxiv.org/pdf/2010.00600.pdf){:target="_blank"}. In the paper it states that the first release of tweets from 6/20/2020 through 9/06/2020 contains **240 million tweets** which is almost **2 TB** of raw data! Within Twarc, I am only able to obtain 1 million tweets per day (this is part of the Twitter API limit) which means it would take 140 days to retrieve all that data!
 
 **Ummmm... Abandon twarcing! Stop Collecting Data!!**
 
-My MacBook air cannot handle 240 million tweets and its storage limit is 250 GB lol. I could potentially collect the data on the cloud, however at the moment I do not want to work on the cloud or at least until my analysis is ready for production.
+My MacBook Air cannot handle 240 million tweets and its storage limit is 250 GB lol. I could potentially collect the data on the cloud, however at the moment I do not want to work on the cloud or at least until my analysis is ready for production.
 
 #### Step 3: Revisiting collecting twitter data
 
@@ -93,7 +93,7 @@ twarc search blacklivesmatter \
   > tweets.jsonl
 ```
 
-However, with how the data is setup in that 
+However, with this project I already have the tweet ID. As well the tweet IDs are setup into folders: 2020-06, 2020-07, 2020-08, 2020-09, 2020-10. Each folder contains 
 
 #### References
 
