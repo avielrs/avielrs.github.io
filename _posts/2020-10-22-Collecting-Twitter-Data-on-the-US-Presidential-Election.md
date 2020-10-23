@@ -50,7 +50,7 @@ twarc configure
 ```
 
 The below image should appear in your Terminal:
-  Happing Twarcing! Do you think Ed Summers and Sam Samhuns, the developers of twarc, is making a pun from Twerking? I may have to email them and ask.</br>
+Happing Twarcing! Do you think Ed Summers and Sam Samhuns, the developers of twarc, is making a pun from Twerking? I may have to email them and ask.<br>
 ![Alternate image text](/images/twitter/happy_twarcing.png)
 
 Now that I have twark configured, I can run a command to retrieve tweet data. 
@@ -67,7 +67,7 @@ Run in the command line:
 
     python3 hydrate.py 
 
-</br>
+<br>
 ![Alternate image text](/images/twitter/hydrate.png)
 
 #### Step 2: Running into problems
