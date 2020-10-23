@@ -49,11 +49,9 @@ To begin using twarc enter in the command line:
 twarc configure
 ```
 
-
-
 ![Alternate image text](/images/twitter/happy_twarcing.png)
 
-Happing Twarcing!! Do you think Ed Summers and Sam Samhuns, the developers of twarc, is making a pun from Twerking? I may have to email them and ask.
+This should appear in your Terminal. Happing Twarcing! Do you think Ed Summers and Sam Samhuns, the developers of twarc, is making a pun from Twerking? I may have to email them and ask.
 
 Now that I have twark configured, I can run a command to retrieve tweet data. 
 
