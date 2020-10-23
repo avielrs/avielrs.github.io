@@ -10,7 +10,7 @@ As a Data Scientist, it is easy to want to start with nicely formatted data and 
 ### Purpose
 I am collecting Twitter API data in order to analyze topics during the 2020 presidential election and to determine if there is a trend in the overall sentiment within these topics depending on location and time of the tweet. Topics that I expect to find from the tweets comprises of COVID19, Trump, Biden, election, vaccines, Black Lives Matter, fake news, Proud Boys, voter fraud, climate change, Ruth Ginsburg, Amy Coney Barrett, and TikTok. Phew, can you believe all this has happened in just 4 months?! 
 
-![Alternate image text](/images/twitter/voter_facemask.jpg)
+![Alternate image text](/images/twitter/vote_facemask.jpg)
 
 
 ### The Data
