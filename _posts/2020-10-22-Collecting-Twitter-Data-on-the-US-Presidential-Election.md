@@ -49,9 +49,8 @@ To begin using twarc enter in the command line:
 twarc configure
 ```
 
-![Alternate image text](/images/twitter/happy_twarcing.png)
-
 This should appear in your Terminal. Happing Twarcing! Do you think Ed Summers and Sam Samhuns, the developers of twarc, is making a pun from Twerking? I may have to email them and ask.
+![Alternate image text](/images/twitter/happy_twarcing.png)
 
 Now that I have twark configured, I can run a command to retrieve tweet data. 
 
@@ -80,7 +79,7 @@ My MacBook air cannot handle 240 million tweets and its storage limit is 250 GB 
 
 #### Step 3: Revisiting collecting twitter data
 
-I want to collect enough data for each month so that I can analyze the tweet data throughout the presidential campaign, rather than for just the month of June 2020. Within the Twarc documentation they describe applying certain filters such as: 
+I want to collect enough data for each month so that I can analyze the tweet data throughout the presidential campaign. Within the Twarc documentation they describe applying certain filters such as: 
 
 ```
 twarc search blacklivesmatter \
