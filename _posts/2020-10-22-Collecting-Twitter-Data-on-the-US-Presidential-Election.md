@@ -49,7 +49,7 @@ To begin using twarc enter in the command line:
 twarc configure
 ```
 
-This below image should appear in your Terminal:
+The below image should appear in your Terminal:
   Happing Twarcing! Do you think Ed Summers and Sam Samhuns, the developers of twarc, is making a pun from Twerking? I may have to email them and ask.
 ![Alternate image text](/images/twitter/happy_twarcing.png)
 
