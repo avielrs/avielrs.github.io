@@ -109,7 +109,7 @@ To hydrate tweet identifers in twarc by passing a list of ids within a txt file,
 This method does not include a filter method. I am currently still trying to figure out how to add a filter to this command. In the meantime, I decided to filter the old fashion way! I am deleting the .txt files myself. There are multiple .txt files for each day, therefore I only kept one .txt file for each day. To be honost it really didn't take long to delete the files manually. Recall that each .txt file contains about 100,000 tweets. This means I will have about 100,000 tweets regarding the US 2020 presidential election for every day between June 2020 - November 2020. This is still an overabundance of data for this specific project. 
 
 ### What's Next? 
-#### Data Cleaning
+#### Data Cleaning, Exploratory Data Analyst, Topic Labelling, Sentiment Analyst
 ![Alternate image text](/images/twitter/goals.jpg)
 *Anyone else think the text in this picture said gouls instead of goals?* <br><br>
 Overcome with excitement to apply sentiment analysis and topic modelling to the US Presidential 2020 twitter data, I almost forgot about data cleaning! Data cleaning is an essential step in the data science pipeline. Cleaning data is a preprocessing step that ensures your data is ready to be trained, tested, and analyzed. 
