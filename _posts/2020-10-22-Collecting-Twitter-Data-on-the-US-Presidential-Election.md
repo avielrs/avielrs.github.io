@@ -109,21 +109,21 @@ To hydrate tweet identifers in twarc by passing a list of ids within a txt file,
 This method does not include a filter method. I am currently still trying to figure out how to add a filter to this command. In the meantime, I decided to filter the old fashion way! I am deleting the .txt files myself. There are multiple .txt files for each day, therefore I only kept one .txt file for each day. To be honost it really didn't take long to delete the files manually. Recall that each .txt file contains about 100,000 tweets. This means I will have about 100,000 tweets regarding the US 2020 presidential election for every day between June 2020 - November 2020. This is still an overabundance of data for this specific project. 
 
 ### What's Next? 
-#### Cleaning, Exploratory Data Analysis, Preliminary Machine Learning:
+#### Data Cleaning
 ![Alternate image text](/images/twitter/goals.jpg)
 *Anyone else think the text in this picture said gouls instead of goals?* <br><br>
-Overcome with excitement about applying sentiment analysis and topic modelling to the US Presidential 2020 twitter data, I almost forgot that 'Data Cleaning' is the next on the table. Data cleaning is an essential step in the data science pipeline. Cleaning data is a preprocessing step that ensures that your data is ready to be trained, tested, and analyzed.
+Overcome with excitement to apply sentiment analysis and topic modelling for the US Presidential 2020 twitter data, I almost forgot about data cleaning! Data cleaning is an essential step in the data science pipeline. Cleaning data is a preprocessing step that ensures your data is ready to be trained, tested, and analyzed. 
 
-Here is a general guideline for this project:
+Here is a general guideline for my next steps on this project:
 
-1.	Importing the json files into python and restructuring the data in tables and lists. 
+1.	Import the json files into python and restructure the data in tables and lists. 
 2.	Data Cleaning and Data Wrangling
-3.	Apply multiple Natural Language Processing techniques to determine the best approach
+3.	Apply multiple Natural Language Processing techniques to determine the best approach.
 4.	Apply sentiment analysis and topic modelling to find: 
-  - Specific topics and the trend in emotion towards each topic: 
-  - As whole within the US
-  - As whole within each state
-  - Did the sentiment of the topics swayed overtime
+  - Specific topics and trends for each topic: 
+    - As whole within the US
+    - As whole within each state
+  - Did the sentiment of the topics swayed overtime?
 5.	Create a timeline of events from the tweets
 
 To end this blog post, I'll leave you with this quote: 
