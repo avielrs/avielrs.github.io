@@ -119,12 +119,11 @@ Here is a general guideline for my next steps on this project:
 1.	Import the json files into python and restructure the data in tables and lists. 
 2.	Data Cleaning and Data Wrangling
 3.	Apply multiple Natural Language Processing techniques to determine the best approach.
-4.	Apply sentiment analysis and topic modelling to find: 
-5. Specific topics and trends for each topic: 
+4.	Apply sentiment analysis and topic modelling to find specific topics and trends: 
     - As whole within the US
     - As whole within each state
-6. Did the sentiment of the topics swayed overtime?
-7. Create a timeline of events from the tweets
+5. Did the sentiment of the topics swayed overtime?
+6. Create a timeline of events from the tweets
 <br>
 
 
