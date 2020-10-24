@@ -100,7 +100,7 @@ However, with this specific project I already have an extensive list of tweet ID
     <img src="/images/twittter/text_file.png"/>
 </p>
 
-In order to hydrate tweet identifers in twarc by passing a list of ids, we use: 
+To hydrate tweet identifers in twarc by passing a list of ids within a txt file, run in the command line:  
 
     for tweet in t.hydrate(open('ids.txt')):
       print(tweet["text"])
