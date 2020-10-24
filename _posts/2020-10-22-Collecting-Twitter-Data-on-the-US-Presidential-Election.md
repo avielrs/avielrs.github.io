@@ -96,7 +96,9 @@ twarc search blacklivesmatter \
 
 However, with this specific project I already have an extensive list of tweet IDs regarding the 2020 election. The tweet IDs are setup into folders: 2020-06, 2020-07, 2020-08, 2020-09, 2020-10. Each folder contains mulitple .txt file which contains about 100,000 tweets: <br>
 
+<p align="center">
 ![Alternate image text](/images/twitter/text_file.png)
+</p>
 
 In order to hydrate tweet identifers in twarc by passing a list of ids, we use: 
 
