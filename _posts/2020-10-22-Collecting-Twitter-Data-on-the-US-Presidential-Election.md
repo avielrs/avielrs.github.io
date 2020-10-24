@@ -111,7 +111,7 @@ This method does not include a filter method. I am currently still trying to fig
 ### What's Next? 
 #### Cleaning, Exploratory Data Analysis, Preliminary Machine Learning:
 ![Alternate image text](/images/twitter/goals.jpg)
-Anyone else think the text in the picture said gouls instead of goals? <br><br>
+*Anyone else think the text in the picture said gouls instead of goals?* <br><br>
 My excitement for applying sentiment analysis and topic modelling to the US Presidential 2020 twitter data, when in the back of mind, the words 'Data Cleaning' appeared in front of me. Data cleaning is an essential step in the data science pipeline. Cleaning data is a preprocessing step that ensures that your data is ready to be trained, tested, and analyzed. Ok so what is next?
 
 1.	Importing the json files into python and restructuring the data in tables and lists. 
