@@ -93,9 +93,14 @@ twarc search blacklivesmatter \
   > tweets.jsonl
 ```
 
-However, with this specific project I already have an extensive list of tweet IDs regarding the 2020 election. The tweet IDs are setup into folders: 2020-06, 2020-07, 2020-08, 2020-09, 2020-10. Each folder contains a .txt file which contains about 100,000 tweets: <br>
+However, with this specific project I already have an extensive list of tweet IDs regarding the 2020 election. The tweet IDs are setup into folders: 2020-06, 2020-07, 2020-08, 2020-09, 2020-10. Each folder contains mulitple .txt file which contains about 100,000 tweets: <br>
 
 ![Alternate image text](/images/twitter/txt_file.png)
+
+In order to hydrate tweet identifers in twarc by passing a list of ids, we use: 
+
+    for tweet in t.hydrate(open('ids.txt')):
+      print(tweet["text"])
 
 
 #### References
