@@ -111,10 +111,22 @@ This method does not include a filter method. I am currently still trying to fig
 ### What's Next? 
 #### Cleaning, Exploratory Data Analysis, Preliminary Machine Learning:
 ![Alternate image text](/images/twitter/goals.jpg)
-*Anyone else think the text in the picture said gouls instead of goals?* <br><br>
-My excitement for applying sentiment analysis and topic modelling to the US Presidential 2020 twitter data, when in the back of mind, the words 'Data Cleaning' appeared in front of me. Data cleaning is an essential step in the data science pipeline. Cleaning data is a preprocessing step that ensures that your data is ready to be trained, tested, and analyzed. Ok so what is next?
+*Anyone else think the text in this picture said gouls instead of goals?* <br><br>
+Overcome with excitement about applying sentiment analysis and topic modelling to the US Presidential 2020 twitter data, I almost forgot that 'Data Cleaning' is the next on the table. Data cleaning is an essential step in the data science pipeline. Cleaning data is a preprocessing step that ensures that your data is ready to be trained, tested, and analyzed.
+
+Here is a general guideline for this project:
 
 1.	Importing the json files into python and restructuring the data in tables and lists. 
+2.	Data Cleaning and Data Wrangling
+3.	Apply multiple Natural Language Processing techniques to determine the best approach
+4.	Apply sentiment analysis and topic modelling to find: 
+  - Specific topics and the trend in emotion towards each topic: 
+  - As whole within the US
+  - As whole within each state
+  - Did the sentiment of the topics swayed overtime
+5.	Create a timeline of events from the tweets
+
+![Alternate image text](/images/twitter/notes.jpg)
 
 #### References
 
