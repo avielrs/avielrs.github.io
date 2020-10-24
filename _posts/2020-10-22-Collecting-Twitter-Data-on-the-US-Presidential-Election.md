@@ -4,7 +4,7 @@ title: Collecting Twitter Data on the US 2020 Presidential Election
 ---
 ![Alternate image text](/images/twitter/tweet_tweet.jpg)
 
-# Part 1: Data Collection
+## Part 1: Data Collection
 As a Data Scientist, it is easy to want to start with nicely formatted data and to jump into the predictive modelling and analysis phase. However, beginning a Data Science project from raw data can be fun and rewarding! Everyone loves a good challenge. Right? I decided for my raw data challenge, I would work with Twitter API data. By the way, can #RawDataChallenge become a thing? Anyways as I was saying, I decided to work with Twitter API data because 1) The documentation on Twitter APIs is abundant. Huzzah! 2) Twitter APIs provide very useful text data such as the tweets, location, hashtags, and user mentions, and other data includes time, date, and number of followers. 4) I am intrigued by the idea of finding twitter trends and identifying emotions and topics from just a simple tweet. 
 
 ### Purpose
