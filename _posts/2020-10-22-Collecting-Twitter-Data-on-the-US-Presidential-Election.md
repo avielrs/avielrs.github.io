@@ -112,7 +112,7 @@ This method does not include a filter method. I am currently still trying to fig
 #### Data Cleaning
 ![Alternate image text](/images/twitter/goals.jpg)
 *Anyone else think the text in this picture said gouls instead of goals?* <br><br>
-Overcome with excitement to apply sentiment analysis and topic modelling for the US Presidential 2020 twitter data, I almost forgot about data cleaning! Data cleaning is an essential step in the data science pipeline. Cleaning data is a preprocessing step that ensures your data is ready to be trained, tested, and analyzed. 
+Overcome with excitement to apply sentiment analysis and topic modelling to the US Presidential 2020 twitter data, I almost forgot about data cleaning! Data cleaning is an essential step in the data science pipeline. Cleaning data is a preprocessing step that ensures your data is ready to be trained, tested, and analyzed. 
 
 Here is a general guideline for my next steps on this project:
 
