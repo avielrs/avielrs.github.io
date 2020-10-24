@@ -97,7 +97,7 @@ twarc search blacklivesmatter \
 However, with this specific project I already have an extensive list of tweet IDs regarding the 2020 election. The tweet IDs are setup into folders: 2020-06, 2020-07, 2020-08, 2020-09, 2020-10. Each folder contains mulitple .txt file which contains about 100,000 tweets: <br>
 
 <p align="center">
-![Alternate image text](/images/twitter/text_file.png)
+    <img src="/images/twittter/text_file.png"/>
 </p>
 
 In order to hydrate tweet identifers in twarc by passing a list of ids, we use: 
@@ -106,6 +106,9 @@ In order to hydrate tweet identifers in twarc by passing a list of ids, we use:
       print(tweet["text"])
 
 This method does not include a filter method. I am currently still trying to figure out how to add a filter to this command. In the meantime, I decided to filter the old fashion way! I am deleting the .txt files myself. There are multiple .txt files for each day, therefore I only kept one .txt file for each day. To be honost it really didn't take long to delete the files manually. Recall that each .txt file contains about 100,000 tweets. This means I will have about 100,000 tweets regarding the US 2020 presidential election for every day between June 2020 - November 2020. This is still an overabundance of data for this specific project. 
+
+### What's Next? 
+
 
 #### References
 
