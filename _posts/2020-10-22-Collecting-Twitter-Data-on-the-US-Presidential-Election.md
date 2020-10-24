@@ -96,10 +96,9 @@ twarc search blacklivesmatter \
 
 However, with this specific project I already have an extensive list of tweet IDs regarding the 2020 election. The tweet IDs are setup into folders: 2020-06, 2020-07, 2020-08, 2020-09, 2020-10. Each folder contains mulitple .txt file which contains about 100,000 tweets: <br>
 
-<p align="center">
-    <img src="/images/twittter/text_file.png"/>
-</p>
+![Alternate image text](/images/twittter/text_file.png)
 
+<br>
 To hydrate tweet identifers in twarc by passing a list of ids within a txt file, run in the command line:  
 
     for tweet in t.hydrate(open('ids.txt')):
