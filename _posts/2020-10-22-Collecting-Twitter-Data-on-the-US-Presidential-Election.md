@@ -27,7 +27,6 @@ Before collecting the tweets, I first downloaded the data folders from the GitHu
 
 ```
 git clone https://github.com/user_name/repo_name.git
-
 ```
 
 This step basically downloads the most recently updated files from the repo onto my computer. This step is important because the dataset will be continuously updated in the next month or two and I will want to easily update my folder without re-downloading the entire dataset every time.
