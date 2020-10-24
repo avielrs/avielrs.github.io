@@ -29,11 +29,11 @@ Before collecting the tweets, I first downloaded the data folders from the GitHu
 git clone https://github.com/user_name/repo_name.git
 ```
 
-This step basically downloads the most recently updated files from the repo onto my computer. This step is important because the dataset will be continuously updated in the next month or two and I will want to easily update my folder without re-downloading the entire dataset every time.
+This step basically downloads the most recently updated files from the repo onto the computer. This step is important because the dataset will continuously update in the next month or two. Cloning the git folder will allow me to easily update my files without re-downloading the entire dataset every time.
 
 Ok. I have the data on my desktop! Yay! Well sort of….
 
-As I mentioned earlier, the dataset contains a list of Tweet IDs. In order to search the tweet API associated with the Tweet ID, I need to rehydrate the Tweet IDs with [Twarc](https://github.com/DocNow/twarc){:target="_blank"} or another installation package of your choosing. The reason for rehydrated tweets is because of Twitter API’s [Terms of Service agreement](https://developer.twitter.com/en/developer-terms/agreement-and-policy){:target="_blank"}. The agreement states that developers cannot make large amounts of raw Twitter data available onto the Web. This is to ensure user privacy on Twitter. For example, if a user decides to delete their tweet, then the developer will not be able to retrieve that deleted tweet. As well, part of the developer agreement is that private information found in tweet data such as a username or user ID associated to sexual orientation, religion, health, or alleged crime is not permitted to make public on the web. Ok, well that seems fair enough. 
+As I mentioned earlier, the dataset contains a list of Tweet IDs. In order to search the tweet API associated with the Tweet ID, I need to rehydrate the Tweet IDs with [Twarc](https://github.com/DocNow/twarc){:target="_blank"} or another installation package of your choosing. The reason for rehydrated tweets is because of Twitter API’s [Terms of Service agreement](https://developer.twitter.com/en/developer-terms/agreement-and-policy){:target="_blank"}. The agreement states that developers cannot make large amounts of raw Twitter data available onto the Web. This is to ensure user privacy on Twitter. For example, if a user decides to delete their tweet, then the developer will not be able to retrieve that tweet. As well, private information found in tweet data such as a username or user ID associated to sexual orientation, religion, health, or alleged crime is not permitted to make available to the public on the web. Well, that seems fair enough. 
 
 #### Step 2: Install packages
 
@@ -59,7 +59,7 @@ twarc search #blacklivesmatter > tweets.jsonl
 ```
 This will search for all tweets that contain the hashtag #blacklivesmatter and will be placed into a file named tweets.jsonl
 
-The us-pres-elections-2020 repo from GitHub user [echen102](https://github.com/echen102){:target="_blank"} provides a python script ‘hydrate.py’ which runs twarc and rehydrates every tweet ID from the text file. The tweet IDs from each file are a zipped into a json file which contains about 100,000 tweet data. 
+The us-pres-elections-2020 repo from GitHub user [echen102](https://github.com/echen102){:target="_blank"} provides a python script ‘hydrate.py’ which runs twarc and rehydrates every tweet ID from the text file. The tweet IDs from each file are zipped into a json file which contains about 100,000 tweet data. 
 
 Run in the command line: 
 
@@ -70,7 +70,7 @@ Run in the command line:
 
 #### Step 2: Running into problems
 
-After happily running the hydrate.py script on my computer for about four days, I realized that extracting tweets from June 2020 had not even finished! I decided to take a look at the us-pres-elections-2020 repo and review the associated [paper](https://arxiv.org/pdf/2010.00600.pdf){:target="_blank"}. In the paper it states that the first release of tweets from 6/20/2020 through 9/06/2020 contains **240 million tweets** which is almost **2 TB** of raw data! Twarc is able to hydrate 1 million tweet IDs per day, which means it will take 140 days to retrieve all that data! To be honest, retrieving 1 million tweets/day is actually quite amazing. This is because the Twitter API v2 rate limit is 900 requests/15-minutes thus 43,200 requests per day. The total amount of requests per month is limited to 500,000 per user. The Twitter's rate limit is necessary for managing large volumes of requests which are placed by thousands of developers each day on twitter.
+After happily running the hydrate.py script on my computer for about four days, I realized that extracting tweets from June 2020 is not even complete! I decided to take a look at the us-pres-elections-2020 repo and review the associated [paper](https://arxiv.org/pdf/2010.00600.pdf){:target="_blank"}. In the paper it states that the first release of tweets from 6/20/2020 through 9/06/2020 contains **240 million tweets** which is almost **2 TB** of raw data! Twarc is able to hydrate 1 million tweet IDs per day. This means it will take 140 days to retrieve all that data! To be honest, retrieving 1 million tweets per day is actually quite amazing. This is because the Twitter API v2 rate limit is 900 requests/15-minutes thus 43,200 requests per day. The total amount of requests per month is limited to 500,000 per user. The Twitter's rate limit is necessary for managing large volumes of requests which are placed by thousands of developers each day on twitter.
 
 Anyways back to 240 million tweets and 2 TB of data: <br>
 **Abandon twarcing! Stop Collecting Data!!**
@@ -81,7 +81,7 @@ My MacBook Air cannot handle 240 million tweets and its storage limit is 250 GB 
 
 ![Alternate image text](/images/twitter/rethinking.jpg)
 
-I want to collect enough data for each month so that I can analyze the tweet data throughout the presidential campaign. Within the Twarc documentation they describe applying certain filters such as: 
+I want to collect enough data for each month so that I can analyze the tweet data throughout the presidential campaign. Within the Twarc documentation they describe applying certain filters such as a date range and limiting number of tweets:
 
 ```
 twarc search blacklivesmatter \
@@ -92,14 +92,14 @@ twarc search blacklivesmatter \
   > tweets.jsonl
 ```
 
-However, with this specific project I already have an extensive list of tweet IDs regarding the 2020 election. The tweet IDs are setup into folders: 2020-06, 2020-07, 2020-08, 2020-09, 2020-10. Each folder contains multiple .txt file which contains about 100,000 tweets: <br>
+However, with this specific project I already have an extensive list of tweet IDs regarding the 2020 election. The tweet IDs are setup into folders: 2020-06, 2020-07, 2020-08, 2020-09, 2020-10. Each folder contains multiple .txt file and each .txt file contains about 100,000 tweet IDs <br>
 
 <p align="center">
     <img src="/images/twitter/text_file.png"/>
 </p>
 
 <br>
-To hydrate tweet identifiers in twarc by passing a list of ids within a txt file, run in the command line:  
+To hydrate tweet identifiers that are contained in a .txt file in twarc, run the command :  
 
     for tweet in t.hydrate(open('ids.txt')):
       print(tweet["text"])
