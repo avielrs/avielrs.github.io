@@ -125,12 +125,12 @@ Here is a general guideline for my next steps on this project:
 5. Did the sentiment of the topics swayed overtime?
 6. Create a timeline of events from the tweets
 <br>
-
+<br>
 
 #### To end this post, I will leave you with this quote.
 *“‘Possessed’ is probably the right word. I often tell people, ‘I don’t want to necessarily be a data scientist. You just kind of are a data scientist. You just can’t help but look at that data set and go, ‘I feel like I need to look deeper. I feel like that’s not the right fit.’”* <br> 
 ― Jennifer Shin, Senior Principal Data Scientist at Nielsen; Lecturer at UC Berkeley
-
+<br>
 #### References
 
 Emily Chen, Ashok Deb, Emilio Ferrara. #Election2020: The First Public Twitter Dataset on the 2020 US Presidential Election. Arxiv (2020)
