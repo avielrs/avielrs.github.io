@@ -121,15 +121,14 @@ Here is a general guideline for my next steps on this project:
 3.	Apply multiple Natural Language Processing techniques to determine the best approach.
 4.	Apply sentiment analysis and topic modelling to find: 
   - Specific topics and trends for each topic: 
-    - As whole within the US
-    - As whole within each state
+      - As whole within the US
+      - As whole within each state
   - Did the sentiment of the topics swayed overtime?
 5.	Create a timeline of events from the tweets
 <br>
 
 
-To end this post, I will leave you with this quote. 
-
+**To end this post, I will leave you with this quote.**
 *“‘Possessed’ is probably the right word. I often tell people, ‘I don’t want to necessarily be a data scientist. You just kind of are a data scientist. You just can’t help but look at that data set and go, ‘I feel like I need to look deeper. I feel like that’s not the right fit.’”* <br> 
 ― Jennifer Shin, Senior Principal Data Scientist at Nielsen; Lecturer at UC Berkeley
 
