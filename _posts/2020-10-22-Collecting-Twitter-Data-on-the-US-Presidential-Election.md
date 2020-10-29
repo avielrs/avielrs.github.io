@@ -45,7 +45,7 @@ I decide to rehydrate with the package [Twarc](https://github.com/DocNow/twarc).
 
 Twitter API v2 rate limit is 900 requests/15-minutes thus 43,200 requests per day. The total amount of requests per month is limited to 500,000 per user! Twitter's rate limit request helps mitigate large volumes of requests which are placed by thousands of developers each day on twitter. 
 
- What makes Twarc beneficial is that Twarc handles the twitter rate limit for the user and thus able to handle extracting 1 million tweet IDs per day!
+What makes Twarc beneficial is that Twarc handles the twitter rate limit for the user and thus able to handle extracting 1 million tweet IDs per day!
 
 #### Step 2: Install packages
 
@@ -84,7 +84,6 @@ Run in the command line:
 
 After happily running the hydrate.py script on my computer for about four days, I realized that extracting tweets from June 2020 is not even complete! I decided to take a look at the us-pres-elections-2020 repo and review the associated [paper](https://arxiv.org/pdf/2010.00600.pdf){:target="_blank"}. In the paper it states that the first release of tweets from 6/20/2020 through 9/06/2020 contains **240 million tweets** which is almost **2 TB** of raw data! 
 
-Anyways back to 240 million tweets and 2 TB of data: <br>
 **Abandon twarcing! Stop Collecting Data!!**
 
 My MacBook Air cannot handle 240 million tweets and its storage limit is 250 GB lol. I could potentially collect the data on the cloud, however at the moment I do not want to work on the cloud or at least until my analysis is ready for production.
