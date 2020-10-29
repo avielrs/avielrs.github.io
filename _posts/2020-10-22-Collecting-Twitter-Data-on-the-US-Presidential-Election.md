@@ -33,17 +33,19 @@ This step basically downloads the most recently updated files from the repo onto
 
 Ok. I have the data on my desktop! Yay! Well sort of….
 
-As I mentioned earlier, the dataset contains a list of tweet IDs. The tweet IDs were obtained by GitHub user [echen102](https://github.com/echen102){:target="_blank"} and the data science research group at USC. They were obtained by hitting the twitter API endpoints. In order to search for tweets regarding the 2020 Presidential election, filters were added to search for specific tweet accounts and tweets with specific users mentioned. After collecting the twitter APIs, a provided and organized list of the tweet IDS associated to these tweets were posted on GitHub. 
+As I mentioned earlier, the dataset contains a list of tweet IDs. The tweet IDs were obtained by GitHub user [echen102](https://github.com/echen102){:target="_blank"} and the data science research group at USC. They were obtained by hitting the twitter API endpoints. In order to search for tweets regarding the 2020 Presidential election, filters were added to search for specific tweet accounts and tweets with specific users mentioned. 
 
-The reason why a list of tweet IDs are provided, rather than the entire json file is because of Twitter API’s [Terms of Service agreement](https://developer.twitter.com/en/developer-terms/agreement-and-policy){:target="_blank"}. The agreement states that developers cannot make large amounts of raw Twitter data available onto the Web. This is to ensure user privacy on Twitter. For example, if a user decides to delete their tweet, then the developer will not be able to retrieve that tweet. As well, private information found in tweet data such as a username or user ID associated to sexual orientation, religion, health, or alleged crime is not permitted to make available to the public on the web. Well, that seems fair enough. 
+The reason why a list of tweet IDs are provided, rather than the entire json file is because of Twitter API’s [Terms of Service agreement](https://developer.twitter.com/en/developer-terms/agreement-and-policy){:target="_blank"}. The agreement states that developers cannot make large amounts of raw Twitter data available onto the web. This is to ensure user privacy on Twitter. For example, if a user decides to delete their tweet, then the developer will not be able to retrieve that tweet. As well, private information found in tweet data such as a username or user ID associated to sexual orientation, religion, health, or alleged crime is not permitted to make available to the public on the web. Well, that seems fair enough. 
 
-In order to utilize the tweet IDs, I need to **rehydrate**. To rehydrate tweet ids means to take a tweet ID and extract the entire tweet API information associated to that ID. 
+In order to utilize the tweet IDs, I need to **rehydrate**. To rehydrate means to take a tweet ID and extract the entire tweet API information associated to that ID. 
 
 #### Part 3: Rehydrate 
 
-I decide to rehydrate with the package [Twarc](https://github.com/DocNow/twarc). Another package out there is [Hydrator](https://github.com/DocNow/hydrator) (GUI version). I could as well directly hit the twitter API endpoint to retrieve the APIs. 
+I decide to rehydrate with the package [Twarc](https://github.com/DocNow/twarc). Twarc is a command line tool that archives twitter JSON data. Another package out there is [Hydrator](https://github.com/DocNow/hydrator) (GUI version). I could as well directly hit the twitter API endpoint to retrieve the APIs. 
 
-Twarc is a command line tool that archives twitter JSON data. What makes Twarc beneficial is that Twarc handles the twitter rate limit for the user and thus able to handle extracting 1 million tweet IDs per day! Whereas, Twitter API v2 rate limit is 900 requests/15-minutes thus 43,200 requests per day. The total amount of requests per month is limited to 500,000 per user! The Twitter's rate limit helps manage large volumes of requests which are placed by thousands of developers each day on twitter. 
+Twitter API v2 rate limit is 900 requests/15-minutes thus 43,200 requests per day. The total amount of requests per month is limited to 500,000 per user! Twitter's rate limit request helps mitigate large volumes of requests which are placed by thousands of developers each day on twitter. 
+
+ What makes Twarc beneficial is that Twarc handles the twitter rate limit for the user and thus able to handle extracting 1 million tweet IDs per day!
 
 #### Step 2: Install packages
 
