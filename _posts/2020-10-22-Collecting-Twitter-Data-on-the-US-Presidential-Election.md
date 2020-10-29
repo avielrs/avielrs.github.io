@@ -5,7 +5,7 @@ title: Collecting Twitter Data on the US 2020 Presidential Election
 ![Alternate image text](/images/twitter/tweet_tweet.jpg)
 
 # Part 1: Data Collection
-As a Data Scientist, it is easy to want to start with nicely formatted data and to jump into the predictive modelling and analysis phase. However, beginning a data science project from raw data can be fun and rewarding! Everyone loves a good challenge. Right? I decided for my raw data challenge, I will work with Twitter API data. By the way, can #RawDataChallenge become a thing? Anyways as I was saying, I decided to work with Twitter API data because 1) The documentation on Twitter APIs is abundant. Huzzah! 2) Twitter APIs provide very useful text data such as tweets, location, hashtags, and user mentions. Other data includes time, date, and number of followers. 4) I am intrigued by the idea of finding twitter trends and identifying major topics from just a simple tweet. 
+As a Data Scientist, it is easy to want to start with nicely formatted data and to jump into the predictive modelling and analysis phase. However, beginning a data science project from raw data can be fun and rewarding! Everyone loves a good challenge. Right? I decided for my raw data challenge, I will work with Twitter API data. By the way, can #RawDataChallenge become a thing? Anyways as I was saying, I decided to work with Twitter API data because 1) The documentation on Twitter APIs is abundant. Huzzah! 2) Twitter APIs provide very useful text data such as tweets, location, hashtags, and user mentions. Other data includes time, date, and number of followers. 3) I am intrigued by the idea of finding twitter trends and identifying major topics from just a simple tweet. 
 
 ### Purpose
 I am collecting Twitter API data in order to analyze topics during the 2020 presidential election and to determine if there is a trend in the overall sentiment within these topics depending on location and time of the tweet. Topics that I expect to find from the tweets comprises of COVID19, Trump, Biden, election, vaccines, Black Lives Matter, fake news, Proud Boys, voter fraud, climate change, Ruth Ginsburg, Amy Coney Barrett, and TikTok. Phew, can you believe all this has happened in just 4 months?! 
@@ -33,7 +33,17 @@ This step basically downloads the most recently updated files from the repo onto
 
 Ok. I have the data on my desktop! Yay! Well sort of….
 
-As I mentioned earlier, the dataset contains a list of Tweet IDs. In order to search the tweet API associated with the Tweet ID, I need to rehydrate the Tweet IDs with [Twarc](https://github.com/DocNow/twarc){:target="_blank"} or another installation package of your choosing. The reason for rehydrated tweets is because of Twitter API’s [Terms of Service agreement](https://developer.twitter.com/en/developer-terms/agreement-and-policy){:target="_blank"}. The agreement states that developers cannot make large amounts of raw Twitter data available onto the Web. This is to ensure user privacy on Twitter. For example, if a user decides to delete their tweet, then the developer will not be able to retrieve that tweet. As well, private information found in tweet data such as a username or user ID associated to sexual orientation, religion, health, or alleged crime is not permitted to make available to the public on the web. Well, that seems fair enough. 
+As I mentioned earlier, the dataset contains a list of tweet IDs. The tweet IDs were obtained by GitHub user [echen102](https://github.com/echen102){:target="_blank"} and the data science research group at USC. They were obtained by hitting the twitter API endpoints. In order to search for tweets regarding the 2020 Presidential election, filters were added to search for specific tweet accounts and tweets with specific users mentioned. After collecting the twitter APIs, a provided and organized list of the tweet IDS associated to these tweets were posted on GitHub. 
+
+The reason why a list of tweet IDs are provided, rather than the entire json file is because of Twitter API’s [Terms of Service agreement](https://developer.twitter.com/en/developer-terms/agreement-and-policy){:target="_blank"}. The agreement states that developers cannot make large amounts of raw Twitter data available onto the Web. This is to ensure user privacy on Twitter. For example, if a user decides to delete their tweet, then the developer will not be able to retrieve that tweet. As well, private information found in tweet data such as a username or user ID associated to sexual orientation, religion, health, or alleged crime is not permitted to make available to the public on the web. Well, that seems fair enough. 
+
+In order to utilize the tweet IDs, I need to **rehydrate**. To rehydrate tweet ids means to take a tweet ID and extract the entire tweet API information associated to that ID. 
+
+#### Part 3: Rehydrate 
+
+I decide to rehydrate with the package [Twarc](https://github.com/DocNow/twarc). Another package out there is [Hydrator](https://github.com/DocNow/hydrator) (GUI version). I could as well directly hit the twitter API endpoint to retrieve the APIs. 
+
+Twarc is a command line tool that archives twitter JSON data. What makes Twarc beneficial is that Twarc handles the twitter rate limit for the user and thus able to handle extracting 1 million tweet IDs per day! Whereas, Twitter API v2 rate limit is 900 requests/15-minutes thus 43,200 requests per day. The total amount of requests per month is limited to 500,000 per user! The Twitter's rate limit helps manage large volumes of requests which are placed by thousands of developers each day on twitter. 
 
 #### Step 2: Install packages
 
@@ -68,9 +78,9 @@ Run in the command line:
 <br>
 ![Alternate image text](/images/twitter/hydrate.png)
 
-#### Step 2: Running into problems
+#### Step 3: Running into problems
 
-After happily running the hydrate.py script on my computer for about four days, I realized that extracting tweets from June 2020 is not even complete! I decided to take a look at the us-pres-elections-2020 repo and review the associated [paper](https://arxiv.org/pdf/2010.00600.pdf){:target="_blank"}. In the paper it states that the first release of tweets from 6/20/2020 through 9/06/2020 contains **240 million tweets** which is almost **2 TB** of raw data! Twarc is able to hydrate 1 million tweet IDs per day. This means it will take 140 days to retrieve all that data! To be honest, retrieving 1 million tweets per day is actually quite amazing. This is because the Twitter API v2 rate limit is 900 requests/15-minutes thus 43,200 requests per day. The total amount of requests per month is limited to 500,000 per user. The Twitter's rate limit is necessary for managing large volumes of requests which are placed by thousands of developers each day on twitter.
+After happily running the hydrate.py script on my computer for about four days, I realized that extracting tweets from June 2020 is not even complete! I decided to take a look at the us-pres-elections-2020 repo and review the associated [paper](https://arxiv.org/pdf/2010.00600.pdf){:target="_blank"}. In the paper it states that the first release of tweets from 6/20/2020 through 9/06/2020 contains **240 million tweets** which is almost **2 TB** of raw data! 
 
 Anyways back to 240 million tweets and 2 TB of data: <br>
 **Abandon twarcing! Stop Collecting Data!!**
