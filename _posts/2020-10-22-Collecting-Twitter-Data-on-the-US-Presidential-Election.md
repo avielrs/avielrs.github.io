@@ -58,10 +58,10 @@ To begin using twarc enter in the command line:
 ```
 twarc configure
 ```
-
-The below image should appear in your Terminal: Happing Twarcing! <br>
-Do you think the developers of twarc are making a pun from Twerking? I may have to email them and ask.<br><br>
-![Alternate image text](/images/twitter/happy_twarcing.png)
+<br>
+The below image should appear in your Terminal: Happing Twarcing! <br><br>
+*Do you think the developers of twarc are making a pun from Twerking? I may have to email them and ask.*<br><br>
+![Alternate image text](/images/twitter/happy_twarcing.png)<br>
 
 Now that I have configured twarc, I can run a command to retrieve tweet data. 
 
