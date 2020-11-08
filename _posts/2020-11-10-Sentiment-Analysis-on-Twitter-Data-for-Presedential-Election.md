@@ -23,12 +23,12 @@ For my project, I am collecting Twitter Data on the US 2020 Presidential Electio
 
 A few example questions to answer with Sentiment analysis and Topic Modelling: 
 
-1. How do the majority of tweets collected perceive Trump in total versus for each state? Does the perception change from June 2020 to October 2020?
-2. How do the majority of tweets collected perceive Biden in total versus for each state? Does the perception change from June 2020 to October 2020?
-3. How do the majority of tweets collected perceive Kamala Harris in total versus for each state?
-4. How do the majority of tweets collected perceive COVID19 in total versus for each state?
-5. How do the majority of tweets collected perceive voter fraud in total versus for each state? 
-6. How do tweets with a large following perceive certain topics?
+- How do the majority of tweets collected perceive Trump in total versus for each state? Does the perception change from June 2020 to October 2020?
+- How do the majority of tweets collected perceive Biden in total versus for each state? Does the perception change from June 2020 to October 2020?
+- How do the majority of tweets collected perceive Kamala Harris in total versus for each state?
+- How do the majority of tweets collected perceive COVID19 in total versus for each state?
+- How do the majority of tweets collected perceive voter fraud in total versus for each state? 
+- How do tweets with a large following perceive certain topics?
 
 The rest of this blog post, I will describe the methods I have taken for applying Sentiment analysis to the tweet data on the 2020 United States presidential election. 
 
@@ -152,46 +152,46 @@ Both are subjective, however the Polarity with the punctation is less positive t
 
 Word Cloud
 
-#remove stop words
-import spacy
+    #remove stop words
+    import spacy
 
-spacy.prefer_gpu()
-spacy_nlp = spacy.load("en_core_web_sm")
+    spacy.prefer_gpu()
+    spacy_nlp = spacy.load("en_core_web_sm")
 
-# Stop words from spacy
-all_stopwords = nlp.Defaults.stop_words
+    # Stop words from spacy
+    all_stopwords = nlp.Defaults.stop_words
 
 
-comment_words = '' 
-  
-# iterate through the csv file 
-for val in Text: 
-      
-    # typecaste each val to string 
-    val = str(val) 
-  
-    # split the value 
-    tokens = val.split() 
-      
-    # Converts each token into lowercase 
-    for i in range(len(tokens)): 
-        tokens[i] = tokens[i].lower() 
-      
-    comment_words += " ".join(tokens)+" "
+    comment_words = '' 
+    
+    # iterate through the csv file 
+    for val in Text: 
+        
+        # typecaste each val to string 
+        val = str(val) 
+    
+        # split the value 
+        tokens = val.split() 
+        
+        # Converts each token into lowercase 
+        for i in range(len(tokens)): 
+            tokens[i] = tokens[i].lower() 
+        
+        comment_words += " ".join(tokens)+" "
 
-wordcloud = WordCloud(width = 1000, height = 600, 
-                background_color = 'white',
-               # colormap = 'Spectral',
-                stopwords = all_stopwords, 
-                min_font_size = 10).generate(comment_words) 
-  
-# plot the WordCloud image                        
-plt.figure(figsize = (10, 6), facecolor = None) 
-plt.imshow(wordcloud) 
-plt.axis("off") 
-plt.tight_layout(pad = 0) 
-  
-plt.show()
+    wordcloud = WordCloud(width = 1000, height = 600, 
+                    background_color = 'white',
+                # colormap = 'Spectral',
+                    stopwords = all_stopwords, 
+                    min_font_size = 10).generate(comment_words) 
+    
+    # plot the WordCloud image                        
+    plt.figure(figsize = (10, 6), facecolor = None) 
+    plt.imshow(wordcloud) 
+    plt.axis("off") 
+    plt.tight_layout(pad = 0) 
+    
+    plt.show()
 
 ![Alternate image text](/images/twitter/word_cloud_august_1.png)
 
