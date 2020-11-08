@@ -8,6 +8,8 @@ title: Sentiment Analysis on Twitter Data from the 2020 Presedential Election
 
 ### Introduction
 
+![Alternate image text](/images/twitter/sentiment_def.png)
+
 According to google dictionary **Sentiment** is defined as "a view of or attitude toward a situation or event; an opinion".  We create sentences to describe what is happening around us, and to share our opinions. *Text is a form of creating understanding and explanation about the world around us. *
 
 With an abundance of social media, new articles, and opinion pieces available on the web, Data Scientists are able to utilize these resources to develop recommender systems, [predict text](https://www.newyorker.com/magazine/2019/10/14/can-a-machine-learn-to-write-for-the-new-yorker){:target="_blank"}, identify trends and sentiment toward those trends, and even try to predict outcomes such as the [2020 United States Election](https://www.independent.co.uk/news/world/americas/us-election-2020/2020-election-whos-going-to-win-ai-trump-biden-results-outcome-odds-b1374290.html){:target="_blank"}. In order for millions of text data to be processed efficiently, we use a process called Natural Language Processing.
