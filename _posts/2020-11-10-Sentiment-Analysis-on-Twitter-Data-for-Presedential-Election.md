@@ -6,22 +6,19 @@ title: Sentiment Analysis towards Twitter Data from the 2020 Presedential Electi
 
 # Part 2: Sentiment Analysis 
 
-We create sentences to describe what is happening around us, and to share our opinions. Text is a form of creating understanding and explanation about the world around us.
+Text is a form of creating understanding and explanation about the world around us. With an abundance of social media, news articles, and opinion pieces available on the web, Data Scientists are able to utilize these resources in order to develop recommender systems, predict text, identify sentiment and major topics within a document, and even predict outcomes such as the [2020 United States Election](https://www.independent.co.uk/news/world/americas/us-election-2020/2020-election-whos-going-to-win-ai-trump-biden-results-outcome-odds-b1374290.html){:target="_blank"}. In order for millions of text data to be processed efficiently, we use a process called Natural Language Processing.
 
-With an abundance of social media, news articles, and opinion pieces available on the web, Data Scientists are able to utilize these resources in order to develop recommender systems, [predict text](https://www.newyorker.com/magazine/2019/10/14/can-a-machine-learn-to-write-for-the-new-yorker){:target="_blank"}, identify sentiment and major topics, and even predict outcomes such as the [2020 United States Election](https://www.independent.co.uk/news/world/americas/us-election-2020/2020-election-whos-going-to-win-ai-trump-biden-results-outcome-odds-b1374290.html){:target="_blank"}. In order for millions of text data to be processed efficiently, we use a process called Natural Language Processing.
-
-Natural Language Processing is part of the machine learning/AI pipeline, where a variety of tasks are applied in in order to process the text data and format it in a way so that the computer can read the data and perform analysis packages.
+Natural Language Processing is part of the machine learning/AI pipeline, where a variety of tasks are applied in in order to process the text data and format it in a way so that the computer can read the data and perform analysis.
 
 ![Alternate image text](/images/twitter/linguistics.png)
 
-I love this figure which is taken from the textbook "Practical Natural Language Processing: A Comprehensive Guide to Building Real-World NLP Systems" by Vajjala, S. et al. 2020. The image shows the building blocks of a language and in result how NLP was developed in order to process text data.
-
-**Sentiment Analysis** specifically is a Natural Language Process in order to detect and analyze opinions or attitude within a text or document.
+I love this figure which is taken from the textbook "Practical Natural Language Processing: A Comprehensive Guide to Building Real-World NLP Systems" by Vajjala, S. et al. 2020. The image shows the building blocks of a language and in result how NLP is utilized in order to process text data. Within the NLP packages, we can identify meaning through topic modelling and sentiment analysis. We can identify syntax through parsing words. We can identfy morhpemes and lexemes through utilizing natural language tools called tokenizing, word embeddings, and part of speach tagging. We can as well identify speech and sounds through applying speech to text, speaker identification, and text to speech. 
 
 ### Purpose
-For my project, I am collecting Twitter Data on the US 2020 Presidential Election in order to apply sentiment analysis and topic modelling to the tweet data. To read how I collected the tweets, you can read my previous [post](https://avielrs.github.io/Collecting-Twitter-Data-on-the-US-Presidential-Election/){:target="_blank"}. The goal is to determine the frequency of trending topics how they were perceived throughout the campaign. 
 
-A few example questions to answer with Sentiment analysis and Topic Modelling: 
+For this project, I aam focusing on context from tweet data through sentiment analysis and topic modelling. **Sentiment Analysis** specifically is a Natural Language Process in order to detect and analyze opinions or attitude within a text or document. To read how I collected the tweets, you can read my previous [post](https://avielrs.github.io/Collecting-Twitter-Data-on-the-US-Presidential-Election/){:target="_blank"}.  
+
+A few example questions to answer with sentiment analysis and topic modelling: 
 
 - How do the majority of tweets collected perceive Trump in total versus for each state? Does the perception change from June 2020 to October 2020?
 - How do the majority of tweets collected perceive Biden in total versus for each state? Does the perception change from June 2020 to October 2020?
@@ -30,17 +27,15 @@ A few example questions to answer with Sentiment analysis and Topic Modelling:
 - How do the majority of tweets collected perceive voter fraud in total versus for each state? 
 - How do tweets with a large following perceive certain topics?
 
-The rest of this blog post, I will describe the methods I have taken for applying Sentiment analysis to the tweet data on the 2020 United States presidential election. 
-
 ### Methods
 
 #### 1) Rule Based
-1) Text Blob
-2) Vader Sentiment Analysis
+- Text Blob
+- Vader Sentiment Analysis
 
 #### 2) Machine Learning
-1) SVM
-2) Naïve Bayes
+- SVM
+- Naïve Bayes
 
 ### Step 1: Text Blob
 
