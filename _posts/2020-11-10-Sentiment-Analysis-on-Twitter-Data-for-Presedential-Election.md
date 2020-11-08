@@ -6,23 +6,19 @@ title: Sentiment Analysis on Twitter Data from the 2020 Presedential Election
 
 # Part 2: Sentiment Analysis 
 
-### Introduction
+We create sentences to describe what is happening around us, and to share our opinions. Text is a form of creating understanding and explanation about the world around us.
 
-![Alternate image text](/images/twitter/sentiment_def.png)
+With an abundance of social media, news articles, and opinion pieces available on the web, Data Scientists are able to utilize these resources in order to develop recommender systems, [predict text](https://www.newyorker.com/magazine/2019/10/14/can-a-machine-learn-to-write-for-the-new-yorker){:target="_blank"}, identify sentiment and major topics, and even predict outcomes such as the [2020 United States Election](https://www.independent.co.uk/news/world/americas/us-election-2020/2020-election-whos-going-to-win-ai-trump-biden-results-outcome-odds-b1374290.html){:target="_blank"}. In order for millions of text data to be processed efficiently, we use a process called Natural Language Processing.
 
-According to google dictionary **Sentiment** is defined as "a view of or attitude toward a situation or event; an opinion".  We create sentences to describe what is happening around us, and to share our opinions. *Text is a form of creating understanding and explanation about the world around us. *
-
-With an abundance of social media, new articles, and opinion pieces available on the web, Data Scientists are able to utilize these resources to develop recommender systems, [predict text](https://www.newyorker.com/magazine/2019/10/14/can-a-machine-learn-to-write-for-the-new-yorker){:target="_blank"}, identify trends and sentiment toward those trends, and even try to predict outcomes such as the [2020 United States Election](https://www.independent.co.uk/news/world/americas/us-election-2020/2020-election-whos-going-to-win-ai-trump-biden-results-outcome-odds-b1374290.html){:target="_blank"}. In order for millions of text data to be processed efficiently, we use a process called Natural Language Processing.
-
-#### Definition
 Natural Language Processing is part of the machine learning/AI pipeline, where a variety of tasks are applied in in order to process the text data and format it in a way so that the computer can read the data and perform analysis packages.
 
 ![Alternate image text](/images/twitter/linguistics.png)
 
 I love this figure which is taken from the textbook "Practical Natural Language Processing: A Comprehensive Guide to Building Real-World NLP Systems" by Vajjala, S. et al. 2020. The image shows the building blocks of a language and in result how NLP was developed in order to process text data.
 
-Sentiment Analysis specifically is a Natural Language Process in order to detect and analyze opinions within a text or document. 
+**Sentiment Analysis** specifically is a Natural Language Process in order to detect and analyze opinions or attitude within a text or document.
 
+### Purpose
 For my project, I am collecting Twitter Data on the US 2020 Presidential Election in order to apply sentiment analysis and topic modelling to the tweet data. To read how I collected the tweets, you can read my previous [post](https://avielrs.github.io/Collecting-Twitter-Data-on-the-US-Presidential-Election/){:target="_blank"}. The goal is to determine the frequency of trending topics how they were perceived throughout the campaign. 
 
 A few example questions to answer with Sentiment analysis and Topic Modelling: 
@@ -36,7 +32,7 @@ A few example questions to answer with Sentiment analysis and Topic Modelling:
 
 The rest of this blog post, I will describe the methods I have taken for applying Sentiment analysis to the tweet data on the 2020 United States presidential election. 
 
-## Sentiment Analysis Methods
+### Methods
 
 #### 1) Rule Based
 1) Text Blob
@@ -197,7 +193,7 @@ plt.tight_layout(pad = 0)
   
 plt.show()
 
-![Alternate image text](/images/twitter/word_cloud_august_2.png)
+![Alternate image text](/images/twitter/word_cloud_august_1.png)
 
 
 #### References
