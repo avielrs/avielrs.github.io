@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sentiment Analysis on Twitter Data
+title: Sentiment Analysis on Twitter Data from the 2020 Presedential Election
 ---
 ![Alternate image text](/images/twitter/emojis.jpg)
 
