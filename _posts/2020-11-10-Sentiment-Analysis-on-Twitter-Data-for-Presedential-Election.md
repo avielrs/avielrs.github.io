@@ -195,7 +195,7 @@ plt.tight_layout(pad = 0)
   
 plt.show()
 
-![Alternate image text](/images/twitter/text_blob_august_sentiment_2.png)
+![Alternate image text](/images/twitter/word_cloud_august_2.png)
 
 
 #### References
