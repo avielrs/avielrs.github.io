@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rule-Based Sentiment Analysis on Twitter Data From The 2020 Presedential Election
+title: Rule-Based Sentiment Analysis on Twitter Data
 ---
 ![Alternate image text](/images/twitter/social_media_sen.jpg)
 
