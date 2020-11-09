@@ -6,10 +6,12 @@ title: Rule-Based Sentiment Analysis on Twitter Data
 
 # Part 2: Sentiment Analysis 
 
-With an abundance of social media, news articles, and opinion pieces available on the web, Data Scientists are able to utilize these resources in order to extract millions of text data. In this project, I am specifically looking at tweets from the 2020 United States Presedential Election. To read how I collected the tweets, check out my previous [post](https://avielrs.github.io/Collecting-Twitter-Data-on-the-US-Presidential-Election/){:target="_blank"}! Tweet data is very advantagous because people use twitter to express opninions and engage with others publicly. From twitter, Data Scientists are able to find key words used amoungst tweets, analyze geographic differences in opinions about topics, detect bots on twitter, analyze user engagment for specific topics, and create a timeline of events from tweet data (Chen et al., 2020). Tweet data can even be utilized to make predictions such as the [2020 US Presedential Elections](https://www.independent.co.uk/news/world/americas/us-election-2020/2020-election-whos-going-to-win-ai-trump-biden-results-outcome-odds-b1374290.html){}:target="_blank"}! Pretty amazing, right? We as well know that social media influences opinions. I have personally experienced this myself by following people who tend to have a certain view point who then shares resources, links, and more education on that view which then makes my opninion even stronger towards that topic. The spread and influence of opinions on social media can be positive and negatively impacted. A rise in hate groups. 
+With an abundance of social media, news articles, and opinion pieces available on the web, Data Scientists are able to utilize these resources in order to extract millions of text data. In this project, I am specifically looking at tweets from the 2020 United States Presidential Election. To read how I collected these tweets, please check out my previous [post](https://avielrs.github.io/Collecting-Twitter-Data-on-the-US-Presidential-Election/){:target="_blank"}! Tweet data is very advantageous because people use twitter to express opinions and engage with others publicly. From twitter, Data Scientists are able to find key words amongst tweets, analyze geographic differences in opinions about topics, detect bots on twitter, analyze user engagement for specific topics, and create a timeline of events from tweet data (Chen et al., 2020). As well, tweet data can even be utilized to make predictions such as the [2020 US Presidential Elections](https://www.independent.co.uk/news/world/americas/us-election-2020/2020-election-whos-going-to-win-ai-trump-biden-results-outcome-odds-b1374290.html){}:target="_blank"}! Pretty amazing, right? 
+
+We as well know that social media influences opinions. I have personally experienced this myself by following people who tend to have a certain viewpoint who then shares resources, links, and more education on that view. In result, my opinion grows stronger towards that topic. The spread and influence of opinions on social media can positively and negatively impact society. For example, the rise of hate groups and terrorist organizations is increasingly spreading with the help of social media. These dangerous organizations utilize social media platforms to recruit, radicalize vulnerable persons in the U.S., propagate its ideology, and create false personas on social media to discredit U.S. individuals and institutions. [(reference)]( https://www.fbi.gov/news/testimony/worldwide-threats-to-the-homeland-091720) {:target="_blank"}. This is why analyzing and understanding the intricacies of social media is important to continue to research as it will provide clarity in how, where, and why social media influences opinions.
 
 ## Purpose
-As we can see understanding the intricies of tweet data is greatly beneifical in a variety of ways. For this project, I aam focusing on the context of popular topics from the collected data regarding the 2020 US Presedential election from June 2020 - November 2020, by applying sentiment analysis and topic modelling. **Sentiment Analysis** specifically is a Natural Language Process in order to detect and analyze opinions or attitude within tweets. 
+For this project, I am focusing on the context of popular topics from the collected data regarding the 2020 US Presidential election from June 2020 - November 2020, by applying sentiment analysis and topic modelling. **Sentiment Analysis** specifically is a Natural Language Process in order to detect and analyze opinions or attitude within tweets. 
 
 A few example questions to answer with sentiment analysis and topic modelling: 
 
@@ -27,7 +29,7 @@ Describe what it is
 - Text Blob
 - Vader Sentiment Analysis
 
-#### Machine Learaning
+#### Machine Learning
  Describe what it is
 - SVM
 - Naive Bayes Classifier 
@@ -50,7 +52,7 @@ Describe what it is
 - Add new models or languages through extensions
 - WordNet integration
 
-From TextBlob, the sentiment returns a polarity and subjectivity score. The polarity score output is a float between the range [-1.0, 1.0], where -1.0 is 100% negativea and 1.0 is 100% positive. The subjectivity is a float within the range [0.0, 1.0] where 1.0 is very subjective (influence by a personal feeling or opinion) and 0.0 is very objective (not influenced by personal feelings or opinion).
+From TextBlob, the sentiment returns a polarity and subjectivity score. The polarity score output is a float between the range [-1.0, 1.0], where -1.0 is 100% negative and 1.0 is 100% positive. The subjectivity is a float within the range [0.0, 1.0] where 1.0 is very subjective (influence by a personal feeling or opinion) and 0.0 is very objective (not influenced by personal feelings or opinion).
 
 #### Step 1: Import libraries
 ``` python
@@ -60,16 +62,16 @@ from textblob import TextBlob
 #### Step 2: Clean text data 
 
 Let’s take a look at a tweet example from the dataset: 
-	  
+      
 ![Alternate image text](/images/twitter/original_tweet.png)
 
 The first thing to note from this tweet is that the subjectivity is positive and will probably be ranked near 1. The other thing to note is that this is a retweet (RT) from tweet user Kayleigh McEnany. 
 
 Things to note about the text:
-1.	There are breaks (newlines) in this tweet
-2.	Punctuation: ‘@’,’!’, ‘…’, ‘:’, ‘/’, ‘.’
-3.	Html link is present
-4.	Arrow Emoji 
+1.  There are breaks (newlines) in this tweet
+2.  Punctuation: ‘@’,’!’, ‘…’, ‘:’, ‘/’, ‘.’
+3.  Html link is present
+4.  Arrow Emoji 
 
 In order to improve the accuracy when processing the tweet data with TextBlob, I first clean the text data by changing uppercase letters to lowercase, removing RT and the @username associated with the RT (retweet), remove hyperlinks, remove punctuation and emojis, remove consecutive spaces, remove breaks, remove extra spaces at the beginning and end of the tweet. 
 
@@ -79,7 +81,7 @@ In order to improve the accuracy when processing the tweet data with TextBlob, I
 
 def cleanTxt(text):
         
-    text = re.sub('RT[\s]@[A-Za-z0–9]+', '', text) # Removing RT and the the account retweeted from
+    text = re.sub('RT[\s]@[A-Za-z0–9]+', '', text) # Removing RT and the account retweeted from
     text = re.sub('https?:\/\/\S+', '', text) # Removing hyperlink
     text = re.sub('https', '', text)
     text = re.sub('@', '', text)
@@ -88,7 +90,6 @@ def cleanTxt(text):
     text = re.sub(r'\s*<br\s*/?>\s*', '\n', text)  # newline after a <br>
     text = re.sub(r'^\s+', '', text)  # remove spaces at the beginning
     text = re.sub(r'\s+$', '', text)  # remove spaces at the end
-
 
     return text
 
@@ -148,7 +149,7 @@ With Punctuation
 Subjectivity =  0.43
 Polarity = 0.47
 Analysis: Positive
-Both are subjective, however the Polarity with the punctation is less positive then the polarity without the punctuation. One thing to note, is that while the TextBlob analysis rated the tweet as subjective. It is rated as 0.45 between (0-1). Because of the explaination marks and 
+Both are subjective, however the Polarity with the punctation is less positive then the polarity without the punctuation. One thing to note, is that while the TextBlob analysis rated the tweet as subjective. It is rated as 0.45 between (0-1). Because of the explanation marks and 
 
 ## Vader Analysis
 ![Alternate image text](/images/twitter/social media sign.jpg)
@@ -190,7 +191,6 @@ df['comp_score'] = df['compound'].apply(lambda c: 'pos' if c >=0.05 else ('neutr
 ```
 
 
-
 ### Word Cloud Fun
 
 ``` python
@@ -202,7 +202,6 @@ df['comp_score'] = df['compound'].apply(lambda c: 'pos' if c >=0.05 else ('neutr
 
     # Stop words from spacy
     all_stopwords = nlp.Defaults.stop_words
-
 
     comment_words = '' 
     
@@ -238,7 +237,6 @@ df['comp_score'] = df['compound'].apply(lambda c: 'pos' if c >=0.05 else ('neutr
 ```
 ![Alternate image text](/images/twitter/word_cloud_august_1.png)
 
-
 #### References
 
 Chen E, Lerman K, Ferrara E
@@ -250,3 +248,7 @@ PMID: 32427106
 PMCID: 7265654
 
 Hutto, C.J. & Gilbert, E.E. (2014). VADER: A Parsimonious Rule-based Model for Sentiment Analysis of Social Media Text. Eighth International Conference on Weblogs and Social Media (ICWSM-14). Ann Arbor, MI, June 2014.
+
+Wray, Christopher. “Worldwide Threats to the Homeland.” Federal Bureau of Investigation, 17 Sept. 2020, www.fbi.gov/news/testimony/worldwide-threats-to-the-homeland-091720. 
+
+
