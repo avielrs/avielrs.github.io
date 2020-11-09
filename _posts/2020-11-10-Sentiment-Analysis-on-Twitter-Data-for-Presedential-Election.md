@@ -154,11 +154,16 @@ Let's take a quick look at the other tweets, does the score make sense?
 
 ![Alternate image text](/images/twitter/text_blob_hist.png)
 
+
+### Step 7: Quick Analysis on comparing sentiment in relation to the 2020 Presendential Election within August
 ![Alternate image text](/images/twitter/text_blob_august_sentiment.png)
 
 ## Vader Sentiment Analysis
 ![Alternate image text](/images/twitter/social media sign.jpg)
 
+
+
+Notes: Because TextBlob does not handle the text as welln as I would like because of the complexities of social media, I will use Vader Sentiment Analysis which is an amaz
 [Vader Sentiment Analysis](https://github.com/cjhutto/vaderSentiment){:target="_blank"} is a lexicon rule-based sentiment analysis tool that was specifically developed for social media text. Vader Sentiment accounts for speed and performance which is important for large datasets such as thousands or millions of tweets.
 
 Score is computed by summing the valence scores of each word in the lexicon, adjusted according to the rules, and then normalized to be between -1 (most extreme negative) and +1 (most extreme positive).
