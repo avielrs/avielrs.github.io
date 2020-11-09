@@ -64,7 +64,7 @@ from textblob import TextBlob
 
 Let’s take a look at a tweet example from the dataset: 
 	  
-![Alternate image text](/images/twitter/tweet_example_1.png)
+![Alternate image text](/images/twitter/original_tweet.png)
 
 The first thing to note from this tweet is that the subjectivity is positive and will probably be ranked near 1. The other thing to note is that this is a retweet (RT) from tweet user Kayleigh McEnany. 
 
@@ -105,7 +105,7 @@ for i in np.arange(0, len(Text), 1):
 ```
 
 After cleaning the text, the tweet now looks like this:
-![Alternate image text](/images/twitter/clean_text.png)
+![Alternate image text](/images/twitter/clean_texts.png)
 
 #### Step 3: Create a function to get the subjectivity and polarity
 ``` python
