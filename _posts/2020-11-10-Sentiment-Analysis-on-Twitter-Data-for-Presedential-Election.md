@@ -11,7 +11,7 @@ With an abundance of social media, news articles, and opinion pieces available o
 We as well know that social media influences opinions. I have personally experienced this myself by following people who tend to have a certain viewpoint who then shares resources, links, and more education on that view. In result, my opinion grows stronger towards that topic. The spread and influence of opinions on social media can positively and negatively impact society. An example of negative impact is the rise of hate groups and terrorist organizations through the help of social media. [According to Christopher Way, Director of FBI](https://www.fbi.gov/news/testimony/worldwide-threats-to-the-homeland-091720){:target="_blank"}, these dangerous organizations utilize social media platforms to recruit, radicalize vulnerable persons in the U.S., propagate its ideology, and create false personas on social media to discredit U.S. individuals and institutions. This is why analyzing and understanding the intricacies of social media is so important.
 
 ## Purpose
-For my project, I am focusing on the context of popular topics from collected tweet data regarding the 2020 US Presidential election. The goal is to apply sentiment analysis and topic modelling to these tweets. **Sentiment Analysis** specifically is a Natural Language Process in order to detect and analyze opinions or attitude within tweets. 
+For my project, I am focusing on the context of popular topics from collecting tweet data regarding the 2020 US Presidential election. The goal of this is to apply sentiment analysis and topic modelling to these tweets. **Sentiment Analysis** specifically is a Natural Language Process in order to detect and analyze opinions or attitude within tweets. 
 
 **A few questions to answer with sentiment analysis and topic modelling:**
 
@@ -25,12 +25,14 @@ For my project, I am focusing on the context of popular topics from collected tw
 ### Methods
 
 #### Rule Based
-Describe what it is
-- Text Blob
+Rule-based sentiment analysis calculates a sentiment score on a text based off implemnted rules such as if negations are present, or specific words are present. For example, in Vader Sentiment Analysis on on a scale from "[–4] Extremely Negative" to "[4] Extremely Positive", th eword "okay" has a positive valence of 0.9, "good is 1.9, and great is 3.1, whereas 'horrible is -2.5.
+
+- TextBlob
 - Vader Sentiment Analysis
 
 #### Machine Learning
- Describe what it is
+Utilizng machine learning to identify the sentiment is beneficial if you are able to train a dataset with an independent variable as score, ratining, or identified sentiment. For example, machine learning to identify a positive, negative, or neatural sentance can be utilized in Yelp reviews, AirBNB reviews, and moview reviews. One way to be able to apply machine learning to identidfy the sentiment of tweet data, is to create a train dataset by identifying a sample of tweets as positive, negative, and neatural. The problem with this is that because we are able to collect millions of tweets. Identifying the sentiment for ven 1000s tweets by hand is probaly not enough for training a model on tweet data.
+
 - SVM
 - Naive Bayes Classifier 
 
@@ -65,7 +67,7 @@ Let’s take a look at a tweet example from the dataset:
       
 ![Alternate image text](/images/twitter/original_tweet.png)
 
-The first thing to note from this tweet is that the subjectivity is positive and will probably be ranked near 1. The other thing to note is that this is a retweet (RT) from tweet user Kayleigh McEnany. 
+The first thing to note from this tweet is that the subjectivity from the viewpoint of the twitter account user is positive. The other thing to note is that this is a retweet (RT) from tweet user Kayleigh McEnany. 
 
 Things to note about the text:
 1.  There are breaks (newlines) in this tweet
@@ -121,7 +123,7 @@ df['Subjectivity'] = df['Full_Text'].apply(getSubjectivity)
 df['Polarity'] = df['Full_Text'].apply(getPolarity)
 ```
 
-#### Step 5: Create a function to compute negative (-1), neutral (0) and positive (+1) analysis
+#### Step 5: Create a function to calculate negative (Polarity < 0), neutral (Polarity = 0), and positive (Polareity > 0) analysis
 ``` python
 
 def getAnalysis(score):
