@@ -35,7 +35,7 @@ A few example questions to answer with sentiment analysis and topic modelling:
 - SVM
 - Naive Bayes Classifier 
 
-### Text Blob
+## Text Blob
 
 [Text Blob](https://textblob.readthedocs.io/en/dev/){:target="_blank"} is a text processing package that works with part-of-speech tagging, noun phrase extraction, sentiment analysis, classification, translation, and more.
 
@@ -153,7 +153,7 @@ Polarity = 0.47
 Analysis: Positive
 Both are subjective, however the Polarity with the punctation is less positive then the polarity without the punctuation. One thing to note, is that while the TextBlob analysis rated the tweet as subjective. It is rated as 0.45 between (0-1). Because of the explaination marks and 
 
-### Vader Analysis
+## Vader Analysis
 ![Alternate image text](/images/twitter/social media sign.jpg)
 
 [Vader Sentiment Analysis](https://github.com/cjhutto/vaderSentiment){:target="_blank"} is a lexicon rule-based sentiment analysis tool that was specifically developed for social media text. Vader Sentiment accounts for speed and performance which is important for large datasets such as thousands or millions of tweets.
