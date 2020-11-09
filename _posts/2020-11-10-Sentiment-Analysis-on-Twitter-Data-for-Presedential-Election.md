@@ -26,12 +26,12 @@ A few example questions to answer with sentiment analysis and topic modelling:
 ### Methods
 
 #### Rule Based
-# Describe what it is
+Describe what it is
 - Text Blob
 - Vader Sentiment Analysis
 
 #### Machine Learaning
-# Describe what it is
+ Describe what it is
 - SVM
 - Naive Bayes Classifier 
 
