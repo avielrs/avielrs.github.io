@@ -55,7 +55,7 @@ A few example questions to answer with sentiment analysis and topic modelling:
 
 From TextBlob, the sentiment returns a polarity and subjectivity score. The polarity score output is a float between the range [-1.0, 1.0], where -1.0 is 100% negativea and 1.0 is 100% positive. The subjectivity is a float within the range [0.0, 1.0] where 1.0 is very subjective (influence by a personal feeling or opinion) and 0.0 is very objective (not influenced by personal feelings or opinion).
 
-#### Step 1: Import libraries**
+#### Step 1: Import libraries
 ``` python
 from textblob import TextBlob
 ```
@@ -104,9 +104,8 @@ for i in np.arange(0, len(Text), 1):
 
 ```
 
-After cleaning the text data, the tweet looks likes this: <br>
-overflow crowd for president realdonaldtrump in new hampshire we are going to win via abatemedia
-
+After cleaning the text, the tweet now looks like this:
+![Alternate image text](/images/twitter/clean_text.png)
 
 #### Step 3: Create a function to get the subjectivity and polarity
 ``` python
@@ -155,6 +154,7 @@ Analysis: Positive
 Both are subjective, however the Polarity with the punctation is less positive then the polarity without the punctuation. One thing to note, is that while the TextBlob analysis rated the tweet as subjective. It is rated as 0.45 between (0-1). Because of the explaination marks and 
 
 ### Vader Analysis
+![Alternate image text](/images/twitter/social media sign.jpg)
 
 Vader Sentiment Analysis is a lexicon rule-based sentiment analysis tool that was specifically developed for social media text. Vader Sentiment accounts for speed and performance which is important for large datasets such as thousands or millions of tweets.
 
