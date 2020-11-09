@@ -148,6 +148,12 @@ df['Analysis'] = df['Polarity'].apply(getAnalysis)
 
 ![Alternate image text](/images/twitter/Compare_TextBlob_Clean.png)
 
+Just from peaking into the first 10 tweets in the dataset, there is little difference between the clean and unclean dataset. The analysis has not changed, and the subjectivity has barely changed as well. The only tweet that shows a significant difference in Polarity score is the first tweet (row 0). This makes sense because the first tweet as discussed before contained a lot of extra unusual syntax to handle such as an emoji, links, and new lines. The good news is that after cleaning the text data, the polarity score increased for the first tweet. From uncleaned the polarity score is 0.17 which means it is barely positve, after cleaning the text is changes to 0.47 which is much more positive. Having said that, I still think the polarity score should be higher given that there multiple explaination marks and capitlizations indicating excitiment in the tone. 
+
+Let's take a quick look at the other tweets, does the score make sense? 
+
+![Alternate image text](/images/twitter/text_blob_hist.png)
+
 ![Alternate image text](/images/twitter/text_blob_august_sentiment.png)
 
 ## Vader Sentiment Analysis
