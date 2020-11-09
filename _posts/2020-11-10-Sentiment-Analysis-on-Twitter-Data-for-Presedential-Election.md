@@ -146,18 +146,7 @@ df['Analysis'] = df['Polarity'].apply(getAnalysis)
 
 ### Step 6: Compare the sentiment score before cleaning the data with the score after cleaning the data:
 
-
-Without Punctation
-Subjectivity: 0.45
-Polarity: 0.16
-Analysis: Positive
-
-With Punctuation
-Subjectivity =  0.43
-Polarity = 0.47
-Analysis: Positive
-Both are subjective, however the Polarity with the punctation is less positive then the polarity without the punctuation. One thing to note, is that while the TextBlob analysis rated the tweet as subjective. It is rated as 0.45 between (0-1). Because of the explanation marks and 
-
+![Alternate image text](/images/twitter/Compare_TextBlob_Clean.png)
 
 ![Alternate image text](/images/twitter/text_blob_august_sentiment.png)
 
