@@ -8,12 +8,6 @@ title: Sentiment Analysis on Twitter Data From The 2020 Presedential Election
 
 Text creates understanding and explanation about the world around us and we can use text to express how we feel and share an opinion towards a subject. With an abundance of social media, news articles, and opinion pieces available on the web, Data Scientists are able to utilize these resources in order to extract millions of text data and analyze trending topics, sentiment towards the topics, create a timeline of events, and more with the use of Natural Language Processing.
 
-Natural Language Processing is part of the machine learning/AI pipeline, where a variety of tasks are applied in in order to process the text data and format it in a way so that the computer can read the data and perform analysis. 
-
-![Alternate image text](/images/twitter/linguistics.png)
-
-I love this figure which is taken from the textbook "Practical Natural Language Processing: A Comprehensive Guide to Building Real-World NLP Systems" by Vajjala, S. et al. 2020. The image shows the building blocks of a language and in result how NLP is utilized in order to process text data. Within the NLP packages, we can identify meaning through topic modelling and sentiment analysis. We can as well identify syntax through parsing words, morhpemes and lexemes through utilizing natural language tools such as tokenizing, word embeddings, and part of speach tagging, and identify speech and sounds from NLP applications such as speech to text, speaker identification, and text to speech. All of these NLP tools are important to think about when developing machine learning and AI models.
-
 ### Purpose
 
 For this project, I aam focusing on the context from the building blocks of languages in order to apply sentiment analysis and topic modelling on tweet data. **Sentiment Analysis** specifically is a Natural Language Process in order to detect and analyze opinions or attitude within tweets. 
@@ -80,9 +74,10 @@ Things to note about the text:
 
 In order to improve the accuracy when processing the tweet data with TextBlob, I first clean the text data by changing uppercase letters to lowercase, removing RT and the @username associated with the RT (retweet), remove hyperlinks, remove punctuation and emojis, remove consecutive spaces, remove breaks, remove extra spaces at the beginning and end of the tweet. 
 
-#### Use Regex to clean the data
+#### Use Regex to clean the data:
 
 ``` python
+
 def cleanTxt(text):
         
     text = re.sub('RT[\s]@[A-Za-z0–9]+', '', text) # Removing RT and the the account retweeted from
@@ -98,7 +93,7 @@ def cleanTxt(text):
 
     return text
 
-	# Clean the tweets
+# Clean text
 Text = df['full_text'].apply(cleanTxt)
 
 # Add lower cases
