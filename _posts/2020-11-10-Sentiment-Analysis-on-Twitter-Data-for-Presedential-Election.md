@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Sentiment Analysis on Twitter Data From The 2020 Presedential Election
+title: Rule-Based Sentiment Analysis on Twitter Data From The 2020 Presedential Election
 ---
-![Alternate image text](/images/twitter/emojis.jpg)
+![Alternate image text](/images/twitter/social_media_sen.jpg)
 
 # Part 2: Sentiment Analysis 
 
@@ -25,13 +25,15 @@ A few example questions to answer with sentiment analysis and topic modelling:
 
 ### Methods
 
-#### 1) Rule Based
+#### Rule Based
+# Describe what it is
 - Text Blob
 - Vader Sentiment Analysis
 
-#### 2) Machine Learning
+#### Machine Learaning
+# Describe what it is
 - SVM
-- Naïve Bayes
+- Naive Bayes Classifier 
 
 ### Text Blob
 
@@ -190,8 +192,11 @@ df['compound'] = df['scores'].apply(lambda score_dict: score_dict['compound'])
 df['comp_score'] = df['compound'].apply(lambda c: 'pos' if c >=0.05 else ('neutral' if (c < 0.05 and c > -0.05) else 'neg'))
 ```
 
-Word Cloud
 
+
+### Word Cloud Fun
+
+``` python
     #remove stop words
     import spacy
 
@@ -233,6 +238,7 @@ Word Cloud
     
     plt.show()
 
+```
 ![Alternate image text](/images/twitter/word_cloud_august_1.png)
 
 
