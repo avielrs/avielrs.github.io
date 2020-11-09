@@ -11,3 +11,8 @@ Natural Language Processing is part of the machine learning/AI pipeline, where a
 ![Alternate image text](/images/twitter/linguistics.png)
 
 I love this figure which is taken from the textbook "Practical Natural Language Processing: A Comprehensive Guide to Building Real-World NLP Systems" by Vajjala, S. et al. 2020. The image shows the building blocks of a language and in result how NLP is utilized in order to process text data. Within the NLP packages, we can identify meaning through topic modelling and sentiment analysis. We can as well identify syntax through parsing words, morhpemes and lexemes through utilizing natural language tools such as tokenizing, word embeddings, and part of speach tagging, and identify speech and sounds from NLP applications such as speech to text, speaker identification, and text to speech. All of these NLP tools are important to think about when developing machine learning and AI models.
+
+Text creates understanding and explanation about the world around us and we can use text to express how we feel and share an opinion towards a subject. 
+
+References:
+[B., Sowmya V., et al. Practical Natural Language Processing: a Comprehensive Guide to Building Real-World NLP Systems. O'Reilly Media, 2020.](https://www.oreilly.com/library/view/practical-natural-language/9781492054047/){:target="_blank"} 

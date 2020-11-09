@@ -6,13 +6,10 @@ title: Rule-Based Sentiment Analysis on Twitter Data
 
 # Part 2: Sentiment Analysis 
 
-Text creates understanding and explanation about the world around us and we can use text to express how we feel and share an opinion towards a subject. With an abundance of social media, news articles, and opinion pieces available on the web, Data Scientists are able to utilize these resources in order to extract millions of text data and analyze trending topics, sentiment towards the topics, create a timeline of events, and more with the use of Natural Language Processing.
+With an abundance of social media, news articles, and opinion pieces available on the web, Data Scientists are able to utilize these resources in order to extract millions of text data. In this project, I am specifically looking at tweets from the 2020 United States Presedential Election. To read how I collected the tweets, check out my previous [post](https://avielrs.github.io/Collecting-Twitter-Data-on-the-US-Presidential-Election/){:target="_blank"}! Tweet data is very advantagous because people use twitter to express opninions and engage with others publicly. From twitter, Data Scientists are able to find key words used amoungst tweets, analyze geographic differences in opinions about topics, detect bots on twitter, analyze user engagment for specific topics, and create a timeline of events from tweet data (Chen et al., 2020). Tweet data can even be utilized to make predictions such as the [2020 US Presedential Elections](https://www.independent.co.uk/news/world/americas/us-election-2020/2020-election-whos-going-to-win-ai-trump-biden-results-outcome-odds-b1374290.html){}:target="_blank"}! Pretty amazing, right? We as well know that social media influences opinions. I have personally experienced this myself by following people who tend to have a certain view point who then shares resources, links, and more education on that view which then makes my opninion even stronger towards that topic. The spread and influence of opinions on social media can be positive and negatively impacted. A rise in hate groups. 
 
-### Purpose
-
-For this project, I aam focusing on the context from the building blocks of languages in order to apply sentiment analysis and topic modelling on tweet data. **Sentiment Analysis** specifically is a Natural Language Process in order to detect and analyze opinions or attitude within tweets. 
-
-To read how I collected the tweets, you can read my previous [post](https://avielrs.github.io/Collecting-Twitter-Data-on-the-US-Presidential-Election/){:target="_blank"}.  
+## Purpose
+As we can see understanding the intricies of tweet data is greatly beneifical in a variety of ways. For this project, I aam focusing on the context of popular topics from the collected data regarding the 2020 US Presedential election from June 2020 - November 2020, by applying sentiment analysis and topic modelling. **Sentiment Analysis** specifically is a Natural Language Process in order to detect and analyze opinions or attitude within tweets. 
 
 A few example questions to answer with sentiment analysis and topic modelling: 
 
@@ -244,6 +241,12 @@ df['comp_score'] = df['compound'].apply(lambda c: 'pos' if c >=0.05 else ('neutr
 
 #### References
 
-[B., Sowmya V., et al. Practical Natural Language Processing: a Comprehensive Guide to Building Real-World NLP Systems. O'Reilly Media, 2020.](https://www.oreilly.com/library/view/practical-natural-language/9781492054047/){:target="_blank"} 
+Chen E, Lerman K, Ferrara E
+Tracking Social Media Discourse About the COVID-19 Pandemic: Development of a Public Coronavirus Twitter Data Set
+JMIR Public Health Surveill 2020;6(2):e19273
+URL: https://publichealth.jmir.org/2020/2/e19273
+DOI: 10.2196/19273
+PMID: 32427106
+PMCID: 7265654
 
 Hutto, C.J. & Gilbert, E.E. (2014). VADER: A Parsimonious Rule-based Model for Sentiment Analysis of Social Media Text. Eighth International Conference on Weblogs and Social Media (ICWSM-14). Ann Arbor, MI, June 2014.
