@@ -6,9 +6,16 @@ title: Rule-Based Sentiment Analysis on Twitter Data
 
 # Part 2: Sentiment Analysis 
 
-With an abundance of social media, news articles, and opinion pieces available on the web, Data Scientists are able to utilize these resources in order to extract millions of text data. In this project, I am specifically looking at tweets from the 2020 United States Presidential Election. To read how I collected these tweets, please check out my previous [post!](https://avielrs.github.io/Collecting-Twitter-Data-on-the-US-Presidential-Election/){:target="_blank"} Tweet data is advantageous because people use twitter to express opinions and engage with others publicly. From twitter, Data Scientists are able to find key words amongst tweets, analyze geographic differences in opinions about topics, detect bots on twitter, analyze user engagement for specific topics, and create a timeline of events from tweet data (Chen et al., 2020). As well, tweet data can even be utilized to make predictions such as the [2020 US Presidential Elections](https://www.independent.co.uk/news/world/americas/us-election-2020/2020-election-whos-going-to-win-ai-trump-biden-results-outcome-odds-b1374290.html){:target="_blank"}! Pretty amazing, right? 
+## Why the heck would someone care about social media data?
+With an abundance of social media, news articles, and opinion pieces available on the web, Data Scientists are able to utilize these resources in order to extract millions of text data. In this project, I am specifically looking at tweets from the 2020 United States Presidential Election. To read how I collected these tweets, please check out my previous [post!](https://avielrs.github.io/Collecting-Twitter-Data-on-the-US-Presidential-Election/){:target="_blank"} 
 
-We as well know that social media influences opinions. I have personally experienced this myself by following people who tend to have a certain viewpoint who then shares resources, links, and more education on that view. In result, my opinion grows stronger towards that topic. The spread and influence of opinions on social media can positively and negatively impact society. An example of negative impact is the rise of hate groups and terrorist organizations through the help of social media. [According to Christopher Way, Director of FBI](https://www.fbi.gov/news/testimony/worldwide-threats-to-the-homeland-091720){:target="_blank"}, these dangerous organizations utilize social media platforms to recruit, radicalize vulnerable persons in the U.S., propagate its ideology, and create false personas on social media to discredit U.S. individuals and institutions. This is why analyzing and understanding the intricacies of social media is so important.
+Tweet data is advantageous because people use twitter to express opinions and engage with others publicly. From twitter, Data Scientists are able to find key words amongst tweets, analyze geographic differences in opinions about topics, detect bots on twitter, analyze user engagement for specific topics, and create a timeline of events from tweet data (Chen et al., 2020). As well, tweet data can even be utilized to make predictions such as the [2020 US Presidential Elections](https://www.independent.co.uk/news/world/americas/us-election-2020/2020-election-whos-going-to-win-ai-trump-biden-results-outcome-odds-b1374290.html){:target="_blank"}! Pretty amazing, right? 
+
+We know that social media influences opinions. I have personally experienced this myself by following people who tend to have a certain viewpoint who then shares resources, links, and more education on that view. In result, my opinion grows stronger towards that topic. The spread and influence of opinions on social media can positively and negatively impact society. An example of negative impact is the rise of hate groups and terrorist organizations through the help of social media. [According to Christopher Way, Director of FBI](https://www.fbi.gov/news/testimony/worldwide-threats-to-the-homeland-091720){:target="_blank"}, these dangerous organizations utilize social media platforms to recruit, radicalize vulnerable persons in the U.S., propagate its ideology, and create false personas on social media to discredit U.S. individuals and institutions. Thus analyzing and understanding the intricacies of social media can can help pinpoint how, where, and why radical groups spread on social media in order to mitigate the problem. 
+
+On the business spectrum, one might want to utilize tweet data to identify influencers, key markets, and trends in that market in order to implement successfull marketing campaignss. 
+
+Alright, at this point you are probabily thinking to yourself, "Wow! how cool is Twitter API data ?!"
 
 ## Purpose
 For my project, I am focusing on the context of popular topics from collecting tweet data regarding the 2020 US Presidential election. The goal of this is to apply sentiment analysis and topic modelling to these tweets. **Sentiment Analysis** specifically is a Natural Language Process in order to detect and analyze opinions or attitude within tweets. 
@@ -137,10 +144,8 @@ def getAnalysis(score):
 df['Analysis'] = df['Polarity'].apply(getAnalysis)
 ```
 
-We can also take a quick look
-![Alternate image text](/images/twitter/text_blob_august_sentiment.png)
+### Step 6: Compare the sentiment score before cleaning the data with the score after cleaning the data:
 
-#### Step 6: View Analysis and compare with non-cleaned text data
 
 Without Punctation
 Subjectivity: 0.45
@@ -153,7 +158,10 @@ Polarity = 0.47
 Analysis: Positive
 Both are subjective, however the Polarity with the punctation is less positive then the polarity without the punctuation. One thing to note, is that while the TextBlob analysis rated the tweet as subjective. It is rated as 0.45 between (0-1). Because of the explanation marks and 
 
-## Vader Analysis
+
+![Alternate image text](/images/twitter/text_blob_august_sentiment.png)
+
+## Vader Sentiment Analysis
 ![Alternate image text](/images/twitter/social media sign.jpg)
 
 [Vader Sentiment Analysis](https://github.com/cjhutto/vaderSentiment){:target="_blank"} is a lexicon rule-based sentiment analysis tool that was specifically developed for social media text. Vader Sentiment accounts for speed and performance which is important for large datasets such as thousands or millions of tweets.
