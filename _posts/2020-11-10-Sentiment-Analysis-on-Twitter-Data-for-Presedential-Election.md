@@ -1,22 +1,24 @@
 ---
 layout: post
-title: Sentiment Analysis towards Twitter Data from the 2020 Presedential Election
+title: Sentiment Analysis on Twitter Data From The 2020 Presedential Election
 ---
 ![Alternate image text](/images/twitter/emojis.jpg)
 
 # Part 2: Sentiment Analysis 
 
-Text is a form of creating understanding and explanation about the world around us. With an abundance of social media, news articles, and opinion pieces available on the web, Data Scientists are able to utilize these resources in order to develop recommender systems, predict text, identify sentiment and major topics within a document, and even predict outcomes such as the [2020 United States Election](https://www.independent.co.uk/news/world/americas/us-election-2020/2020-election-whos-going-to-win-ai-trump-biden-results-outcome-odds-b1374290.html){:target="_blank"}. In order for millions of text data to be processed efficiently, we use a process called Natural Language Processing.
+Text creates understanding and explanation about the world around us and we can use text to express how we feel and share an opinion towards a subject. With an abundance of social media, news articles, and opinion pieces available on the web, Data Scientists are able to utilize these resources in order to extract millions of text data and analyze trending topics, sentiment towards the topics, create a timeline of events, and more with the use of Natural Language Processing.
 
-Natural Language Processing is part of the machine learning/AI pipeline, where a variety of tasks are applied in in order to process the text data and format it in a way so that the computer can read the data and perform analysis.
+Natural Language Processing is part of the machine learning/AI pipeline, where a variety of tasks are applied in in order to process the text data and format it in a way so that the computer can read the data and perform analysis. 
 
 ![Alternate image text](/images/twitter/linguistics.png)
 
-I love this figure which is taken from the textbook "Practical Natural Language Processing: A Comprehensive Guide to Building Real-World NLP Systems" by Vajjala, S. et al. 2020. The image shows the building blocks of a language and in result how NLP is utilized in order to process text data. Within the NLP packages, we can identify meaning through topic modelling and sentiment analysis. We can identify syntax through parsing words. We can identfy morhpemes and lexemes through utilizing natural language tools called tokenizing, word embeddings, and part of speach tagging. We can as well identify speech and sounds through applying speech to text, speaker identification, and text to speech. 
+I love this figure which is taken from the textbook "Practical Natural Language Processing: A Comprehensive Guide to Building Real-World NLP Systems" by Vajjala, S. et al. 2020. The image shows the building blocks of a language and in result how NLP is utilized in order to process text data. Within the NLP packages, we can identify meaning through topic modelling and sentiment analysis. We can as well identify syntax through parsing words, morhpemes and lexemes through utilizing natural language tools such as tokenizing, word embeddings, and part of speach tagging, and identify speech and sounds from NLP applications such as speech to text, speaker identification, and text to speech. All of these NLP tools are important to think about when developing machine learning and AI models.
 
 ### Purpose
 
-For this project, I aam focusing on context from tweet data through sentiment analysis and topic modelling. **Sentiment Analysis** specifically is a Natural Language Process in order to detect and analyze opinions or attitude within a text or document. To read how I collected the tweets, you can read my previous [post](https://avielrs.github.io/Collecting-Twitter-Data-on-the-US-Presidential-Election/){:target="_blank"}.  
+For this project, I aam focusing on the context from the building blocks of languages in order to apply sentiment analysis and topic modelling on tweet data. **Sentiment Analysis** specifically is a Natural Language Process in order to detect and analyze opinions or attitude within a text or document. 
+
+To read how I collected the tweets, you can read my previous [post](https://avielrs.github.io/Collecting-Twitter-Data-on-the-US-Presidential-Election/){:target="_blank"}.  
 
 A few example questions to answer with sentiment analysis and topic modelling: 
 
@@ -37,7 +39,7 @@ A few example questions to answer with sentiment analysis and topic modelling:
 - SVM
 - Naïve Bayes
 
-### Step 1: Text Blob
+### Text Blob
 
 [Text Blob](https://textblob.readthedocs.io/en/dev/){:target="_blank"} is a text processing package that works with part-of-speech tagging, noun phrase extraction, sentiment analysis, classification, translation, and more.
 
@@ -56,48 +58,22 @@ A few example questions to answer with sentiment analysis and topic modelling:
 - WordNet integration
 
 
-I will use TextBlob specifically for Sentiment Analysis. The sentiment returns a polarity score as a float between the range [-1.0, 1.0]. Where 1.0 is very subjective (influence by a personal feeling or opinion), 0.0 is very objective (not influenced by personal feelings or opinion).
+From TextBlob, the sentiment returns a polarity and subjectivity score. The polarity score output is a float between the range [-1.0, 1.0], where -1.0 is 100% negativea and 1.0 is 100% positive. The subjectivity is a float within the range [0.0, 1.0] where 1.0 is very subjective (influence by a personal feeling or opinion) and 0.0 is very objective (not influenced by personal feelings or opinion).
 
-**Import libraries**
-```
+#### Step 1: Import libraries**
+``` python
 from textblob import TextBlob
 ```
 
-** Create a function to get the subjectivity and polarity**
-```
-def getSubjectivity(text):
-    return TextBlob(text).sentiment.subjectivity
+#### Step 2: Clean text data 
 
-def getPolarity(text):
-    return  TextBlob(text).sentiment.polarity
-
-
-# Create two new columns 'Subjectivity' & 'Polarity'
-df['Subjectivity'] = df['Full_Text'].apply(getSubjectivity)
-df['Polarity'] = df['Full_Text'].apply(getPolarity)
-```
-
-```
-# Create a function to compute negative (-1), neutral (0) and positive (+1) analysis
-def getAnalysis(score):
-    if score < 0:
-        return 'Negative'
-    elif score == 0:
-        return 'Neutral'
-    else:
-        return 'Positive'
-
-df['Analysis'] = df['Polarity'].apply(getAnalysis)
-```
-
-Let’s take a look at a tweet and see how the TextBlob identiefies the tweet: 
-
-	Print(print(df['full_text'][0])
-
+Let’s take a look at a tweet example from the dataset: 
 	  
 ![Alternate image text](/images/twitter/tweet_example_1.png)
 
-The first think to note from this tweet is that the subjectivity is positive and will probably be ranked near 1.0. The other thing to note is that this is retweet (RT) from tweet user Kayleigh McEnany. Next let’s look the setup of the tweet. Things to note about  this  tweet:
+The first thing to note from this tweet is that the subjectivity is positive and will probably be ranked near 1. The other thing to note is that this is a retweet (RT) from tweet user Kayleigh McEnany. 
+
+Things to note about the text:
 1.	There are breaks (newlines) in this tweet
 2.	Punctuation: ‘@’,’!’, ‘…’, ‘:’, ‘/’, ‘.’
 3.	Html link is present
@@ -105,6 +81,7 @@ The first think to note from this tweet is that the subjectivity is positive and
 
 In order to improve the accuracy when processing the tweet data with TextBlob, I first clean the text data by changing uppercase letters to lowercase, removing RT and the @username associated with the RT (retweet), remove hyperlinks, remove punctuation and emojis, remove consecutive spaces, remove breaks, remove extra spaces at the beginning and end of the tweet. 
 
+#### Step 
 
 def cleanTxt(text):
         
@@ -142,8 +119,77 @@ Subjectivity =  0.43
 Polarity = 0.47
 Analysis: Positive
 Both are subjective, however the Polarity with the punctation is less positive then the polarity without the punctuation. One thing to note, is that while the TextBlob analysis rated the tweet as subjective. It is rated as 0.45 between (0-1). Because of the explaination marks and 
+
+#### Step 3: Create a function to get the subjectivity and polarity
+``` python
+def getSubjectivity(text):
+    return TextBlob(text).sentiment.subjectivity
+
+def getPolarity(text):
+    return  TextBlob(text).sentiment.polarity
+```
+
+#### Step 4: Create two new columns 'Subjectivity' & 'Polarity'
+
+``` python
+df['Subjectivity'] = df['Full_Text'].apply(getSubjectivity)
+df['Polarity'] = df['Full_Text'].apply(getPolarity)
+```
+
+#### Step 5: Create a function to compute negative (-1), neutral (0) and positive (+1) analysis
+``` python
+
+def getAnalysis(score):
+    if score < 0:
+        return 'Negative'
+    elif score == 0:
+        return 'Neutral'
+    else:
+        return 'Positive'
+
+df['Analysis'] = df['Polarity'].apply(getAnalysis)
+```
+
+We can also take a quick look
 ![Alternate image text](/images/twitter/text_blob_august_sentiment.png)
 
+### Vader Analysis
+
+Vader Sentiment Analysis is a lexicon rule-based sentiment analysis tool that was specifically developed for social media text. Vader Sentiment accounts for speed and performance which is important for large datasets such as thousands or millions of tweets.
+
+Score is computed by summing the valence scores of each word in the lexicon, adjusted according to the rules, and then normalized to be between -1 (most extreme negative) and +1 (most extreme positive).
+
+Examples of typical use cases for sentiment analysis, including proper handling of sentences with:
+- typical negations (e.g., "not good")
+- use of contractions as negations (e.g., "wasn't very good")
+- conventional use of punctuation to signal increased sentiment intensity (e.g., "Good!!!")
+- conventional use of word-shape to signal emphasis (e.g., using ALL CAPS for words/phrases)
+- using degree modifiers to alter sentiment intensity (e.g., intensity boosters such as "very" and intensity dampeners such as "kind of")
+- understanding many sentiment-laden slang words (e.g., 'sux')
+- understanding many sentiment-laden slang words as modifiers such as 'uber' or 'friggin' or 'kinda'
+- understanding many sentiment-laden emoticons such as :) and :D
+- translating utf-8 encoded emojis such as 💘 and 💋 and 😁
+- understanding sentiment-laden initialisms and acronyms (for example: 'lol')
+
+The sentiment score of a text can be obtained by summing up the intensity of each word in the text.
+    positive sentiment: compound score >= 0.05
+    neutral sentiment: (compound score > -0.05) and (compound score < 0.05)
+    negative sentiment: compound score <= -0.05
+
+``` python
+import nltk
+nltk.download('vader_lexicon')
+
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
+sid = SentimentIntensityAnalyzer()
+```
+
+``` python
+df['scores'] = df['full_text'].apply(lambda review: sid.polarity_scores(review))
+df['compound'] = df['scores'].apply(lambda score_dict: score_dict['compound'])
+df['comp_score'] = df['compound'].apply(lambda c: 'pos' if c >=0.05 else ('neutral' if (c < 0.05 and c > -0.05) else 'neg'))
+```
 
 Word Cloud
 
@@ -195,3 +241,4 @@ Word Cloud
 
 [B., Sowmya V., et al. Practical Natural Language Processing: a Comprehensive Guide to Building Real-World NLP Systems. O'Reilly Media, 2020.](https://www.oreilly.com/library/view/practical-natural-language/9781492054047/){:target="_blank"} 
 
+Hutto, C.J. & Gilbert, E.E. (2014). VADER: A Parsimonious Rule-based Model for Sentiment Analysis of Social Media Text. Eighth International Conference on Weblogs and Social Media (ICWSM-14). Ann Arbor, MI, June 2014.
