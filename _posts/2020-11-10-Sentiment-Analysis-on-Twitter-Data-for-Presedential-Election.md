@@ -16,7 +16,7 @@ I love this figure which is taken from the textbook "Practical Natural Language 
 
 ### Purpose
 
-For this project, I aam focusing on the context from the building blocks of languages in order to apply sentiment analysis and topic modelling on tweet data. **Sentiment Analysis** specifically is a Natural Language Process in order to detect and analyze opinions or attitude within a text or document. 
+For this project, I aam focusing on the context from the building blocks of languages in order to apply sentiment analysis and topic modelling on tweet data. **Sentiment Analysis** specifically is a Natural Language Process in order to detect and analyze opinions or attitude within tweets. 
 
 To read how I collected the tweets, you can read my previous [post](https://avielrs.github.io/Collecting-Twitter-Data-on-the-US-Presidential-Election/){:target="_blank"}.  
 
@@ -57,7 +57,6 @@ A few example questions to answer with sentiment analysis and topic modelling:
 - Add new models or languages through extensions
 - WordNet integration
 
-
 From TextBlob, the sentiment returns a polarity and subjectivity score. The polarity score output is a float between the range [-1.0, 1.0], where -1.0 is 100% negativea and 1.0 is 100% positive. The subjectivity is a float within the range [0.0, 1.0] where 1.0 is very subjective (influence by a personal feeling or opinion) and 0.0 is very objective (not influenced by personal feelings or opinion).
 
 #### Step 1: Import libraries**
@@ -81,8 +80,9 @@ Things to note about the text:
 
 In order to improve the accuracy when processing the tweet data with TextBlob, I first clean the text data by changing uppercase letters to lowercase, removing RT and the @username associated with the RT (retweet), remove hyperlinks, remove punctuation and emojis, remove consecutive spaces, remove breaks, remove extra spaces at the beginning and end of the tweet. 
 
-#### Step 
+#### Use Regex to clean the data
 
+``` python
 def cleanTxt(text):
         
     text = re.sub('RT[\s]@[A-Za-z0–9]+', '', text) # Removing RT and the the account retweeted from
@@ -105,20 +105,11 @@ Text = df['full_text'].apply(cleanTxt)
 for i in np.arange(0, len(Text), 1):
     Text[i] = Text[i].lower()
 
-After cleaning the text data, the tweet looks likes this: 
+```
 
+After cleaning the text data, the tweet looks likes this: <br>
 overflow crowd for president realdonaldtrump in new hampshire we are going to win via abatemedia
 
-Without Punctation
-Subjectivity: 0.45
-Polarity: 0.16
-Analysis: Positive
-
-With Punctuation
-Subjectivity =  0.43
-Polarity = 0.47
-Analysis: Positive
-Both are subjective, however the Polarity with the punctation is less positive then the polarity without the punctuation. One thing to note, is that while the TextBlob analysis rated the tweet as subjective. It is rated as 0.45 between (0-1). Because of the explaination marks and 
 
 #### Step 3: Create a function to get the subjectivity and polarity
 ``` python
@@ -152,6 +143,19 @@ df['Analysis'] = df['Polarity'].apply(getAnalysis)
 
 We can also take a quick look
 ![Alternate image text](/images/twitter/text_blob_august_sentiment.png)
+
+#### Step 6: View Analysis and compare with non-cleaned text data
+
+Without Punctation
+Subjectivity: 0.45
+Polarity: 0.16
+Analysis: Positive
+
+With Punctuation
+Subjectivity =  0.43
+Polarity = 0.47
+Analysis: Positive
+Both are subjective, however the Polarity with the punctation is less positive then the polarity without the punctuation. One thing to note, is that while the TextBlob analysis rated the tweet as subjective. It is rated as 0.45 between (0-1). Because of the explaination marks and 
 
 ### Vader Analysis
 
