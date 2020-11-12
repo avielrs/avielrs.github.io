@@ -110,9 +110,10 @@ for i in np.arange(0, len(Text), 1):
     Text[i] = Text[i].lower()
 
 ```
-
-After cleaning the text, the tweet now looks like this:
+<br>
+After cleaning the text, the tweet now looks like this:<br>
 ![Alternate image text](/images/twitter/clean_texts.png)
+<br>
 
 #### Step 3: Create a function to get the subjectivity and polarity
 ``` python
@@ -148,19 +149,20 @@ df['Analysis'] = df['Polarity'].apply(getAnalysis)
 
 ![Alternate image text](/images/twitter/Compare_TextBlob_Clean.png)
 
-Just from peaking into the first 10 tweets in the dataset, there is little difference between the clean and unclean dataset. The analysis has not changed, and the subjectivity has barely changed as well. The only tweet that shows a significant difference in Polarity score is the first tweet (row 0). This makes sense because the first tweet as discussed before contained a lot of extra unusual syntax to handle such as an emoji, links, and new lines. The good news is that after cleaning the text data, the polarity score increased for the first tweet. From uncleaned the polarity score is 0.17 which means it is barely positve, after cleaning the text is changes to 0.47 which is much more positive. Having said that, I still think the polarity score should be higher given that there multiple explaination marks and capitlizations indicating excitiment in the tone. 
+Just from peaking into the first 10 tweets into the dataset, there is little difference between the clean and unclean dataset. The analysis has not changed, and the subjectivity has barely changed as well. The only tweet that shows a significant difference in Polarity score is the first tweet (row 0). This makes sense because the first tweet as discussed before contained a lot of extra unusual syntax to handle such as an emoji, links, and new lines. The good news is that after cleaning the text data, the polarity score increased for the first tweet. From uncleaned the polarity score is 0.17 which means it is barely positve, after cleaning the text is changes to 0.47 which is much more positive. Having said that, I still think the polarity score should be scored higher given that there multiple explaination marks and capitlizations indicating excitiment in the tone. 
 
-Let's take a quick look at the other tweets, does the score make sense? 
+
+![Alternate image text](/images/twitter/tweet_2.png)
 
 ![Alternate image text](/images/twitter/text_blob_hist.png)
 
+Social media text is complex because there are emojis to express feelings, acroynms (LOL OMG LMAO ROFL WTF ASAP), intentially mispelled words like sucks -> sux and fav -> favorite. There are as well slang words that are used on social media that is not identified in the dictionary at least yet such as yolo, muah, haha, woohoo, and using punctuation to make an emotion or face such as (: (; <3 . We as well utilize words in different context. For example on social media, one might use the word wicked to mean cool/awesome which is then taken an originally negative word and utilizing it in a positive way. These complexities in social media need to be accounted for when identifying sentiment in a sentance. Luckily for us, a package called Vader Sentiment Analsysis has done this for us!
 
 ### Step 7: Quick Analysis on comparing sentiment in relation to the 2020 Presendential Election within August
 ![Alternate image text](/images/twitter/text_blob_august_sentiment.png)
 
 ## Vader Sentiment Analysis
 ![Alternate image text](/images/twitter/social media sign.jpg)
-
 
 
 Notes: Because TextBlob does not handle the text as welln as I would like because of the complexities of social media, I will use Vader Sentiment Analysis which is an amaz

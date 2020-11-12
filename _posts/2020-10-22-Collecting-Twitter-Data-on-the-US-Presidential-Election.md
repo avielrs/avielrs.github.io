@@ -41,7 +41,7 @@ In order to utilize the tweet IDs, I need to **rehydrate**. To rehydrate means t
 
 #### Part 3: Rehydrate 
 
-I decide to rehydrate with the package [Twarc](https://github.com/DocNow/twarc). Twarc is a command line tool that archives twitter JSON data. Another package out there is [Hydrator](https://github.com/DocNow/hydrator) (GUI version). I could as well directly hit the twitter API endpoint to retrieve the APIs. 
+I decide to rehydrate with the package [Twarc](https://github.com/DocNow/twarc){:target="_blank"}. Twarc is a command line tool that archives twitter JSON data. Another package out there is [Hydrator](https://github.com/DocNow/hydrator){:target="_blank"} (GUI version). I could as well directly hit the twitter API endpoint to retrieve the APIs. 
 
 Twitter API v2 rate limit is 900 requests/15-minutes thus 43,200 requests per day. The total amount of requests per month is limited to 500,000 per user! Twitter's rate limit request helps mitigate large volumes of requests which are placed by thousands of developers each day on twitter. 
 
@@ -135,6 +135,17 @@ Here is a general guideline for my next steps on this project:
 6. Create a timeline of events from the tweets
 <br>
 <br>
+
+### UPDATE 11/12/2020
+
+While working on the sentiment analysis portion of this project, I realized a slight hiccup from collecting Retweets. Within the root-level 'full_text' object, the retweet does not display the entire original text. AKA part of the text is cut off! See image below. What does the rest of the tweet say?!
+
+![Alternate image text](/images/twitter/full_text.png)
+
+At first, I looked into seeing if there is an [extended tweet mode](http://docs.tweepy.org/en/latest/extended_tweets.html){:target="_blank"} option in Twarc. There seems to be a potential option by using [--tweet_mode extended](https://gwu-libraries.github.io/sfm-ui/posts/2017-03-31-extended-tweets){:target="_blank"}. However, when I ran this option, the full_text is still cut off! I did find a [github issue](https://github.com/DocNow/twarc/issues/153){:target="_blank"} regarding this problem, however the issue is closed. I think this is a good example for why I might want to collect twitter API directly rather than using a third-party package. Next time!
+
+ At first, I wasn't sure how to work around this. Luckily before going down a deep whole, I looked at the JSON file again and realized that there is a child object called 'retweeted_status'. The retweeted_status object contains the extended full text! The downside is that the complexity for processing retweets into a DataFrame has increased because the full_text within the retweeted_status is an attribute within a child object. Oy!
+![Alternate image text](/images/twitter/retweet.png)
 
 #### To end this post, I will leave you with this quote.
 *“‘Possessed’ is probably the right word. I often tell people, ‘I don’t want to necessarily be a data scientist. You just kind of are a data scientist. You just can’t help but look at that data set and go, ‘I feel like I need to look deeper. I feel like that’s not the right fit.’”* <br> 
