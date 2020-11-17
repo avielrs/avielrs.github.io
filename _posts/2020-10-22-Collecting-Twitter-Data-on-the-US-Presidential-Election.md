@@ -148,7 +148,7 @@ At first, I looked into seeing if there is an [extended tweet mode](http://docs.
 Luckily before going down a deep whole, I looked at the JSON file again and realized that there is a child object called 'retweeted_status'. The retweeted_status object contains the extended full text! The downside is that the complexity for processing retweets into a DataFrame has increased because the full_text within the retweeted_status is an attribute within a child object. Oy! 
 
 
-[Alternate image text](/images/twitter/retweet.png)
+![Alternate image text](/images/twitter/retweet.png)
 
 
 #### To end this post, I will leave you with this quote.
