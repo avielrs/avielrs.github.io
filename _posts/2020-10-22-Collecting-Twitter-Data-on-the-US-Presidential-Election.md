@@ -150,7 +150,7 @@ Luckily before going down a deep whole, I opened the JSON file again and realize
 
 ![Alternate image text](/images/twitter/retweet.png)
 
-
+<br>
 #### To end this post, I will leave you with this quote.
 *“‘Possessed’ is probably the right word. I often tell people, ‘I don’t want to necessarily be a data scientist. You just kind of are a data scientist. You just can’t help but look at that data set and go, ‘I feel like I need to look deeper. I feel like that’s not the right fit.’”* <br> 
 ― Jennifer Shin, Senior Principal Data Scientist at Nielsen; Lecturer at UC Berkeley
