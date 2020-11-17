@@ -138,11 +138,10 @@ Here is a general guideline for my next steps on this project:
 
 ### UPDATE 11/12/2020
 
-While working on the sentiment analysis portion of this project, I realized a slight hiccup from collecting Retweets. Within the root-level 'full_text' object, the retweet does not display the entire original text. AKA part of the text is cut off! See image below. What does the rest of the tweet say?! <br><br>
+While working on the sentiment analysis portion of this project, I realized a slight hiccup from collecting Retweets. Within the root-level 'full_text' object, the retweet does not display the entire original text. AKA part of the text is cut off! See image below. What does the rest of the tweet say?! <br>
 
 ![Alternate image text](/images/twitter/full_text.png) 
 
-<br>
 At first, I searched for an [extended tweet mode](http://docs.tweepy.org/en/latest/extended_tweets.html){:target="_blank"} option in Twarc. There seems a potential option by using [' --tweet_mode extended'](https://gwu-libraries.github.io/sfm-ui/posts/2017-03-31-extended-tweets){:target="_blank"}. However, when I ran this option, the full_text is still cut off! I did find a [github issue](https://github.com/DocNow/twarc/issues/153){:target="_blank"} regarding this problem, however the issue is closed. I think this is a good example for why I might want to collect twitter API directly rather than using a third-party package. Next time!
 
 Luckily before going down a deep whole, I opened the JSON file again and realized that there is a child object called 'retweeted_status'. The retweeted_status object contains the extended full text! The downside to this is that it is now more complicated to process the retweets into a DataFrame because the full_text within the retweeted_status is an attribute within a child object. Oy! 
