@@ -18,7 +18,7 @@ On the business spectrum, one might want to utilize tweet data to identify influ
 Alright, at this point you are probably thinking to yourself, "Wow! Collecting and analyzing data from social media is super cool!"
 
 ## Purpose
-For my project, I am focusing on the context of popular topics from collecting tweet data regarding the 2020 US Presidential election. The goal of this is to apply sentiment analysis and topic modelling to these tweets. **Sentiment Analysis** specifically is a Natural Language Process in order to detect and analyze opinions or attitude within tweets. 
+For my project, I am focusing on the context of popular topics from collecting tweet data regarding the 2020 US Presidential election. The goal of this is to apply sentiment analysis and topic modelling to these tweets. **Sentiment Analysis** specifically is a Natural Language Process in order to detect and analyze opinions or attitudes within text. 
 
 **A few questions to answer with sentiment analysis and topic modelling:**
 
