@@ -78,8 +78,6 @@ Let’s take a look at a tweet example from the dataset:
       
 ![Alternate image text](/images/twitter/original_tweet.png)
 
-The first thing to note from this tweet is that the subjectivity from the viewpoint of the twitter account user is negative.
-
 Things to note about the text:
 1.  Punctuation: ‘@’,’!’, ‘…’, ‘:’, ‘/’, ‘.’, ‘?’
 2.  Capitalization of words
