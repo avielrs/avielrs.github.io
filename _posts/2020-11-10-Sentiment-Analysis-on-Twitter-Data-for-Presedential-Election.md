@@ -147,10 +147,10 @@ df['sentiment'] = df['Polarity'].apply(getAnalysis)
 ```
 #### Step 6: Compare the sentiment score before cleaning the data with the score after cleaning the data:
 
-TextBlob Analysis without cleaning the text<br>
+TextBlob Analysis without cleaning the text <br>
 ![Alternate image text](/images/twitter/sentiment_unclean.png)
 <br><br>
-TextBlob Analysis with cleaning the text<br>
+TextBlob Analysis with cleaning the text <br>
 ![Alternate image text](/images/twitter/sentiment_clean.png)
 <br>
 The subjectivity and polarity for this specific text did not change after cleaning the text. This somewhat makes sense because the text is already fairly simplified because there are no links present, no additional lines or spaces. 
