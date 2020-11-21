@@ -94,8 +94,7 @@ def cleanTxt(text):
         
     text = re.sub('RT[\s]@[A-Za-z0–9]+', '', text) # Removing RT and the account retweeted from
     text = re.sub('https?:\/\/\S+', '', text) # Removing hyperlink
-    text = re.sub('https', '', text)
-    text = re.sub('@', '', text)
+    text = re.sub('https', '', text)  #remove word https
     text = re.sub(r'[^\w\s]', '', text) # removes punctuation and emojis
     text = re.sub(r'\s+', ' ', text)  # replace consecutive spaces
     text = re.sub(r'\s*<br\s*/?>\s*', '\n', text)  # newline after a <br>
