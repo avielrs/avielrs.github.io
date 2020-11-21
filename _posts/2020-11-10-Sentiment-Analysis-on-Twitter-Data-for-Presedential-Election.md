@@ -30,13 +30,15 @@ For my project, I am focusing on the context of popular topics from collecting t
 ### Methods
 
 #### Rule Based
-Rule-based sentiment analysis calculates a sentiment score on a text based off implemented rules such as if negations are present, or specific words are present. For example, in Vader Sentiment Analysis on a scale from "[–4] Extremely Negative" to "[4] Extremely Positive", the word "okay" has a positive valence of 0.9, "good is 1.9, and great is 3.1, whereas 'horrible is -2.5.
+Rule-based sentiment analysis calculates a sentiment score on a text based off implemented rules such as determining if negations are present or a specific word is present. 
 
 - TextBlob
 - Vader Sentiment Analysis
 
 #### Machine Learning
-Utilizing machine learning to identify the sentiment is beneficial if you are able to train a dataset with an independent variable as score, rating, or identified sentiment. For example, machine learning to identify a positive, negative, or neutral sentence can be utilized in Yelp reviews, Airbnb reviews, and movie reviews. One way to be able to apply machine learning to identify the sentiment of tweet data, is to create a train dataset by identifying a sample of tweets as positive, negative, and neutral. The problem with this is that because we are able to collect millions of tweets. Identifying the sentiment for ven 1000s tweets by hand is probably not enough for training a model on tweet data.
+Machine learning can identify the sentiment if you are able to train a dataset with an independent variable. For example, machine learning can be utilized to predict the score from Yelp reviews, Airbnb reviews, and movie reviews. You could say that the sentiment of 5 out of 5 stars is very positive and 1 out of 5 stars is very negative. 
+
+If you want to use machine learning to identify sentiment but you do not have a rating. There is a work around method where you can label a training dataset in order to create an independent variable for sentiment. The problem with this is that because we are able to collect millions of tweets. Identifying the sentiment for even 1000 tweets by hand is not enough data to train a model. 
 
 - SVM
 - Naive Bayes Classifier 
@@ -72,15 +74,15 @@ Let’s take a look at a tweet example from the dataset:
       
 ![Alternate image text](/images/twitter/original_tweet.png)
 
-The first thing to note from this tweet is that the subjectivity from the viewpoint of the twitter account user is positive. The other thing to note is that this is a retweet (RT) from tweet user Kayleigh McEnany. 
+The first thing to note from this tweet is that the subjectivity from the viewpoint of the twitter account user is negative.
 
 Things to note about the text:
-1.  There are breaks (newlines) in this tweet
-2.  Punctuation: ‘@’,’!’, ‘…’, ‘:’, ‘/’, ‘.’
-3.  Html link is present
-4.  Arrow Emoji 
-
-In order to improve the accuracy when processing the tweet data with TextBlob, I first clean the text data by changing uppercase letters to lowercase, removing RT and the @username associated with the RT (retweet), remove hyperlinks, remove punctuation and emojis, remove consecutive spaces, remove breaks, remove extra spaces at the beginning and end of the tweet. 
+1.  Punctuation: ‘@’,’!’, ‘…’, ‘:’, ‘/’, ‘.’, ‘?’
+2.  Capitalization of words
+3.  Face Palm emoji which displays the  emotion frustration or  disappointment
+4. @mention of twitter user realDonaldTrump
+5. Negation word: Can’t 
+In order to improve the accuracy when processing the tweet data with TextBlob, I first clean the text data by changing uppercase letters to lowercase, remove punctuation and emojis, remove consecutive spaces. Other important cleaning capabilities to account for within social media text is removing hyperlinks, removing newlines, and removing the retweet account when tweets are retweeted.
 
 #### Use Regex to clean the data:
 
@@ -110,7 +112,7 @@ for i in np.arange(0, len(Text), 1):
 ```
 <br>
 After cleaning the text, the tweet now looks like this:<br>
-![Alternate image text](/images/twitter/clean_texts.png)
+![Alternate image text](/images/twitter/clean_text.png)
 <br>
 
 #### Step 3: Create a function to get the subjectivity and polarity
@@ -129,7 +131,7 @@ df['Subjectivity'] = df['Full_Text'].apply(getSubjectivity)
 df['Polarity'] = df['Full_Text'].apply(getPolarity)
 ```
 
-#### Step 5: Create a function to calculate negative (Polarity < 0), neutral (Polarity = 0), and positive (Polarity > 0) analysis
+#### Step 5: Create a function to define sentiment by calculating negative as (Polarity < 0), neutral as (Polarity = 0), and positive as (Polarity > 0) analysis
 ``` python
 
 def getAnalysis(score):
@@ -140,7 +142,28 @@ def getAnalysis(score):
     else:
         return 'Positive'
 
-df['Analysis'] = df['Polarity'].apply(getAnalysis)
+df['sentiment'] = df['Polarity'].apply(getAnalysis)
 ```
+### Step 6: Compare the sentiment score before cleaning the data with the score after cleaning the data:
+
+#### TextBlob Analysis without cleaning the text
+![Alternate image text](/images/twitter/sentiment_unclean.png)
+<br>
+#### TextBlob Analysis with cleaning the text
+![Alternate image text](/images/twitter/sentiment_clean.png)
+
+The subjectivity and polarity for this specific text did not change after cleaning the text. This somewhat makes sense because the text is already fairly simplified because there are no links present, no additional lines or spaces. 
+
+In order to compare the entire text dataset that is original content (not including retweets) for the month of  August, the 10% of the text dataset calculated polarity changed after cleaning  the dataset.
+![Alternate image text](/images/twitter/bar_unclean_clean.png)
+
+
+
+
+While there is not a significant change in polarity after cleaning the text, it is still important  to remove anything that  might hinder the  analysis  for example html links, extra space and lines, punctuation, and emojis.
+
+
+### Step 7: Quick Analysis on comparing sentiment in relation to the 2020 Presidential Election within August
+![Alternate image text](/images/twitter/August_Sentiment.png)
 
 ### To Be Continued …
