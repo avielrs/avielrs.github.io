@@ -111,7 +111,7 @@ for i in np.arange(0, len(Text), 1):
 
 ```
 <br>
-After cleaning the text, the tweet now looks like this:<br>
+After cleaning the text, the tweet now looks like this:<br><br>
 ![Alternate image text](/images/twitter/clean_text.png)
 <br>
 
@@ -144,17 +144,17 @@ def getAnalysis(score):
 
 df['sentiment'] = df['Polarity'].apply(getAnalysis)
 ```
-### Step 6: Compare the sentiment score before cleaning the data with the score after cleaning the data:
+#### Step 6: Compare the sentiment score before cleaning the data with the score after cleaning the data:
 
-#### TextBlob Analysis without cleaning the text
+TextBlob Analysis without cleaning the text<br>
 ![Alternate image text](/images/twitter/sentiment_unclean.png)
-<br>
-#### TextBlob Analysis with cleaning the text
+<br><br>
+TextBlob Analysis with cleaning the text<br>
 ![Alternate image text](/images/twitter/sentiment_clean.png)
-
+<br>
 The subjectivity and polarity for this specific text did not change after cleaning the text. This somewhat makes sense because the text is already fairly simplified because there are no links present, no additional lines or spaces. 
 
-In order to compare the entire text dataset that is original content (not including retweets) for the month of  August, the 10% of the text dataset calculated polarity changed after cleaning  the dataset.
+In order to compare the entire text dataset that is original content (not including retweets) for the month of  August, the 10% of the text dataset calculated polarity changed after cleaning  the dataset.<br>
 ![Alternate image text](/images/twitter/bar_unclean_clean.png)
 
 
@@ -163,7 +163,7 @@ In order to compare the entire text dataset that is original content (not includ
 While there is not a significant change in polarity after cleaning the text, it is still important  to remove anything that  might hinder the  analysis  for example html links, extra space and lines, punctuation, and emojis.
 
 
-### Step 7: Quick Analysis on comparing sentiment in relation to the 2020 Presidential Election within August
+#### Step 7: Quick Analysis on comparing sentiment in relation to the 2020 Presidential Election within August
 ![Alternate image text](/images/twitter/August_Sentiment.png)
 
 ### To Be Continued …
