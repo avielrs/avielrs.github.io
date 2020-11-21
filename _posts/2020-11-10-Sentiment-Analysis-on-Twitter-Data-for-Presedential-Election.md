@@ -81,9 +81,9 @@ Let’s take a look at a tweet example from the dataset:
 Things to note about the text:
 1.  Punctuation: ‘@’,’!’, ‘…’, ‘:’, ‘/’, ‘.’, ‘?’
 2.  Capitalization
-3.  Face Palm emoji which displays the  emotion frustration or  disappointment
+3.  Face Palm emoji which signifies frustration or  disappointment
 4. @mention of twitter user realDonaldTrump
-5. Negation word: Can’t 
+
 In order to improve the accuracy when processing the tweet data with TextBlob, I first clean the text data by changing uppercase letters to lowercase, remove punctuation and emojis, remove consecutive spaces. Other important cleaning capabilities to account for within social media text is removing hyperlinks, removing newlines, and removing the retweet account when tweets are retweeted.
 
 #### Use Regex to clean the data:
