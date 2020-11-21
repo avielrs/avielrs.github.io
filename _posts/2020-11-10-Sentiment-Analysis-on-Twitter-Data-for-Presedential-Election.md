@@ -27,7 +27,7 @@ For my project, I am focusing on the context of popular topics from collecting t
 - How do tweets posted from a twitter account user with a large following perceive certain topics?
 - What are the top 5 positively perceived topics versus top 5 negatively perceived topics?
 
-### Methods
+## Methods
 
 #### Rule Based
 Rule-based sentiment analysis calculates a sentiment score on a text based off implemented rules such as determining if negations are present or a specific word is present. 
