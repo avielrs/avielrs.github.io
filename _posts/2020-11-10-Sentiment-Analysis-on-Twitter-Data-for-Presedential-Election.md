@@ -80,7 +80,7 @@ Let’s take a look at a tweet example from the dataset:
 
 Things to note about the text:
 1.  Punctuation: ‘@’,’!’, ‘…’, ‘:’, ‘/’, ‘.’, ‘?’
-2.  Capitalization of words
+2.  Capitalization
 3.  Face Palm emoji which displays the  emotion frustration or  disappointment
 4. @mention of twitter user realDonaldTrump
 5. Negation word: Can’t 
