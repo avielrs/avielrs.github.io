@@ -61,7 +61,11 @@ If you want to use machine learning to identify sentiment but you do not have a 
 - Add new models or languages through extensions
 - WordNet integration
 
-From TextBlob, the sentiment returns a polarity and subjectivity score. The polarity score output is a float between the range [-1.0, 1.0], where -1.0 is 100% negative and 1.0 is 100% positive. The subjectivity is a float within the range [0.0, 1.0] where 1.0 is very subjective (influence by a personal feeling or opinion) and 0.0 is very objective (not influenced by personal feelings or opinion).
+From TextBlob, the sentiment returns a polarity and subjectivity score. 
+
+**Polarity** score output is a float between the range [-1.0, 1.0], where -1.0 is 100% negative and 1.0 is 100% positive. 
+
+**Subjectivity** is a float within the range [0.0, 1.0] where 1.0 is very subjective (influence by a personal feeling or opinion) and 0.0 is very objective (not influenced by personal feelings or opinion).
 
 #### Step 1: Import libraries
 ``` python
