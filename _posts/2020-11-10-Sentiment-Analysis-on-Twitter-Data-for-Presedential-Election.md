@@ -43,7 +43,7 @@ If we want to use machine learning to identify sentiment but do not have a ratin
 - SVM
 - Naive Bayes Classifier 
 
-## Text Blob
+## Using Text Blob to identify sentiment for tweet data
 
 [Text Blob](https://textblob.readthedocs.io/en/dev/){:target="_blank"} is a text processing package that works with part-of-speech tagging, noun phrase extraction, sentiment analysis, classification, translation, and more.
 
@@ -84,7 +84,7 @@ Things to note about the text:
 3.  Face Palm emoji which signifies frustration or  disappointment
 4. @mention of twitter user realDonaldTrump
 
-In order to improve the accuracy when processing the tweet data with TextBlob, I first clean the text data by changing uppercase letters to lowercase, remove punctuation and emojis, remove consecutive spaces. Other important cleaning capabilities to account for within social media text is removing hyperlinks, removing newlines, and removing the retweet account when tweets are retweeted.
+In order to improve the accuracy when processing the tweet data with TextBlob, I first clean the text data by changing uppercase letters to lowercase, remove punctuation and emojis, remove consecutive spaces, remove hyperlinks, removing newlines, and remove the retweet account when tweets are retweeted.
 
 #### Use Regex to clean the data:
 
@@ -145,21 +145,10 @@ def getAnalysis(score):
 
 df['sentiment'] = df['Polarity'].apply(getAnalysis)
 ```
-#### Step 6: Compare the sentiment score before cleaning the data with the score after cleaning the data:
-
-TextBlob Analysis without cleaning the text <br>
-![Alternate image text](/images/twitter/sentiment_unclean.png)
-<br><br>
-TextBlob Analysis with cleaning the text <br>
-![Alternate image text](/images/twitter/sentiment_clean.png)
-<br>
-The subjectivity and polarity for this specific text did not change after cleaning the text. This somewhat makes sense because the text is already fairly simplified because there are no links present, no additional lines or spaces. 
+#### Step 6: Compare sentiment score before cleaning the data with after cleaning the data:
 
 In order to compare the entire text dataset that is original content (not including retweets) for the month of  August, the 10% of the text dataset calculated polarity changed after cleaning  the dataset.<br>
 ![Alternate image text](/images/twitter/bar_unclean_clean.png)
-
-
-
 
 While there is not a significant change in polarity after cleaning the text, it is still important  to remove anything that  might hinder the  analysis  for example html links, extra space and lines, punctuation, and emojis.
 
