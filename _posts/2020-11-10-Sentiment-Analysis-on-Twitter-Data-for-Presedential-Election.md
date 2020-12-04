@@ -107,7 +107,7 @@ def cleanTxt(text):
     text = re.sub(r'\s+$', '', text)  # remove spaces at the end
     
     #  make all text lower case
-    lambda text : text.lower()
+    text = text.lower()
         
     return text
 ```
@@ -145,15 +145,20 @@ def getAnalysis(score):
 
 df['sentiment'] = df['Polarity'].apply(getAnalysis)
 ```
+
+After cleaning the text and applying TextBlob Sentiment Analysis the dataframe looks something like this! 
+![Alternate image text](/images/twitter/TextBlob_Clean_head5.png)
+
 #### Step 6: Compare sentiment score before cleaning the data with after cleaning the data:
 
-In order to compare the entire text dataset that is original content for the month of August, the 10% of the text dataset calculated polarity changed after cleaning the dataset.<br>
-![Alternate image text](/images/twitter/textblob_unclean_table.png)
+I would like to check to see how much changed the Polarity Scores and Sentiment Analysis between the clean  text and clean text. For me, this is a sanity check to make sure there acutally is a difference after cleaning the text dataset, rather than blindly saying cleaning "Text data will change the outcome of the sentiment score. Awesome!" <br>
 
-![Alternate image text](/images/twitter/textblob_unclean_clean.png)
+To do this, I calculate how many tweets changed its polarity scores after cleaning the text data.
+![Alternate image text](/images/twitter/change_unchange_polarity_textblob.png)
 
-It is important to note that while the polarity did change for 10% of the text after cleaning the dataset, the polarity did not change enough to change the sentiment. The reason for cleaning text even if it may seem not significant is because html links, extra space and lines, punctuation, and emojis may hinder the analysis.
+**17% percent of the text changed its polarity score after cleaning the text**
 
+It is important to note that even if cleaning text may not seem significant, it  is important to include for setting up the data because text data from tweets inicludes html links, extra space and lines, punctuation, and emojis which all may hinder TextBlob Sentiment Analysis scores.
 
 #### Step 7: Quick Analysis on comparing sentiment in relation to the 2020 Presidential Election within August
 ![Alternate image text](/images/twitter/august_textblob_sentiment.png)
