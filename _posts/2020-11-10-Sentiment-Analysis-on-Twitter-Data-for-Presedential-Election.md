@@ -84,32 +84,32 @@ Things to note about the text:
 3.  Face Palm emoji which signifies frustration or  disappointment
 4. @mention of twitter user realDonaldTrump
 
-In order to improve the accuracy when processing the tweet data with TextBlob, I first clean the text data by changing uppercase letters to lowercase, remove punctuation and emojis, remove consecutive spaces, remove hyperlinks, removing newlines, and remove the retweet account when tweets are retweeted.
+In order to improve the accuracy when processing the tweet data with TextBlob, I first clean the text data by:
+ - change uppercase letters to lowercase
+ - remove punctuation and emojis
+ - remove consecutive spaces
+ - remove hyperlinks
+ - remove newlines
+ - emove retweet account when tweets are retweeted.
 
 #### Use Regex to clean the data:
 
 ``` python
-
+# Create a function to clean text
 def cleanTxt(text):
-        
-    text = re.sub('RT[\s]@[A-Za-z0–9]+', '', text) # Removing RT and the account retweeted from
+
+    text = re.sub('RT[\s]@[A-Za-z0–9]+', '', text) # Removing RT and the the account retweeted from
     text = re.sub('https?:\/\/\S+', '', text) # Removing hyperlink
-    text = re.sub('https', '', text)  #remove word https
     text = re.sub(r'[^\w\s]', '', text) # removes punctuation and emojis
     text = re.sub(r'\s+', ' ', text)  # replace consecutive spaces
     text = re.sub(r'\s*<br\s*/?>\s*', '\n', text)  # newline after a <br>
     text = re.sub(r'^\s+', '', text)  # remove spaces at the beginning
     text = re.sub(r'\s+$', '', text)  # remove spaces at the end
-
+    
+    #  make all text lower case
+    lambda text : text.lower()
+        
     return text
-
-# Clean text
-Text = df['full_text'].apply(cleanTxt)
-
-# Add lower cases
-for i in np.arange(0, len(Text), 1):
-    Text[i] = Text[i].lower()
-
 ```
 <br>
 After cleaning the text, the tweet now looks like this:<br><br>
@@ -158,6 +158,7 @@ It is important to note that while the polarity did change for 10% of the text a
 #### Step 7: Quick Analysis on comparing sentiment in relation to the 2020 Presidential Election within August
 ![Alternate image text](/images/twitter/august_textblob_sentiment.png)
 
+While TextBlob is a tool that can 
 ## VADER SENTIMENT ANLAYSIS
 
 Social media text is complex because there are emojis to express feelings, acronyms (LOL OMG LMAO ROFL WTF ASAP), intentionally misspelled words like sucks -> sux and fav -> favorite. There are as well slang words that are used on social media that is not identified in the dictionary at least yet such as yolo, muah, haha, woohoo, and using punctuation to make an emotion or face such as (: (; <3 . We as well utilize words in different context. For example, on social media, one might use the word wicked to mean cool/awesome which is then taken an originally negative word and utilizing it in a positive way. These complexities in social media need to be accounted for when identifying sentiment in a sentence. Luckily for us, a package called [Vader Sentiment Analysis](https://github.com/cjhutto/vaderSentiment){:target="_blank"} has done this for us! 
