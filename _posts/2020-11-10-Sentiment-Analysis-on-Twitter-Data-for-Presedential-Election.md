@@ -101,8 +101,8 @@ def cleanTxt(text):
     text = re.sub('RT[\s]@[A-Za-z0–9]+', '', text) # Removing RT and the the account retweeted from
     text = re.sub('https?:\/\/\S+', '', text) # Removing hyperlink
     text = re.sub(r'[^\w\s]', '', text) # removes punctuation and emojis
-    text = re.sub(r'\s+', ' ', text)  # replace consecutive spaces
     text = re.sub(r'\s*<br\s*/?>\s*', '\n', text)  # newline after a <br>
+    text = re.sub(r'\s+', ' ', text)  # replace consecutive spaces
     text = re.sub(r'^\s+', '', text)  # remove spaces at the beginning
     text = re.sub(r'\s+$', '', text)  # remove spaces at the end
     
@@ -134,7 +134,6 @@ df['Polarity'] = df['Full_Text'].apply(getPolarity)
 
 #### Step 5: Create a function to define sentiment by calculating negative as (Polarity < 0), neutral as (Polarity = 0), and positive as (Polarity > 0) analysis
 ``` python
-
 def getAnalysis(score):
     if score < 0:
         return 'Negative'
@@ -160,11 +159,10 @@ To do this, I calculate how many tweets changed its polarity scores after cleani
 
 It is important to note that even if cleaning text may not seem significant, it  is important to include for setting up the data because text data from tweets inicludes html links, extra space and lines, punctuation, and emojis which all may hinder TextBlob Sentiment Analysis scores.
 
-While TextBlob Sentiment Analysis is a great tool to use, identifying the sentiment in social media text adds an extra level of complexity compared to identifying sentiment within reviews, online news articles, or books. This is because unlike other text, social media has more freedom and leniency for epxressing oneself. In social media we can use acronyms to express ourselfs such as LOL (Laugh out Loud), we can use emojies which are literally images to define feelings, we can use multiple exclamation marks !!!!!! to express an EXTREME feeling. As well in social media, sentances tend to be short hand and not complete. TextBlob Sentiment Analysis cannot handle these unusual edge cases in social media. However, we are in luck! Computer scentists from Georgia Tech, C.J Hutto nd Eric Gilbert developed Vader Sentiment Analysis which is a rule based model for sentiment analysis that is specific for social media text. 
-
 ## VADER SENTIMENT ANLAYSIS
+![Alternate image text](/images/twitter/social media sign.jpg)
 
-Social media text is complex because there are emojis to express feelings, acronyms (LOL OMG LMAO ROFL WTF ASAP), intentionally misspelled words like sucks -> sux and fav -> favorite. There are as well slang words that are used on social media that is not identified in the dictionary at least yet such as yolo, muah, haha, woohoo, and using punctuation to make an emotion or face such as (: (; <3 . We as well utilize words in different context. For example, on social media, one might use the word wicked to mean cool/awesome which is then taken an originally negative word and utilizing it in a positive way. These complexities in social media need to be accounted for when identifying sentiment in a sentence. Luckily for us, a package called [Vader Sentiment Analysis](https://github.com/cjhutto/vaderSentiment){:target="_blank"} has done this for us! 
+While TextBlob Sentiment Analysis is a great tool to use, identifying the sentiment in text from social media adds an extra level of complexity compared to identifying sentiment within reviews, online news articles, or books. Social media text is complex because there are emojis to express feelings, acronyms (LOL OMG LMAO ROFL WTF ASAP), intentionally misspelled words like sucks -> sux and fav -> favorite. There are as well slang words that are used on social media that is not identified in the dictionary at least yet such as yolo, muah, haha, woohoo, and using punctuation to make an emotion or face such as (: (; <3 . We as well utilize words in different context. For example, on social media, one might use the word wicked to mean cool/awesome which is takes an originally negative word and utilize it in a positive way. These complexities in social media need to be accounted for when identifying sentiment in a sentence. Luckily for us, computer scientists from Georgeo Tech, C.J. Hutto and Eric Gilbert developed a package called [Vader Sentiment Analysis](https://github.com/cjhutto/vaderSentiment){:target="_blank"} which takes into account many of the edge cases found in social media.
 
 Vader Sentiment Analysis is another lexicon rule-based sentiment analysis tool that was specifically developed for social media text. Vader Sentiment accounts for speed and performance which is important for large datasets such as thousands or millions of tweets.
 
@@ -183,12 +181,14 @@ Examples of typical use cases for sentiment analysis, including proper handling 
 - understanding sentiment-laden initialisms and acronyms (for example: 'lol')
 
 ### Clean Text
-This time when cleaning the text, for vader sentiment analysis. I do not make
+This time when cleaning the text, for vader sentiment analysis. I do not change all letters to lowercase. This is because vader sentiment analysis takes into account uppercase letters.  Speficially if a word is all capitilize.  Suggesting emphaisis on that word. For example: HURRAY! WIN! FAIL!
+
+I as well specifically specified which punctuation to remove from the text. I decided to exclude exclamation marks ! because Vader Sentiment Anaalysis takes into excalamation marks.  
 
 ``` python
 def cleanTxt(text):
 
-        #initializing punctuations string  
+    #initializing punctuations string  
     punc = '''()-[]{};:'"\, <>./?@#$%^&*_~'''
   
     # Removing punctuations in string 
@@ -200,18 +200,10 @@ def cleanTxt(text):
     text = re.sub('RT[\s]@[A-Za-z0–9]+', '', text) # Removing RT and the the account retweeted from
     text = re.sub('https?:\/\/\S+', '', text) # Removing hyperlink
     text = re.sub('https', '', text)
-    text = re.sub('…', '', text)
-    text = re.sub('\u2066', '', text)
-    text = re.sub('\u2069 ', '', text)
     text = re.sub(r'\s*<br\s*/?>\s*', u'\n', text)  # newline after a <br>
-    text = re.sub(r'</(div)\s*>\s*', u'\n', text)  # newline after </p> and </div> and <h1/>...
-    text = re.sub(r'</(p|h\d)\s*>\s*', u'\n\n', text)  # newline after </p> and </div> and <h1/>...
     text = re.sub(r'\s+', u' ', text)  # replace consecutive spaces
     text = re.sub(r'^\s+', u'', text)  # remove spaces at the beginning
     text = re.sub(r'\s+$', u'', text)  # remove spaces at the end
-  
-    
-
         
     return text
 ```
