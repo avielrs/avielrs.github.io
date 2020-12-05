@@ -240,33 +240,43 @@ Let's do a another sanity check and compare how  many tweets changed its compoun
 **12% percent of the text changed its compound score after cleaning the text**
 
 #### Step 5: Compare distirubtion of tweets for negative, neatural, and positive sentiment 
-![Alternate image text](/images/twitter/neg_neutral_pos.png)
+![Alternate image text](/images/twitter/neg_neut_pos.png)
 For the month of AUgust, the majority of tweets were positive.
 
-### Top 5 positive tweets from original content
+### Top 5 positive tweets from August sample
 
-RandyRRQuaid He makes me laugh for sure He s definitely made us a proud people again I love our country and this is definitely the Trump era realDonaldTrump Trump2020 WalkAway RandyQuaid
+Win win win win win F🤬k everything else Win win win win WIN
 
-JoeBiden ThePathToSaveAmerica Goes through JoeBiden It is the ONLY WAY to SAVE AMERICA TO SAVE LIVES OF AMERICANS TO SAVE THE CONSTITUTION TO SAVE JOBS
+Dear realDonaldTrump I m 68 years old I was a Republican but now I m doing EVERYTHING I can to make sure JoeBiden wins in November YOU WILL NOT STEAL MY SOCIAL SECURITY BENEFITS amp YOU WILL NOT KILL MY POSTAL SERVICE UNDER UNDER ANY CIRCUMSTANCES Sincerely Grandma Grit
 
-ewarren is far amp above the best pick She has a grassroots base in place Her PHD in bankruptcy law makes wall street shudder she is the best most prolific policy wonk She is a practical yet a kind compassionate soul
+Today it was my great honor to proudly accept the endorsement of the NYCPBA! I have deeply and profoundly admired the brave men and women of the NYPD for my entire life New York’s Finest are truly the best of the best — I will NEVER let you down! MAGA
 
-JoeBiden as a White Middleclass woman i beg you to chose a Black woman as your running mate We need it now more than ever There are so many wonderful strong smart Black women who could help save this hurting country
+KellyannePolls GOD BLESS YOU🇺🇸 Sweet KellyannePolls U SHINED LIKE A BRIGHT MORNING STAR ⭐️ May The Lord Bless You amp Keep You In His Care🛡 We Will Be Praying For You🙏🏻 You SPOKE The Truth For Millions To Hear And We Know♥️🎚♥️ Thank You Our Love For You Is Great realDonaldTrump🩸 GODWINS
 
-VP JoeBiden please talk about how you will protect Social Security during DNC2020 This is a top issue for voters 50+ Social Security is a hard earned benefit and a promise that must be kept ProtectVoters50Plus
+Dear Mr President As you honor and celebrate the life of your best friend and brother Robert please know that millions of Americans are praying that you and your family feel the Presence of God and the Peace that only He can bring realDonaldTrump DonaldJTrumpJr EricTrump
 
-### Top 5 negative tweets from original content 
+### Top 5 negative tweets from August sample
+
+Pissed off about schools Blame Trump Pissed off about college football Blame Trump Pissed off about 165 000 dead Blame Trump Pissed off about an economy still on its back Blame Trump He didn’t listen didn’t prepare didn’t lead He lied He fucked up Blame him
 
 realDonaldTrump Maybe the root of evil is drugs Drugs distort the mind into thinking there is no other way Then sets the place for prostitution robbing stealing murder Every kind of evil gives way to a life of misery and chaos Which causes destruction and no responsibility
 
-How incredibly and unbelievably stupid are some Americans who are lied to every day by realDonaldTrump who ignore his epic failures who over look his hate and still want to vote for him You people are fools and must be brainless
+atlpackfan2 onlytruthhere realDonaldTrump Take “Christian” off your profile It’s profane vain for hate intolerance racism pride falsewitness lying resentment impatience cruelty idolatry warmongering arrogance cheating amp antiChrist attitudes acts to rule your heart mind amp life Look to yourself!
 
-ReedCoverdale Sadly realDonaldTrump it s too little way too late So far all troop reductions have just been reassigned to other illegal war zones You can t move 1500 troops from Iraq then claim your the anti war president
+Seriously how can anyone with half a functioning brain say JoeBiden is a danger to America when we have the most self serving moronic grifting misogynistic ugly as fuck no heart no brain uncaring constitution killing pussy grabbing punk ass bitch as president now
 
-realDonaldTrump if I ever meet u I m Ganna grab your dick so hard and if I get arrested I m getting a fake Russian identity u fuck nachosarah
-
-JoeBiden when do we stand up to Trump He and his fascists keep doing all this until WE MAKE THEM STOP Steal the election if we let them Buddies w 🇷🇺 if we let them What breaks Fascism All the outrages we have seen lived and continue = Fascism Trump is a Fascist
+realDonaldTrump Tucker Carlson is a racist and a brat that they gave a platform to so he can spew his racism OBAMA and the other presidents did the right thing dump trump did the wrong thing as usual Carlson and trump 2 pieces of crap sad sad miserable people you are go get a real life racist
 
 ### Word Cloud
 
 ![Alternate image text](/images/twitter/word cloud august.png)
+
+### What's next on the agenda?
+![Alternate image text](/images/twitter/next.jpg)
+
+Ok, I have now cleaned the the text data, applied Vader Sentiment Analysis to label the sentiment for each tweet. What's next on the agenda? 
+
+Next stop Top Modelling! Well sort of. First I will need to prepare the text data even more before running the topic models which will be discussed in my next blog post 😉. 
+
+With the combination of Topic Modelling and Sentiment Analysis, I will be able to start to form a story of the topics discussed and majority of feeling towards that subject throughout the election. 
+
