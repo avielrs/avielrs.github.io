@@ -278,7 +278,7 @@ Seriously how can anyone with half a functioning brain say JoeBiden is a danger 
 
 realDonaldTrump Tucker Carlson is a racist and a brat that they gave a platform to so he can spew his racism OBAMA and the other presidents did the right thing dump trump did the wrong thing as usual Carlson and trump 2 pieces of crap sad sad miserable people you are go get a real life racist
 
-**Things to note:**
+**Things to note:** <br>
 3 out of 5 Top negative tweets are about Trump <br>
 1 out of 5 top negative tweets is about Joe Biden <br>
 
