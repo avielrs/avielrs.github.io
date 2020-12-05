@@ -239,9 +239,16 @@ Let's do a another sanity check and compare how  many tweets changed its compoun
 
 **12% percent of the text changed its compound score after cleaning the text**
 
-#### Step 5: Compare distirubtion of tweets for negative, neatural, and positive sentiment 
+#### Step 5: Compare distirubtion of tweets for negative, neatural, and positive sentiment in August
+
 ![Alternate image text](/images/twitter/neg_neut_pos.png)
-For the month of AUgust, the majority of tweets were positive.
+
+*42.6% of tweets in August contain positive sentiment (2351 tweets)*
+*38.8% of tweets in August contain negative sentiment (2142 tweets)*
+*18.6% of tweets in August contain Neutral sentiment (1025 tweets)*
+
+I want to note that this analysis is a sample of tweets taken from August representing a much larger dataset (explained in previous blog post). 
+
 
 ### Top 5 positive tweets from August sample
 
