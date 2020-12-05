@@ -180,7 +180,17 @@ Examples of typical use cases for sentiment analysis, including proper handling 
 - translating utf-8 encoded emojis such as 💘 and 💋 and 😁
 - understanding sentiment-laden initialisms and acronyms (for example: 'lol')
 
-### Clean Text
+#### Step 1: Install Packages and instantiate 
+``` python
+import nltk
+nltk.download('vader_lexicon')
+
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
+sid = SentimentIntensityAnalyzer()
+```
+
+#### Step 2: Clean Text
 This time when cleaning the text, I do not change all letters to lowercase. This is because vader sentiment analysis takes into account uppercase letters.  Speficially if a word is all capitilize which suggests emphaisis on that word. For example: HURRAY! WIN! FAIL!
 
 This time I am specifically input which punctuation to remove from the text. I decided to exclude exclamation marks ! because Vader Sentiment Anaalysis as well takes into excalamation marks.  
@@ -213,41 +223,37 @@ def cleanTxt(text):
     return text
 ```
 
-### Import packages and instantiate 
-``` python
-import nltk
-nltk.download('vader_lexicon')
-
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
-
-sid = SentimentIntensityAnalyzer()
-```
-
-#
+#### Step 3: Perform Vader Sentiment Analysis
 ``` python
 df['scores'] = df['full_text'].apply(lambda review: sid.polarity_scores(review))
 df['compound'] = df['scores'].apply(lambda score_dict: score_dict['compound'])
 df['comp_score'] = df['compound'].apply(lambda c: 'pos' if c >=0.05 else ('neutral' if (c < 0.05 and c > -0.05) else 'neg'))
+```
 
 Check out the table after applying Vader Sentiment Analysis!
 ![Alternate image text](/images/twitter/vsa_Clean_head5.png)
 
+#### Step 4: Sanity Check on cleaning data
 Let's do a another sanity check and compare how  many tweets changed its compound score before and after cleaning the text data.
 ![Alternate image text](/images/twitter/change_unchange_vsa.png)
 
-For 
+**12% percent of the text changed its compound score after cleaning the text**
+
+#### Step 5: Compare distirubtion of tweets for negative, neatural, and positive sentiment 
+![Alternate image text](/images/twitter/neg_neutral_pos.png)
+For the month of AUgust, the majority of tweets were positive.
 
 ### Top 5 positive tweets from original content
 
-        RandyRRQuaid He makes me laugh for sure He s definitely made us a proud people again I love our country and this is definitely the Trump era realDonaldTrump Trump2020 WalkAway RandyQuaid
+RandyRRQuaid He makes me laugh for sure He s definitely made us a proud people again I love our country and this is definitely the Trump era realDonaldTrump Trump2020 WalkAway RandyQuaid
 
-        JoeBiden ThePathToSaveAmerica Goes through JoeBiden It is the ONLY WAY to SAVE AMERICA TO SAVE LIVES OF AMERICANS TO SAVE THE CONSTITUTION TO SAVE JOBS
+JoeBiden ThePathToSaveAmerica Goes through JoeBiden It is the ONLY WAY to SAVE AMERICA TO SAVE LIVES OF AMERICANS TO SAVE THE CONSTITUTION TO SAVE JOBS
 
-        ewarren is far amp above the best pick She has a grassroots base in place Her PHD in bankruptcy law makes wall street shudder she is the best most prolific policy wonk She is a practical yet a kind compassionate soul
+ewarren is far amp above the best pick She has a grassroots base in place Her PHD in bankruptcy law makes wall street shudder she is the best most prolific policy wonk She is a practical yet a kind compassionate soul
 
-        JoeBiden as a White Middleclass woman i beg you to chose a Black woman as your running mate We need it now more than ever There are so many wonderful strong smart Black women who could help save this hurting country
+JoeBiden as a White Middleclass woman i beg you to chose a Black woman as your running mate We need it now more than ever There are so many wonderful strong smart Black women who could help save this hurting country
 
-        VP JoeBiden please talk about how you will protect Social Security during DNC2020 This is a top issue for voters 50+ Social Security is a hard earned benefit and a promise that must be kept ProtectVoters50Plus
+VP JoeBiden please talk about how you will protect Social Security during DNC2020 This is a top issue for voters 50+ Social Security is a hard earned benefit and a promise that must be kept ProtectVoters50Plus
 
 ### Top 5 negative tweets from original content 
 
