@@ -243,9 +243,9 @@ Let's do a another sanity check and compare how  many tweets changed its compoun
 
 ![Alternate image text](/images/twitter/neg_neut_pos.png)
 
-*42.6% of tweets in August contain positive sentiment (2351 tweets)*
-*38.8% of tweets in August contain negative sentiment (2142 tweets)*
-*18.6% of tweets in August contain Neutral sentiment (1025 tweets)*
+*42.6% of tweets in August contain positive sentiment (2351 tweets)* <br>
+*38.8% of tweets in August contain negative sentiment (2142 tweets)* <br>
+*18.6% of tweets in August contain Neutral sentiment (1025 tweets)* <br>
 
 I want to note that this analysis is a sample of tweets taken from August representing a much larger dataset (explained in previous blog post). 
 
@@ -279,8 +279,8 @@ Seriously how can anyone with half a functioning brain say JoeBiden is a danger 
 realDonaldTrump Tucker Carlson is a racist and a brat that they gave a platform to so he can spew his racism OBAMA and the other presidents did the right thing dump trump did the wrong thing as usual Carlson and trump 2 pieces of crap sad sad miserable people you are go get a real life racist
 
 **Things to note:**
-3 out of 5 Top negative tweets are about Trump
-1 out of 5 top negative tweets is about Joe Biden
+3 out of 5 Top negative tweets are about Trump <br>
+1 out of 5 top negative tweets is about Joe Biden <br>
 
 ## Word Cloud
 A word cloud is a great visual tool because it helps visualize important words.
