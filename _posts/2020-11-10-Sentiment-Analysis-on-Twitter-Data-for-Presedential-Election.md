@@ -181,14 +181,20 @@ Examples of typical use cases for sentiment analysis, including proper handling 
 - understanding sentiment-laden initialisms and acronyms (for example: 'lol')
 
 ### Clean Text
-This time when cleaning the text, for vader sentiment analysis. I do not change all letters to lowercase. This is because vader sentiment analysis takes into account uppercase letters.  Speficially if a word is all capitilize.  Suggesting emphaisis on that word. For example: HURRAY! WIN! FAIL!
+This time when cleaning the text, I do not change all letters to lowercase. This is because vader sentiment analysis takes into account uppercase letters.  Speficially if a word is all capitilize which suggests emphaisis on that word. For example: HURRAY! WIN! FAIL!
 
-I as well specifically specified which punctuation to remove from the text. I decided to exclude exclamation marks ! because Vader Sentiment Anaalysis takes into excalamation marks.  
+This time I am specifically input which punctuation to remove from the text. I decided to exclude exclamation marks ! because Vader Sentiment Anaalysis as well takes into excalamation marks.  
 
 ``` python
+# Create a function to clean the tweets          
 def cleanTxt(text):
 
     #initializing punctuations string  
+    text = re.sub('RT[\s]@[A-Za-z0–9]+', '', text) # Removing RT and the the account retweeted from
+    # Remove hyperlinks before punctuation is important
+    text = re.sub('https?:\/\/\S+', '', text) # Removing hyperlink
+   
+   # define punctuation
     punc = '''()-[]{};:'"\, <>./?@#$%^&*_~'''
   
     # Removing punctuations in string 
@@ -197,9 +203,8 @@ def cleanTxt(text):
         if ele in punc:  
             text = text.replace(ele, " ")  
             
-    text = re.sub('RT[\s]@[A-Za-z0–9]+', '', text) # Removing RT and the the account retweeted from
-    text = re.sub('https?:\/\/\S+', '', text) # Removing hyperlink
-    text = re.sub('https', '', text)
+    # One last clean with removing spacing
+    # After removing punctuation, consecutive spacing may be present
     text = re.sub(r'\s*<br\s*/?>\s*', u'\n', text)  # newline after a <br>
     text = re.sub(r'\s+', u' ', text)  # replace consecutive spaces
     text = re.sub(r'^\s+', u'', text)  # remove spaces at the beginning
@@ -224,32 +229,37 @@ df['scores'] = df['full_text'].apply(lambda review: sid.polarity_scores(review))
 df['compound'] = df['scores'].apply(lambda score_dict: score_dict['compound'])
 df['comp_score'] = df['compound'].apply(lambda c: 'pos' if c >=0.05 else ('neutral' if (c < 0.05 and c > -0.05) else 'neg'))
 
+Check out the table after applying Vader Sentiment Analysis!
+![Alternate image text](/images/twitter/vsa_Clean_head5.png)
 
+Let's do a another sanity check and compare how  many tweets changed its compound score before and after cleaning the text data.
+![Alternate image text](/images/twitter/change_unchange_vsa.png)
 
+For 
 
 ### Top 5 positive tweets from original content
 
-    He makes me laugh for sure  He s definitely made us a proud people again  I love our country and this is definitely the Trump era realDonaldTrump Trump2020 WalkAway
+        RandyRRQuaid He makes me laugh for sure He s definitely made us a proud people again I love our country and this is definitely the Trump era realDonaldTrump Trump2020 WalkAway RandyQuaid
 
-    JoeBiden  ThePathToSaveAmerica Goes through JoeBiden It is the ONLY WAY to SAVE AMERICA TO SAVE LIVES OF AMERICANS TO SAVE THE CONSTITUTION TO SAVE JOBS
+        JoeBiden ThePathToSaveAmerica Goes through JoeBiden It is the ONLY WAY to SAVE AMERICA TO SAVE LIVES OF AMERICANS TO SAVE THE CONSTITUTION TO SAVE JOBS
 
-    ewarren is far amp above the best pick She has a grassroots base in place  Her PHD in bankruptcy law makes wall street shudder she is the best most prolific policy wonk  She is a practical yet a kind compassionate soul 
+        ewarren is far amp above the best pick She has a grassroots base in place Her PHD in bankruptcy law makes wall street shudder she is the best most prolific policy wonk She is a practical yet a kind compassionate soul
 
-    VP JoeBiden please talk about how you will protect Social Security during DNC2020 This is a top issue for voters 50+ Social Security is a hard earned benefit and a promise that must be kept   ProtectVoters50Plus
+        JoeBiden as a White Middleclass woman i beg you to chose a Black woman as your running mate We need it now more than ever There are so many wonderful strong smart Black women who could help save this hurting country
 
-    JoeBiden as a White Middleclass woman i beg you to chose a Black woman as your running mate We need it now more than ever There are so many wonderful strong smart Black women who could help save this hurting country
+        VP JoeBiden please talk about how you will protect Social Security during DNC2020 This is a top issue for voters 50+ Social Security is a hard earned benefit and a promise that must be kept ProtectVoters50Plus
 
 ### Top 5 negative tweets from original content 
 
-    realDonaldTrump Maybe the root of evil is drugs  Drugs distort the mind into thinking there is no other way Then sets the place for prostitution robbing stealing murder Every kind of evil gives way to a life of misery and chaos  Which causes destruction and no responsibility 
+realDonaldTrump Maybe the root of evil is drugs Drugs distort the mind into thinking there is no other way Then sets the place for prostitution robbing stealing murder Every kind of evil gives way to a life of misery and chaos Which causes destruction and no responsibility
 
-    How incredibly and unbelievably stupid are some Americans who are lied to every day by realDonaldTrump  who ignore his epic failures who over look his hate and still want to vote for him You people are fools and must be brainless 
+How incredibly and unbelievably stupid are some Americans who are lied to every day by realDonaldTrump who ignore his epic failures who over look his hate and still want to vote for him You people are fools and must be brainless
 
-    JoeBiden when do we stand up to Trump He and his fascists keep doing all this until WE MAKE THEM STOP  Steal the election if we let them Buddies w 🇷🇺 if we let them What breaks Fascism All the outrages we have seen lived and continue = Fascism  Trump is a Fascist 
+ReedCoverdale Sadly realDonaldTrump it s too little way too late So far all troop reductions have just been reassigned to other illegal war zones You can t move 1500 troops from Iraq then claim your the anti war president
 
-    realDonaldTrump if I ever meet u I m Ganna grab your dick so hard and if I get arrested I m getting a fake Russian identity u fuck nachosarah
+realDonaldTrump if I ever meet u I m Ganna grab your dick so hard and if I get arrested I m getting a fake Russian identity u fuck nachosarah
 
-    Sadly due to CFIX inability to stop violating my rights I will retweet this tweet everyday until Election Day Until the day I’m a second class citizen no more until the day when the confederate stasi no longer exists I will retweet this tweet GoodTrouble Nov3rdIsComing
+JoeBiden when do we stand up to Trump He and his fascists keep doing all this until WE MAKE THEM STOP Steal the election if we let them Buddies w 🇷🇺 if we let them What breaks Fascism All the outrages we have seen lived and continue = Fascism Trump is a Fascist
 
 ### Word Cloud
 
