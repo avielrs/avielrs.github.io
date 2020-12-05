@@ -274,6 +274,13 @@ Seriously how can anyone with half a functioning brain say JoeBiden is a danger 
 
 realDonaldTrump Tucker Carlson is a racist and a brat that they gave a platform to so he can spew his racism OBAMA and the other presidents did the right thing dump trump did the wrong thing as usual Carlson and trump 2 pieces of crap sad sad miserable people you are go get a real life racist
 
+## Word Cloud
+A word cloud is a great visual tool because it helps visualize important words.
+
+Before performing topic modelling, we can actually start to view which topics were frequently expressed in August. Below is a word cloud of the most frequently used words from the Tweets posted in August. The larger the font size the more  frequent the word is used. We can see here that realdonaldtrump is the most freuqnet word. Other popular topics includes Joe Biden, american, people, president, voting, support, police,  democrat,  ballot, Kamala Harris,  justice,  country,  mail, white house,  social security, united states,  school, black, racist, covid19, death, and november.
+
+![Alternate image text](/images/twitter/wordcloud.png)
+
 ## What's next on the agenda?
 ![Alternate image text](/images/twitter/next.jpg)
 
@@ -283,63 +290,3 @@ Next stop Top Modelling! Well sort of. First I will need to prepare the text dat
 
 With the combination of Topic Modelling and Sentiment Analysis, I will be able to start to form a story of the topics discussed and majority of feeling towards that subject throughout the election. 
 
-## Word Cloud - One Last Thing
-
-Before performing topic modelling, we can actually start to view which topics were frequently expressed in August. Below is a word cloud of the most frequently used words from the Tweets posted in August. The larger the font size the more  frequent the word is used. We can see here that realdonaldtrump is the most freuqnet word. Other popular topics includes Joe Biden, american, people, president, voting, support, police,  democrat,  ballot, Kamala Harris,  justice,  country,  mail, white house,  social security, united states,  school, black, racist, covid19, death, and november.
-
-![Alternate image text](/images/twitter/wordcloud.png)
-
-Word Clouds are a great visual tool because it helps visualize important words.
-
-Python Script to make word cloud:
-
-``` python
-# import package
-from wordcloud import WordCloud
-
-# use clean text
-Text = df_clean['full_text']
-
-# remove stop words with spacy
-
-# import spacy package
-import spacy
-
-spacy.prefer_gpu()
-spacy_nlp = spacy.load("en_core_web_sm")
-
-# Stop words from spacy
-all_stopwords = spacy_nlp.Defaults.stop_words
-
-
-comment_words = '' 
-  
-# iterate through Text
-for val in Text: 
-      
-    # typecaste each val to string 
-    val = str(val) 
-  
-    # split the value 
-    tokens = val.split() 
-      
-    # Converts each token into lowercase 
-    for i in range(len(tokens)): 
-        tokens[i] = tokens[i].lower() 
-      
-    comment_words += " ".join(tokens)+" "
-
-wordcloud = WordCloud(width = 1000, height = 600, 
-                background_color = 'white',
-               # colormap = 'Spectral',
-                stopwords = all_stopwords, 
-                min_font_size = 10).generate(comment_words) 
-  
-# plot the WordCloud image                        
-plt.figure(figsize = (10, 6), facecolor = None) 
-plt.imshow(wordcloud) 
-plt.axis("off") 
-plt.tight_layout(pad = 0) 
-  
-plt.show() 
-```
