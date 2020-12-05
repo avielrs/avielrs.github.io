@@ -262,9 +262,9 @@ KellyannePolls GOD BLESS YOU🇺🇸 Sweet KellyannePolls U SHINED LIKE A BRIGHT
 
 Dear Mr President As you honor and celebrate the life of your best friend and brother Robert please know that millions of Americans are praying that you and your family feel the Presence of God and the Peace that only He can bring realDonaldTrump DonaldJTrumpJr EricTrump
 
-**Things to note:**
-3 out of 5 Top Positive Tweets are about Trump
-1 out of 5 Top Positive Tweets is about Joe Biden
+**Things to note:** <br>
+3 out of 5 Top Positive Tweets are about Trump <br>
+1 out of 5 Top Positive Tweets is about Joe Biden <br>
 
 ### Top 5 negative tweets from August sample
 
