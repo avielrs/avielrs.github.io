@@ -262,6 +262,10 @@ KellyannePolls GOD BLESS YOU🇺🇸 Sweet KellyannePolls U SHINED LIKE A BRIGHT
 
 Dear Mr President As you honor and celebrate the life of your best friend and brother Robert please know that millions of Americans are praying that you and your family feel the Presence of God and the Peace that only He can bring realDonaldTrump DonaldJTrumpJr EricTrump
 
+**Things to note:**
+3 out of 5 Top Positive Tweets are about Trump
+1 out of 5 Top Positive Tweets is about Joe Biden
+
 ### Top 5 negative tweets from August sample
 
 Pissed off about schools Blame Trump Pissed off about college football Blame Trump Pissed off about 165 000 dead Blame Trump Pissed off about an economy still on its back Blame Trump He didn’t listen didn’t prepare didn’t lead He lied He fucked up Blame him
@@ -273,6 +277,10 @@ atlpackfan2 onlytruthhere realDonaldTrump Take “Christian” off your profile 
 Seriously how can anyone with half a functioning brain say JoeBiden is a danger to America when we have the most self serving moronic grifting misogynistic ugly as fuck no heart no brain uncaring constitution killing pussy grabbing punk ass bitch as president now
 
 realDonaldTrump Tucker Carlson is a racist and a brat that they gave a platform to so he can spew his racism OBAMA and the other presidents did the right thing dump trump did the wrong thing as usual Carlson and trump 2 pieces of crap sad sad miserable people you are go get a real life racist
+
+**Things to note:**
+3 out of 5 Top negative tweets are about Trump
+1 out of 5 top negative tweets is about Joe Biden
 
 ## Word Cloud
 A word cloud is a great visual tool because it helps visualize important words.
