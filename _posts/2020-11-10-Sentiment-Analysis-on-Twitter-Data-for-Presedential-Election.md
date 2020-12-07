@@ -9,13 +9,11 @@ title: Rule-Based Sentiment Analysis on Twitter Data
 ## Why in the world would someone care about social media data?
 With an abundance of social media, news articles, and opinion pieces available on the web, Data Scientists are able to utilize these resources in order to extract millions of text data. In this project, I am specifically looking at tweets from the 2020 United States Presidential Election. To read how I collected these tweets, please check out my previous [post!](https://avielrs.github.io/Collecting-Twitter-Data-on-the-US-Presidential-Election/){:target="_blank"} 
 
-Extracting data from twitter is greatly beneficial because twitter is used to express opinions and engage with others publicly. From twitter, Data Scientists are able to find key words amongst tweets, analyze geographic differences in opinions about topics, detect bots on twitter, analyze user engagement for specific topics, and create a timeline of events from tweet data (Chen et al., 2020). As well, tweet data can even be utilized to make predictions such as the [2020 US Presidential Elections](https://www.independent.co.uk/news/world/americas/us-election-2020/2020-election-whos-going-to-win-ai-trump-biden-results-outcome-odds-b1374290.html){:target="_blank"}! Pretty amazing, right? 
+Extracting data from twitter is greatly beneficial because twitter is used to express opinions and engage with others publicly. From twitter, Data Scientists are able to find key words among tweets, analyze geographic differences in opinions about topics, detect bots on twitter, analyze user engagement for specific topics, and create a timeline of events from tweet data (Chen et al., 2020). As well, tweet data can even be utilized to make predictions such as the [2020 US Presidential Elections](https://www.independent.co.uk/news/world/americas/us-election-2020/2020-election-whos-going-to-win-ai-trump-biden-results-outcome-odds-b1374290.html){:target="_blank"}! Pretty amazing, right? 
 
-We as well know that social media influences opinions. It starts with following those who tend to have a certain viewpoint who then shares resources, links, and more education towards that point of view. In result, our opinions grow stronger towards that topic. The spread and influence of opinions on social media can positively and negatively impact society. An example of negative impact is the rise of hate groups and terrorist organizations through the help of social media. [According to Christopher Way, Director of FBI](https://www.fbi.gov/news/testimony/worldwide-threats-to-the-homeland-091720){:target="_blank"}, these dangerous organizations utilize social media platforms to recruit, radicalize vulnerable persons in the U.S., propagate its ideology, and create false personas on social media to discredit U.S. individuals and institutions. 
+We as well know that social media influences opinions. It starts with following those who tend to have a certain viewpoint who then shares resources, links, and more towards that point of view. In result, our opinions grow stronger towards that topic. The spread and influence of opinions on social media can positively and negatively impact society. An example of negative impact is the rise of hate groups and terrorist organizations through the help of social media. [According to Christopher Way, Director of FBI](https://www.fbi.gov/news/testimony/worldwide-threats-to-the-homeland-091720){:target="_blank"}, these dangerous organizations utilize social media platforms to recruit, radicalize vulnerable persons in the U.S., propagate its ideology, and create false personas on social media to discredit U.S. individuals and institutions. 
 
-Therefore, we can see how analyzing and understanding the intricacies of social media can help pinpoint how, where, and why trending opinions spread. This might interest businesses as well because a compnay may want to utilize influencers who will positive influence their business, and identify key trends within that market in order to implement successful marketing campaigns on social media. 
-
-Alright, at this point you are probably thinking to yourself, "Wow! Data from social media is super cool!"
+We can see how analyzing and understanding the intricacies of social media can help pinpoint how, where, and why trending opinions spread. Alright, at this point you are probably thinking to yourself, "Wow! Data from social media is super cool!"
 
 ## Purpose
 For my project, I am focusing on the context of popular topics from collecting tweet data regarding the 2020 US Presidential election. The goal of this is to apply sentiment analysis and topic modelling to these tweets. **Sentiment Analysis** specifically is a Natural Language Process in order to detect and analyze opinions or attitudes within text. 
@@ -30,15 +28,13 @@ For my project, I am focusing on the context of popular topics from collecting t
 ## Methods
 
 #### Rule Based
-Rule-based sentiment analysis calculates a sentiment score on a text based off implemented rules such as determining if negations are present or a specific word is present. 
+Rule-based sentiment analysis calculates a sentiment score on a text based off implemented rules. 
 
 - TextBlob
 - Vader Sentiment Analysis
 
 #### Machine Learning
-Machine learning can identify the sentiment if you are able to train a dataset with an independent variable. For example, machine learning can be utilized to predict the score from Yelp reviews, Airbnb reviews, and movie reviews. You could label the sentiment of 5 out of 5 stars very positive and 1 out of 5 stars very negative. 
-
-If we want to use machine learning to identify sentiment but do not have a rating. There is a work around method by labelling a training dataset in order to create an independent variable for sentiment. The problem with this is that if we collect hundres of thousands and millions of data, labeling the sentiment for even 1000 tweets by hand is not enough data to train a model. 
+Machine learning algorithms can be utilized to label the sentiment. In order to do this, I need to first train the model with a pre-existing labeled sentiment as the independent variable. The drawback to this approach is that I would need to label the sentiment for each tweet for a large enough sample size in order to train and test the model successfully. For now, I will put this approach aside and continue with rule-based sentiment analysis.
 
 - SVM
 - Naive Bayes Classifier 
@@ -61,7 +57,7 @@ If we want to use machine learning to identify sentiment but do not have a ratin
 - Add new models or languages through extensions
 - WordNet integration
 
-From TextBlob, the sentiment returns a polarity and subjectivity score. 
+From TextBlob Sentiment Analysis, the sentiment returns a polarity and subjectivity score. 
 
 **Polarity** score output is a float between the range [-1.0, 1.0], where -1.0 is 100% negative and 1.0 is 100% positive. 
 
@@ -84,13 +80,13 @@ Things to note about the text:
 3.  Face Palm emoji which signifies frustration or  disappointment
 4. @mention of twitter user realDonaldTrump
 
-In order to improve the accuracy when processing the tweet data with TextBlob, I first clean the text data by:
- - change uppercase letters to lowercase
- - remove punctuation and emojis
- - remove consecutive spaces
- - remove hyperlinks
- - remove newlines
- - emove retweet account when tweets are retweeted.
+In order to improve the accuracy when processing the tweet data with TextBlob, I first clean the text by:
+ - changing uppercase letters to lowercase
+ - removing punctuation and emojis
+ - removing consecutive spaces
+ - removing hyperlinks
+ - removing newlines
+ - removing retweet account when tweets are retweeted.
 
 #### Use Regex to clean the data:
 
@@ -98,7 +94,7 @@ In order to improve the accuracy when processing the tweet data with TextBlob, I
 # Create a function to clean text
 def cleanTxt(text):
 
-    text = re.sub('RT[\s]@[A-Za-z0–9]+', '', text) # Removing RT and the the account retweeted from
+    text = re.sub('RT[\s]@[A-Za-z0–9]+', '', text) # Removing RT and the account retweeted from
     text = re.sub('https?:\/\/\S+', '', text) # Removing hyperlink
     text = re.sub(r'[^\w\s]', '', text) # removes punctuation and emojis
     text = re.sub(r'\s*<br\s*/?>\s*', '\n', text)  # newline after a <br>
@@ -145,24 +141,57 @@ def getAnalysis(score):
 df['sentiment'] = df['Polarity'].apply(getAnalysis)
 ```
 
-After cleaning the text and applying TextBlob Sentiment Analysis the dataframe looks something like this! 
+After cleaning the text and applying TextBlob Sentiment Analysis the dataframe now looks something like this! 
 ![Alternate image text](/images/twitter/TextBlob_Clean_head5.png)
 
-#### Step 6: Compare sentiment score before cleaning the data with after cleaning the data:
+#### Step 6: Compare sentiment score before cleaning the data with after cleaning the data
 
-I would like to check to see how much changed the Polarity Scores and Sentiment Analysis between the clean  text and clean text. For me, this is a sanity check to make sure there acutally is a difference after cleaning the text dataset, rather than blindly saying cleaning "Text data will change the outcome of the sentiment score. Awesome!" <br>
+I would like to check to see how much changed the Polarity Scores and Sentiment Analysis between the clean text and clean text. For me, this is a sanity check to make sure there actually is a difference after cleaning the text dataset, rather than blindly saying that "Text data will change the outcome of the sentiment score. Awesome!" <br>
 
 To do this, I calculate how many tweets changed its polarity scores after cleaning the text data.
 ![Alternate image text](/images/twitter/change_unchange_polarity_textblob.png)
 
 **17% percent of the text changed its polarity score after cleaning the text**
 
-It is important to note that even if cleaning text may not seem significant, it  is important to include for setting up the data because text data from tweets inicludes html links, extra space and lines, punctuation, and emojis which all may hinder TextBlob Sentiment Analysis scores.
+It is important to note that even if cleaning the text may not seem very significant, cleaning text is important for setting up the data because text data from tweets includes html links, extra space and lines, punctuation, and emojis which all may hinder TextBlob Sentiment Analysis scores.
+
+#### Step 5: How many tweets TextBlob identified as negative, neutral, and positive sentiment in August
+
+![Alternate image text](/images/twitter/august_textblob_sentiment.png)
+
+*44.9% of tweets in August contain positive sentiment (2351 tweets)* <br>
+*25.4% of tweets in August contain negative sentiment (2142 tweets)* <br>
+*29.7% of tweets in August contain Neutral sentiment (1025 tweets)* <br>
+
+I want to note that this analysis is a sample of tweets taken from August representing a much larger dataset (explained in previous blog post). 
+
+### Top 5 Positive Tweets from August regarding the 2020 US Elections
+when they say the best is yet to come thats a threat
+
+sethabramson realdonaldtrump he went through school but school did not go through him is the best way i can explain it
+
+realdonaldtrump nytimes cnn greatest president of all time of all time
+
+perfectly stated marklevinshow we dont need crazycreepycharacterassassins running our country we need realdonaldtrump for another fourmoreyears getoutofyourbasement joeandthehoenogo
+
+when it comes to reopening schools democrats are doing whats best for the teachers union the teachers union is doing whats best for themselves amp neither are doing whats best for the students or their families rt if you agree with realdonaldtrump that schools must reopen
+
+### Top 5 negative tweets 
+president trump stop being a phony your executive order on housing is a cruel joke your eviction moratorium wont prevent one tenant from being evicted or provide one cent to pay the rent 40 million americans are in danger of being evicted stop lying cancel the rent now
+
+terrible
+
+berniesanders my family is suffering because of our awful government we need to do something about this for everyone
+
+president trump stop being a phony your executive order on housing is a cruel joke your eviction moratorium wont prevent one tenant from being evicted or provide one cent to pay the rent 40 million americans are in danger of being evicted stop lying cancel the rent now
+
+president trump stop being a phony your executive order on housing is a cruel joke your eviction moratorium wont prevent one tenant from being evicted or provide one cent to pay the rent 40 million americans are in danger of being evicted stop lying cancel the rent now
+
 
 ## VADER SENTIMENT ANLAYSIS
 ![Alternate image text](/images/twitter/social media sign.jpg)
 
-While TextBlob Sentiment Analysis is a great tool to use, identifying the sentiment in text from social media adds an extra level of complexity compared to identifying sentiment within reviews, online news articles, or books. Social media text is complex because there are emojis to express feelings, acronyms (LOL OMG LMAO ROFL WTF ASAP), intentionally misspelled words like sucks -> sux and fav -> favorite. There are as well slang words that are used on social media that is not identified in the dictionary at least yet such as yolo, muah, haha, woohoo, and using punctuation to make an emotion or face such as (: (; <3 . We as well utilize words in different context. For example, on social media, one might use the word wicked to mean cool/awesome which is takes an originally negative word and utilize it in a positive way. These complexities in social media need to be accounted for when identifying sentiment in a sentence. Luckily for us, computer scientists from Georgeo Tech, C.J. Hutto and Eric Gilbert developed a package called [Vader Sentiment Analysis](https://github.com/cjhutto/vaderSentiment){:target="_blank"} which takes into account many of the edge cases found in social media.
+While TextBlob Sentiment Analysis is a great tool to use, identifying the sentiment in text from social media adds an extra level of complexity compared to identifying sentiment within reviews, online news articles, or books. Social media text is complex because there are emojis to express feelings, acronyms (LOL OMG LMAO ROFL WTF ASAP), intentionally misspelled words like sucks -> sux and fav -> favorite. There are as well slang words that are used on social media that is not identified in the dictionary at least yet such as yolo, muah, haha, woohoo, and using punctuation to make an emotion or face such as (: (; <3 . We as well utilize words in different context. For example, on social media, one might use the word wicked to mean cool/awesome which is takes an originally negative word and utilize it in a positive way. These complexities in social media need to be accounted for when identifying sentiment in a sentence. Luckily for us, computer scientists from Georgia Tech, C.J. Hutto and Eric Gilbert developed a package called [Vader Sentiment Analysis](https://github.com/cjhutto/vaderSentiment){:target="_blank"} which takes into account many of the edge cases found in social media.
 
 Vader Sentiment Analysis is another lexicon rule-based sentiment analysis tool that was specifically developed for social media text. Vader Sentiment accounts for speed and performance which is important for large datasets such as thousands or millions of tweets.
 
@@ -191,16 +220,16 @@ sid = SentimentIntensityAnalyzer()
 ```
 
 #### Step 2: Clean Text
-This time when cleaning the text, I do not change all letters to lowercase. This is because vader sentiment analysis takes into account uppercase letters.  Speficially if a word is all capitilize which suggests emphaisis on that word. For example: HURRAY! WIN! FAIL!
+This time when cleaning the text, I do not change all letters to lowercase. This is because vader sentiment analysis takes into account uppercase letters.  Specifically, if a word is all capitalize which suggests emphasis on that word. For example: HURRAY! WIN! FAIL!
 
-This time I am specifically input which punctuation to remove from the text. I decided to exclude exclamation marks ! because Vader Sentiment Anaalysis as well takes into excalamation marks.  
+This time I am specifically input which punctuation to remove from the text. I decided to exclude exclamation marks ! because Vader Sentiment Analysis as well takes into exclamation marks.  
 
 ``` python
 # Create a function to clean the tweets          
 def cleanTxt(text):
 
     #initializing punctuations string  
-    text = re.sub('RT[\s]@[A-Za-z0–9]+', '', text) # Removing RT and the the account retweeted from
+    text = re.sub('RT[\s]@[A-Za-z0–9]+', '', text) # Removing RT and the account retweeted from
     # Remove hyperlinks before punctuation is important
     text = re.sub('https?:\/\/\S+', '', text) # Removing hyperlink
    
@@ -234,12 +263,12 @@ Check out the table after applying Vader Sentiment Analysis!
 ![Alternate image text](/images/twitter/vsa_Clean_head5.png)
 
 #### Step 4: Sanity Check on cleaning data
-Let's do a another sanity check and compare how  many tweets changed its compound score before and after cleaning the text data.
+Let's do another sanity check and compare how  many tweets changed its compound score before and after cleaning the text data.
 ![Alternate image text](/images/twitter/change_unchange_vsa.png)
 
 **12% percent of the text changed its compound score after cleaning the text**
 
-#### Step 5: Compare distirubtion of tweets for negative, neatural, and positive sentiment in August
+#### Step 5: Compare distribution of tweets for negative, neutral, and positive sentiment in August
 
 ![Alternate image text](/images/twitter/neg_neut_pos.png)
 
@@ -248,7 +277,6 @@ Let's do a another sanity check and compare how  many tweets changed its compoun
 *18.6% of tweets in August contain Neutral sentiment (1025 tweets)* <br>
 
 I want to note that this analysis is a sample of tweets taken from August representing a much larger dataset (explained in previous blog post). 
-
 
 ### Top 5 positive tweets from August sample
 
@@ -298,3 +326,18 @@ Next stop Top Modelling! Well sort of. First I will need to prepare the text dat
 
 With the combination of Topic Modelling and Sentiment Analysis, I will be able to start to form a story of the topics discussed and majority of feeling towards that subject throughout the election. 
 
+
+
+#### References
+
+Chen E, Lerman K, Ferrara E
+Tracking Social Media Discourse About the COVID-19 Pandemic: Development of a Public Coronavirus Twitter Data Set
+JMIR Public Health Surveill 2020;6(2):e19273
+URL: https://publichealth.jmir.org/2020/2/e19273
+DOI: 10.2196/19273
+PMID: 32427106
+PMCID: 7265654
+
+Hutto, C.J. & Gilbert, E.E. (2014). VADER: A Parsimonious Rule-based Model for Sentiment Analysis of Social Media Text. Eighth International Conference on Weblogs and Social Media (ICWSM-14). Ann Arbor, MI, June 2014.
+
+Wray, Christopher. “Worldwide Threats to the Homeland.” Federal Bureau of Investigation, 17 Sept. 2020, www.fbi.gov/news/testimony/worldwide-threats-to-the-homeland-091720. 
