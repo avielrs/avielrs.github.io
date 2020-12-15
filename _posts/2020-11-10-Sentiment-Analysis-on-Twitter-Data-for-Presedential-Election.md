@@ -264,7 +264,7 @@ Check out the table after applying Vader Sentiment Analysis!
 ![Alternate image text](/images/twitter/vsa_Clean_head5.png)
 
 #### Step 4: Sanity Check on cleaning data
-Let's do another sanity check and compare how  many tweets changed its compound score before and after cleaning the text data.
+Let's do another sanity check and compare how many tweets changed its compound score before and after cleaning the text data.
 ![Alternate image text](/images/twitter/change_unchange_vsa.png)
 
 **12% percent of the text changed its compound score after cleaning the text**
@@ -314,7 +314,7 @@ realDonaldTrump Tucker Carlson is a racist and a brat that they gave a platform 
 ## Word Cloud
 A word cloud is a great visual tool because it helps visualize important words.
 
-Before performing topic modelling, we can actually start to view which topics were frequently expressed in August. Below is a word cloud of the most frequently used words from the Tweets posted in August. The larger the font size the more  frequent the word is used. We can see here that realdonaldtrump is the most freuqnet word. Other popular topics includes Joe Biden, american, people, president, voting, support, police,  democrat,  ballot, Kamala Harris,  justice,  country,  mail, white house,  social security, united states,  school, black, racist, covid19, death, and november.
+Before performing topic modelling, we can actually start to view which topics were frequently expressed in August. Below is a word cloud of the most frequently used words from the Tweets posted in August. The larger the font size the more frequent the word is used. We can see here that realdonaldtrump is the most freuqnet word. Other popular topics includes Joe Biden, american, people, president, voting, support, police,  democrat, ballot, Kamala Harris, justice, country, mail, white house, social security, united states,  school, black, racist, covid19, death, and november.
 
 ![Alternate image text](/images/twitter/wordcloud.png)
 
@@ -323,9 +323,9 @@ Before performing topic modelling, we can actually start to view which topics we
 
 Ok, I have now cleaned the the text data, applied Vader Sentiment Analysis to label the sentiment for each tweet. What's next on the agenda? 
 
-Next stop Top Modelling! Well sort of. First I will need to prepare the text data even more before running the topic models which will be discussed in my next blog post 😉. 
+Next stop is Top Modelling! Well sort of. First I will need to prepare the text data even more before running the topic models which will be discussed in my next blog post 😉. 
 
-With the combination of Topic Modelling and Sentiment Analysis, I will be able to start to form a story of the topics discussed and majority of feeling towards that subject throughout the election. 
+With the combination of Topic Modelling and Sentiment Analysis, I will be able to start to form a story of the topics discussed and identify a sentiment trend towards that subject throughout the election. 
 
 
 
