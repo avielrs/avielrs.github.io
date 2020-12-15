@@ -11,19 +11,21 @@ With an abundance of social media, news articles, and opinion pieces available o
 
 Extracting data from twitter is greatly beneficial because twitter is used to express opinions and engage with others publicly. From twitter, Data Scientists are able to find key words among tweets, analyze geographic differences in opinions about topics, detect bots on twitter, analyze user engagement for specific topics, and create a timeline of events from tweet data (Chen et al., 2020). As well, tweet data can even be utilized to make predictions such as the [2020 US Presidential Elections](https://www.independent.co.uk/news/world/americas/us-election-2020/2020-election-whos-going-to-win-ai-trump-biden-results-outcome-odds-b1374290.html){:target="_blank"}! Pretty amazing, right? 
 
-We as well know that social media influences opinions. It starts with following those who tend to have a certain viewpoint who then shares resources, links, and more towards that point of view. In result, our opinions grow stronger towards that topic. The spread and influence of opinions on social media can positively and negatively impact society. An example of negative impact is the rise of hate groups and terrorist organizations through the help of social media. [According to Christopher Way, Director of FBI](https://www.fbi.gov/news/testimony/worldwide-threats-to-the-homeland-091720){:target="_blank"}, these dangerous organizations utilize social media platforms to recruit, radicalize vulnerable persons in the U.S., propagate its ideology, and create false personas on social media to discredit U.S. individuals and institutions. 
+We as well know that social media influences opinions. Opinions are spread through following other accounts that tend to share a certain viewpoint with the use of resources, links, and more. In result, our opinions grow stronger towards that topic. The spread and influence of opinions on social media can positively and negatively impact society. An example of negative impact is the rise of hate groups and terrorist organizations through the help of social media. [According to Christopher Way, Director of FBI](https://www.fbi.gov/news/testimony/worldwide-threats-to-the-homeland-091720){:target="_blank"}, these dangerous organizations utilize social media platforms to recruit, radicalize vulnerable persons in the U.S., propagate its ideology, and create false personas on social media to discredit U.S. individuals and institutions. 
 
 We can see how analyzing and understanding the intricacies of social media can help pinpoint how, where, and why trending opinions spread. Alright, at this point you are probably thinking to yourself, "Wow! Data from social media is super cool!"
 
 ## Purpose
-For my project, I am focusing on the context of popular topics from collecting tweet data regarding the 2020 US Presidential election. The goal of this is to apply sentiment analysis and topic modelling to these tweets. **Sentiment Analysis** specifically is a Natural Language Process in order to detect and analyze opinions or attitudes within text. 
+For my project, I am focusing on the context of popular topics from collecting tweet data regarding the 2020 US Presidential election. The goal of this is to apply sentiment analysis and topic modelling to these tweets. **Sentiment Analysis** specifically is a Natural Language Process in order to detect and analyze opinions or attitudes within a text. 
 
 **A few questions to answer with sentiment analysis and topic modelling:**
 
-- How do the majority of tweets collected perceive Trump and Biden in total versus for each state? Does the perception change from June 2020 to October 2020?
-- What is the sentiment on specific topics that were important to the election such as COVID19, voter fraud, BLM, supremacist groups, Trump tax return, Supreme Court, anti-mask.
+- How do the majority of tweets perceive Trump and Biden in total versus for each state? Does the perception change from June 2020 to October 2020?
+- What is the sentiment on specific topics that were important to the election such as COVID19, voter fraud, BLM, supremacist groups, Trump tax return, supreme court, anti-mask.
 - How do tweets posted from a twitter account user with a large following perceive certain topics?
 - What are the top 5 positively perceived topics versus top 5 negatively perceived topics?
+
+These are questions that will be answered as I continue this project. For the rest of this post I will be focusing on the senttiment analysis methods. 
 
 ## Methods
 
@@ -34,7 +36,7 @@ Rule-based sentiment analysis calculates a sentiment score on a text based off i
 - Vader Sentiment Analysis
 
 #### Machine Learning
-Machine learning algorithms can be utilized to label the sentiment. In order to do this, I need to first train the model with a pre-existing labeled sentiment as the independent variable. The drawback to this approach is that I would need to label the sentiment for each tweet for a large enough sample size in order to train and test the model successfully. For now, I will put this approach aside and continue with rule-based sentiment analysis.
+Machine learning algorithms can be utilized to label the sentiment. In order to do this, I need to first train the model with a pre-existing labeled sentiment as the independent variable. The drawback to this approach is that I would need to label the sentiment for each tweet for a large enough sample size in order to train and test the model successfully. The second drawback to this approach is that in this project, I  would be the only person labeling the trained dataset which means there will be bias in labelling the dataset. This is because my viewpoint may be different then someone else and how I identify as negative or positive may be different for someone else. For now, I will put this approach aside and continue with rule-based sentiment analysis.
 
 - SVM
 - Naive Bayes Classifier 
@@ -78,7 +80,7 @@ Things to note about the text:
 1.  Punctuation: ‘@’,’!’, ‘…’, ‘:’, ‘/’, ‘.’, ‘?’
 2.  Capitalization
 3.  Face Palm emoji which signifies frustration or  disappointment
-4. @mention of twitter user realDonaldTrump
+4.  @mention of twitter user realDonaldTrump
 
 In order to improve the accuracy when processing the tweet data with TextBlob, I first clean the text by:
  - changing uppercase letters to lowercase
@@ -146,7 +148,7 @@ After cleaning the text and applying TextBlob Sentiment Analysis the dataframe n
 
 #### Step 6: Compare sentiment score before cleaning the data with after cleaning the data
 
-I would like to check to see how much changed the Polarity Scores and Sentiment Analysis between the clean text and clean text. For me, this is a sanity check to make sure there actually is a difference after cleaning the text dataset, rather than blindly saying that "Text data will change the outcome of the sentiment score. Awesome!" <br>
+I would like to check to see how many tweet Polarity Scores changed between the clean text and unclean text. For me, this is a sanity check to make sure there is a difference when cleaning the text dataset. <br>
 
 To do this, I calculate how many tweets changed its polarity scores after cleaning the text data.
 ![Alternate image text](/images/twitter/change_unchange_polarity_textblob.png)
@@ -155,7 +157,7 @@ To do this, I calculate how many tweets changed its polarity scores after cleani
 
 It is important to note that even if cleaning the text may not seem very significant, cleaning text is important for setting up the data because text data from tweets includes html links, extra space and lines, punctuation, and emojis which all may hinder TextBlob Sentiment Analysis scores.
 
-#### Step 5: How many tweets TextBlob identified as negative, neutral, and positive sentiment in August
+#### Step 5: The number of tweets TextBlob identified as negative, neutral, and positive sentiment in August
 
 ![Alternate image text](/images/twitter/august_textblob_sentiment.png)
 
@@ -165,27 +167,28 @@ It is important to note that even if cleaning the text may not seem very signifi
 
 I want to note that this analysis is a sample of tweets taken from August representing a much larger dataset (explained in previous blog post). 
 
-### Top 5 Positive Tweets from August regarding the 2020 US Elections
-when they say the best is yet to come thats a threat
+### Top 5 Positive Tweets from August regarding the 2020 US Elections from original content
+the best argument you will ever hear for realdonaldtrump
 
-sethabramson realdonaldtrump he went through school but school did not go through him is the best way i can explain it
+realdonaldtrump gets out the best in all of us
 
-realdonaldtrump nytimes cnn greatest president of all time of all time
+its friday august 28th 2020 and donald trump will be the best twoterm president in us history lets flood twitter every day with this trump2020
 
-perfectly stated marklevinshow we dont need crazycreepycharacterassassins running our country we need realdonaldtrump for another fourmoreyears getoutofyourbasement joeandthehoenogo
+whining is what donald trump does best joe biden
 
-when it comes to reopening schools democrats are doing whats best for the teachers union the teachers union is doing whats best for themselves amp neither are doing whats best for the students or their families rt if you agree with realdonaldtrump that schools must reopen
+another piece of very very good news bidenharris 2020
 
-### Top 5 negative tweets 
-president trump stop being a phony your executive order on housing is a cruel joke your eviction moratorium wont prevent one tenant from being evicted or provide one cent to pay the rent 40 million americans are in danger of being evicted stop lying cancel the rent now
+### Top 5 negative tweets from August regarading 2020 US Elections from original content
+realdonaldtrump wheres the horrible option
 
-terrible
+senatormelendez it looks like your boss realdonaldtrump is allowing putin to terrorise troops but you and gop are too scared of telling trump pathetic foxandfriends cbsnews newshour abc breitbartnews
 
-berniesanders my family is suffering because of our awful government we need to do something about this for everyone
+people should not vote before hearing the debates and you would think everyone would be outraged about this no debates no vote
 
-president trump stop being a phony your executive order on housing is a cruel joke your eviction moratorium wont prevent one tenant from being evicted or provide one cent to pay the rent 40 million americans are in danger of being evicted stop lying cancel the rent now
+you idiot
 
-president trump stop being a phony your executive order on housing is a cruel joke your eviction moratorium wont prevent one tenant from being evicted or provide one cent to pay the rent 40 million americans are in danger of being evicted stop lying cancel the rent now
+so sick of this crap realdonaldtrump
+
 
 
 ## VADER SENTIMENT ANLAYSIS
