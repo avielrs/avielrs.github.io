@@ -5,7 +5,9 @@ title: Collecting Twitter Data on the US 2020 Presidential Election
 ![Alternate image text](/images/twitter/tweet_tweet.jpg)
 
 # Part 1: Data Collection
-As a Data Scientist, it is easy to want to start with nicely formatted data and to jump into the predictive modelling and analysis phase. However, beginning a data science project from raw data can be fun and rewarding! Everyone loves a good challenge. Right? I decided for my raw data challenge, I will work with Twitter API data. By the way, can #RawDataChallenge become a thing? Anyways as I was saying, I decided to work with Twitter API data because 1) The documentation on Twitter APIs is abundant. Huzzah! 2) Twitter APIs provide very useful text data such as tweets, location, hashtags, and user mentions. Other data includes time, date, and number of followers. 3) I am intrigued by the idea of finding twitter trends and identifying major topics from just a simple tweet. 
+As a Data Scientist, it is easy to want to start with nicely formatted data and to jump into the predictive modelling and analysis phase. However, beginning a data science project from raw data can be fun and rewarding! Everyone loves a good challenge. Right? I decided for my raw data challenge, I will work with Twitter API data.
+
+I decided to work with Twitter API data because 1) The documentation on Twitter APIs is abundant. Huzzah! 2) Twitter APIs provide very useful text data such as tweets, location, hashtags, and user mentions. Other data includes time, date, and number of followers. 3) I am intrigued by the idea of finding twitter trends and identifying major topics from just a simple tweet. 
 
 ### Purpose
 I am collecting Twitter API data in order to analyze topics during the 2020 presidential election and to determine if there is a trend in the overall sentiment within these topics depending on location and time of the tweet. Topics that I expect to find from the tweets comprises of COVID19, Trump, Biden, election, vaccines, Black Lives Matter, fake news, Proud Boys, voter fraud, climate change, Ruth Ginsburg, Amy Coney Barrett, and TikTok. Phew, can you believe all this has happened in just 4 months?! 
@@ -29,13 +31,13 @@ Before collecting the tweets, I first downloaded the data folders from the GitHu
 git clone https://github.com/user_name/repo_name.git
 ```
 
-This step basically downloads the most recently updated files from the repo onto the computer. This step is important because the dataset will continuously update in the next month or two. Cloning the git folder will allow me to easily update my files without re-downloading the entire dataset every time.
+This step basically downloads the most recently updated files from the repo onto my computer. This step is important because the dataset will continuously update in the next month or two. Cloning the git folder will allow me to easily update my files without re-downloading the entire dataset every time.
 
 Ok. I have the data on my desktop! Yay! Well sort of….
 
 As I mentioned earlier, the dataset contains a list of tweet IDs. The tweet IDs were obtained by GitHub user [echen102](https://github.com/echen102){:target="_blank"} and the data science research group at USC. They were obtained by hitting the twitter API endpoints. In order to search for tweets regarding the 2020 Presidential election, filters were added to search for specific tweet accounts and tweets with specific users mentioned. 
 
-The reason why a list of tweet IDs are provided, rather than the entire json file is because of Twitter API’s [Terms of Service agreement](https://developer.twitter.com/en/developer-terms/agreement-and-policy){:target="_blank"}. The agreement states that developers cannot make large amounts of raw Twitter data available onto the web. This is to ensure user privacy on Twitter. For example, if a user decides to delete their tweet, then the developer will not be able to retrieve that tweet. As well, private information found in tweet data such as a username or user ID associated to sexual orientation, religion, health, or alleged crime is not permitted to make available to the public on the web. Well, that seems fair enough. 
+The reason why a list of tweet IDs are provided, rather than the entire json file is because of Twitter API’s [Terms of Service agreement](https://developer.twitter.com/en/developer-terms/agreement-and-policy){:target="_blank"}. The agreement states that developers cannot make large amounts of raw Twitter data available onto the web. This is to ensure user privacy on Twitter. For example, if a user decides to delete their tweet, then the developer will not be able to retrieve that tweet. As well, private information found in tweet data such as a username or user ID associated to sexual orientation, religion, health, or alleged crime is not permitted to make available to the public on the web. Ok that seems fair enough. 
 
 In order to utilize the tweet IDs, I need to **rehydrate**. To rehydrate means to take a tweet ID and extract the entire tweet API information associated to that ID. 
 
@@ -61,7 +63,7 @@ twarc configure
 <br>
 The below image should appear in your Terminal: Happing Twarcing! <br><br>
 ![Alternate image text](/images/twitter/happy_twarcing.png)<br>
-*Do you think the developers of twarc are making a pun from Twerking? I may have to email them and ask.*<br><br>
+*<br><br>
 
 Now that I have configured twarc, I can run a command to retrieve tweet data. 
 
@@ -110,7 +112,7 @@ However, with this specific project I already have an extensive list of tweet ID
 </p>
 
 <br>
-To hydrate tweet identifiers that are contained in a .txt file in twarc, run the command :  
+To hydrate tweet identifiers that are contained in a .txt file in twarc, run the command:  
 
     for tweet in t.hydrate(open('ids.txt')):
       print(tweet["text"])
@@ -142,18 +144,14 @@ While working on the sentiment analysis portion of this project, I realized a sl
 
 ![Alternate image text](/images/twitter/full_text.png) 
 
-At first, I searched for an [extended tweet mode](http://docs.tweepy.org/en/latest/extended_tweets.html){:target="_blank"} option in Twarc. There seems a potential option by using [' --tweet_mode extended'](https://gwu-libraries.github.io/sfm-ui/posts/2017-03-31-extended-tweets){:target="_blank"}. However, when I ran this option, the full_text is still cut off! I did find a [github issue](https://github.com/DocNow/twarc/issues/153){:target="_blank"} regarding this problem, however the issue is closed. I think this is a good example for why I might want to collect twitter API directly rather than using a third-party package. Next time!
+At first, I searched for an [extended tweet mode](http://docs.tweepy.org/en/latest/extended_tweets.html){:target="_blank"} option in Twarc. There seems a potential option by using [' --tweet_mode extended'](https://gwu-libraries.github.io/sfm-ui/posts/2017-03-31-extended-tweets){:target="_blank"}. However, when I ran this option, the full_text is still cut off! I did find a [github issue](https://github.com/DocNow/twarc/issues/153){:target="_blank"} regarding this problem, however the issue is closed. I think this is a good example for why I might want to collect twitter APIs directly rather than using a third-party package. Next time!
 
-Luckily before going down a deep whole, I opened the JSON file again and realized that there is a child object called 'retweeted_status'. The retweeted_status object contains the extended full text! The downside to this is that it is now more complicated to process the retweets into a DataFrame because the full_text within the retweeted_status is an attribute within a child object. Oy! 
-
+Luckily before going down a deep whole, I opened the JSON file again and realized that there is a child object called 'retweeted_status'. The retweeted_status object contains the extended full text!
 
 ![Alternate image text](/images/twitter/retweet.png)
 
 <br>
-#### To end this post, I will leave you with this quote.
-*“‘Possessed’ is probably the right word. I often tell people, ‘I don’t want to necessarily be a data scientist. You just kind of are a data scientist. You just can’t help but look at that data set and go, ‘I feel like I need to look deeper. I feel like that’s not the right fit.’”* <br> 
-― Jennifer Shin, Senior Principal Data Scientist at Nielsen; Lecturer at UC Berkeley
-<br><br>
+
 ### References
 
 Emily Chen, Ashok Deb, Emilio Ferrara. #Election2020: The First Public Twitter Dataset on the 2020 US Presidential Election. Arxiv (2020)
