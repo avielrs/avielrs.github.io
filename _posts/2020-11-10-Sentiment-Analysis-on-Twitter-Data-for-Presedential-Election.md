@@ -178,7 +178,7 @@ whining is what donald trump does best joe biden
 
 another piece of very very good news bidenharris 2020
 
-### Top 5 negative tweets from August regarading 2020 US Elections from original content
+### Top 5 negative tweets from August regarading 2020 US Elections from original content (not including retweets)
 realdonaldtrump wheres the horrible option
 
 senatormelendez it looks like your boss realdonaldtrump is allowing putin to terrorise troops but you and gop are too scared of telling trump pathetic foxandfriends cbsnews newshour abc breitbartnews
@@ -189,18 +189,16 @@ you idiot
 
 so sick of this crap realdonaldtrump
 
-
-
 ## VADER SENTIMENT ANLAYSIS
 ![Alternate image text](/images/twitter/social media sign.jpg)
 
-While TextBlob Sentiment Analysis is a great tool to use, identifying the sentiment in text from social media adds an extra level of complexity compared to identifying sentiment within reviews, online news articles, or books. Social media text is complex because there are emojis to express feelings, acronyms (LOL OMG LMAO ROFL WTF ASAP), intentionally misspelled words like sucks -> sux and fav -> favorite. There are as well slang words that are used on social media such as yolo, muah, haha, woohoo, and using punctuation to make an emotion or face such as (: (; <3. These complexities in social media need to be accounted for when identifying sentiment with rule-based algorithms. Luckily, computer scientists from Georgia Tech, C.J. Hutto and Eric Gilbert developed a package called [Vader Sentiment Analysis](https://github.com/cjhutto/vaderSentiment){:target="_blank"} which takes into account many of the edge cases found in social media.
+While TextBlob Sentiment Analysis is a great tool to use, identifying the sentiment in text from social media adds an extra level of complexity compared to identifying sentiment within reviews, online news articles, or books. Social media text is complex because there are emojis to express feelings, acronyms (LOL OMG LMAO ROFL WTF ASAP), intentionally misspelled words like sux -> sucks and fav -> favorite. There are as well slang words that are used on social media such as yolo, muah, haha, woohoo, and using punctuation to make an emotion or face such as (: (; <3. These complexities in social media need to be accounted for when identifying sentiment with rule-based algorithms. Luckily, computer scientists from Georgia Tech, C.J. Hutto and Eric Gilbert developed a package called [Vader Sentiment Analysis](https://github.com/cjhutto/vaderSentiment){:target="_blank"} which takes into account many of the edge cases found in social media.
 
 Vader Sentiment Analysis is another lexicon rule-based sentiment analysis tool that was specifically developed for social media text. Vader Sentiment as well accounts for speed and performance which is important for large datasets such as thousands or millions of tweets.
 
 Score is computed by summing the valence scores of each word in the lexicon, adjusted according to the rules, and then normalized to be between -1 (most extreme negative) and +1 (most extreme positive).
 
-Examples of typical use cases for sentiment analysis, including proper handling of sentences with:
+Examples of typical use cases for sentiment analysis, include proper handling of sentences with:
 - typical negations (e.g., "not good")
 - use of contractions as negations (e.g., "wasn't very good")
 - conventional use of punctuation to signal increased sentiment intensity (e.g., "Good!!!")
@@ -223,9 +221,9 @@ sid = SentimentIntensityAnalyzer()
 ```
 
 #### Step 2: Clean Text
-This time when cleaning the text, I do not change all letters to lowercase. This is because vader sentiment analysis takes into account uppercase letters.  Specifically, if a word is all capitalize which suggests emphasis on that word. For example: HURRAY! WIN! FAIL!
+This time when cleaning the text, I do not change all letters to lowercase. This is because vader sentiment analysis takes into account uppercase letters.  Specifically, if a word is in all capitalize this suggests emphasis on that word. For example: HURRAY! WIN! FAIL!
 
-This time I specifically input which punctuation to remove from the text. For example, I did not remove exclamation marks ! because Vader Sentiment Analysis as well takes into exclamation marks.  
+This time I specifically input which punctuation to remove from the text. For example, I do not remove exclamation marks ! because Vader Sentiment Analysis as well takes into account for exclamation marks.  
 
 ``` python
 # Create a function to clean the tweets          
