@@ -167,28 +167,6 @@ It is important to note that even if cleaning the text may not seem very signifi
 
 I want to note that this analysis is a sample of tweets taken from August representing a much larger dataset (explained in previous blog post). 
 
-### Top 5 Positive Tweets from August regarding the 2020 US Elections from original content
-the best argument you will ever hear for realdonaldtrump
-
-realdonaldtrump gets out the best in all of us
-
-its friday august 28th 2020 and donald trump will be the best twoterm president in us history lets flood twitter every day with this trump2020
-
-whining is what donald trump does best joe biden
-
-another piece of very very good news bidenharris 2020
-
-### Top 5 negative tweets from August regarading 2020 US Elections from original content (not including retweets)
-realdonaldtrump wheres the horrible option
-
-senatormelendez it looks like your boss realdonaldtrump is allowing putin to terrorise troops but you and gop are too scared of telling trump pathetic foxandfriends cbsnews newshour abc breitbartnews
-
-people should not vote before hearing the debates and you would think everyone would be outraged about this no debates no vote
-
-you idiot
-
-so sick of this crap realdonaldtrump
-
 ## VADER SENTIMENT ANLAYSIS
 ![Alternate image text](/images/twitter/social media sign.jpg)
 
@@ -279,7 +257,7 @@ Let's do another sanity check and compare how many tweets changed its compound s
 
 I want to note that this analysis is a sample of tweets taken from August representing a much larger dataset (explained in previous blog post). 
 
-### Top 5 positive tweets from August sample
+### Examples positive tweets from August
 
 Win win win win win F🤬k everything else Win win win win WIN
 
@@ -291,11 +269,7 @@ KellyannePolls GOD BLESS YOU🇺🇸 Sweet KellyannePolls U SHINED LIKE A BRIGHT
 
 Dear Mr President As you honor and celebrate the life of your best friend and brother Robert please know that millions of Americans are praying that you and your family feel the Presence of God and the Peace that only He can bring realDonaldTrump DonaldJTrumpJr EricTrump
 
-**Things to note:** <br>
-3 out of 5 Top Positive Tweets are about Trump <br>
-1 out of 5 Top Positive Tweets is about Joe Biden <br>
-
-### Top 5 negative tweets from August sample
+### Examples of negative tweets from August
 
 Pissed off about schools Blame Trump Pissed off about college football Blame Trump Pissed off about 165 000 dead Blame Trump Pissed off about an economy still on its back Blame Trump He didn’t listen didn’t prepare didn’t lead He lied He fucked up Blame him
 
@@ -306,10 +280,6 @@ atlpackfan2 onlytruthhere realDonaldTrump Take “Christian” off your profile 
 Seriously how can anyone with half a functioning brain say JoeBiden is a danger to America when we have the most self serving moronic grifting misogynistic ugly as fuck no heart no brain uncaring constitution killing pussy grabbing punk ass bitch as president now
 
 realDonaldTrump Tucker Carlson is a racist and a brat that they gave a platform to so he can spew his racism OBAMA and the other presidents did the right thing dump trump did the wrong thing as usual Carlson and trump 2 pieces of crap sad sad miserable people you are go get a real life racist
-
-**Things to note:** <br>
-3 out of 5 Top negative tweets are about Trump <br>
-1 out of 5 top negative tweets is about Joe Biden <br>
 
 ## Word Cloud
 A word cloud is a great visual tool because it helps visualize important words.
