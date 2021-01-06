@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Stemming vs Lemmatization, Text Processing - Part A
+title: Stemming vs Lemmatization - Text Processing PartA
 ---
 ![Alternate image text](/images/twitter/books.jpg)
 
