@@ -1,14 +1,14 @@
 ---
 layout: post
-title: Stemming vs Lemmatization - Text Processing PartA
+title: Stemming vs Lemmatization
 ---
 ![Alternate image text](/images/twitter/books.jpg)
 
 # Part 3A: Text Preprocessing for Topic Modelling
 
-I am not sure why, but I love the word 'Lemmatization', the cummulation of sounds from its syllables, vowels, and constants makes me smile. Ever sense I heard the word 'Lemmatization', I knew I needed to know what this is! I guess that is why I like to study Natural Language Processing (NLP). I enjoy words in a structured, visual, and mathematical sense. I am as well passionate about languages because to me studying a language is fun puzzle which is as well similar to NLP. 
+I love the word 'Lemmatization'. Something about the cummulation of sounds formed from the word'ssyllables, vowels, and constenants makes me smile. Ever sense I heard the word 'Lemmatization', I knew I needed to learn more about it! I guess that is why I like studying Natural Language Processing (NLP). I am drawn towards NLP because I enjoy studying languages because I like to think about languages as a structure, pattern, and thus taking a sentance and word and visualizing the word for its purpose. To melanguages are a fun puzzle, messy at first but when you find the right pieces that go together we are able to create a picture. This idea is similar to studying NLP. 
 
-I remember sitting in high school English and looking at individual sentences on the board. As a class we broke down the sentence structure and identified part of speech for each word in order to understand how the word is applied in that sentence. The breakdown of sentences creates meaning within a text and is the fundamentals of what natural language processing is. Text creates understanding and explanation about the world around us and we can use text to express how we feel and share our opinion towards a subject. 
+I remember sitting in high school English and looking at individual sentences on the board. As a class we broke down the sentence structure and identified part of speech for each word in order to understand how the word is applied in that sentence. The breakdown of sentences creates meaning within a text. Text creates understanding and explanation about the world around us and we can use text to express how we feel and share our opinion towards a subject. 
 
 Natural Language Processing is part of the machine learning/AI pipeline, where a variety of tasks are applied in in order to process text data and format it in a way so that the computer can read the data and perform analysis. 
 
