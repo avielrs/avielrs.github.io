@@ -28,21 +28,19 @@ Two approaches to reducing the term: Stemming and Lemmatization.
 
 ### Stemming
 
-**Stemming** is a text processing method in which a term is reduced to its "stem" through the removal of suffixes from the term such as (-ED, -ING, -ION, -IONS). simplest form such as extracting its root word or removing letters from end of word that may not be significant for example 's' for plural words. Suffixes are being removed specifically for IR performance, not for linguistic meaning.
+**Stemming** is a text processing method in which a term is reduced to its "stem" or simplest form through the removal of suffixes from the term such as (-ED, -ING, -ION, -IONS, -S). Suffixes are removed specifically for IR performance, not for linguistic meaning (Porter, 1980).
 
 Types of Stemming: 
 1. Porter Stemmer 
 2. Lovinus Stemmer
 3. Paice Stemmer
 
-cats --> cat
-
-Stemming removes case letters the end of a word. For example, when applying stemming to the word *catastrophe* the 'e' at the end of the word is removed. 
+Stemming removes case letters at the end of a word. For example, when applying stemming to the word *catastrophe* the 'e' at the end of the word is removed. 
 
 catastrophe --> catostroph 
 
 **Significance of stemming:** 
-The goal of stemming it to reduce a word which can be beneficial when developing search engines where a query can be matched and in text classification where feature space can be reduced when training a model.   
+Stemming can be beneficial when developing search engines where a query can be matched and in text classification where feature space can be reduced when training a model (B., Sowmya V et al., 2020).   
 
 Example rules of Porter Stemmer: 
 
@@ -50,6 +48,8 @@ SSES ---> SS      caresses ---> caress<br>
 IES ---> I        ponies ---> poni<br>
 SS ---> SS        caress ---> caress<br>
 S --->            cats ---> cat <br>
+
+
 
 ``` python
 # Import NLTK
@@ -148,12 +148,12 @@ sp = spacy.load('en_core_web_sm')
 References:
 [B., Sowmya V., et al. Practical Natural Language Processing: a Comprehensive Guide to Building Real-World NLP Systems. O'Reilly Media, 2020.](https://www.oreilly.com/library/view/practical-natural-language/9781492054047/){:target="_blank"} 
 
-Thomas, Rachel. “Topic Modeling with SVD & NMF (NLP Video 2).” YouTube, 8 July 2019, www.youtube.com/watch?v=tG3pUwmGjsc. 
+Thomas, Rachel. “Topic Modeling with SVD & NMF (NLP Video 2).” YouTube, 8 July 2019, [www.youtube.com/watch?v=tG3pUwmGjsc](www.youtube.com/watch?v=tG3pUwmGjsc){:target="_blank"}. 
 
-https://nlp.stanford.edu/IR-book/html/htmledition/stemming-and-lemmatization-1.html
+[https://nlp.stanford.edu/IR-book/html/htmledition/stemming-and-lemmatization-1.html](https://nlp.stanford.edu/IR-book/html/htmledition/stemming-and-lemmatization-1.html){:target="_blank"}
 
 Porter, Martin F. 1980. An algorithm for suffix stripping. Program 14 (3): 130-137.
 
-http://www.nltk.org/_modules/nltk/stem/wordnet.html#WordNetLemmatizer
+[http://www.nltk.org/_modules/nltk/stem/wordnet.html#WordNetLemmatizer](http://www.nltk.org/_modules/nltk/stem/wordnet.html#WordNetLemmatizer){:target="_blank"}
 
-http://www.nltk.org/api/nltk.stem.html#nltk.stem.wordnet.WordNetLemmatizer.lemmatize
+[http://www.nltk.org/api/nltk.stem.html#nltk.stem.wordnet.WordNetLemmatizer.lemmatize](http://www.nltk.org/api/nltk.stem.html#nltk.stem.wordnet.WordNetLemmatizer.lemmatize){:target="_blank"}
