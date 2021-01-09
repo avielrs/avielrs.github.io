@@ -6,22 +6,27 @@ title: Stemming vs Lemmatization
 
 # Part 3A: Text Preprocessing for Topic Modelling
 
-I love the word 'Lemmatization'. Something about the cumulation of sounds formed from its syllables, vowels, and consonants makes me smile. The first time I heard the word 'Lemmatization', I knew I needed to learn more about it! I guess that is why I like studying Natural Language Processing (NLP). I am drawn to NLP in Data Science because I like to think about languages as a structure, patten, and rhythm. Through this process, I am able to take a sentence and visualize it. Just like a fun puzzle, languages are messy at first but when the right pieces fit together, a clear picture is formed.
+I love the word 'Lemmatization'. Something about the cumulation of sounds that are formed from the syllables, vowels, and consonants that make up the word 'Lemmatization' makes me smile. The first time I heard the word 'Lemmatization', I knew I needed to learn more about it! I guess that is why I like studying Natural Language Processing (NLP). I am drawn towards the subject because I like to think about languages as a structure, patten, and rhythm. Through this process, I am able to take a sentence and visualize it. Just like a fun puzzle, languages are messy at first but when the right pieces fit together, a clear picture is formed.
 
-I remember sitting in high school English and looking at individual sentences on the board. As a class we broke down the sentence structure and identified part of speech for each word in order to understand how that word is applied in the sentence. The breakdown of sentences creates meaning within a text. Text creates understanding and explanation about the world around us. We can use text to express how we feel and share our opinion towards a subject. 
-
-Natural Language Processing is part of the machine learning/AI pipeline, where a variety of tasks are applied in in order to process text data and format it in a way so that the computer can read the data and perform analysis. 
+I remember sitting in high school English and looking at individual sentences on the board. As a class we broke down the sentence structure and identified part of speech for each word. This provides understanding aand meaning of how the word is applied in the sentence. Sentances creates understanding and explanation about the world around us. We use words to express how we feel and share our opinion towards a subject. 
 
 ![Alternate image text](/images/twitter/linguistics.png)
 
-I love this figure which is taken from the textbook "Practical Natural Language Processing: A Comprehensive Guide to Building Real-World NLP Systems" by Vajjala, S. et al. 2020. The image shows the building blocks of a language and in result how NLP is utilized in order for computers to process text data. Within NLP packages such as NLTK, we can identify meaning through the use of text modelling and analysis. We can as well identify syntax through parsing words, morphemes and lexemes through utilizing natural language tools such as tokenizing, word embeddings, and part of speech tagging, and identify speech and sounds from NLP applications such as speech to text, speaker identification, and text to speech. All of these NLP tools are important to think about when developing machine learning models.
+I love this figure which is taken from the textbook *"Practical Natural Language Processing: A Comprehensive Guide to Building Real-World NLP Systems" by Vajjala, S. et al. 2020.* The image shows the building blocks of a language and in result how NLP is utilized in order for computers to process text data. 
+
+**Definition of Natural Language Processing**
+Natural Language Processing is part of the machine learning/AI pipeline, where a variety of tasks are applied in order to process text data and format it in a way so that the computer can read the data and perform analysis. 
 
 *In this blog post I will discuss a few different approaches for pre-processing text so that the text is ready to process for machine learning and rule-based algorithms specifically in regards to topic modelling with the use of Twitter text data. This blog post is Part 3 in a series of posts in regard to [collecting twitter data on the US Presidential Election](https://avielrs.github.io/Collecting-Twitter-Data-on-the-US-Presidential-Election/){:target="_blank"}.*
 
-![Alternate image text](/images/twitter/text preprocessing steps.png)
-
 ## Stemming and Lemmatization
-Each document contains a vector of words (terms), in this case, the document is the tweet. As discussed above sentence tokenization separates each word into a matrix where each term is a feature. If one tweet (or document) contains the term SIT and another document contains the term SITTING or SAT. The terms will end up in separate columns even though the meaning is the same. This is where stemming and lemmatization comes into play. Stemming and Lemmatization are two separate approaches for stripping a term within a document so that document matrix is reduced and complexity of data decreases. Reducing size and complexity of a model is beneficial for achieving model accuracy and for reducing computationally memory and time.
+![Alternate image text](/images/twitter/dictionary.jpg)
+
+Each document contains a vector of words (terms), in this case, the document is the tweet. Sentence tokenization separates each word into a matrix where each term is a feature. For example, if sentance (or document) contains the term **sit**, and another document contains the term **sitting**. The terms will end up in separate columns even though the meaning is the same. This is where stemming and lemmatization comes into play. Stemming and Lemmatization are two separate approaches for stripping a term within a document so that a document matrix is reduced and the complexity of data decreases. Reducing size and complexity of a model is beneficial for achieving model accuracy and for reducing computationally memory and time.
+
+Two approaches to reducing the term: Stemming and Lemmatization. 
+
+### Stemming
 
 **Stemming** is a text processing method in which a term is reduced to its "stem" through the removal of suffixes from the term such as (-ED, -ING, -ION, -IONS). simplest form such as extracting its root word or removing letters from end of word that may not be significant for example 's' for plural words. Suffixes are being removed specifically for IR performance, not for linguistic meaning.
 
