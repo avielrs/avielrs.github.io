@@ -50,8 +50,8 @@ IES ---> I <br>
 pon**ies** ---> poni<br><br>
 SS ---> SS  <br> 
 care**ss** ---> caress<br><br>
-S ---> <br>            
-cat**s** ---> cat <br>
+S --->       
+cat**s** ---> cat <br><br>
 
 Sample code:
 
