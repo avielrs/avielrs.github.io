@@ -30,26 +30,30 @@ Two approaches to reducing the term: Stemming and Lemmatization.
 
 **Stemming** is a text processing method in which a term is reduced to its "stem" or simplest form through the removal of suffixes from the term such as (-ED, -ING, -ION, -IONS, -S). Suffixes are removed specifically for IR performance, not for linguistic meaning (Porter, 1980).
 
-Types of Stemming: 
+**Types of Stemming:**
 1. Porter Stemmer 
 2. Lovinus Stemmer
 3. Paice Stemmer
 
 Stemming removes case letters at the end of a word. For example, when applying stemming to the word *catastrophe* the 'e' at the end of the word is removed. 
 
-catastrophe --> catostroph 
+catastroph**e** --> catostroph 
 
-**Significance of stemming:** 
+**Significance of stemming:** <br>
 Stemming can be beneficial when developing search engines where a query can be matched and in text classification where feature space can be reduced when training a model (B., Sowmya V et al., 2020).   
 
 Example rules of Porter Stemmer: 
 
-SSES ---> SS      caresses ---> caress<br> 
-IES ---> I        ponies ---> poni<br>
-SS ---> SS        caress ---> caress<br>
-S --->            cats ---> cat <br>
+SSES ---> SS <br>
+care**sses** ---> caress<br><br> 
+IES ---> I <br>
+pon**ies** ---> poni<br><br>
+SS ---> SS  <br> 
+care**ss** ---> caress<br><br>
+S ---> <br>            
+cat**s** ---> cat <br>
 
-
+Sample code:
 
 ``` python
 # Import NLTK
