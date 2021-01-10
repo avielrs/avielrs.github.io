@@ -53,7 +53,7 @@ care**ss** ---> caress<br><br>
 S --->       
 cat**s** ---> cat <br><br>
 
-Sample code:
+Import and instantiate Porter Stemmer:
 
 ``` python
 # Import NLTK
@@ -64,14 +64,8 @@ nltk.download('wordnet')
 from nltk import stem
 from nltk.corpus import wordnet
 
-# import lemmitzer package
-from nltk.stem import WordNetLemmatizer 
-
 # stemmer
 porter = stem.porter.PorterStemmer()
-
-# lemmatization
-lem = stem.WordNetLemmatizer()
 ```
 
 ![Alternate image text](/images/twitter/stem.png)
