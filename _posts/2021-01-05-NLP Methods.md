@@ -238,20 +238,20 @@ for word in words:
     print(word,'-->', lem.lemmatize(word))
 ```
 **Output**<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; better --> better
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ran --> ran
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; are --> are
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; running --> running
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; were --> were
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; shared --> shared
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; organize --> organize
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; university --> university
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; awoken --> awoken
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; arose --> arose
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; beheld --> beheld
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sped --> sped
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; withhold --> withhold
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flung --> flung
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; better --> better <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ran --> ran <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; are --> are <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; running --> running <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; were --> were <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; shared --> shared <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; organize --> organize <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; university --> university <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; awoken --> awoken <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; arose --> arose <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; beheld --> beheld <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sped --> sped <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; withhold --> withhold <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flung --> flung <br>
 
 
 
