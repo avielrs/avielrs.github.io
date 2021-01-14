@@ -194,7 +194,7 @@ In hebrew, the ending of the adjective changes according to if the word is used 
 1. Need to identify part of speech
 2. Need to understand fundamentals of linguistics thus more complex
 
-#### Spacy Lemmatization 
+### Spacy Lemmatization 
 ![Alternate image text](/images/twitter/lem_without_pos.png)
 
 ```python
