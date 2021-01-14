@@ -134,9 +134,9 @@ print(lemmatizer.lemmatize("cats"))
 ```
 pony<br>
 caress<br>
-cat<br>
+cat<br><br>
 
-To gain a better understanding of how lemma is used within linguestics, let's take a trip down memory lane and recall verb conjugation. 
+#### To gain a better understanding of how lemma is used within linguestics, let's take a trip down memory lane and recall verb conjugation. 
 
 **Conjucating of 'To Be'**
 
