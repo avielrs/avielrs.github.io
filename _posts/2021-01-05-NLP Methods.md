@@ -187,7 +187,7 @@ For example in Hebrew, the word for 'big' is גָּדוֹל (gadol). <br>
 
 ![Alternate image text](/images/twitter/hebrew_gadol.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In hebrew, the ending of the adjective changes according to if the word is used as singlular masculine, singlular feminine, plural masculine, or plural feminine. The root (lemma) of gadol is  ג - ד - ל (g-d-l).Thus when lemmatization is applied to the hebrew word גָּדוֹל (Gadol), the word will be reduced to its root word גדל (gdl). <br>
+In Hebrew, the ending of the adjective changes according to if the word is used as singlular masculine, singlular feminine, plural masculine, or plural feminine. The root (lemma) of gadol is  ג - ד - ל (g-d-l).Thus when lemmatization is applied to the Hebrew word גָּדוֹל (Gadol), the word is reduced to its root word גדל (gdl). <br><br>
 
 **Pros for lemmatization**
 1. Using the base word ensures that the meaning behind the word is not being lost
@@ -198,14 +198,62 @@ For example in Hebrew, the word for 'big' is גָּדוֹל (gadol). <br>
 
 
 # Spacy Lemmatization 
-![Alternate image text](/images/twitter/lem_without_pos.png)
+Spacy provides its own lemmatization package. Let's see how this package compares with the lemmatizer in NLTK. 
 
 ```python
-
+# import spacy package
 import spacy
+
+# load english spacy
 sp = spacy.load('en_core_web_sm')
+
+# create word list
+words = ['better','ran', 'are', 'running', 'were', 'shared', 'organize', 'university', 
+         'awoken', 'arose', 'beheld', 'sped', 'withhold', 'flung']
+
+for i in words:
+    token = sp(i)
+    for word in token:
+        print(word.text,'-->',  word.lemma_)
 ```
-![Alternate image text](/images/twitter/spacy_lem.png)
+**Output:** <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; better --> well <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ran --> run <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; are --> be <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; running --> run <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; were --> be <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; shared --> share <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; organize --> organize <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; university --> university <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; awoken --> awake <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; arose --> arise <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; beheld --> beheld <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sped --> speed <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; withhold --> withhold <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flung --> flung <br>
+
+Compare NLTK Lemmatizer without including pos:
+``` python
+for word in words:
+    print(word,'-->', lem.lemmatize(word))
+```
+**Output**<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; better --> better
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ran --> ran
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; are --> are
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; running --> running
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; were --> were
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; shared --> shared
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; organize --> organize
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; university --> university
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; awoken --> awoken
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; arose --> arose
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; beheld --> beheld
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sped --> sped
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; withhold --> withhold
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flung --> flung
+
+
 
 #### References
 [B., Sowmya V., et al. Practical Natural Language Processing: a Comprehensive Guide to Building Real-World NLP Systems. O'Reilly Media, 2020.](https://www.oreilly.com/library/view/practical-natural-language/9781492054047/){:target="_blank"} 
