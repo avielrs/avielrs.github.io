@@ -20,7 +20,7 @@ Natural Language Processing is part of the machine learning/AI pipeline, where a
 *In this blog post I will discuss stemming and lematization, a pre-processing method for text data so that the text is ready to process for machine learning and rule-based algorithms. Specifically, in regards to topic modelling with the use of Twitter text data. This blog post is Part 3 in a series of posts in regard to [collecting twitter data on the US Presidential Election](https://avielrs.github.io/Collecting-Twitter-Data-on-the-US-Presidential-Election/){:target="_blank"}.*
 
 ## Stemming
-![Alternate image text](/images/twitter/books.jpg)
+![Alternate image text](/images/twitter/stemming.jpg)
 
 Each document contains a vector of words (terms), in this case, the document is the tweet. Sentence tokenization separates each word into a matrix where each term is a feature. For example, if a sentance (or document) contains the term **sit**, and another document contains the term **sitting**. The terms will end up in separate columns even though the meaning is the same. 
 
