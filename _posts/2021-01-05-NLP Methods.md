@@ -122,7 +122,7 @@ print("['universe', 'university'] -------> ", [lem.lemmatize(word) for word in w
 ['feet', 'foot', 'foots', 'footing'] ------------->  ['foot', 'foot', 'foot', 'footing']<br>
 ['organize', 'organizing', 'organization'] ------->  ['organize', 'organizing', 'organization']<br>
 ['benefactor', 'benevolent', 'beneficial'] ------->  ['benefactor', 'benevolent', 'beneficial']<br>
-['universe', 'university'] ------->  ['universe', 'university'] <br>
+['universe', 'university'] ------->  ['universe', 'university'] <br><br>
 
 Even though part of speech is not identified in the above example, we can see here that Lemmatization is more conservative about trimming a word then in stemming. University does not change to universe and organize/organization does not change to organ.
 
