@@ -116,7 +116,7 @@ Let's do a code test:
 
 **Note that I needed to define the part of speech as a verb. If part of speech parameter is not defined then the default is set to NOUN.**
 
-Let's see some examples of how Porter Stemmer is applied: 
+Let's see some examples of how Lemmatization is applied: 
 
 ```python
 print("['play', 'playing', 'played'] -------------------->", [lem.lemmatize(word) for word in word_list1])
