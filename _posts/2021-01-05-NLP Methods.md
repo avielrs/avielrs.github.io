@@ -2,7 +2,7 @@
 layout: post
 title: Stemming vs Lemmatization
 ---
-![Alternate image text](/images/twitter/books.jpg)
+![Alternate image text](/images/twitter/dictionary.jpg)
 
 # Part 3A: Text Preprocessing for Topic Modelling
 
@@ -19,8 +19,7 @@ Natural Language Processing is part of the machine learning/AI pipeline, where a
 
 *In this blog post I will discuss stemming and lematization, a pre-processing method for text data so that the text is ready to process for machine learning and rule-based algorithms. Specifically, in regards to topic modelling with the use of Twitter text data. This blog post is Part 3 in a series of posts in regard to [collecting twitter data on the US Presidential Election](https://avielrs.github.io/Collecting-Twitter-Data-on-the-US-Presidential-Election/){:target="_blank"}.*
 
-## Stemming and Lemmatization
-![Alternate image text](/images/twitter/dictionary.jpg)
+## Stemming
 
 Each document contains a vector of words (terms), in this case, the document is the tweet. Sentence tokenization separates each word into a matrix where each term is a feature. For example, if a sentance (or document) contains the term **sit**, and another document contains the term **sitting**. The terms will end up in separate columns even though the meaning is the same. 
 
@@ -28,7 +27,7 @@ Each document contains a vector of words (terms), in this case, the document is 
 
 This is where stemming and lemmatization may be beneficial. Stemming and Lemmatization are two separate approaches for stripping a term within a document so that a document matrix is reduced and thus the complexity of data decreases. Reducing size and complexity of a model is beneficial for achieving model accuracy and for reducing computationally memory and time.
 
-### Stemming
+## Stemming
 
 **Stemming** is a text processing method in which a term is reduced to its "stem" or simplest form through the removal of suffixes from the term such as (-ED, -ING, -ION, -IONS, -S). Suffixes are removed specifically for IR performance, not for linguistic meaning (Porter, 1980).
 
@@ -70,7 +69,24 @@ from nltk.corpus import wordnet
 porter = stem.porter.PorterStemmer()
 ```
 
-![Alternate image text](/images/twitter/stem.png)
+Let's see some examples of how Porter Stemmer is applied: 
+``` python
+# Create a word list
+word_list1 = ['play', 'playing', 'played']
+word_list2 = ['feet', 'foot', 'foots', 'footing']
+word_list3 = ['organize', 'organizing', 'organization']
+word_list4 = ['benefactor', 'benevolent', 'beneficial']
+word_list5 = ['universe', 'university']
+
+print("['play', 'playing', 'played'] -------------------->", [porter.stem(word) for word in word_list1])
+print("['feet', 'foot', 'foots', 'footing'] -------------> ", [porter.stem(word) for word in word_list2])
+print("['organize', 'organizing', 'organization'] -------> ", [porter.stem(word) for word in word_list3])
+print("['benefactor', 'benevolent', 'beneficial'] -------> ", [porter.stem(word) for word in word_list4])
+print("['universe', 'university'] -------> ", [porter.stem(word) for word in word_list5])
+```
+**Output**
+
+![Alternate image text](/images/twitter/stem_output.png)
 
 Pros: 
 1. Remove sufixes
@@ -79,29 +95,19 @@ Pros:
 
 Cons: Stemming does "too" good of a job of extracting the root word or one could say stemming "butchers" the word. For example, 
 
-
-
 Stemming will take a word like **organize** and shorten it to **organ** which has an entirely different meaning. Same with the word **University**, which will stem to **univers**, again shortening the word to a word that is not the same meaning. This is something to consider when using Porter Stemmer. How important is the meaning of the word versus reducing the complexity of the data to your model and analysis?
 
-**Lemmatization** is another approach that handles terms by labeling the term from its base word (lemma). With this method, it is ensuring that you are not grouping terms together with different means like universe and university done in stemming.  
+## Lemmatization
 
-The base word is Recall conjugating verbs from Spanish or French class? Let's start at the beginning. What is the conjugation of 'To Be'? 
+**Lemmatization** is another approach that handles term. Lemmatization labels the term from its base word (lemma). This method is a more methodical approach for ensuring the words are reduced without losing its meaning.
 
-Present Tense: <br>
-I am <br>
-You are  <br>   
-He/She/It is <br><br>
-We are <br>
-You are <br>
-They are <br>
+To get a better understanding of how lemma is used within linguestics, let's take trip back to Spanish or French 101. 
 
-Past Tense: <br>
-I was   <br> 
-You were   <br> 
-He/She/It was <br><br>
-We were <br>
-You were <br>
-They were <br>
+Remember conjucating verbs? I bet you didn't think this would become handy in Data Science?!
+
+**The conjugation of 'To Be' is:**
+
+![Alternate image text](/images/twitter/tobe.png)
 
 The lemma or lemmatization of AM, IS, ARE, WAS, and were is 'BE'
 
