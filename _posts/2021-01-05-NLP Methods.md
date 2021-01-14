@@ -183,9 +183,9 @@ lem.lemmatize('flung', pos = 'v')
 **Part of Speech in Lemmatization:**
 In English, identifying pos in a verb changes the output within lemmatization. However, identifying pos for nouns and adjectives is more meaningful within languages other than English. Basically, languages that utilize grammatical gender. 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Example of how defining pos for adjectives is important in Lemmatization:**<br> In Hebrew, the word for 'big' is גָּדוֹל (gadol). <br>
+For example in Hebrew, the word for 'big' is גָּדוֹל (gadol). <br>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![Alternate image text](/images/twitter/hebrew_gadol.png)
+![Alternate image text](/images/twitter/hebrew_gadol.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In hebrew, the ending of the adjective changes according to if the word is used as singlular masculine, singlular feminine, plural masculine, or plural feminine. The root (lemma) of gadol is  ג - ד - ל (g-d-l).Thus when lemmatization is applied to the hebrew word גָּדוֹל (Gadol), the word will be reduced to its root word גדל (gdl). <br>
 
