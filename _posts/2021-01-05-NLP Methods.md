@@ -139,23 +139,23 @@ To gain a better understanding of how lemma is used within linguestics, let's ta
 
 Conjucating of 'To Be':
 
-**Present Tense:**<br>
-&nbsp;&nbsp;&nbsp;&nbsp; I am <br>
-        You are <br>
-        He/She/It is <br>
-        We are <br>
-        You are <br>
-        They are <br>
+Present Tense:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I am <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You are <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; He/She/It is <br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We are <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You are <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; They are <br>
 
-*Past Tense:* <br>
-        I was <br>
-        You were <br>
-        He/She/It was <br>
-        We were <br>
-        You were <br>
-        They were <br><br>
+Past Tense: <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I was <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You were <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; He/She/It was <br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We were <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You were <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; They were <br>
 
-*The lemma or lemmatization of AM, IS, ARE, WAS, and were is 'BE'* <br>
+Thus the lemma or lemmatization of AM, IS, ARE, WAS, and were is 'BE'
 
 Code test: 
 ```python
