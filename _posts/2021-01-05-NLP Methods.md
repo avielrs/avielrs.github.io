@@ -17,7 +17,7 @@ I love this figure which is taken from the textbook *"Practical Natural Language
 #### Definition of Natural Language Processing
 Natural Language Processing is part of the machine learning/AI pipeline, where a variety of tasks are applied in order to process text data and format it in a way so that the computer can read the data and perform analysis. 
 
-*In this blog post I will discuss a few different approaches for pre-processing text so that the text is ready to process for machine learning and rule-based algorithms. Specifically, in regards to topic modelling with the use of Twitter text data. This blog post is Part 3 in a series of posts in regard to [collecting twitter data on the US Presidential Election](https://avielrs.github.io/Collecting-Twitter-Data-on-the-US-Presidential-Election/){:target="_blank"}.*
+*In this blog post I will discuss stemming and lematization, a pre-processing method for text data so that the text is ready to process for machine learning and rule-based algorithms. Specifically, in regards to topic modelling with the use of Twitter text data. This blog post is Part 3 in a series of posts in regard to [collecting twitter data on the US Presidential Election](https://avielrs.github.io/Collecting-Twitter-Data-on-the-US-Presidential-Election/){:target="_blank"}.*
 
 ## Stemming and Lemmatization
 ![Alternate image text](/images/twitter/dictionary.jpg)
@@ -79,7 +79,9 @@ Pros:
 
 Cons: Stemming does "too" good of a job of extracting the root word or one could say stemming "butchers" the word. For example, 
 
-What I mean by this is that the stemming function will take a word like organize and shorten it to organ which has an entirely different meaning. Same with the word University which will stem to univers, again shortening the word to a word that is not the same meaning. This is something to consider when using Porter Stemmer. How important is the meaning of the word versus reducing the complexity of the data to your model and analysis?
+
+
+Stemming will take a word like **organize** and shorten it to **organ** which has an entirely different meaning. Same with the word **University**, which will stem to **univers**, again shortening the word to a word that is not the same meaning. This is something to consider when using Porter Stemmer. How important is the meaning of the word versus reducing the complexity of the data to your model and analysis?
 
 **Lemmatization** is another approach that handles terms by labeling the term from its base word (lemma). With this method, it is ensuring that you are not grouping terms together with different means like universe and university done in stemming.  
 
