@@ -124,11 +124,10 @@ Past Tense: <br>
 
 The lemma or lemmatization of AM, IS, ARE, WAS, and were is 'BE'
 
-Let's do a code test: 
-
+code test: 
 ![Alternate image text](/images/twitter/tobecode.png)
 
-**Note that I needed to define the part of speech as a verb. If part of speech parameter is not defined then the default is set to NOUN.**
+#### Note that I needed to define the part of speech as a verb. If part of speech parameter is not defined then the default is set to NOUN.**
 
 Let's see some examples of how Lemmatization is applied: 
 
