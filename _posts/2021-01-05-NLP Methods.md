@@ -139,7 +139,7 @@ You are --> To be <br>
 He is --> To be <br>
 They were --> To be <br>
 
-**Note: In lemmatization, the part of speech (pos) needs to be defined. In the example above, I define the pos as "v" for verb. If the pos parameter is not defined, then the default is set to NOUN.**
+**Note:** In lemmatization, the part of speech (pos) needs to be defined. In the example above, I define the pos as "v" for verb. If the pos parameter is not defined, then the default is set to NOUN.
 
 Examples of how Lemmatization is applied: 
 ```python
@@ -156,9 +156,9 @@ print("['universe', 'university'] -------> ", [lem.lemmatize(word) for word in w
 ['benefactor', 'benevolent', 'beneficial'] ------->  ['benefactor', 'benevolent', 'beneficial']<br>
 ['universe', 'university'] ------->  ['universe', 'university'] <br>
 
-Even though part of speech is not identified, we can see here that Lemmatization is more conservative about trimming a word. University does not change to universe and organize/organization does not change to organ.
+Even though part of speech is not identified in the above example, we can see here that Lemmatization is more conservative about trimming a word then in stemming. University does not change to universe and organize/organization does not change to organ.
 
-If part of speech is applied, lemmatization is great at even identifying the base word for complex verbs. See example below:
+Lemmatization is great at even identifying the base word for complex verbs. See example below:
 ```python
 print('beheld', lem.lemmatize('beheld', pos = 'v'))
 print('witheld', lem.lemmatize('withheld', pos = 'v'))
@@ -180,11 +180,12 @@ cat<br>
 
 Identifying part of speech for nouns and adjectives is more meaningful within languages other than English. Basically, languages that utilize grammatical gender. 
 
-For example in Hebrew, the word for 'big' is גָּדוֹל (gadol):
+#### Example of how defining pos for adjectives is important in Lemmatization
+In Hebrew, the word for 'big' is גָּדוֹל (gadol):
 
 ![Alternate image text](/images/twitter/hebrew_gadol.png)
 
-In hebrew, the ending of the adjective changes according to if the word is used as singlular masculine, singlular feminine, plural masculine, or plural feminine. The root (lemma) of Gadol is  ג - ד - ל (g-d-l).Thus when lemmatization is applied to the hebrew word גָּדוֹל (Gadol), the word will be reduced to its root word גדל (gdl).
+In hebrew, the ending of the adjective changes according to if the word is used as singlular masculine, singlular feminine, plural masculine, or plural feminine. The root (lemma) of gadol is  ג - ד - ל (g-d-l).Thus when lemmatization is applied to the hebrew word גָּדוֹל (Gadol), the word will be reduced to its root word גדל (gdl).
 
 **Pros for lemmetization**
 1. Using the base word ensures that the meaning behind the word is not being lost
@@ -192,10 +193,8 @@ In hebrew, the ending of the adjective changes according to if the word is used 
 **Cons for lemmetization**
 1. Need to identify part of speech
 2. Need to understand fundamentals of linguistics thus more complex
-3. Not as good as stemmer for query use 
 
 #### Spacy Lemmatization 
-
 ![Alternate image text](/images/twitter/lem_without_pos.png)
 
 ```python
