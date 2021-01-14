@@ -154,9 +154,9 @@ cat<br><br>
         He/She/It was <br>
         We were <br>
         You were <br>
-        They were <br>
+        They were <br><br>
 
-The lemma or lemmatization of AM, IS, ARE, WAS, and were is 'BE'
+*The lemma or lemmatization of AM, IS, ARE, WAS, and were is 'BE'* <br>
 
 Code test: 
 ```python
