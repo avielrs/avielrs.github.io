@@ -135,12 +135,12 @@ ponies ---> pony<br>
 caresses ---> caress<br>
 cats ---> cat<br><br>
 
-#### To gain a better understanding of how lemma is used within linguestics, let's take a trip down memory lane and recall verb conjugation. 
+To gain a better understanding of how lemma is used within linguestics, let's take a trip down memory lane and recall verb conjugation. 
 
-**Conjucating of 'To Be'**
+Conjucating of 'To Be':
 
-*Present Tense:*<br>
-        I am <br>
+**Present Tense:**<br>
+&nbsp;&nbsp;&nbsp;&nbsp; I am <br>
         You are <br>
         He/She/It is <br>
         We are <br>
