@@ -84,21 +84,19 @@ print("['organize', 'organizing', 'organization'] -------> ", [porter.stem(word)
 print("['benefactor', 'benevolent', 'beneficial'] -------> ", [porter.stem(word) for word in word_list4])
 print("['universe', 'university'] -------> ", [porter.stem(word) for word in word_list5])
 ```
-**output**<br>
+**Output:**<br>
 ['play', 'playing', 'played'] --------------------> ['play', 'play', 'play'] <br>
 ['feet', 'foot', 'foots', 'footing'] ------------->  ['feet', 'foot', 'foot', 'foot'] <br>
 ['organize', 'organizing', 'organization'] ------->  ['organ', 'organ', 'organ']<br>
 ['benefactor', 'benevolent', 'beneficial'] ------->  ['benefactor', 'benevol', 'benefici'] <br>
-['universe', 'university'] ------->  ['univers', 'univers'] <br>
+['universe', 'university'] ------->  ['univers', 'univers'] <br><br>
 
 **Pros for stemming:**
 1. Remove sufixes
 2. Reduce size and complexity of data
 3. Reduce variance in models which can cause overfitting.
 
-**Cons for stemming:** Stemming does "too" good of a job of extracting the root word or one could say stemming "butchers" the word. For example, 
-
-Stemming will take a word like **organize** and shorten it to **organ** which has an entirely different meaning. Same with the word **University**, which will stem to **univers**, again shortening the word to a word that is not the same meaning. This is something to consider when using Porter Stemmer. How important is the meaning of the word versus reducing the complexity of the data to your model and analysis?
+**Cons for stemming:** Stemming does "too" good of a job of extracting the root word or one could say stemming "butchers" the word. Stemming will take a word like **organize** and shorten it to **organ** which has an entirely different meaning. Same with the word **University**, which will stem to **univers**, again shortening the word to a word that is not the same meaning. This is something to consider when using Porter Stemmer. How important is the meaning of the word versus reducing the complexity of the data to your model and analysis?
 
 ## Lemmatization
 ![Alternate image text](/images/twitter/dictionary.jpg)
@@ -109,7 +107,7 @@ Stemming will take a word like **organize** and shorten it to **organ** which ha
 # import lemmatizer package
 from nltk.stem import WordNetLemmatizer 
 ```
-#### Examples of how Lemmatization is applied: 
+Examples of how Lemmatization is applied: 
 ```python
 print("['play', 'playing', 'played'] -------------------->", [lem.lemmatize(word) for word in word_list1])
 print("['feet', 'foot', 'foots', 'footing'] -------------> ", [lem.lemmatize(word) for word in word_list2])
@@ -117,7 +115,7 @@ print("['organize', 'organizing', 'organization'] -------> ", [lem.lemmatize(wor
 print("['benefactor', 'benevolent', 'beneficial'] -------> ", [lem.lemmatize(word) for word in word_list4])
 print("['universe', 'university'] -------> ", [lem.lemmatize(word) for word in word_list5])
 ```
-**Output** <br>
+**Output:** <br>
 ['play', 'playing', 'played'] --------------------> ['play', 'playing', 'played']<br>
 ['feet', 'foot', 'foots', 'footing'] ------------->  ['foot', 'foot', 'foot', 'footing']<br>
 ['organize', 'organizing', 'organization'] ------->  ['organize', 'organizing', 'organization']<br>
@@ -126,15 +124,16 @@ print("['universe', 'university'] -------> ", [lem.lemmatize(word) for word in w
 
 Even though part of speech is not identified in the above example, we can see here that Lemmatization is more conservative about trimming a word then in stemming. University does not change to universe and organize/organization does not change to organ.
 
+
 #### Handling plural in lemmatization:
 ```python
-print(lemmatizer.lemmatize("ponies"))
-print(lemmatizer.lemmatize("caresses"))
-print(lemmatizer.lemmatize("cats"))
+lemmatizer.lemmatize("ponies")
+lemmatizer.lemmatize("caresses")
+lemmatizer.lemmatize("cats")
 ```
-pony<br>
-caress<br>
-cat<br><br>
+ponies ---> pony<br>
+caresses ---> caress<br>
+cats ---> cat<br><br>
 
 #### To gain a better understanding of how lemma is used within linguestics, let's take a trip down memory lane and recall verb conjugation. 
 
