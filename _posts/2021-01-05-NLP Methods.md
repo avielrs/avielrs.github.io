@@ -164,10 +164,10 @@ print('You are --> To', lemmatizer.lemmatize("are", pos="v")) #v is for verb”
 print('He is --> To', lemmatizer.lemmatize("is", pos="v")) #v is for verb”
 print('They were --> To', lemmatizer.lemmatize("were", pos="v")) #v is for verb” 
 ```
-I am ---> To be <br>
-You are --> To be <br>
-He is --> To be <br>
-They were --> To be <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I am ---> To be <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You are --> To be <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; He is --> To be <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; They were --> To be <br>
 
 **Note:** In lemmatization, the part of speech (pos) needs to be defined. In the example above, I define the pos as "v" for verb. If the pos parameter is not defined, then the default is set to NOUN.
 
