@@ -24,7 +24,7 @@ Natural Language Processing is part of the machine learning/AI pipeline, where a
 
 Each document contains a vector of words (terms), in this case, the document is the tweet. Sentence tokenization separates each word into a matrix where each term is a feature. For example, if a sentance (or document) contains the term **sit**, and another document contains the term **sitting**. The terms will end up in separate columns even though the meaning is the same. 
 
-![Alternate image text](/images/twitter/diagram_lem_stem_token.jpg)
+![Alternate image text](/images/twitter/diagram_lem_stem_token.png)
 
 This is where stemming and lemmatization may be beneficial. Stemming and Lemmatization are two separate approaches for stripping a term within a document so that a document matrix is reduced and thus the complexity of data decreases. Reducing size and complexity of a model is beneficial for achieving model accuracy and for reducing computationally memory and time.
 
@@ -75,9 +75,11 @@ porter = stem.porter.PorterStemmer()
 Pros: 
 1. Remove sufixes
 2. Reduce size and complexity of data
-3. Reduces variance in models which can cause overfitting.
+3. Reduce variance in models which can cause overfitting.
 
-Cons: Stemming does "too" good of a job of extracting the root word. What I mean by this is that the stemming function will take a word like organize and shorten it to organ which has an entirely different meaning. Same with the word University which will stem to univers, again shortening the word to a word that is not the same meaning. This is something to consider when using Porter Stemmer. How important is the meaning of the word versus reducing the complexity of the data to your model and analysis?
+Cons: Stemming does "too" good of a job of extracting the root word or one could say stemming "butchers" the word. For example, 
+
+What I mean by this is that the stemming function will take a word like organize and shorten it to organ which has an entirely different meaning. Same with the word University which will stem to univers, again shortening the word to a word that is not the same meaning. This is something to consider when using Porter Stemmer. How important is the meaning of the word versus reducing the complexity of the data to your model and analysis?
 
 **Lemmatization** is another approach that handles terms by labeling the term from its base word (lemma). With this method, it is ensuring that you are not grouping terms together with different means like universe and university done in stemming.  
 
