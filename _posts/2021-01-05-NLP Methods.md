@@ -105,7 +105,39 @@ Stemming will take a word like **organize** and shorten it to **organ** which ha
 
 **Lemmatization** is another approach that handles term. Lemmatization labels the term from its base word (lemma). This method is a more methodical approach for ensuring the words are reduced without losing its meaning.
 
-To get a better understanding of how lemma is used within linguestics, let's take a trip down memory lane and recall verb conjugation. 
+#### Import and instantiate Lemmatization:
+```python
+# import lemmatizer package
+from nltk.stem import WordNetLemmatizer 
+```
+#### Examples of how Lemmatization is applied: 
+```python
+print("['play', 'playing', 'played'] -------------------->", [lem.lemmatize(word) for word in word_list1])
+print("['feet', 'foot', 'foots', 'footing'] -------------> ", [lem.lemmatize(word) for word in word_list2])
+print("['organize', 'organizing', 'organization'] -------> ", [lem.lemmatize(word) for word in word_list3])
+print("['benefactor', 'benevolent', 'beneficial'] -------> ", [lem.lemmatize(word) for word in word_list4])
+print("['universe', 'university'] -------> ", [lem.lemmatize(word) for word in word_list5])
+```
+**Output** <br>
+['play', 'playing', 'played'] --------------------> ['play', 'playing', 'played']<br>
+['feet', 'foot', 'foots', 'footing'] ------------->  ['foot', 'foot', 'foot', 'footing']<br>
+['organize', 'organizing', 'organization'] ------->  ['organize', 'organizing', 'organization']<br>
+['benefactor', 'benevolent', 'beneficial'] ------->  ['benefactor', 'benevolent', 'beneficial']<br>
+['universe', 'university'] ------->  ['universe', 'university'] <br>
+
+Even though part of speech is not identified in the above example, we can see here that Lemmatization is more conservative about trimming a word then in stemming. University does not change to universe and organize/organization does not change to organ.
+
+#### Handling plural in lemmatization:
+```python
+print(lemmatizer.lemmatize("ponies"))
+print(lemmatizer.lemmatize("caresses"))
+print(lemmatizer.lemmatize("cats"))
+```
+pony<br>
+caress<br>
+cat<br>
+
+To gain a better understanding of how lemma is used within linguestics, let's take a trip down memory lane and recall verb conjugation. 
 
 **Conjucating of 'To Be'**
 
@@ -141,23 +173,6 @@ They were --> To be <br>
 
 **Note:** In lemmatization, the part of speech (pos) needs to be defined. In the example above, I define the pos as "v" for verb. If the pos parameter is not defined, then the default is set to NOUN.
 
-#### Examples of how Lemmatization is applied: 
-```python
-print("['play', 'playing', 'played'] -------------------->", [lem.lemmatize(word) for word in word_list1])
-print("['feet', 'foot', 'foots', 'footing'] -------------> ", [lem.lemmatize(word) for word in word_list2])
-print("['organize', 'organizing', 'organization'] -------> ", [lem.lemmatize(word) for word in word_list3])
-print("['benefactor', 'benevolent', 'beneficial'] -------> ", [lem.lemmatize(word) for word in word_list4])
-print("['universe', 'university'] -------> ", [lem.lemmatize(word) for word in word_list5])
-```
-**Output** <br>
-['play', 'playing', 'played'] --------------------> ['play', 'playing', 'played']<br>
-['feet', 'foot', 'foots', 'footing'] ------------->  ['foot', 'foot', 'foot', 'footing']<br>
-['organize', 'organizing', 'organization'] ------->  ['organize', 'organizing', 'organization']<br>
-['benefactor', 'benevolent', 'beneficial'] ------->  ['benefactor', 'benevolent', 'beneficial']<br>
-['universe', 'university'] ------->  ['universe', 'university'] <br>
-
-Even though part of speech is not identified in the above example, we can see here that Lemmatization is more conservative about trimming a word then in stemming. University does not change to universe and organize/organization does not change to organ.
-
 #### Lemmatization is great at even identifying the base word for complex verbs. See example below:
 ```python
 print('beheld', lem.lemmatize('beheld', pos = 'v'))
@@ -168,20 +183,10 @@ beheld behold <br>
 witheld withhold <br>
 flung fling <br>
 
-#### Handling plural in lemmatization:
-```python
-print(lemmatizer.lemmatize("ponies"))
-print(lemmatizer.lemmatize("caresses"))
-print(lemmatizer.lemmatize("cats"))
-```
-pony<br>
-caress<br>
-cat<br>
+In English, identifying pos in a verb changes the output within lemmatization. However, identifying pos for nouns and adjectives is more meaningful within languages other than English. Basically, languages that utilize grammatical gender. 
 
-Identifying part of speech for nouns and adjectives is more meaningful within languages other than English. Basically, languages that utilize grammatical gender. 
-
-#### Example of how defining pos for adjectives is important in Lemmatization
-In Hebrew, the word for 'big' is גָּדוֹל (gadol):
+#### Example of how defining pos for adjectives is important in Lemmatization:
+In Hebrew, the word for 'big' is גָּדוֹל (gadol). <br>
 
 ![Alternate image text](/images/twitter/hebrew_gadol.png)
 
