@@ -26,7 +26,7 @@ Each document contains a vector of words (terms), in this case, the document is 
 
 This is where stemming and lemmatization may be beneficial. Stemming and Lemmatization are two separate approaches for stripping a term within a document so that a document matrix is reduced and thus the complexity of data decreases. Reducing size and complexity of a model is beneficial for achieving model accuracy and for reducing computationally memory and time.
 
-## Stemming
+## 1. Stemming
 ![Alternate image text](/images/twitter/stemming.jpg)
 
 **Stemming** is a text processing method in which a term is reduced to its "stem" or simplest form through the removal of suffixes from the term such as (-ED, -ING, -ION, -IONS, -S). Suffixes are removed specifically for IR performance, not for linguistic meaning (Porter, 1980).
@@ -98,7 +98,7 @@ print("['universe', 'university'] -------> ", [porter.stem(word) for word in wor
 
 **Cons for stemming:** Stemming does "too" good of a job of extracting the root word or one could say stemming "butchers" the word. Stemming will take a word like **organize** and shorten it to **organ** which has an entirely different meaning. Same with the word **University**, which will stem to **univers**, again shortening the word to a word that is not the same meaning. This is something to consider when using Porter Stemmer. How important is the meaning of the word versus reducing the complexity of the data to your model and analysis?
 
-## Lemmatization
+## 2. Lemmatization
 ![Alternate image text](/images/twitter/dictionary.jpg)
 
 **Lemmatization** labels the term from its base word (lemma). This method is a more methodical approach for ensuring the words are reduced without losing its meaning.
@@ -197,7 +197,7 @@ In English, identifying pos in a verb changes the output within lemmatization. H
 2. Need to understand fundamentals of linguistics thus more complex
 
 
-## Spacy Lemmatization 
+## 3. Spacy Lemmatization 
 ![Alternate image text](/images/twitter/lem_without_pos.png)
 
 ```python
