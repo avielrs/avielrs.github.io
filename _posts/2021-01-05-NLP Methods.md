@@ -8,7 +8,7 @@ title: Stemming vs Lemmatization
 
 I love the word 'Lemmatization'. Something about the cumulation of sounds that are formed from the syllables, vowels, and consonants that make up the word 'Lemmatization' makes me smile. The first time I heard the word 'Lemmatization', I knew I needed to learn more about it! I guess that is why I like studying Natural Language Processing (NLP). I am drawn towards the subject because I like to think about languages as a structure, patten, and rhythm. Through this process, I am able to take a sentence and visualize it. Just like a fun puzzle, languages are messy at first but when the right pieces fit together, a clear picture is formed.
 
-I remember sitting in high school English and looking at individual sentences on the board. As a class we broke down the sentence structure and identified part of speech for each word. This provides understanding aand meaning of how the word is applied in the sentence. Sentances creates understanding and explanation about the world around us. We use words to express how we feel and share our opinion towards a subject. 
+I remember sitting in my high school English literature class with multiple sentences written on the board. For the class assingment, we broke down each sentence and identified the part of speech for each word. By doing this, we gained understanding and meaning of how each word was applied in that sentence. The act of breaking down a sentence in order to understand the structure of a sentence falls under the discpline of linguistics.  While as individuals, we can break down sentences and idenify meaning, it becomes difficult and almost impossible to do so with large text documents such as 100,000,000 tweets or 100,000 news articles. This is where natural language processing comes into effect. The variety of packages provided for NLP allows us to process big text data efficently. 
 
 ![Alternate image text](/images/twitter/linguistics.png)
 
@@ -17,12 +17,12 @@ I love this figure which is taken from the textbook *"Practical Natural Language
 **Definition of Natural Language Processing**
 Natural Language Processing is part of the machine learning/AI pipeline, where a variety of tasks are applied in order to process text data and format it in a way so that the computer can read the data and perform analysis. 
 
-*In this blog post I will discuss a few different approaches for pre-processing text so that the text is ready to process for machine learning and rule-based algorithms specifically in regards to topic modelling with the use of Twitter text data. This blog post is Part 3 in a series of posts in regard to [collecting twitter data on the US Presidential Election](https://avielrs.github.io/Collecting-Twitter-Data-on-the-US-Presidential-Election/){:target="_blank"}.*
+*In this blog post I will discuss a few different approaches for pre-processing text so that the text is ready to process for machine learning and rule-based algorithms. Specifically, in regards to topic modelling with the use of Twitter text data. This blog post is Part 3 in a series of posts in regard to [collecting twitter data on the US Presidential Election](https://avielrs.github.io/Collecting-Twitter-Data-on-the-US-Presidential-Election/){:target="_blank"}.*
 
 ## Stemming and Lemmatization
 ![Alternate image text](/images/twitter/dictionary.jpg)
 
-Each document contains a vector of words (terms), in this case, the document is the tweet. Sentence tokenization separates each word into a matrix where each term is a feature. For example, if sentance (or document) contains the term **sit**, and another document contains the term **sitting**. The terms will end up in separate columns even though the meaning is the same. This is where stemming and lemmatization comes into play. Stemming and Lemmatization are two separate approaches for stripping a term within a document so that a document matrix is reduced and the complexity of data decreases. Reducing size and complexity of a model is beneficial for achieving model accuracy and for reducing computationally memory and time.
+Each document contains a vector of words (terms), in this case, the document is the tweet. Sentence tokenization separates each word into a matrix where each term is a feature. For example, if a sentance (or document) contains the term **sit**, and another document contains the term **sitting**. The terms will end up in separate columns even though the meaning is the same. This is where stemming and lemmatization may be beneficial. Stemming and Lemmatization are two separate approaches for stripping a term within a document so that a document matrix is reduced and thus the complexity of data decreases. Reducing size and complexity of a model is beneficial for achieving model accuracy and for reducing computationally memory and time.
 
 Two approaches to reducing the term: Stemming and Lemmatization. 
 
@@ -143,7 +143,7 @@ sp = spacy.load('en_core_web_sm')
 ```
 ![Alternate image text](/images/twitter/spacy_lem.png)
 
-References:
+#### References
 [B., Sowmya V., et al. Practical Natural Language Processing: a Comprehensive Guide to Building Real-World NLP Systems. O'Reilly Media, 2020.](https://www.oreilly.com/library/view/practical-natural-language/9781492054047/){:target="_blank"} 
 
 Thomas, Rachel. “Topic Modeling with SVD & NMF (NLP Video 2).” YouTube, 8 July 2019, [www.youtube.com/watch?v=tG3pUwmGjsc](www.youtube.com/watch?v=tG3pUwmGjsc){:target="_blank"}. 
