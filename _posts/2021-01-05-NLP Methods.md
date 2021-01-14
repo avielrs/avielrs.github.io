@@ -131,29 +131,29 @@ lemmatizer.lemmatize("ponies")
 lemmatizer.lemmatize("caresses")
 lemmatizer.lemmatize("cats")
 ```
-ponies ---> pony<br>
-caresses ---> caress<br>
-cats ---> cat<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ponies ---> pony<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; caresses ---> caress<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cats ---> cat<br><br>
 
 To gain a better understanding of how lemma is used within linguestics, let's take a trip down memory lane and recall verb conjugation. 
 
-Conjucating of 'To Be':
+**Conjucate 'To Be'**
 
-Present Tense:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I am <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You are <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; He/She/It is <br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We are <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You are <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; They are <br>
+&nbsp;&nbsp; Present Tense:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  I am <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  You are <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  He/She/It is <br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  We are <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  You are <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  They are <br>
 
-Past Tense: <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I was <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You were <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; He/She/It was <br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We were <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You were <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; They were <br>
+&nbsp;&nbsp; Past Tense: <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  I was <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  You were <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  He/She/It was <br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  We were <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  You were <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  They were <br>
 
 Thus the lemma or lemmatization of AM, IS, ARE, WAS, and were is 'BE'
 
@@ -171,15 +171,15 @@ print('They were --> To', lemmatizer.lemmatize("were", pos="v")) #v is for verbâ
 
 **Note:** In lemmatization, the part of speech (pos) needs to be defined. In the example above, I define the pos as "v" for verb. If the pos parameter is not defined, then the default is set to NOUN.
 
-#### Lemmatization is great at even identifying the base word for complex verbs. See example below:
+Lemmatization is great at even identifying the base word for complex verbs. See example below:
 ```python
-print('beheld', lem.lemmatize('beheld', pos = 'v'))
-print('witheld', lem.lemmatize('withheld', pos = 'v'))
-print('flung', lem.lemmatize('flung', pos = 'v'))
+lem.lemmatize('beheld', pos = 'v')
+lem.lemmatize('withheld', pos = 'v')
+lem.lemmatize('flung', pos = 'v')
 ```
-beheld behold <br>
-witheld withhold <br>
-flung fling <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; beheld ---> behold <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; witheld ---> withhold <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flung ---> fling <br>
 
 **Part of Speech in Lemmatization**
 In English, identifying pos in a verb changes the output within lemmatization. However, identifying pos for nouns and adjectives is more meaningful within languages other than English. Basically, languages that utilize grammatical gender. 
