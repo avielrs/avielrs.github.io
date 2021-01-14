@@ -107,20 +107,20 @@ To get a better understanding of how lemma is used within linguestics, let's tak
 **Conjucationg of 'To Be'**
 
 Present Tense:<br>
-    I am <br>
-    You are <br>
-    He/She/It is <br><br>
-    We are <br>
-    You are <br>
-    They are <br><br>
+        I am <br>
+        You are <br>
+        He/She/It is <br><br>
+        We are <br>
+        You are <br>
+        They are <br>
 
 Past Tense: <br>
-    I was <br>
-    You were <br>
-    He/She/It was <br><br>
-    We were <br>
-    You were <br>
-    They were <br>
+        I was <br>
+        You were <br>
+        He/She/It was <br><br>
+        We were <br>
+        You were <br>
+        They were <br>
 
 The lemma or lemmatization of AM, IS, ARE, WAS, and were is 'BE'
 
