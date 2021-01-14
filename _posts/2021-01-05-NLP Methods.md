@@ -102,13 +102,27 @@ Stemming will take a word like **organize** and shorten it to **organ** which ha
 
 **Lemmatization** is another approach that handles term. Lemmatization labels the term from its base word (lemma). This method is a more methodical approach for ensuring the words are reduced without losing its meaning.
 
-To get a better understanding of how lemma is used within linguestics, let's take trip back to Spanish or French 101. 
+To get a better understanding of how lemma is used within linguestics, let's take trip back to Spanish or French 101. I bet you didn't think practicing conjugating verbs wouldn't become handy in Data Science?!
 
-Remember conjucating verbs? I bet you didn't think this would become handy in Data Science?!
+**Conjucationg of 'To Be'**
 
-![Alternate image text](/images/twitter/tobe.png)
+Present Tense:<br>
+    I am <br>
+    You are <br>
+    He/She/It is <br><br>
+    We are <br>
+    You are <br>
+    They are <br><br>
 
-**The lemma or lemmatization of AM, IS, ARE, WAS, and were is 'BE'**
+Past Tense: <br>
+    I was <br>
+    You were <br>
+    He/She/It was <br><br>
+    We were <br>
+    You were <br>
+    They were <br>
+
+The lemma or lemmatization of AM, IS, ARE, WAS, and were is 'BE'
 
 Let's do a code test: 
 
