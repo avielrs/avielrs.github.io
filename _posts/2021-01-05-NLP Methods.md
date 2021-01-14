@@ -182,6 +182,7 @@ beheld behold <br>
 witheld withhold <br>
 flung fling <br>
 
+**Part of Speech in Lemmatization**
 In English, identifying pos in a verb changes the output within lemmatization. However, identifying pos for nouns and adjectives is more meaningful within languages other than English. Basically, languages that utilize grammatical gender. 
 
 #### Example of how defining pos for adjectives is important in Lemmatization:
