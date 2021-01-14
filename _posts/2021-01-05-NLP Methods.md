@@ -141,7 +141,7 @@ They were --> To be <br>
 
 **Note:** In lemmatization, the part of speech (pos) needs to be defined. In the example above, I define the pos as "v" for verb. If the pos parameter is not defined, then the default is set to NOUN.
 
-Examples of how Lemmatization is applied: 
+#### Examples of how Lemmatization is applied: 
 ```python
 print("['play', 'playing', 'played'] -------------------->", [lem.lemmatize(word) for word in word_list1])
 print("['feet', 'foot', 'foots', 'footing'] -------------> ", [lem.lemmatize(word) for word in word_list2])
@@ -158,7 +158,7 @@ print("['universe', 'university'] -------> ", [lem.lemmatize(word) for word in w
 
 Even though part of speech is not identified in the above example, we can see here that Lemmatization is more conservative about trimming a word then in stemming. University does not change to universe and organize/organization does not change to organ.
 
-Lemmatization is great at even identifying the base word for complex verbs. See example below:
+#### Lemmatization is great at even identifying the base word for complex verbs. See example below:
 ```python
 print('beheld', lem.lemmatize('beheld', pos = 'v'))
 print('witheld', lem.lemmatize('withheld', pos = 'v'))
@@ -168,7 +168,7 @@ beheld behold <br>
 witheld withhold <br>
 flung fling <br>
 
-Handling plural in lemmatization:
+#### Handling plural in lemmatization:
 ```python
 print(lemmatizer.lemmatize("ponies"))
 print(lemmatizer.lemmatize("caresses"))
