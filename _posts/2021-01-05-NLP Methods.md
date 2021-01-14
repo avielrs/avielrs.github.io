@@ -84,9 +84,12 @@ print("['organize', 'organizing', 'organization'] -------> ", [porter.stem(word)
 print("['benefactor', 'benevolent', 'beneficial'] -------> ", [porter.stem(word) for word in word_list4])
 print("['universe', 'university'] -------> ", [porter.stem(word) for word in word_list5])
 ```
-**Output**
-
-![Alternate image text](/images/twitter/stem_output.png)
+#### Output
+['play', 'playing', 'played'] --------------------> ['play', 'play', 'play'] <br>
+['feet', 'foot', 'foots', 'footing'] ------------->  ['feet', 'foot', 'foot', 'foot'] <br>
+['organize', 'organizing', 'organization'] ------->  ['organ', 'organ', 'organ']<br>
+['benefactor', 'benevolent', 'beneficial'] ------->  ['benefactor', 'benevol', 'benefici'] <br>
+['universe', 'university'] ------->  ['univers', 'univers'] <br>
 
 Pros: 
 1. Remove sufixes
@@ -139,8 +142,12 @@ print("['benefactor', 'benevolent', 'beneficial'] -------> ", [lem.lemmatize(wor
 print("['universe', 'university'] -------> ", [lem.lemmatize(word) for word in word_list5])
 ```
 
-**Output:**
-![Alternate image text](/images/twitter/lem_code.png)
+#### Output:
+['play', 'playing', 'played'] --------------------> ['play', 'playing', 'played']<br>
+['feet', 'foot', 'foots', 'footing'] ------------->  ['foot', 'foot', 'foot', 'footing']<br>
+['organize', 'organizing', 'organization'] ------->  ['organize', 'organizing', 'organization']<br>
+['benefactor', 'benevolent', 'beneficial'] ------->  ['benefactor', 'benevolent', 'beneficial']<br>
+['universe', 'university'] ------->  ['universe', 'university'] <br>
 
 Even though part of speech is not identified, we can see here that Lemmatization is more conservative about trimming a word. University does not change to universe and organize/organization does not change to organ.
 
