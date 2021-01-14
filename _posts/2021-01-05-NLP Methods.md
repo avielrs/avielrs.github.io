@@ -109,15 +109,26 @@ Remember conjucating verbs? I bet you didn't think this would become handy in Da
 
 ![Alternate image text](/images/twitter/tobe.png)
 
-The lemma or lemmatization of AM, IS, ARE, WAS, and were is 'BE'
+**The lemma or lemmatization of AM, IS, ARE, WAS, and were is 'BE'**
 
-We can test this out in code: 
+Let's do a code test: 
 
-![Alternate image text](/images/twitter/to_be_lem.png)
+![Alternate image text](/images/twitter/to_be_code.png)
 
 **Note that I needed to define the part of speech as a verb. If part of speech parameter is not defined then the default is set to NOUN.**
 
-![Alternate image text](/images/twitter/lem.png)
+Let's see some examples of how Porter Stemmer is applied: 
+
+```python
+print("['play', 'playing', 'played'] -------------------->", [lem.lemmatize(word) for word in word_list1])
+print("['feet', 'foot', 'foots', 'footing'] -------------> ", [lem.lemmatize(word) for word in word_list2])
+print("['organize', 'organizing', 'organization'] -------> ", [lem.lemmatize(word) for word in word_list3])
+print("['benefactor', 'benevolent', 'beneficial'] -------> ", [lem.lemmatize(word) for word in word_list4])
+print("['universe', 'university'] -------> ", [lem.lemmatize(word) for word in word_list5])
+```
+
+**Output:**
+![Alternate image text](/images/twitter/lem_code.png)
 
 Even though part of speech is not identified, we can see here that Lemmatization is more conservative about trimming a word. University does not change to universe and organize/organization does not change to organ.
 
