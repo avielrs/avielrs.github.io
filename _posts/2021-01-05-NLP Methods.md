@@ -133,7 +133,7 @@ print("['universe', 'university'] -------> ", [lem.lemmatize(word) for word in w
 
 Even though part of speech is not identified, we can see here that Lemmatization is more conservative about trimming a word. University does not change to universe and organize/organization does not change to organ.
 
-If part of speech is applied, Lemmatization is great at even identify9ng the base word for complex verbs. For example
+If part of speech is applied, lemmatization is great at even identifying the base word for complex verbs. For example
 
 ![Alternate image text](/images/twitter/lem_complex_verbs.png)
 
@@ -142,11 +142,11 @@ Do not need to identify part of speech for plural:
 
 Identifying part of speech for nouns and adjectives is more meaningful within languages other than English. Basically, languages that utilize grammatical gender. 
 
-For example, the Hebrew word for 'big' is גָּדוֹל (gadol):
+For example in Hebrew, the word for 'big' is גָּדוֹל (gadol):
 
-![Alternate image text](/images/twitter/gadol.png)
+![Alternate image text](/images/twitter/hebrew_gadol.png)
 
-Here the adjective changes the ending of the word depending if the adjective is describing a single masculine, single feminine, plural masculine, or plural feminine. However, the root (lemma) of the word of Gadol is  ג - ד - ל which is the simplest form of the word because the vowels and gender are removed. 
+In hebrew, the ending of the adjective changes according to if the word is used as singlular masculine, singlular feminine, plural masculine, or plural feminine. The root (lemma) of Gadol is  ג - ד - ל (g-d-l).Thus when lemmatization is applied to the hebrew word גָּדוֹל (Gadol), the word will be reduced to its root word גדל (gdl).
 
 Pros: 
 1. Using the base word ensures that the meaning behind the word is not being lost
