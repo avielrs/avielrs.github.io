@@ -105,7 +105,6 @@ Stemming will take a word like **organize** and shorten it to **organ** which ha
 
 **Lemmatization** labels the term from its base word (lemma). This method is a more methodical approach for ensuring the words are reduced without losing its meaning.
 
-#### Import and instantiate Lemmatization:
 ```python
 # import lemmatizer package
 from nltk.stem import WordNetLemmatizer 
