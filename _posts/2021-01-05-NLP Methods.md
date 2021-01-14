@@ -91,13 +91,12 @@ print("['universe', 'university'] -------> ", [porter.stem(word) for word in wor
 ['benefactor', 'benevolent', 'beneficial'] ------->  ['benefactor', 'benevol', 'benefici'] <br>
 ['universe', 'university'] ------->  ['univers', 'univers'] <br>
 
-**Pros for stemming**
+**Pros for stemming:**
 1. Remove sufixes
 2. Reduce size and complexity of data
 3. Reduce variance in models which can cause overfitting.
 
-**Cons for stemming**
-Stemming does "too" good of a job of extracting the root word or one could say stemming "butchers" the word. For example, 
+**Cons for stemming:** Stemming does "too" good of a job of extracting the root word or one could say stemming "butchers" the word. For example, 
 
 Stemming will take a word like **organize** and shorten it to **organ** which has an entirely different meaning. Same with the word **University**, which will stem to **univers**, again shortening the word to a word that is not the same meaning. This is something to consider when using Porter Stemmer. How important is the meaning of the word versus reducing the complexity of the data to your model and analysis?
 
@@ -108,7 +107,7 @@ Stemming will take a word like **organize** and shorten it to **organ** which ha
 
 To get a better understanding of how lemma is used within linguestics, let's take trip back to Spanish or French 101. I bet you didn't think practicing conjugating verbs wouldn't become handy in Data Science?!
 
-**Conjucationg of 'To Be'**
+**Conjucating of 'To Be'**
 
 *Present Tense:*<br>
         I am <br>
@@ -129,7 +128,16 @@ To get a better understanding of how lemma is used within linguestics, let's tak
 The lemma or lemmatization of AM, IS, ARE, WAS, and were is 'BE'
 
 Code test: 
-![Alternate image text](/images/twitter/tobecode.png)
+```python
+print('I am ---> To', lemmatizer.lemmatize("am", pos="v")) #v is for verb”
+print('You are --> To', lemmatizer.lemmatize("are", pos="v")) #v is for verb”
+print('He is --> To', lemmatizer.lemmatize("is", pos="v")) #v is for verb”
+print('They were --> To', lemmatizer.lemmatize("were", pos="v")) #v is for verb” 
+```
+I am ---> To be <br>
+You are --> To be <br>
+He is --> To be <br>
+They were --> To be <br>
 
 #### Note that I needed to define the part of speech as a verb. If part of speech parameter is not defined then the default is set to NOUN.**
 
