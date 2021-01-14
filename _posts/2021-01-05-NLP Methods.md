@@ -131,11 +131,11 @@ print("['universe', 'university'] -------> ", [lem.lemmatize(word) for word in w
 
 Even though part of speech is not identified, we can see here that Lemmatization is more conservative about trimming a word. University does not change to universe and organize/organization does not change to organ.
 
-If part of speech is applied, lemmatization is great at even identifying the base word for complex verbs. For example
+If part of speech is applied, lemmatization is great at even identifying the base word for complex verbs. See example below:
 
 ![Alternate image text](/images/twitter/lem_complex_verbs.png)
 
-Do not need to identify part of speech for plural: 
+Handling plural in lemmatization:
 ![Alternate image text](/images/twitter/lem_plural.png)
 
 Identifying part of speech for nouns and adjectives is more meaningful within languages other than English. Basically, languages that utilize grammatical gender. 
