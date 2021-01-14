@@ -106,15 +106,13 @@ To get a better understanding of how lemma is used within linguestics, let's tak
 
 Remember conjucating verbs? I bet you didn't think this would become handy in Data Science?!
 
-**The conjugation of 'To Be' is:**
-
 ![Alternate image text](/images/twitter/tobe.png)
 
 **The lemma or lemmatization of AM, IS, ARE, WAS, and were is 'BE'**
 
 Let's do a code test: 
 
-![Alternate image text](/images/twitter/to_be_code.png)
+![Alternate image text](/images/twitter/tobecode.png)
 
 **Note that I needed to define the part of speech as a verb. If part of speech parameter is not defined then the default is set to NOUN.**
 
