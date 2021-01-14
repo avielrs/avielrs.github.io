@@ -192,14 +192,15 @@ In Hebrew, the word for 'big' is גָּדוֹל (gadol). <br>
 
 In hebrew, the ending of the adjective changes according to if the word is used as singlular masculine, singlular feminine, plural masculine, or plural feminine. The root (lemma) of gadol is  ג - ד - ל (g-d-l).Thus when lemmatization is applied to the hebrew word גָּדוֹל (Gadol), the word will be reduced to its root word גדל (gdl).
 
-**Pros for lemmetization**
+**Pros for lemmatization**
 1. Using the base word ensures that the meaning behind the word is not being lost
 
-**Cons for lemmetization**
+**Cons for lemmatization**
 1. Need to identify part of speech
 2. Need to understand fundamentals of linguistics thus more complex
 
-### Spacy Lemmatization 
+
+## Spacy Lemmatization 
 ![Alternate image text](/images/twitter/lem_without_pos.png)
 
 ```python
