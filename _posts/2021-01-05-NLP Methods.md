@@ -14,7 +14,7 @@ I remember sitting in my high school English literature class with multiple sent
 
 I love this figure which is taken from the textbook *"Practical Natural Language Processing: A Comprehensive Guide to Building Real-World NLP Systems" by Vajjala, S. et al. 2020.* The image shows the building blocks of a language and in result how NLP is utilized in order for computers to process text data. 
 
-**Definition of Natural Language Processing**
+#### Definition of Natural Language Processing
 Natural Language Processing is part of the machine learning/AI pipeline, where a variety of tasks are applied in order to process text data and format it in a way so that the computer can read the data and perform analysis. 
 
 *In this blog post I will discuss a few different approaches for pre-processing text so that the text is ready to process for machine learning and rule-based algorithms. Specifically, in regards to topic modelling with the use of Twitter text data. This blog post is Part 3 in a series of posts in regard to [collecting twitter data on the US Presidential Election](https://avielrs.github.io/Collecting-Twitter-Data-on-the-US-Presidential-Election/){:target="_blank"}.*
@@ -22,7 +22,11 @@ Natural Language Processing is part of the machine learning/AI pipeline, where a
 ## Stemming and Lemmatization
 ![Alternate image text](/images/twitter/dictionary.jpg)
 
-Each document contains a vector of words (terms), in this case, the document is the tweet. Sentence tokenization separates each word into a matrix where each term is a feature. For example, if a sentance (or document) contains the term **sit**, and another document contains the term **sitting**. The terms will end up in separate columns even though the meaning is the same. This is where stemming and lemmatization may be beneficial. Stemming and Lemmatization are two separate approaches for stripping a term within a document so that a document matrix is reduced and thus the complexity of data decreases. Reducing size and complexity of a model is beneficial for achieving model accuracy and for reducing computationally memory and time.
+Each document contains a vector of words (terms), in this case, the document is the tweet. Sentence tokenization separates each word into a matrix where each term is a feature. For example, if a sentance (or document) contains the term **sit**, and another document contains the term **sitting**. The terms will end up in separate columns even though the meaning is the same. 
+
+![Alternate image text](/images/twitter/diagram_lem_stem_token.jpg)
+
+This is where stemming and lemmatization may be beneficial. Stemming and Lemmatization are two separate approaches for stripping a term within a document so that a document matrix is reduced and thus the complexity of data decreases. Reducing size and complexity of a model is beneficial for achieving model accuracy and for reducing computationally memory and time.
 
 Two approaches to reducing the term: Stemming and Lemmatization. 
 
