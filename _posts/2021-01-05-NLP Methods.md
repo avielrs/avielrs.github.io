@@ -103,7 +103,7 @@ Stemming will take a word like **organize** and shorten it to **organ** which ha
 ## Lemmatization
 ![Alternate image text](/images/twitter/dictionary.jpg)
 
-**Lemmatization** is another approach that handles term. Lemmatization labels the term from its base word (lemma). This method is a more methodical approach for ensuring the words are reduced without losing its meaning.
+**Lemmatization** labels the term from its base word (lemma). This method is a more methodical approach for ensuring the words are reduced without losing its meaning.
 
 #### Import and instantiate Lemmatization:
 ```python
