@@ -105,7 +105,7 @@ Stemming will take a word like **organize** and shorten it to **organ** which ha
 
 **Lemmatization** is another approach that handles term. Lemmatization labels the term from its base word (lemma). This method is a more methodical approach for ensuring the words are reduced without losing its meaning.
 
-To get a better understanding of how lemma is used within linguestics, let's take trip back to Spanish or French 101. I bet you didn't think practicing conjugating verbs wouldn't become handy in Data Science?!
+To get a better understanding of how lemma is used within linguestics, let's take a trip down memory lane and recall verb conjugation. 
 
 **Conjucating of 'To Be'**
 
@@ -139,10 +139,9 @@ You are --> To be <br>
 He is --> To be <br>
 They were --> To be <br>
 
-#### Note that I needed to define the part of speech as a verb. If part of speech parameter is not defined then the default is set to NOUN.**
+**Note: In lemmatization, the part of speech (pos) needs to be defined. In the example above, I define the pos as "v" for verb. If the pos parameter is not defined, then the default is set to NOUN.**
 
-Let's see some examples of how Lemmatization is applied: 
-
+Examples of how Lemmatization is applied: 
 ```python
 print("['play', 'playing', 'played'] -------------------->", [lem.lemmatize(word) for word in word_list1])
 print("['feet', 'foot', 'foots', 'footing'] -------------> ", [lem.lemmatize(word) for word in word_list2])
@@ -150,7 +149,6 @@ print("['organize', 'organizing', 'organization'] -------> ", [lem.lemmatize(wor
 print("['benefactor', 'benevolent', 'beneficial'] -------> ", [lem.lemmatize(word) for word in word_list4])
 print("['universe', 'university'] -------> ", [lem.lemmatize(word) for word in word_list5])
 ```
-
 **Output** <br>
 ['play', 'playing', 'played'] --------------------> ['play', 'playing', 'played']<br>
 ['feet', 'foot', 'foots', 'footing'] ------------->  ['foot', 'foot', 'foot', 'footing']<br>
