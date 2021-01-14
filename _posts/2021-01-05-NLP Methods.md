@@ -84,19 +84,20 @@ print("['organize', 'organizing', 'organization'] -------> ", [porter.stem(word)
 print("['benefactor', 'benevolent', 'beneficial'] -------> ", [porter.stem(word) for word in word_list4])
 print("['universe', 'university'] -------> ", [porter.stem(word) for word in word_list5])
 ```
-#### Output
+Output<br>
 ['play', 'playing', 'played'] --------------------> ['play', 'play', 'play'] <br>
 ['feet', 'foot', 'foots', 'footing'] ------------->  ['feet', 'foot', 'foot', 'foot'] <br>
 ['organize', 'organizing', 'organization'] ------->  ['organ', 'organ', 'organ']<br>
 ['benefactor', 'benevolent', 'beneficial'] ------->  ['benefactor', 'benevol', 'benefici'] <br>
 ['universe', 'university'] ------->  ['univers', 'univers'] <br>
 
-Pros: 
+#### Pros
 1. Remove sufixes
 2. Reduce size and complexity of data
 3. Reduce variance in models which can cause overfitting.
 
-Cons: Stemming does "too" good of a job of extracting the root word or one could say stemming "butchers" the word. For example, 
+#### Cons 
+Stemming does "too" good of a job of extracting the root word or one could say stemming "butchers" the word. For example, 
 
 Stemming will take a word like **organize** and shorten it to **organ** which has an entirely different meaning. Same with the word **University**, which will stem to **univers**, again shortening the word to a word that is not the same meaning. This is something to consider when using Porter Stemmer. How important is the meaning of the word versus reducing the complexity of the data to your model and analysis?
 
@@ -109,25 +110,25 @@ To get a better understanding of how lemma is used within linguestics, let's tak
 
 **Conjucationg of 'To Be'**
 
-Present Tense:<br>
+*Present Tense:*<br>
         I am <br>
         You are <br>
-        He/She/It is <br><br>
+        He/She/It is <br>
         We are <br>
         You are <br>
         They are <br>
 
-Past Tense: <br>
+*Past Tense:* <br>
         I was <br>
         You were <br>
-        He/She/It was <br><br>
+        He/She/It was <br>
         We were <br>
         You were <br>
         They were <br>
 
 The lemma or lemmatization of AM, IS, ARE, WAS, and were is 'BE'
 
-code test: 
+Code test: 
 ![Alternate image text](/images/twitter/tobecode.png)
 
 #### Note that I needed to define the part of speech as a verb. If part of speech parameter is not defined then the default is set to NOUN.**
@@ -142,7 +143,7 @@ print("['benefactor', 'benevolent', 'beneficial'] -------> ", [lem.lemmatize(wor
 print("['universe', 'university'] -------> ", [lem.lemmatize(word) for word in word_list5])
 ```
 
-#### Output:
+Output <br>
 ['play', 'playing', 'played'] --------------------> ['play', 'playing', 'played']<br>
 ['feet', 'foot', 'foots', 'footing'] ------------->  ['foot', 'foot', 'foot', 'footing']<br>
 ['organize', 'organizing', 'organization'] ------->  ['organize', 'organizing', 'organization']<br>
@@ -179,10 +180,10 @@ For example in Hebrew, the word for 'big' is גָּדוֹל (gadol):
 
 In hebrew, the ending of the adjective changes according to if the word is used as singlular masculine, singlular feminine, plural masculine, or plural feminine. The root (lemma) of Gadol is  ג - ד - ל (g-d-l).Thus when lemmatization is applied to the hebrew word גָּדוֹל (Gadol), the word will be reduced to its root word גדל (gdl).
 
-Pros: 
+#### Pros 
 1. Using the base word ensures that the meaning behind the word is not being lost
 
-Cons: 
+#### Cons
 1. Need to identify part of speech
 2. Need to understand fundamentals of linguistics thus more complex
 3. Not as good as stemmer for query use 
