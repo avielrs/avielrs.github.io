@@ -28,8 +28,6 @@ Each document contains a vector of words (terms), in this case, the document is 
 
 This is where stemming and lemmatization may be beneficial. Stemming and Lemmatization are two separate approaches for stripping a term within a document so that a document matrix is reduced and thus the complexity of data decreases. Reducing size and complexity of a model is beneficial for achieving model accuracy and for reducing computationally memory and time.
 
-Two approaches to reducing the term: Stemming and Lemmatization. 
-
 ### Stemming
 
 **Stemming** is a text processing method in which a term is reduced to its "stem" or simplest form through the removal of suffixes from the term such as (-ED, -ING, -ION, -IONS, -S). Suffixes are removed specifically for IR performance, not for linguistic meaning (Porter, 1980).
