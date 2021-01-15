@@ -91,12 +91,13 @@ print("['universe', 'university'] -------> ", [porter.stem(word) for word in wor
 ['benefactor', 'benevolent', 'beneficial'] ------->  ['benefactor', 'benevol', 'benefici'] <br>
 ['universe', 'university'] ------->  ['univers', 'univers'] <br><br>
 
-**Pros for stemming:**
+### Pros for stemming
 1. Remove sufixes
 2. Reduce size and complexity of data
 3. Reduce variance in models which can cause overfitting.
 
-**Cons for stemming:** Stemming does "too" good of a job of extracting the root word or one could say stemming "butchers" the word. Stemming will take a word like **organize** and shorten it to **organ** which has an entirely different meaning. Same with the word **University**, which will stem to **univers**, again shortening the word to a word that is not the same meaning. This is something to consider when using Porter Stemmer. How important is the meaning of the word versus reducing the complexity of the data to your model and analysis?
+### Cons for stemming
+Stemming does "too" good of a job of extracting the root word or one could say stemming "butchers" the word. Stemming will take a word like **organize** and shorten it to **organ** which has an entirely different meaning. Same with the word **University**, which will stem to **univers**, again shortening the word to a word that is not the same meaning. This is something to consider when using Porter Stemmer. How important is the meaning of the word versus reducing the complexity of the data to your model and analysis?
 
 # Lemmatization
 ![Alternate image text](/images/twitter/dictionary.jpg)
@@ -124,7 +125,7 @@ print("['universe', 'university'] -------> ", [lem.lemmatize(word) for word in w
 
 Even though part of speech is not identified in the above example, we can see here that Lemmatization is more conservative about trimming a word then in stemming. University does not change to universe and organize/organization does not change to organ.<br><br>
 
-**Handling plural in lemmatization:**
+### Handling plural in lemmatization
 ```python
 lemmatizer.lemmatize("ponies")
 lemmatizer.lemmatize("caresses")
@@ -134,6 +135,7 @@ lemmatizer.lemmatize("cats")
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; caresses ---> caress<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cats ---> cat<br><br>
 
+### Understanding Lemma
 To gain a better understanding of how lemma is used within linguestics, let's take a trip down memory lane and recall verb conjugation. 
 
 **Conjucate 'To Be'**
@@ -170,7 +172,8 @@ print('They were --> To', lemmatizer.lemmatize("were", pos="v")) #v is for verb�
 
 **Note:** In lemmatization, the part of speech (pos) needs to be defined. In the example above, I define the pos as "v" for verb. If the pos parameter is not defined, then the default is set to NOUN.<br><br>
 
-Lemmatization is great at even identifying the base word for complex verbs. See example below:
+#### Complex verbs in NLTK Lemmatizer
+Has the capability to identify base words from complex verbs. See example below:
 ```python
 lem.lemmatize('beheld', pos = 'v')
 lem.lemmatize('withheld', pos = 'v')
@@ -180,7 +183,7 @@ lem.lemmatize('flung', pos = 'v')
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; witheld ---> withhold <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flung ---> fling <br> <br>
 
-**Part of Speech in Lemmatization:**
+### Part of Speech
 In English, identifying pos in a verb changes the output within lemmatization. However, identifying pos for nouns and adjectives is more meaningful within languages other than English. Basically, languages that utilize grammatical gender. 
 
 For example in Hebrew, the word for 'big' is גָּדוֹל (gadol). <br>
@@ -189,10 +192,10 @@ For example in Hebrew, the word for 'big' is גָּדוֹל (gadol). <br>
 
 In Hebrew, the ending of the adjective changes according to if the word is used as singlular masculine, singlular feminine, plural masculine, or plural feminine. The root (lemma) of gadol is  ג - ד - ל (g-d-l).Thus when lemmatization is applied to the Hebrew word גָּדוֹל (Gadol), the word is reduced to its root word גדל (gdl). <br><br>
 
-**Pros for lemmatization**
+### Pros for lemmatization
 1. Using the base word ensures that the meaning behind the word is not being lost
 
-**Cons for lemmatization**
+### Cons for lemmatization
 1. Need to identify part of speech
 2. Need to understand fundamentals of linguistics thus more complex
 
@@ -230,9 +233,9 @@ for i in words:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; beheld --> beheld <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sped --> speed <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; withhold --> withhold <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flung --> flung <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flung --> flung <br><br>
 
-Compare NLTK Lemmatizer without including pos:
+NLTK Lemmatizer without including pos:
 ``` python
 for word in words:
     print(word,'-->', lem.lemmatize(word))
@@ -252,6 +255,8 @@ for word in words:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sped --> sped <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; withhold --> withhold <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flung --> flung <br>
+
+Things to note: <br>
 
 
 
