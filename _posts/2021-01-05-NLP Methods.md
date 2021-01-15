@@ -6,9 +6,9 @@ title: Stemming vs Lemmatization
 
 # Part 3A: Text Preprocessing for Topic Modelling
 
-I love the word 'Lemmatization'. Something about the cumulation of sounds that are formed from the syllables, vowels, and consonants that make up the word 'Lemmatization' makes me smile. The first time I heard the word 'Lemmatization', I knew I needed to learn more about it! I guess that is why I like studying Natural Language Processing (NLP). I am drawn towards the subject because I like to think about languages as a structure, patten, and rhythm. Through this process, I am able to take a sentence and visualize it. Just like a fun puzzle, languages are messy at first but when the right pieces fit together, a clear picture is formed.
+I love the word 'Lemmatization'. Something about the cumulation of sounds that are formed from the syllables, vowels, and consonants that makes up the word 'Lemmatization' makes me smile. The first time I heard the word 'Lemmatization', I knew I needed to learn more about it! I guess that is why I like studying Natural Language Processing (NLP). I am drawn towards the subject because I like to think about languages as a structure, patten, and rhythm. Through this process, I am able to take a sentence and visualize it. Just like a fun puzzle, languages are messy at first but when the right pieces fit together, a clear picture is formed.
 
-I remember sitting in my high school English literature class with multiple sentences written on the board. For the class assingment, we broke down each sentence and identified the part of speech for each word. By doing this, we gained understanding and meaning of how each word was applied in that sentence. The act of breaking down a sentence in order to understand the structure of a sentence falls under the discpline of linguistics.  While as individuals, we can break down sentences and idenify meaning, it becomes difficult and almost impossible to do so with large text documents such as 100,000,000 tweets or 100,000 news articles. This is where natural language processing comes into effect. The variety of packages provided for NLP allows us to process big text data efficently. 
+I remember sitting in my high school English literature class with multiple sentences written on the board. For the class assignment, we broke down each sentence and identified the part of speech for each word. By doing this, we gained understanding and meaning of how each word was applied in that sentence. The act of breaking down a sentence in order to understand the structure of a sentence falls under the discipline of linguistics.  While as individuals, we can break down sentences and identify meaning, it becomes difficult and almost impossible to do so with large text documents such as 100,000,000 tweets or 100,000 news articles. This is where natural language processing comes into effect. The variety of packages provided for NLP allows us to process big text data efficiently. 
 
 ![Alternate image text](/images/twitter/linguistics.png)
 
@@ -137,7 +137,7 @@ lemmatizer.lemmatize("cats")
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cats ---> cat<br><br>
 
 ### A2. Understanding Lemma
-To gain a better understanding of how lemma is used within linguestics, let's take a trip down memory lane and recall verb conjugation. 
+To gain a better understanding of how lemma is used within linguistics, let's take a trip down memory lane and recall verb conjugation. 
 
 **Conjucate 'To Be'**
 
@@ -157,7 +157,7 @@ To gain a better understanding of how lemma is used within linguestics, let's ta
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  You were <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  They were <br>
 
-Thus the lemma or lemmatization of AM, IS, ARE, WAS, and were is 'BE'
+Thus, the lemma or lemmatization of AM, IS, ARE, WAS, and were is 'BE'
 
 Code test: 
 ```python
@@ -187,11 +187,11 @@ lem.lemmatize('flung', pos = 'v')
 ### A3. Part of Speech
 In English, identifying pos in a verb changes the output within lemmatization. However, identifying pos for nouns and adjectives is more meaningful within languages other than English. Basically, languages that utilize grammatical gender. 
 
-For example in Hebrew, the word for 'big' is גָּדוֹל (gadol). <br>
+For example, in Hebrew, the word for 'big' is גָּדוֹל (gadol). <br>
 
 ![Alternate image text](/images/twitter/hebrew_gadol.png)
 
-In Hebrew, the ending of the adjective changes according to if the word is used as singlular masculine, singlular feminine, plural masculine, or plural feminine. The root (lemma) of gadol is  ג - ד - ל (g-d-l).Thus when lemmatization is applied to the Hebrew word גָּדוֹל (Gadol), the word is reduced to its root word גדל (gdl). <br><br>
+In Hebrew, the ending of the adjective changes according to if the word is used as singular masculine, singular feminine, plural masculine, or plural feminine. The root (lemma) of gadol is  ג - ד - ל (g-d-l).Thus when lemmatization is applied to the Hebrew word גָּדוֹל (Gadol), the word is reduced to its root word גדל (gdl). <br><br>
 
 ### A4. Benefits and drawbacks to lemmatization
 
@@ -202,7 +202,6 @@ In Hebrew, the ending of the adjective changes according to if the word is used 
 1. Need to identify part of speech
 2. Need to understand fundamentals of linguistics thus more complex
 
-
 ## B. Spacy Lemmatization 
 Spacy provides its own lemmatization package. Let's see how this package compares with the lemmatizer in NLTK. 
 
@@ -212,7 +211,7 @@ Spacy provides its own lemmatization package. Let's see how this package compare
 # import spacy package
 import spacy
 
-# load english spacy
+# load English spacy
 sp = spacy.load('en_core_web_sm')
 
 # create word list
@@ -263,7 +262,6 @@ for word in words:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flung --> flung <br>
 
 ### B3 Comparison
-
 
 
 #### References
