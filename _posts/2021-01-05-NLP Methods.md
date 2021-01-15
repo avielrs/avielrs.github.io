@@ -20,11 +20,11 @@ Natural Language Processing is part of the machine learning/AI pipeline, where a
 *In this blog post I will discuss stemming and lematization, a pre-processing method for text data so that the text is ready to process for machine learning and rule-based algorithms. Specifically, in regards to topic modelling with the use of Twitter text data. This blog post is Part 3 in a series of posts in regard to [collecting twitter data on the US Presidential Election](https://avielrs.github.io/Collecting-Twitter-Data-on-the-US-Presidential-Election/){:target="_blank"}.*
 
 ### Why stemming and lemmatization is used? 
-Each document contains a vector of words (terms), in this case, the document is the tweet. Sentence tokenization separates each word into a matrix where each term is a feature. For example, if a sentance (or document) contains the term **sit**, and another document contains the term **sitting**. The terms will end up in separate columns even though the meaning is the same. 
+Each document contains a vector of words (terms). Sentence tokenization separates each word into a matrix where each term is a feature. For example, if a sentance (or document) contains the term **sit**, and another document contains the term **sitting**. The two terms will end up as two separate column features even though the meaning is the same. 
 
 ![Alternate image text](/images/twitter/diagram_lem_stem_token.png)
 
-This is where stemming and lemmatization may be beneficial. Stemming and Lemmatization are two separate approaches for stripping a term within a document so that a document matrix is reduced and thus the complexity of data decreases. Reducing size and complexity of a model is beneficial for achieving model accuracy and for reducing computationally memory and time.
+This is where stemming and lemmatization may be beneficial. Stemming and Lemmatization are two separate approaches for stripping a term within a document so that a document matrix is reduced and thus the complexity of data decreases. Reducing size and complexity of a model is beneficial for achieving model accuracy and for reducing computation memory and time.
 
 # I. Stemming
 ![Alternate image text](/images/twitter/stemming.jpg)
@@ -126,7 +126,7 @@ print("['universe', 'university'] -------> ", [lem.lemmatize(word) for word in w
 
 Even though part of speech is not identified in the above example, we can see here that Lemmatization is more conservative about trimming a word then in stemming. University does not change to universe and organize/organization does not change to organ.<br><br>
 
-### A1. Handling plural in lemmatization
+### Handling plural in lemmatization
 ```python
 lemmatizer.lemmatize("ponies")
 lemmatizer.lemmatize("caresses")
@@ -136,7 +136,7 @@ lemmatizer.lemmatize("cats")
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; caresses ---> caress<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cats ---> cat<br><br>
 
-### A2. Understanding Lemma
+### Understanding Lemma
 To gain a better understanding of how lemma is used within linguistics, let's take a trip down memory lane and recall verb conjugation. 
 
 **Conjucate 'To Be'**
@@ -171,7 +171,7 @@ print('They were --> To', lemmatizer.lemmatize("were", pos="v")) #v is for verb�
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; He is --> To be <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; They were --> To be <br>
 
-**Note:** In lemmatization, the part of speech (pos) needs to be defined. In the example above, I define the pos as "v" for verb. If the pos parameter is not defined, then the default is set to NOUN.<br><br>
+**Note:** In lemmatization, the part of speech (pos) needs to be defined. In the example above, I define the pos as "v" for verb. If the pos parameter is not defined, then the default is set to NOUN.<br>
 
 #### Complex verbs in NLTK Lemmatizer
 Has the capability to identify base words from complex verbs. See example below:
@@ -184,7 +184,7 @@ lem.lemmatize('flung', pos = 'v')
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; witheld ---> withhold <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flung ---> fling <br> <br>
 
-### A3. Part of Speech
+### Part of Speech (POS)
 In English, identifying pos in a verb changes the output within lemmatization. However, identifying pos for nouns and adjectives is more meaningful within languages other than English. Basically, languages that utilize grammatical gender. 
 
 For example, in Hebrew, the word for 'big' is גָּדוֹל (gadol). <br>
@@ -193,19 +193,18 @@ For example, in Hebrew, the word for 'big' is גָּדוֹל (gadol). <br>
 
 In Hebrew, the ending of the adjective changes according to if the word is used as singular masculine, singular feminine, plural masculine, or plural feminine. The root (lemma) of gadol is  ג - ד - ל (g-d-l).Thus when lemmatization is applied to the Hebrew word גָּדוֹל (Gadol), the word is reduced to its root word גדל (gdl). <br><br>
 
-### A4. Benefits and drawbacks to lemmatization
-
-#### Pros for lemmatization**
+### Pros for lemmatization
 1. Using the base word ensures that the meaning behind the word is not being lost
 
-#### Cons for lemmatization
+### Cons for lemmatization
 1. Need to identify part of speech
 2. Need to understand fundamentals of linguistics thus more complex
 
 ## B. Spacy Lemmatization 
 Spacy provides its own lemmatization package. Let's see how this package compares with the lemmatizer in NLTK. 
 
-### B1. Spacy Lemmatization
+### Spacy Lemmatization
+In spacy lemmatization, part of speech for each word is not a parameter.
 
 ```python
 # import spacy package
@@ -239,8 +238,9 @@ for i in words:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; withhold --> withhold <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flung --> flung <br><br>
 
-### B2. NLTK Lemamatizer
-NLTK Lemmatizer without including pos:
+### NLTK Lemamatizer
+Spacy Lemmatizer does not include pos therefore in order to compare the package with with NLTK lemmatizer, I will not include the POS for NLTK Lemmatizer.
+
 ``` python
 for word in words:
     print(word,'-->', lem.lemmatize(word))
@@ -261,8 +261,13 @@ for word in words:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; withhold --> withhold <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flung --> flung <br>
 
-### B3 Comparison
+### Comparison
+From above, we can see that Spacy Lemmatization is able to identify the root word of verbs without including part of speech as a parameter. For example, 'are' is lemmatized as 'be', 'ran' is lemmatized to 'run', 'awoken' is lemmatized to 'awake'. Drawbacks is that Spacy Lemmatization is not able to handle complex verbs as well as NLTK Lemmatizer when the POS is labled. Such words includes 'flung', 'withold', and 'beheld'. 
 
+Spacy Lemmatization as well does a much better job than NLTK Lemmatizer when the pos parameter in NLTK Lemmatizer is set to default as 'Noun'.
+
+### How important is pos for lemmatization? 
+I have demonstrated from above that NLTK Lemmatizer works very well when the part of speech is identified for each word. However labeling each word with the correct pos can be cumbersome and adds one more level of compelxity to the data in order to ensure the data is setup correctly for an accuraate model.
 
 #### References
 [B., Sowmya V., et al. Practical Natural Language Processing: a Comprehensive Guide to Building Real-World NLP Systems. O'Reilly Media, 2020.](https://www.oreilly.com/library/view/practical-natural-language/9781492054047/){:target="_blank"} 
