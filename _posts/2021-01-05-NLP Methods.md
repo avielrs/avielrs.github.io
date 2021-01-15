@@ -26,7 +26,7 @@ Each document contains a vector of words (terms), in this case, the document is 
 
 This is where stemming and lemmatization may be beneficial. Stemming and Lemmatization are two separate approaches for stripping a term within a document so that a document matrix is reduced and thus the complexity of data decreases. Reducing size and complexity of a model is beneficial for achieving model accuracy and for reducing computationally memory and time.
 
-# Stemming
+# I. Stemming
 ![Alternate image text](/images/twitter/stemming.jpg)
 
 **Stemming** is a text processing method in which a term is reduced to its "stem" or simplest form through the removal of suffixes from the term such as (-ED, -ING, -ION, -IONS, -S). Suffixes are removed specifically for IR performance, not for linguistic meaning (Porter, 1980).
@@ -99,11 +99,12 @@ print("['universe', 'university'] -------> ", [porter.stem(word) for word in wor
 ### Cons for stemming
 Stemming does "too" good of a job of extracting the root word or one could say stemming "butchers" the word. Stemming will take a word like **organize** and shorten it to **organ** which has an entirely different meaning. Same with the word **University**, which will stem to **univers**, again shortening the word to a word that is not the same meaning. This is something to consider when using Porter Stemmer. How important is the meaning of the word versus reducing the complexity of the data to your model and analysis?
 
-# Lemmatization
+# II. Lemmatization
 ![Alternate image text](/images/twitter/dictionary.jpg)
 
 **Lemmatization** labels the term from its base word (lemma). This method is a more methodical approach for ensuring the words are reduced without losing its meaning.
 
+## A. NLTK Lemmatization
 ```python
 # import lemmatizer package
 from nltk.stem import WordNetLemmatizer 
@@ -125,7 +126,7 @@ print("['universe', 'university'] -------> ", [lem.lemmatize(word) for word in w
 
 Even though part of speech is not identified in the above example, we can see here that Lemmatization is more conservative about trimming a word then in stemming. University does not change to universe and organize/organization does not change to organ.<br><br>
 
-### Handling plural in lemmatization
+### A1. Handling plural in lemmatization
 ```python
 lemmatizer.lemmatize("ponies")
 lemmatizer.lemmatize("caresses")
@@ -135,7 +136,7 @@ lemmatizer.lemmatize("cats")
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; caresses ---> caress<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cats ---> cat<br><br>
 
-### Understanding Lemma
+### A2. Understanding Lemma
 To gain a better understanding of how lemma is used within linguestics, let's take a trip down memory lane and recall verb conjugation. 
 
 **Conjucate 'To Be'**
@@ -183,7 +184,7 @@ lem.lemmatize('flung', pos = 'v')
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; witheld ---> withhold <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flung ---> fling <br> <br>
 
-### Part of Speech
+### A3. Part of Speech
 In English, identifying pos in a verb changes the output within lemmatization. However, identifying pos for nouns and adjectives is more meaningful within languages other than English. Basically, languages that utilize grammatical gender. 
 
 For example in Hebrew, the word for 'big' is גָּדוֹל (gadol). <br>
@@ -192,16 +193,20 @@ For example in Hebrew, the word for 'big' is גָּדוֹל (gadol). <br>
 
 In Hebrew, the ending of the adjective changes according to if the word is used as singlular masculine, singlular feminine, plural masculine, or plural feminine. The root (lemma) of gadol is  ג - ד - ל (g-d-l).Thus when lemmatization is applied to the Hebrew word גָּדוֹל (Gadol), the word is reduced to its root word גדל (gdl). <br><br>
 
-### Pros for lemmatization
+### A4. Benefits and drawbacks to lemmatization
+
+#### Pros for lemmatization**
 1. Using the base word ensures that the meaning behind the word is not being lost
 
-### Cons for lemmatization
+#### Cons for lemmatization
 1. Need to identify part of speech
 2. Need to understand fundamentals of linguistics thus more complex
 
 
-# Spacy Lemmatization 
+## B. Spacy Lemmatization 
 Spacy provides its own lemmatization package. Let's see how this package compares with the lemmatizer in NLTK. 
+
+### B1. Spacy Lemmatization
 
 ```python
 # import spacy package
@@ -235,6 +240,7 @@ for i in words:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; withhold --> withhold <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flung --> flung <br><br>
 
+### B2. NLTK Lemamatizer
 NLTK Lemmatizer without including pos:
 ``` python
 for word in words:
@@ -256,7 +262,7 @@ for word in words:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; withhold --> withhold <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flung --> flung <br>
 
-Things to note: <br>
+### B3 Comparison
 
 
 
