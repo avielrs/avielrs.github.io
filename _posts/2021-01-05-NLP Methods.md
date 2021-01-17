@@ -173,7 +173,7 @@ print('They were --> To', lemmatizer.lemmatize("were", pos="v")) #v is for verb�
 
 **Note:** In lemmatization, the part of speech (pos) needs to be defined. In the example above, I define the pos as "v" for verb. If the pos parameter is not defined, then the default is set to NOUN.<br>
 
-#### Complex verbs in NLTK Lemmatizer
+### Complex verbs in NLTK Lemmatizer
 Has the capability to identify base words from complex verbs. See example below:
 ```python
 lem.lemmatize('beheld', pos = 'v')
@@ -184,8 +184,58 @@ lem.lemmatize('flung', pos = 'v')
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; witheld ---> withhold <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flung ---> fling <br> <br>
 
+### Adverbs in NLTK Lemmatizer
+
+```python
+# adverb
+print('farther', lem.lemmatize('farther', pos = 'r'))
+# superlative adverb
+print('farthest', lem.lemmatize('farthest', pos = 'r'))
+
+# adverb
+print('loudly', lem.lemmatize('loudly', pos = 'r'))
+# superlative adverb
+print('loudest', lem.lemmatize('loudest', pos = 'r'))
+```
+**Output**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; farther ---> far <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; farthest ---> farthest <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; loudly ---> loudly <br>
+
+NLTK Lemmatizer can handle basic adverbs such as the words farther and loudly. However, adverbs that end in 'est', also known as superlative adverbs, is not supported by NLTK Lemmatizer. Therefore, loudest does not change to loud and farthest does not change to far.
+
+### Adjectives with different endings
+
+```python
+# comparative adjective
+print('closer', lem.lemmatize('closer', pos = 'a'))
+
+#superlative adjective
+print('closest', lem.lemmatize('closest', pos = 'a'))
+
+# comparative adjective:
+print('smaller', lem.lemmatize('smaller', pos = 'a'))
+
+# superlative adjective
+print('smallest', lem.lemmatize('smallest', pos = 'a'))
+
+# Dry
+print('drier', lem.lemmatize('drier', pos = 'a'))
+print('driest', lem.lemmatize('driest', pos = 'a'))
+```
+
+**Output**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; closer close <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; closest close <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; smaller small <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; smallest small <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; drier dry <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; driest dry <br>
+
+NLTK Lemmatizer handles adjectives with different endings very well.
+
 ### Part of Speech (POS)
-In English, identifying pos in a verb changes the output within lemmatization. However, identifying pos for nouns and adjectives is more meaningful within languages other than English. Basically, languages that utilize grammatical gender. 
+In English, I have demonstrated from above that there are different endings for adjectives such as smaller and smallest, and different endings for adverbs such as farther and loudly. I as well showed the significance of the lemmatizer for verb conjugation. The English language while does have some different ending types to words, the ending of a word within nouns and adjectives are more meaningful within languages other than English. Basically, languages that utilize grammatical gender. 
 
 For example, in Hebrew, the word for 'big' is גָּדוֹל (gadol). <br>
 
@@ -215,7 +265,7 @@ sp = spacy.load('en_core_web_sm')
 
 # create word list
 words = ['better','ran', 'are', 'running', 'were', 'shared', 'organize', 'university', 
-         'awoken', 'arose', 'beheld', 'sped', 'withhold', 'flung']
+         'awoken', 'arose', 'beheld', 'sped', 'withhold', 'flung', 'cats', 'timely', 'actively', 'tighter', 'smaller', 'farther', 'driest', 'farthest', 'loudly']
 
 for i in words:
     token = sp(i)
@@ -236,7 +286,16 @@ for i in words:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; beheld --> beheld <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sped --> speed <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; withhold --> withhold <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flung --> flung <br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flung --> flung <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cats --> cat <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; timely --> timely <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; actively --> actively <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tighter --> tight <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; smaller --> small <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; farther --> far <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; driest --> dry <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; farthest --> farthest <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loudly --> loudly <br>
 
 ### NLTK Lemamatizer
 Spacy Lemmatizer does not include pos therefore in order to compare the package with with NLTK lemmatizer, I will not include the POS for NLTK Lemmatizer.
@@ -260,6 +319,8 @@ for word in words:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sped --> sped <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; withhold --> withhold <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flung --> flung <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cats --> cat <br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; greater --> greater <br><br>
 
 ### Comparison
 From above, we can see that Spacy Lemmatization is able to identify the root word of verbs without including part of speech as a parameter. For example, 'are' is lemmatized as 'be', 'ran' is lemmatized to 'run', 'awoken' is lemmatized to 'awake'. Drawbacks is that Spacy Lemmatization is not able to handle complex verbs as well as NLTK Lemmatizer when the POS is labled. Such words includes 'flung', 'withold', and 'beheld'. 
@@ -267,7 +328,7 @@ From above, we can see that Spacy Lemmatization is able to identify the root wor
 Spacy Lemmatization as well does a much better job than NLTK Lemmatizer when the pos parameter in NLTK Lemmatizer is set to default as 'Noun'.
 
 ### How important is pos for lemmatization? 
-I have demonstrated from above that NLTK Lemmatizer works very well when the part of speech is identified for each word. However labeling each word with the correct pos can be cumbersome and adds one more level of compelxity to the data in order to ensure the data is setup correctly for an accuraate model.
+I have demonstrated from above that NLTK Lemmatizer works very well when the part of speech is identified for each word. However labeling each word with the correct pos can be cumbersome and adds one more level of compelxity to the data in order to ensure the data is setup correctly for an accurate model. For me personally, I analyze text data in the English language. I as well showed that for the English language, pos is mainly important for verbs. The spacy lemmatization seems to do a fairly good job at identifying the root word for the verbs, excluding more complex verbs. The spacy lemmatizer as well demonstrates that it can handle adjectives and nouns when needed. For example, cats (plural) change to cat (singular) and greater changes to great
 
 #### References
 [B., Sowmya V., et al. Practical Natural Language Processing: a Comprehensive Guide to Building Real-World NLP Systems. O'Reilly Media, 2020.](https://www.oreilly.com/library/view/practical-natural-language/9781492054047/){:target="_blank"} 
