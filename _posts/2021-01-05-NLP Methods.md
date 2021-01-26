@@ -299,12 +299,20 @@ for i in words:
 
 ### NLTK Lemamatizer
 
-First I use nltk.pos_tag() to identify the part of speechh for each word, rather than I 
+First I use nltk.pos_tag() to identify the part of speechh for each word in the word list.This way I can loop through each word when applying NLTK Lemmatizer. This is as well the method I would use for large Text Datasets in order to identify part of speech. 
+
 ``` python
+# create word list
+words = ['better','ran', 'are', 'running', 'were', 'shared', 'organize', 'university', 
+         'awoken', 'arose', 'beheld', 'sped', 'withhold', 'flung', 'cats', 'timely', 'actively', 'tighter', 'smaller', 'farther', 'driest', 'farthest', 'loudly']
+         
+#identify part of speach from word list
 tags = nltk.pos_tag(words)
-# extract pos
+
+# create a list from part of speech
 tag = list(dict(tags).values())
 
+# rename part of speech for parameter input in NLTK Lemmatizer
 for i in range(0, len(tag)): 
     if tag[i] == 'JJR' or tag[i] == 'JJ' or tag[i] == 'JJS':
         tag[i] = 'a'
@@ -316,13 +324,15 @@ for i in range(0, len(tag)):
         tag[i] = 'r'
     else:
         pass
-    
+
+# Create a new list with the word list and Part of speech    
 word_list = []
 for i in range(0, len(tag)):
     word_list.append([words[i], tag[i]])
-    
-nltk_words = []
 
+
+# Loop to appply NLTK Lemmatizer
+nltk_words = []
 for word in word_list:
     print(word[0],'-->', lem.lemmatize(word[0], pos = word[1]))
     nltk_words.append(lem.lemmatize(word[0], pos = word[1]))
@@ -353,12 +363,11 @@ for word in word_list:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; loudly --> loudly <br>
 
 ### Comparison
-From above, we can see that Spacy Lemmatization is able to identify the root word of verbs without including part of speech as a parameter. For example, 'are' is lemmatized as 'be', 'ran' is lemmatized to 'run', 'awoken' is lemmatized to 'awake'. Drawbacks is that Spacy Lemmatization is not able to handle complex verbs as well as NLTK Lemmatizer when the POS is labled. Such words includes 'flung', 'withold', and 'beheld'. 
+Spacy Lemmatization is able to identify the root word for verbs, plural, adjectives, and for most adverbs. Spacy Lemmatization is not able to handle complex verbs as well as NLTK Lemmatizer when the POS is labled. Such words includes 'flung', 'withold', and 'beheld'. One thing to note is that when I used NLTK.pos_tag() to identify the part of speech for each word in order to include the part of speech for the word list in NLTK Lemmatizer, not all of the part of speech were identify correctly. This is why when I applied NLTK Lemmatizer driest did not change to dry and flung do not change to fling.  
 
-Spacy Lemmatization as well does a much better job than NLTK Lemmatizer when the pos parameter in NLTK Lemmatizer is set to default as 'Noun'.
+### Conclusion
 
-### How important is pos for lemmatization? 
-I have demonstrated from above that NLTK Lemmatizer works very well when the part of speech is identified for each word. However labeling each word with the correct pos can be cumbersome and adds one more level of compelxity to the data in order to ensure the data is setup correctly for an accurate model. For me personally, I analyze text data in the English language. I as well showed that for the English language, pos is mainly important for verbs. The spacy lemmatization seems to do a fairly good job at identifying the root word for the verbs, excluding more complex verbs. The spacy lemmatizer as well demonstrates that it can handle adjectives and nouns when needed. For example, cats (plural) change to cat (singular) and greater changes to great
+After comparing NLTK Stemming, NLTK Lemmatizer, and Spacy Lemmatizer. Spacy Lemmatizer works the best out of the three. Note, for further research there are other Lemmatization packages that can be compared as well. However, I am happy how Spacy Lemmatizer works and for now, I will use this Lemmatization package for Text Processing.
 
 #### References
 [B., Sowmya V., et al. Practical Natural Language Processing: a Comprehensive Guide to Building Real-World NLP Systems. O'Reilly Media, 2020.](https://www.oreilly.com/library/view/practical-natural-language/9781492054047/){:target="_blank"} 
