@@ -299,14 +299,14 @@ for i in words:
 
 ### NLTK Lemamatizer
 
-First I use nltk.pos_tag() to identify the part of speechh for each word in the word list.This way I can loop through each word when applying NLTK Lemmatizer. This is as well the method I would use for large Text Datasets in order to identify part of speech. 
+First I use nltk.pos_tag() to identify the part of speech for each word. This way I can loop through each word when applying NLTK Lemmatizer. This is as well the method I would use for large Text Datasets in order to identify part of speech. 
 
 ``` python
 # create word list
 words = ['better','ran', 'are', 'running', 'were', 'shared', 'organize', 'university', 
          'awoken', 'arose', 'beheld', 'sped', 'withhold', 'flung', 'cats', 'timely', 'actively', 'tighter', 'smaller', 'farther', 'driest', 'farthest', 'loudly']
          
-#identify part of speach from word list
+#identify part of speech from word list
 tags = nltk.pos_tag(words)
 
 # create a list from part of speech
@@ -330,8 +330,7 @@ word_list = []
 for i in range(0, len(tag)):
     word_list.append([words[i], tag[i]])
 
-
-# Loop to appply NLTK Lemmatizer
+# Loop to apply NLTK Lemmatizer
 nltk_words = []
 for word in word_list:
     print(word[0],'-->', lem.lemmatize(word[0], pos = word[1]))
@@ -363,7 +362,7 @@ for word in word_list:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; loudly --> loudly <br>
 
 ### Comparison
-Spacy Lemmatization is able to identify the root word for verbs, plural, adjectives, and for most adverbs. Spacy Lemmatization is not able to handle complex verbs as well as NLTK Lemmatizer when the POS is labled. Such words includes 'flung', 'withold', and 'beheld'. One thing to note is that when I used NLTK.pos_tag() to identify the part of speech for each word in order to include the part of speech for the word list in NLTK Lemmatizer, not all of the part of speech were identify correctly. This is why when I applied NLTK Lemmatizer driest did not change to dry and flung do not change to fling.  
+Spacy Lemmatization is able to identify the root word for verbs, plural, adjectives, and for most adverbs. Spacy Lemmatization is not able to handle complex verbs as well as NLTK Lemmatizer when the POS is labelled. Such words includes 'flung', 'withold', and 'beheld'. One thing to note is that when I used NLTK.pos_tag() to identify the part of speech for each word in order to include the part of speech for the word list in NLTK Lemmatizer, not all of the part of speech were identified correctly. This is why when I applied NLTK Lemmatizer driest did not change to dry and flung do not change to fling.  
 
 ### Conclusion
 
@@ -381,3 +380,4 @@ Porter, Martin F. 1980. An algorithm for suffix stripping. Program 14 (3): 130-1
 [http://www.nltk.org/_modules/nltk/stem/wordnet.html#WordNetLemmatizer](http://www.nltk.org/_modules/nltk/stem/wordnet.html#WordNetLemmatizer){:target="_blank"}
 
 [http://www.nltk.org/api/nltk.stem.html#nltk.stem.wordnet.WordNetLemmatizer.lemmatize](http://www.nltk.org/api/nltk.stem.html#nltk.stem.wordnet.WordNetLemmatizer.lemmatize){:target="_blank"}
+
