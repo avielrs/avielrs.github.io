@@ -6,13 +6,13 @@ title: Stemming vs Lemmatization
 
 # Part 3A: Text Preprocessing for Topic Modelling
 
-I love the word 'Lemmatization'. Something about the cumulation of sounds that are formed from the syllables, vowels, and consonants that makes up the word 'Lemmatization' makes me smile. The first time I heard the word 'Lemmatization', I knew I needed to learn more about it! I guess that is why I like studying Natural Language Processing (NLP). I am drawn towards the subject because I like to think about languages as a structure, patten, and rhythm. Through this process, I am able to take a sentence and visualize it. Just like a fun puzzle, languages are messy at first but when the right pieces fit together, a clear picture is formed.
+I love the word 'Lemmatization'. Something about the cumulation of sounds that are formed from the syllables, vowels, and consonants that makes up the word 'Lemmatization' makes me smile. The first time I heard the word 'Lemmatization', I knew I needed to learn more about it! I guess that is why I like studying Natural Language Processing (NLP). I am drawn to the subject because I like to think about languages as a structure, patten, and rhythm. Through this process, I am able to take a sentence and visualize it. Just like a fun puzzle, languages are messy at first but when the right pieces fit together, a clear picture is formed.
 
-I remember sitting in my high school English literature class with multiple sentences written on the board. For the class assignment, we broke down each sentence and identified the part of speech for each word. By doing this, we gained understanding and meaning of how each word was applied in that sentence. The act of breaking down a sentence in order to understand the structure of a sentence falls under the discipline of linguistics.  While as individuals, we can break down sentences and identify meaning, it becomes difficult and almost impossible to do so with large text documents such as 100,000,000 tweets or 100,000 news articles. This is where natural language processing comes into effect. The variety of packages provided for NLP allows us to process big text data efficiently. 
+I remember sitting in my high school English literature class with multiple sentences written on the board. For the class assignment, we broke down each sentence and identified the part of speech for each word. By doing this, we gained understanding and meaning of how each word was applied in that sentence. The act of breaking down a sentence in order to understand the structure falls under the discipline of linguistics.  While as individuals, we can break down sentences and identify meaning, it becomes difficult and almost impossible to do so with large text documents such as 100,000,000 tweets or 100,000 news articles. This is where natural language processing can help, and the variety of packages provided for NLP allows us to process big text data efficiently. <br> <br>
 
 ![Alternate image text](/images/twitter/linguistics.png)
 
-I love this figure which is taken from the textbook *"Practical Natural Language Processing: A Comprehensive Guide to Building Real-World NLP Systems" by Vajjala, S. et al. 2020.* The image shows the building blocks of a language and in result how NLP is utilized in order for computers to process text data. 
+I love this figure which is taken from the textbook *"Practical Natural Language Processing: A Comprehensive Guide to Building Real-World NLP Systems" by Vajjala, S. et al. 2020.* The image shows that a language is made up of fundmental blocks that can be broken down in order to gain a greater understanding of a sentence. Each block can be processed with an NLP application. For example, in order to identify context (meaning) with NLP, we can apply Topic Modelling and Sentiment Analysis. 
 
 #### Definition of Natural Language Processing
 Natural Language Processing is part of the machine learning/AI pipeline, where a variety of tasks are applied in order to process text data and format it in a way so that the computer can read the data and perform analysis. 
@@ -20,7 +20,7 @@ Natural Language Processing is part of the machine learning/AI pipeline, where a
 *In this blog post I will discuss stemming and lematization, a pre-processing method for text data so that the text is ready to process for machine learning and rule-based algorithms. Specifically, in regards to topic modelling with the use of Twitter text data. This blog post is Part 3 in a series of posts in regard to [collecting twitter data on the US Presidential Election](https://avielrs.github.io/Collecting-Twitter-Data-on-the-US-Presidential-Election/){:target="_blank"}.*
 
 ### Why stemming and lemmatization is used? 
-Each document contains a vector of words (terms). Sentence tokenization separates each word into a matrix where each term is a feature. For example, if a sentance (or document) contains the term **sit**, and another document contains the term **sitting**. The two terms will end up as two separate column features even though the meaning is the same. 
+Each document contains a vector of words (terms). Sentence tokenization separates each word into a matrix where each term is a feature. For example, if a sentence (or document) contains the term **sit**, and another document contains the term **sitting**. The two terms will end up as two separate column features even though the meaning is the same. 
 
 ![Alternate image text](/images/twitter/diagram_lem_stem_token.png)
 
@@ -124,7 +124,7 @@ print("['universe', 'university'] -------> ", [lem.lemmatize(word) for word in w
 ['benefactor', 'benevolent', 'beneficial'] ------->  ['benefactor', 'benevolent', 'beneficial']<br>
 ['universe', 'university'] ------->  ['universe', 'university'] <br>
 
-Even though part of speech is not identified in the above example, we can see here that Lemmatization is more conservative about trimming a word then in stemming. University does not change to universe and organize/organization does not change to organ.<br><br>
+We can see here that Lemmatization is more conservative about trimming a word then in stemming. University does not change to universe and organize/organization does not change to organ.<br><br>
 
 ### Handling plural in lemmatization
 ```python
@@ -197,7 +197,7 @@ print('loudly', lem.lemmatize('loudly', pos = 'r'))
 # superlative adverb
 print('loudest', lem.lemmatize('loudest', pos = 'r'))
 ```
-**Output**
+**Output** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; farther ---> far <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; farthest ---> farthest <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; loudly ---> loudly <br>
@@ -244,7 +244,7 @@ For example, in Hebrew, the word for 'big' is גָּדוֹל (gadol). <br>
 In Hebrew, the ending of the adjective changes according to if the word is used as singular masculine, singular feminine, plural masculine, or plural feminine. The root (lemma) of gadol is  ג - ד - ל (g-d-l).Thus when lemmatization is applied to the Hebrew word גָּדוֹל (Gadol), the word is reduced to its root word גדל (gdl). <br><br>
 
 ### Pros for lemmatization
-1. Using the base word ensures that the meaning behind the word is not being lost
+1. Using the base word ensures that the meaning behind the word is not lost
 
 ### Cons for lemmatization
 1. Need to identify part of speech
@@ -298,29 +298,59 @@ for i in words:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loudly --> loudly <br>
 
 ### NLTK Lemamatizer
-Spacy Lemmatizer does not include pos therefore in order to compare the package with with NLTK lemmatizer, I will not include the POS for NLTK Lemmatizer.
 
+First I use nltk.pos_tag() to identify the part of speechh for each word, rather than I 
 ``` python
-for word in words:
-    print(word,'-->', lem.lemmatize(word))
+tags = nltk.pos_tag(words)
+# extract pos
+tag = list(dict(tags).values())
+
+for i in range(0, len(tag)): 
+    if tag[i] == 'JJR' or tag[i] == 'JJ' or tag[i] == 'JJS':
+        tag[i] = 'a'
+    elif tag[i] == 'VBP' or tag[i] == 'VBG' or tag[i] == 'VBD' or tag[i] == 'VBN':
+        tag[i] = 'v'
+    elif tag[i] == 'NN' or tag[i]== 'NNS':
+        tag[i] = 'n'
+    elif tag[i] == 'RB':
+        tag[i] = 'r'
+    else:
+        pass
+    
+word_list = []
+for i in range(0, len(tag)):
+    word_list.append([words[i], tag[i]])
+    
+nltk_words = []
+
+for word in word_list:
+    print(word[0],'-->', lem.lemmatize(word[0], pos = word[1]))
+    nltk_words.append(lem.lemmatize(word[0], pos = word[1]))
 ```
 **Output**<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; better --> better <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; better --> good <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ran --> ran <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; are --> are <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; running --> running <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; were --> were <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; shared --> shared <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; are --> be <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; running --> run <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; were --> be <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; shared --> share <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; organize --> organize <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; university --> university <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; awoken --> awoken <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; awoken --> awake <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; arose --> arose <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; beheld --> beheld <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sped --> sped <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sped --> speed <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; withhold --> withhold <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flung --> flung <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cats --> cat <br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; greater --> greater <br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cats --> cat <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; timely --> timely <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; actively --> actively <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tighter --> tight <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; smaller --> small <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; farther --> farther <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; driest --> driest <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; farthest --> farthest <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; loudly --> loudly <br>
 
 ### Comparison
 From above, we can see that Spacy Lemmatization is able to identify the root word of verbs without including part of speech as a parameter. For example, 'are' is lemmatized as 'be', 'ran' is lemmatized to 'run', 'awoken' is lemmatized to 'awake'. Drawbacks is that Spacy Lemmatization is not able to handle complex verbs as well as NLTK Lemmatizer when the POS is labled. Such words includes 'flung', 'withold', and 'beheld'. 
