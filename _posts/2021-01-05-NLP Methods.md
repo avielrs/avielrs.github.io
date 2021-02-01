@@ -171,7 +171,7 @@ print('They were --> To', lemmatizer.lemmatize("were", pos="v")) #v is for verb�
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; He is --> To be <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; They were --> To be <br>
  
-**Note:** In lemmatization, the part of speech (pos) needs to be defined. In the example above, I define the pos as "v" for verb. If the pos parameter is not specified, then the default is set to NOUN.<br>
+**Note:** In NLTK lemmatization, the part of speech (pos) needs to be defined. In the example above, I define the pos as "v" for verb. If the pos parameter is not specified, then the default is set to NOUN.<br>
  
 ### Complex verbs in NLTK Lemmatizer
 Has the capability to identify base words from complex verbs. See example below:
@@ -233,16 +233,6 @@ print('driest', lem.lemmatize('driest', pos = 'a'))
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; driest dry <br>
  
 NLTK Lemmatizer handles adjectives with different endings very well.
- 
-### Part of Speech (POS)
-
-I demonstrated how Lemmatization identifies root words for specifically the English Language. When thinking about a root word in English, it feels less 
-
-For example, in Hebrew, the word for 'big' is גָּדוֹל (Gadol). <br>
- 
-![Alternate image text](/images/twitter/hebrew_gadol.png)
- 
-In Hebrew, the ending of the adjective changes according to singular masculine, singular feminine, plural masculine, or plural feminine. The root (lemma) of Gadol is  ג - ד - ל (G-D-L). <br><br>
  
 ### Pros for lemmatization
 1. Using the base word ensures that the meaning behind the word is not lost
