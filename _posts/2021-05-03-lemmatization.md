@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Part 2 Stemming vs Lemmatization
+title: Stemming vs Lemmatization
 ---
 ![Alternate image text](/images/twitter/books.jpg)
  
-# II. Lemmatization
+# Lemmatization
 ![Alternate image text](/images/twitter/dictionary.jpg)
  
 **Lemmatization** labels the term from its base word (lemma). This method is a more methodical approach for ensuring word reduction does not lose its meaning.
@@ -274,6 +274,3 @@ Porter, Martin F. 1980. An algorithm for suffix stripping. Program 14 (3): 130-1
 [http://www.nltk.org/_modules/nltk/stem/wordnet.html#WordNetLemmatizer](http://www.nltk.org/_modules/nltk/stem/wordnet.html#WordNetLemmatizer){:target="_blank"}
  
 [http://www.nltk.org/api/nltk.stem.html#nltk.stem.wordnet.WordNetLemmatizer.lemmatize](http://www.nltk.org/api/nltk.stem.html#nltk.stem.wordnet.WordNetLemmatizer.lemmatize){:target="_blank"}
- 
- 
-
