@@ -2,9 +2,7 @@
 layout: post
 title: Stemming vs Lemmatization
 ---
-<p>
 ![Alternate image text](/images/twitter/books.jpg)
- </p>
 
 # Part 3A: Text Preprocessing for Topic Modelling
  
