@@ -2,10 +2,10 @@
 layout: post
 title: Stemming vs Lemmatization
 ---
-
+<p>
 ![Alternate image text](/images/twitter/books.jpg)
- 
- 
+ </p>
+
 # Part 3A: Text Preprocessing for Topic Modelling
  
 I love the word Lemmatization because the syllables, consonants, and vowels that make up the word lemmatization form a sound that makes me smile. I like Natural Language Processing (NLP) because I like to think about languages as a structure, pattern, and rhythm. Through this process, I can take a sentence and visualize it. Like a fun puzzle, languages are messy at first, but a comprehensive picture forms when the right pieces fit together.
